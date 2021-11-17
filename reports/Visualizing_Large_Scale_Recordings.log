@@ -23,18 +23,18 @@ import numpy as np
 from matplotlib import pyplot as plt
 from pynwb import NWBHDF5IO
 
-# read the file 
-io = NWBHDF5IO('000006/sub-anm369962/sub-anm369962_ses-20170310.nwb', 'r')
+# read the file from the chapter 02 folder
+io = NWBHDF5IO('../Chapter_02/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb', 'r')
 nwb_file = io.read()
 print(type(nwb_file))
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mUnsupportedOperation[0m                      Traceback (most recent call last)
-[0;32m<ipython-input-1-0e2f97dfc04f>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-1-a653dacd35a6>[0m in [0;36m<module>[0;34m[0m
 [1;32m      6[0m [0;34m[0m[0m
-[1;32m      7[0m [0;31m# read the file[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 8[0;31m [0mio[0m [0;34m=[0m [0mNWBHDF5IO[0m[0;34m([0m[0;34m'000006/sub-anm369962/sub-anm369962_ses-20170310.nwb'[0m[0;34m,[0m [0;34m'r'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m [0;31m# read the file from the chapter 02 folder[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 8[0;31m [0mio[0m [0;34m=[0m [0mNWBHDF5IO[0m[0;34m([0m[0;34m'../Chapter_02/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb'[0m[0;34m,[0m [0;34m'r'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      9[0m [0mnwb_file[0m [0;34m=[0m [0mio[0m[0;34m.[0m[0mread[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     10[0m [0mprint[0m[0;34m([0m[0mtype[0m[0;34m([0m[0mnwb_file[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
@@ -66,6 +66,6 @@ print(type(nwb_file))
 [0m[1;32m     63[0m [0;34m[0m[0m
 [1;32m     64[0m         [0;32mif[0m [0mfile_obj[0m [0;32mis[0m [0;32mNone[0m [0;32mand[0m [0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0mexists[0m[0;34m([0m[0mpath[0m[0;34m)[0m [0;32mand[0m [0;34m([0m[0mmode[0m [0;34m==[0m [0;34m'w-'[0m [0;32mor[0m [0mmode[0m [0;34m==[0m [0;34m'x'[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mUnsupportedOperation[0m: Unable to open file 000006/sub-anm369962/sub-anm369962_ses-20170310.nwb in 'r' mode. File does not exist.
-UnsupportedOperation: Unable to open file 000006/sub-anm369962/sub-anm369962_ses-20170310.nwb in 'r' mode. File does not exist.
+[0;31mUnsupportedOperation[0m: Unable to open file ../Chapter_02/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb in 'r' mode. File does not exist.
+UnsupportedOperation: Unable to open file ../Chapter_02/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb in 'r' mode. File does not exist.
 

@@ -32,8 +32,13 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# # Import packages necessary to plot behavior', 'import matplotlib.pyplot as plt', '%matplotlib inline ', 'import warnings', "warnings.filterwarnings('ignore')"]
-...
-['', '# Return all sessions available in this dataset', 'sessions = cache.get_session_table()', "print('Total number of sessions: ' + str(len(sessions)))", 'sessions.head()']
+# Get electrophysiological traces of our cell
+specimen_ephys_data = ctc.get_ephys_data(specimen_id = cell_id)
+
+# Retrieve sweep numbers for cell
+sweep_numbers = specimen_ephys_data.get_experiment_sweep_numbers()
+
+print(type(specimen_ephys_data))
+print(sweep_numbers)
 -------------------
 
