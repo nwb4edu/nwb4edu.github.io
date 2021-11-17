@@ -296,7 +296,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/NeuralDataScience/NeuralDataScience.github.io/master?urlpath=tree/Chapter_04/Obtaining_Data_For_Single_Cells.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Chapter_04/Obtaining_Data_For_Single_Cells.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -304,7 +304,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/NeuralDataScience/NeuralDataScience.github.io/blob/master/Chapter_04/Obtaining_Data_For_Single_Cells.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Chapter_04/Obtaining_Data_For_Single_Cells.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -1010,6 +1010,9 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-11-16 15:14:30,456 allensdk.api.api.retrieve_file_over_http INFO     Downloading URL: http://api.brain-map.org/api/v2/well_known_file_download/491119572
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: 0,
  &#39;type&#39;: 1,
  &#39;x&#39;: 396.0425,
@@ -1034,6 +1037,9 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-11-16 15:14:31,273 allensdk.api.api.retrieve_file_over_http INFO     Downloading URL: http://api.brain-map.org/api/v2/well_known_file_download/497614894
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;x&#39;: 417.1024, &#39;y&#39;: 252.13760000000002, &#39;z&#39;: 18.48, &#39;name&#39;: 10},
  {&#39;x&#39;: 411.4968, &#39;y&#39;: 325.0104, &#39;z&#39;: 18.48, &#39;name&#39;: 10},
  {&#39;x&#39;: 429.4576, &#39;y&#39;: 364.1352, &#39;z&#39;: 19.32, &#39;name&#39;: 10},
@@ -1115,8 +1121,108 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;allensdk.core.nwb_data_set.NwbDataSet&#39;&gt;
-[10, 100, 101, 102, 103, 104, 105, 108, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 4, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 5, 50, 51, 52, 53, 54, 55, 57, 58, 59, 6, 60, 61, 62, 63, 64, 65, 66, 68, 69, 7, 71, 72, 73, 74, 75, 76, 77, 78, 79, 8, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 9, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-11-16 15:14:45,664 allensdk.api.api.retrieve_file_over_http INFO     Downloading URL: http://api.brain-map.org/api/v2/well_known_file_download/491200051
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">38</span><span class="n">f021f6f0f9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get electrophysiological traces of our cell</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">specimen_ephys_data</span> <span class="o">=</span> <span class="n">ctc</span><span class="o">.</span><span class="n">get_ephys_data</span><span class="p">(</span><span class="n">specimen_id</span> <span class="o">=</span> <span class="n">cell_id</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Retrieve sweep numbers for cell</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">sweep_numbers</span> <span class="o">=</span> <span class="n">specimen_ephys_data</span><span class="o">.</span><span class="n">get_experiment_sweep_numbers</span><span class="p">()</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/cell_types_cache.py</span> in <span class="ni">get_ephys_data</span><span class="nt">(self, specimen_id, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>             <span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">EPHYS_DATA_KEY</span><span class="p">,</span> <span class="n">specimen_id</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span> 
+<span class="ne">--&gt; </span><span class="mi">302</span>         <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">save_ephys_data</span><span class="p">(</span><span class="n">specimen_id</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;lazy&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> 
+<span class="g g-Whitespace">    </span><span class="mi">304</span>         <span class="k">return</span> <span class="n">NwbDataSet</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/cache.py</span> in <span class="ni">w</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">cacher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>                                   <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">663</span>                                   <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span> 
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/cache.py</span> in <span class="ni">cacher</span><span class="nt">(fn, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>                 <span class="n">writer</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">387</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span> 
+<span class="g g-Whitespace">    </span><span class="mi">389</span>         <span class="k">if</span> <span class="n">reader</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/queries/cell_types_api.py</span> in <span class="ni">save_ephys_data</span><span class="nt">(self, specimen_id, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">334</span>             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Specimen </span><span class="si">%d</span><span class="s2"> has no ephys data&quot;</span> <span class="o">%</span> <span class="n">specimen_id</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span> 
+<span class="ne">--&gt; </span><span class="mi">336</span>         <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_file_over_http</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">+</span> <span class="n">file_url</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> 
+<span class="g g-Whitespace">    </span><span class="mi">338</span>     <span class="k">def</span> <span class="nf">save_reconstruction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specimen_id</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/api.py</span> in <span class="ni">retrieve_file_over_http</span><span class="nt">(self, url, file_path, zipped)</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>                 <span class="n">stream_zip_directory_over_http</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">323</span>                 <span class="n">stream_file_over_http</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span> 
+<span class="g g-Whitespace">    </span><span class="mi">325</span>         <span class="k">except</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">StreamingError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/api.py</span> in <span class="ni">stream_file_over_http</span><span class="nt">(url, file_path, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>         <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fil</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">443</span>             <span class="n">stream</span><span class="o">.</span><span class="n">stream_response_to_file</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">fil</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/requests_toolbelt/downloadutils/stream.py</span> in <span class="ni">stream_response_to_file</span><span class="nt">(response, path, chunksize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span>         <span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span> 
+<span class="ne">--&gt; </span><span class="mi">171</span>     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunksize</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span>         <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span> 
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">generate</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">751</span>             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s1">&#39;stream&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span>                 <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">753</span>                     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">754</span>                         <span class="k">yield</span> <span class="n">chunk</span>
+<span class="g g-Whitespace">    </span><span class="mi">755</span>                 <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">stream</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span>             <span class="k">while</span> <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">576</span>                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span> 
+<span class="g g-Whitespace">    </span><span class="mi">578</span>                 <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">517</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span>                 <span class="n">cache_content</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="ne">--&gt; </span><span class="mi">519</span>                 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fp_closed</span> <span class="k">else</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span>                 <span class="k">if</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span>                     <span class="n">amt</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">data</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/http/client.py</span> in <span class="ni">read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>             <span class="c1"># Amount is given, implement using readinto</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>             <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">447</span>             <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>             <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/http/client.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span>         <span class="c1"># connection, and the user is reading more bytes than will be provided</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span>         <span class="c1"># (for example, reading in 1k chunks)</span>
+<span class="ne">--&gt; </span><span class="mi">491</span>         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">492</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>             <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span>         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">589</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">590</span>             <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>

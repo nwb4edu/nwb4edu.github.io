@@ -23,7 +23,7 @@ print(type(nwb_file))
 
 # The first group that we will look at is `units` because it contains information about spikes times in the data. This time, we will subset our dataframe to only contain neurons with `Fair` spike sorting quality. This means that the researchers are more confident that these are indeed isolated neurons.  
 
-# In[2]:
+# In[5]:
 
 
 # Get the units data frame
@@ -38,7 +38,7 @@ fair_units_df.head()
 
 # The `spike_times` column contains the times at which the recorded neuron fired an action potential. Each neuron has a list of spike times for their `spike_times` column. 
 
-# In[3]:
+# In[9]:
 
 
 # Return the first 10 spike times for your neuron of choice
@@ -56,7 +56,7 @@ print(units_df['spike_times'][unit_id][:10])
 # - `start_time`: start time for desired time interval 
 # - `end_time`: end time for desired time interval
 
-# In[4]:
+# In[6]:
 
 
 # Function for creating raster plots for Units group in NWB file 
@@ -101,7 +101,7 @@ plt.show()
 # 
 # The function plots the overall firing rate for each array of spike times in the list it is given, in 1 second time bins.
 
-# In[5]:
+# In[7]:
 
 
 def plot_firing_rates(spike_times, start_time = None, end_time = None):
@@ -126,7 +126,7 @@ def plot_firing_rates(spike_times, start_time = None, end_time = None):
 
 # Let's use the function we just created to plot our data. Below, we will store all of the spike times from the same unit as above as `single_unit` and plot the firing rates over time.
 
-# In[6]:
+# In[10]:
 
 
 # Plot our data
@@ -139,7 +139,7 @@ plt.show()
 # 
 # The units in our data were recorded from various cortical depths, therefore we can compare the firing units from differing cortical depths to test for differing firing rates. Let's first take a look at the distribution of depth from our units.
 
-# In[7]:
+# In[35]:
 
 
 # Plot distribution of neuron depth 
@@ -152,7 +152,7 @@ plt.show()
 
 # We will compare the units that were recorded from 1165 um and 715 um cortical depths.
 
-# In[8]:
+# In[42]:
 
 
 # Assign dataframes for different depths 

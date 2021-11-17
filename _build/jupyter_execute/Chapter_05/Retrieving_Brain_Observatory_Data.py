@@ -111,7 +111,7 @@ print(experiments)
 
 # **Note**: You can execute `get_all_stimuli()` on the `boc` object if you are unsure of what stimuli are available. Not all experiments or experiment contiainers will have every stimuli in their datasets. 
 
-# In[7]:
+# In[16]:
 
 
 print('Stimuli found in Brain Observatory:')
@@ -122,7 +122,7 @@ boc.get_all_stimuli()
 # 
 # **Note**: The cell below downloads some data, and make take a minute or so to run. It is important that you do not interrupt the download of the data or else the file will become corrupted and you will have to delete it and try again. 
 
-# In[8]:
+# In[13]:
 
 
 # Note: This id is different from our experiment container id 

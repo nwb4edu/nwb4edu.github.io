@@ -196,7 +196,7 @@ print(sweep_numbers)
 
 # Now that we have sweep numbers to choose from, we can take a look at a sweep's metadata by calling get_sweep_metadata(). This returns a dictionary containing information such as stimulus paramaters and recording quality.
 
-# In[11]:
+# In[32]:
 
 
 # Select a sweep number 
@@ -209,7 +209,7 @@ print(specimen_metadata)
 
 # The `get_sweep()` method returns a dictionary containing the stimulus, response, index_range, and sampling rate for a particular sweep.
 
-# In[12]:
+# In[33]:
 
 
 sweep_data = specimen_ephys_data.get_sweep(sweep_number)
@@ -218,7 +218,7 @@ print(sweep_data)
 
 # Now that you've pulled down some data, chosen a cell, and chosen a sweep number, let's plot that data. We can look closer at the action potential by plotting the raw recording. Our `sweep_data` variable has all the data we need to plot our sweep; the stimulus current injected into our cell, the cell's response, and sampling rate of the sweep. 
 
-# In[13]:
+# In[34]:
 
 
 # Get the stimulus trace (in amps) and convert to pA

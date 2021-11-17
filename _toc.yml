@@ -1,8 +1,8 @@
-format: jb-article
+format: jb-book
 root: landing_page
 options:
   numbered: true
-sections:
+chapters:
 - file: Chapter_01/Data_Science_In_Python
   sections:
   - file: Chapter_01/NumPy

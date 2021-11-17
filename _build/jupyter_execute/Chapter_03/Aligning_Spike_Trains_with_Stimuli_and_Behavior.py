@@ -35,7 +35,7 @@ print('Session data obtained.')
 # 
 # Because there are many units in a given session, we first need to select a subgroup of units to focus on. For the purposes of this notebook we will work with units that were taken from the primary visual area (`VISp`). Below, we will assign spike times of units from the `VISp` area. 
 
-# In[2]:
+# In[4]:
 
 
 # Assign the spike times in this particular session session
@@ -65,7 +65,7 @@ for i in range(4):
 
 # The spike data can be sorted according to the type of stimulus that was presented to the mouse. You can access the different stimuli that were presented in the session by using the attribute `stimulus_names`. 
 
-# In[3]:
+# In[22]:
 
 
 # Stimuli presented in session
