@@ -17,34 +17,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Import the "Cell Types Cache" from the AllenSDK core package
-from allensdk.core.cell_types_cache import CellTypesCache
-
-# Import CellTypesApi, which will allow us to query the database.
-from allensdk.api.queries.cell_types_api import CellTypesApi
-
-# Import packages 
+#Import all the necessary packages and initalize an instance of the cache
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt 
-%matplotlib inline 
-import warnings
-warnings.filterwarnings('ignore')
+from allensdk.core.cell_types_cache import CellTypesCache
+from allensdk.api.queries.cell_types_api import CellTypesApi
+import matplotlib.pyplot as plt
 
-# We'll then initialize the cache as 'ctc' (cell types cache)
 ctc = CellTypesCache(manifest_file='cell_types/manifest.json')
 
-print('Packages were successfully imported.')
+print('Packages successfully downloaded.')
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-2-64b92aac7bc2>[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;31m# Import the "Cell Types Cache" from the AllenSDK core package[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mcore[0m[0;34m.[0m[0mcell_types_cache[0m [0;32mimport[0m [0mCellTypesCache[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      3[0m [0;34m[0m[0m
-[1;32m      4[0m [0;31m# Import CellTypesApi, which will allow us to query the database.[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mapi[0m[0;34m.[0m[0mqueries[0m[0;34m.[0m[0mcell_types_api[0m [0;32mimport[0m [0mCellTypesApi[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-1-f424f5886fe5>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m#Import all the necessary packages and initalize an instance of the cache[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mcore[0m[0;34m.[0m[0mcell_types_cache[0m [0;32mimport[0m [0mCellTypesCache[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      4[0m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mapi[0m[0;34m.[0m[0mqueries[0m[0;34m.[0m[0mcell_types_api[0m [0;32mimport[0m [0mCellTypesApi[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;32mimport[0m [0mmatplotlib[0m[0;34m.[0m[0mpyplot[0m [0;32mas[0m [0mplt[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/anaconda3/lib/python3.7/site-packages/allensdk/core/cell_types_cache.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     42[0m [0;34m[0m[0m

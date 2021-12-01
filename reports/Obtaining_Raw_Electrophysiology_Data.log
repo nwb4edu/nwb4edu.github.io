@@ -17,37 +17,39 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Import necessary packages 
-import numpy as np 
-import pandas as pd
+# # Import packages necessary to plot behavior
 import matplotlib.pyplot as plt
-import xarray as xr
+%matplotlib inline 
 import warnings
 warnings.filterwarnings('ignore')
 
-# Import the Neuropixels Cache
+# Import allensdkd brain observatory packages
 from allensdk.brain_observatory.ecephys.ecephys_project_cache import EcephysProjectCache
 from allensdk.brain_observatory.ecephys.ecephys_project_api import EcephysProjectWarehouseApi
 from allensdk.brain_observatory.ecephys.ecephys_project_api.rma_engine import RmaEngine
+import allensdk.brain_observatory.ecephys.visualization as ecvis
 
 # Assign where data will be stored
 manifest_path = 'manifest.json' 
 
 # Create the EcephysProjectCache object
 cache = EcephysProjectCache(manifest=manifest_path,
-                            fetch_api=EcephysProjectWarehouseApi(RmaEngine(scheme="http",host="api.brain-map.org",timeout= 50 * 60)))          
+                            fetch_api=EcephysProjectWarehouseApi(RmaEngine(scheme="http",host="api.brain-map.org",timeout= 50 * 60)))    
 
-print('Packages imported and cache instance created.')
+# Return all sessions available in this dataset
+sessions = cache.get_session_table()
+print('Total number of sessions: ' + str(len(sessions)))
+sessions.head()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-2-b6cb31826415>[0m in [0;36m<module>[0;34m[0m
-[1;32m      8[0m [0;34m[0m[0m
-[1;32m      9[0m [0;31m# Import the Neuropixels Cache[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 10[0;31m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mbrain_observatory[0m[0;34m.[0m[0mecephys[0m[0;34m.[0m[0mecephys_project_cache[0m [0;32mimport[0m [0mEcephysProjectCache[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     11[0m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mbrain_observatory[0m[0;34m.[0m[0mecephys[0m[0;34m.[0m[0mecephys_project_api[0m [0;32mimport[0m [0mEcephysProjectWarehouseApi[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     12[0m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mbrain_observatory[0m[0;34m.[0m[0mecephys[0m[0;34m.[0m[0mecephys_project_api[0m[0;34m.[0m[0mrma_engine[0m [0;32mimport[0m [0mRmaEngine[0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-2-639b362837c7>[0m in [0;36m<module>[0;34m[0m
+[1;32m      6[0m [0;34m[0m[0m
+[1;32m      7[0m [0;31m# Import allensdkd brain observatory packages[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 8[0;31m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mbrain_observatory[0m[0;34m.[0m[0mecephys[0m[0;34m.[0m[0mecephys_project_cache[0m [0;32mimport[0m [0mEcephysProjectCache[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      9[0m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mbrain_observatory[0m[0;34m.[0m[0mecephys[0m[0;34m.[0m[0mecephys_project_api[0m [0;32mimport[0m [0mEcephysProjectWarehouseApi[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     10[0m [0;32mfrom[0m [0mallensdk[0m[0;34m.[0m[0mbrain_observatory[0m[0;34m.[0m[0mecephys[0m[0;34m.[0m[0mecephys_project_api[0m[0;34m.[0m[0mrma_engine[0m [0;32mimport[0m [0mRmaEngine[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_project_cache.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      7[0m [0;32mimport[0m [0mSimpleITK[0m [0;32mas[0m [0msitk[0m[0;34m[0m[0;34m[0m[0m
