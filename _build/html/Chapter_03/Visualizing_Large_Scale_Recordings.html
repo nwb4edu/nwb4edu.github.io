@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.1. Visualizing Large Scale Recordings &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>Visualizing Large Scale Recordings &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.2. Obtaining Electrophysiology Data from the AllenSDK" href="Obtaining_Raw_Electrophysiology_Data.html" />
-    <link rel="prev" title="3. Large Scale Electrophysiology" href="Large_Scale_Electrophysiology.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -89,7 +87,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter_01/Data_Science_In_Python.html">
    1. Data Science in Python
@@ -144,46 +142,31 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Large_Scale_Electrophysiology.html">
-   3. Large Scale Electrophysiology
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
+   3. Single-Cell Electrophysiology
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     3.1. Visualizing Large Scale Recordings
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
+     3.1. Obtaining Data for Single Cells
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Obtaining_Raw_Electrophysiology_Data.html">
-     3.2. Obtaining  Electrophysiology Data from the AllenSDK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     3.3. Aligning Spike Trains with Visual Stimuli and Behavior
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Identifying_Cells_with_Optogenetics.html">
-     3.4. Identifying Cells with Optogenetics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
+     3.2. Analyzing Computed Features
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
-   4. Single-Cell Electrophysiology
+  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
+   4. Two Photon Imaging
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -192,40 +175,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
-     4.1. Obtaining Data for Single Cells
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
-     4.2. Analyzing Computed Features
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
-   5. Two Photon Imaging
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Retrieving_Brain_Observatory_Data.html">
-     5.1. Retrieving Calcium Imaging Data
+     4.1. Retrieving Calcium Imaging Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Analyzing_Two_Photon_Data.html">
-     5.2. Analyzing Two Photon Data
+     4.2. Analyzing Two Photon Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Correlations_in_Two_Photon_Data.html">
-     5.3. Correlations in Two Photon Data
+     4.3. Correlations in Two Photon Data
     </a>
    </li>
   </ul>
@@ -325,17 +286,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#binning-firing-rates">
-   3.1.1. Binning Firing Rates
+   Binning Firing Rates
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#compare-firing-rates-at-different-depths-of-cortex">
-   3.1.2. Compare firing rates at different depths of cortex
+   Compare firing rates at different depths of cortex
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#additional-resources">
-   3.1.3. Additional resources
+   Additional resources
   </a>
  </li>
 </ul>
@@ -350,13 +311,13 @@
               <div>
                 
   <div class="section" id="visualizing-large-scale-recordings">
-<h1><span class="section-number">3.1. </span>Visualizing Large Scale Recordings<a class="headerlink" href="#visualizing-large-scale-recordings" title="Permalink to this headline">¶</a></h1>
+<h1>Visualizing Large Scale Recordings<a class="headerlink" href="#visualizing-large-scale-recordings" title="Permalink to this headline">¶</a></h1>
 <p>Now that we are familiar with the structure of an NWB file as well as the groups encapsulated within it, we are ready to work with the data. In this chapter you will learn to search the NWB file for its available data and plot visualizations such as raster plots.</p>
-<p>Below, we’ll import some now familiar packages and once again work with the dataset we obtained in <a class="reference external" href="https://neuraldatascience.github.io/Chapter_02/Obtaining_Datasets_with_DANDI.html">Chapter 2.1</a>.</p>
+<p>Below, we’ll import some now familiar packages and once again work with the dataset we obtained in Chapter 2.1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary packages</span>
-<span class="kn">import</span> <span class="nn">h5py</span> <span class="c1"># version &#39;2.10.0&#39; is needed</span>
+<span class="kn">import</span> <span class="nn">h5py</span> 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
@@ -370,43 +331,15 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">UnsupportedOperation</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">a653dacd35a6</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># read the file from the chapter 02 folder</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">io</span> <span class="o">=</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="s1">&#39;../Chapter_02/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">nwb_file</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">nwb_file</span><span class="p">))</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">e84ebf33d68e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import necessary packages</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">h5py</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/hdmf/utils.py</span> in <span class="ni">func_call</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>             <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>                 <span class="n">pargs</span> <span class="o">=</span> <span class="n">_check_args</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">580</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">pargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>             <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pynwb/__init__.py</span> in <span class="ni">__init__</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span>             <span class="k">elif</span> <span class="n">manager</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>                 <span class="n">manager</span> <span class="o">=</span> <span class="n">get_manager</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">246</span>         <span class="nb">super</span><span class="p">(</span><span class="n">NWBHDF5IO</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">manager</span><span class="o">=</span><span class="n">manager</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file_obj</span><span class="p">,</span> <span class="n">comm</span><span class="o">=</span><span class="n">comm</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span> 
-<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="nd">@docval</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;src_io&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">HDMFIO</span><span class="p">,</span> <span class="s1">&#39;doc&#39;</span><span class="p">:</span> <span class="s1">&#39;the HDMFIO object for reading the data to export&#39;</span><span class="p">},</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/hdmf/utils.py</span> in <span class="ni">func_call</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>             <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>                 <span class="n">pargs</span> <span class="o">=</span> <span class="n">_check_args</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">580</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">pargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>             <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/hdmf/backends/hdf5/h5tools.py</span> in <span class="ni">__init__</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>         <span class="k">if</span> <span class="n">file_obj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span> <span class="ow">or</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">driver</span> <span class="o">!=</span> <span class="s1">&#39;ros3&#39;</span><span class="p">:</span>
-<span class="nn">     61             msg = &quot;Unable to open file %s</span> in <span class="ni">&#39;%s&#39; mode. File does not exist.&quot; % </span><span class="nt">(path, mode)</span>
-<span class="ne">---&gt; </span><span class="mi">62</span>             <span class="k">raise</span> <span class="n">UnsupportedOperation</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span> 
-<span class="g g-Whitespace">     </span><span class="mi">64</span>         <span class="k">if</span> <span class="n">file_obj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;w-&#39;</span> <span class="ow">or</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;x&#39;</span><span class="p">):</span>
-
-<span class="ne">UnsupportedOperation</span>: Unable to open file ../Chapter_02/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb in &#39;r&#39; mode. File does not exist.
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
 </pre></div>
 </div>
 </div>
@@ -466,8 +399,7 @@
       <td>Fair</td>
       <td>unidentified</td>
       <td>[329.95417899999956, 330.01945899999953, 330.0...</td>
-      <td>x      y      z     imp  \
-id         ...</td>
+      <td>x    y    z  imp                        ...</td>
     </tr>
     <tr>
       <th>5</th>
@@ -475,8 +407,7 @@ id         ...</td>
       <td>Fair</td>
       <td>unidentified</td>
       <td>[331.09961899999956, 332.14505899999955, 333.3...</td>
-      <td>x      y      z     imp  \
-id         ...</td>
+      <td>x    y    z  imp                        ...</td>
     </tr>
     <tr>
       <th>6</th>
@@ -484,8 +415,7 @@ id         ...</td>
       <td>Fair</td>
       <td>unidentified</td>
       <td>[329.91129899999953, 329.92869899999954, 330.0...</td>
-      <td>x      y      z     imp  \
-id         ...</td>
+      <td>x    y    z  imp                        ...</td>
     </tr>
     <tr>
       <th>7</th>
@@ -493,8 +423,7 @@ id         ...</td>
       <td>Fair</td>
       <td>unidentified</td>
       <td>[330.26357899999954, 330.3849389999996, 330.60...</td>
-      <td>x      y      z     imp  \
-id         ...</td>
+      <td>x    y    z  imp                        ...</td>
     </tr>
     <tr>
       <th>10</th>
@@ -502,14 +431,13 @@ id         ...</td>
       <td>Fair</td>
       <td>unidentified</td>
       <td>[329.8969389999996, 329.94389899999953, 329.95...</td>
-      <td>x      y      z     imp  \
-id         ...</td>
+      <td>x    y    z  imp                        ...</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> column contains the times at which the recorded neuron fired an action potential. Each neuron has a list of spike times for their <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> column.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> column contains the times at which the recorded neuron fired an action potential. Each neuron has a list of spike times for their <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> column. Below, we’ll return the first 10 spike times for a given neuron.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return the first 10 spike times for your neuron of choice</span>
@@ -545,11 +473,11 @@ id         ...</td>
     <span class="c1"># Calculate # of neurons</span>
     <span class="n">num_neurons</span> <span class="o">=</span> <span class="n">neuron_end</span> <span class="o">-</span> <span class="n">neuron_start</span>
     
-    <span class="c1">#Generate colors</span>
-    <span class="n">colors1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_neurons</span><span class="p">)]</span> 
+    <span class="c1">#Generate a list of colors (C0, C1...)</span>
+    <span class="n">my_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_neurons</span><span class="p">)]</span> 
     
     <span class="c1"># Plot our raster plot </span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">eventplot</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">colors1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">eventplot</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">my_colors</span><span class="p">)</span>
 
     <span class="c1"># Set our axis limits to only include points in our data</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">start_time</span><span class="p">,</span><span class="n">end_time</span><span class="p">])</span>
@@ -559,11 +487,10 @@ id         ...</td>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron #&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_neurons</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+<span class="c1"># Use our new function</span>
 <span class="n">plot_raster</span><span class="p">(</span><span class="n">units_df</span><span class="p">,</span> <span class="n">neuron_start</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">neuron_end</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span> <span class="n">start_time</span> <span class="o">=</span> <span class="mi">330</span><span class="p">,</span> <span class="n">end_time</span> <span class="o">=</span> <span class="mi">333</span><span class="p">)</span>
-
-<span class="c1"># Show our plot </span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -573,7 +500,7 @@ id         ...</td>
 </div>
 <p>The plot above is only contains neural spikes from a 3 second time interval. While there are many spikes to consider in this one graph, each neuron has much more than 3 seconds worth of spike recordings! To summarize these spikes over time, we can compute a <strong>firing rate</strong>.</p>
 <div class="section" id="binning-firing-rates">
-<h2><span class="section-number">3.1.1. </span>Binning Firing Rates<a class="headerlink" href="#binning-firing-rates" title="Permalink to this headline">¶</a></h2>
+<h2>Binning Firing Rates<a class="headerlink" href="#binning-firing-rates" title="Permalink to this headline">¶</a></h2>
 <p>Raster plots are great for seeing individual neural spikes, but difficult to see the overall firing rates of the units. To get a better sense of the overall firing rates of our units, we can bin our spikes into time bins of 1 second. The function below, <code class="docutils literal notranslate"><span class="pre">plot_firing_rates()</span></code> take the following arguments:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">spike_times</span></code>: <em>list</em> of spike times, in seconds</p></li>
@@ -586,11 +513,11 @@ id         ...</td>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_firing_rates</span><span class="p">(</span><span class="n">spike_times</span><span class="p">,</span> <span class="n">start_time</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_time</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
     
     <span class="c1"># Assign total number of bins </span>
-    <span class="n">numbins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">spike_times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="n">binned_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">numbins</span><span class="p">))</span>
+    <span class="n">num_bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">spike_times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">binned_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_bins</span><span class="p">)</span>
   
     <span class="c1"># Assign the frequency of spikes over time</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numbins</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_bins</span><span class="p">):</span>
         <span class="n">binned_spikes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">spike_times</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="n">j</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
           
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">binned_spikes</span><span class="p">)</span>
@@ -599,8 +526,6 @@ id         ...</td>
         
     <span class="k">if</span> <span class="p">(</span><span class="n">start_time</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">end_time</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">)</span>
-        
-    <span class="k">return</span> 
 </pre></div>
 </div>
 </div>
@@ -621,7 +546,7 @@ id         ...</td>
 </div>
 </div>
 <div class="section" id="compare-firing-rates-at-different-depths-of-cortex">
-<h2><span class="section-number">3.1.2. </span>Compare firing rates at different depths of cortex<a class="headerlink" href="#compare-firing-rates-at-different-depths-of-cortex" title="Permalink to this headline">¶</a></h2>
+<h2>Compare firing rates at different depths of cortex<a class="headerlink" href="#compare-firing-rates-at-different-depths-of-cortex" title="Permalink to this headline">¶</a></h2>
 <p>The units in our data were recorded from various cortical depths, therefore we can compare the firing units from differing cortical depths to test for differing firing rates. Let’s first take a look at the distribution of depth from our units.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -661,10 +586,11 @@ id         ...</td>
 <img alt="../_images/Visualizing_Large_Scale_Recordings_17_0.png" src="../_images/Visualizing_Large_Scale_Recordings_17_0.png" />
 </div>
 </div>
-<p>It looks like the neuron that’s more superficial has a higher firing rate! But we’d certainly need more data to make a conclusive argument about that.</p>
+<p>It looks like the neuron that’s more superficial (at a depth of 715 microns) has a higher firing rate! But we’d certainly need more data to make a conclusive argument about that.</p>
+<hr>
 </div>
 <div class="section" id="additional-resources">
-<h2><span class="section-number">3.1.3. </span>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
 <p>For more ideas about how to play with this dataset, see this <a class="reference external" href="https://github.com/vathes/DJ-NWB-Economo-2018/blob/master/notebooks/Economo-2018-examples.ipynb">Github repository</a>.</p>
 </div>
 </div>
@@ -694,8 +620,6 @@ id         ...</td>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Large_Scale_Electrophysiology.html" title="previous page"><span class="section-number">3. </span>Large Scale Electrophysiology</a>
-    <a class='right-next' id="next-link" href="Obtaining_Raw_Electrophysiology_Data.html" title="next page"><span class="section-number">3.2. </span>Obtaining  Electrophysiology Data from the AllenSDK</a>
 
         </div>
         

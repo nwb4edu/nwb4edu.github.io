@@ -22,7 +22,7 @@ ctc = CellTypesCache(manifest_file='cell_types/manifest.json')
 
 # We will be demonstrating SciPy using the Allen Cell Types Dataset. We will discuss what this dataset contains and how to navigate through it in a later chapter. 
 
-# In[2]:
+# In[14]:
 
 
 # Download meatadata for only human cells 
@@ -38,7 +38,7 @@ human_ephys_df.head()
 
 # ## SciPy for two-sample statistics
 
-# In[3]:
+# In[15]:
 
 
 # Set up our two samples 
@@ -55,7 +55,7 @@ aspiny_df = human_ephys_df[human_ephys_df['dendrite_type']== 'aspiny']
 
 # Below we will run a statistical test that compares `aspiny_df['tau']` to `spiny_df['tau']`. Before we decide what test to run, we must first check the skewness of our data. To test for skewness, we can use `stats.skewtest()`. **If the skew test gives us a p-value of less than 0.05, the population is skewed.**
 
-# In[4]:
+# In[16]:
 
 
 # Subselect our samples 
@@ -79,7 +79,7 @@ plt.show()
 
 # Our pvalues indicate that both of our samples are skewed, therefore we will continure with the Mann-Whitney U test. 
 
-# In[5]:
+# In[17]:
 
 
 print(stats.mannwhitneyu(sample_1, sample_2))
@@ -91,7 +91,7 @@ print(stats.mannwhitneyu(sample_1, sample_2))
 
 # The `linalg.det()` method is used to solve for the the determinant of a matrix. This function only takes in square matrices as an argument, inputting a non-square matrix will result in an error. Please visit <a href = 'https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.det.html'> here</a> for the original documentation. 
 
-# In[6]:
+# In[18]:
 
 
 # Assign our square matrix
@@ -99,7 +99,7 @@ matrix = np.array([[1,3,5,2], [6,3,9,7], [2,7,8,5], [9,4,1,8]])
 print(matrix)
 
 
-# In[7]:
+# In[19]:
 
 
 print(linalg.det(matrix))
@@ -107,7 +107,7 @@ print(linalg.det(matrix))
 
 # The `linalg.lu()` method is used to solve the LU decomposition of a matrix. It will return the  permutation matrix, p, the lower triangular matrix with unit diagonal elements, l,  and the upper triangular, u. You can look at the <a href = 'https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lu.html' > SciPy documentation</a> for more information. 
 
-# In[8]:
+# In[20]:
 
 
 # Assign our matrix 
@@ -124,7 +124,7 @@ print(u)
 
 # Now that we have p, l, and u, we can used a funtion from numpy, `np.dot()` to execute the dot product of l and u to return our matrix. 
 
-# In[9]:
+# In[21]:
 
 
 print(np.dot(l,u))
@@ -132,7 +132,7 @@ print(np.dot(l,u))
 
 # You can also find the eigen values and eigen vectors with SciPy. The method `linalg.eig()` takes in a complex or real matrix and returns its eigenvalues. Please visit the  <a href = 'https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eig.html'> SciPy documentation</a> for more help.
 
-# In[10]:
+# In[22]:
 
 
 eigen_values, eigen_vectors = linalg.eig(matrix) 
@@ -143,7 +143,7 @@ print(eigen_vectors)
 
 # Lastly, SciPy can be used to solve linear systems of equations. Please visit the  <a href = 'https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve.html'> SciPy documentation</a> for more help.
 
-# In[11]:
+# In[23]:
 
 
 array = [[2],[4],[6],[8]]
@@ -154,7 +154,7 @@ print(linalg.solve(matrix, array))
 
 # Let's first generate a sine wave. We'll then generate a second sine wave and add these together to understand what a fourier transform of this data would look like. Sine waves are defined by their frequency, ampltitude, and and phase. 
 
-# In[12]:
+# In[24]:
 
 
 sampling_freq = 1024 # Sampling frequency 
@@ -179,7 +179,7 @@ print(combined_signal)
 
 # What we have are the signal values for our complex signal composed of the two sin waves. To see our `combined_signal` we must plot it using `plt.plot()`.
 
-# In[13]:
+# In[25]:
 
 
 # Set up our figure
@@ -192,7 +192,7 @@ plt.xlabel('Time',fontsize=14)
 plt.show()
 
 
-# In[14]:
+# In[26]:
 
 
 # plt.plot(time_vector, signal_1)
@@ -205,7 +205,7 @@ plt.show()
 # 
 # The freqs vector contains the x-axis (frequency bins) and the psd vector contains the y-axis values (power spectral density). The units of the power spectral density, when working with EEG data, is usually $\mu$V^2 per Hz.
 
-# In[15]:
+# In[27]:
 
 
 # Import signal processing module 
@@ -231,7 +231,7 @@ plt.show()
 # 
 # The data we'll import here is a real 30-seconds extract of slow-wave sleep from a young individual, collected by the Walker Lab at UC Berkeley. This data was collected at 100 Hz from channel 'F3'. This sampling frequency is fine for EEG data, but wouldn't be enough for high frequency spiking data. That kind of data is typically sampled at 40 kHz.
 
-# In[16]:
+# In[28]:
 
 
 import urllib.request
@@ -248,7 +248,7 @@ data = np.loadtxt('sleep_data.txt')
 
 # Now that we have the data, let's took a look at the raw signal.
 
-# In[17]:
+# In[29]:
 
 
 sampling_freq = 100
@@ -278,7 +278,7 @@ plt.show()
 # 
 # Below, an example bandpass computation is shown to extract the _alpha_ rhythm from the channel 1 data, the results are stored in a dictionary called `oscillations_filtered`, with the oscillation name (e.g. `'alpha'`) as the key
 
-# In[18]:
+# In[30]:
 
 
 # Define lower and upper limits of our bandpass
@@ -301,7 +301,7 @@ bandpassed = signal.filtfilt(b, a, lowpassed)
 
 # Now lets plot our bandpassed data.
 
-# In[19]:
+# In[31]:
 
 
 # Plot the bandpassed data

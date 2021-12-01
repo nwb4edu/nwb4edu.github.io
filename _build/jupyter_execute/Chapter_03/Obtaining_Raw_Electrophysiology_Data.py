@@ -11,7 +11,7 @@
 # 
 # First things first, let's make sure you have the AllenSDK installed. See the [Allen Institute website](https://alleninstitute.github.io/AllenSDK/install.html) for information on installing it, otherwise, the cell below will do it for you.
 
-# In[20]:
+# In[1]:
 
 
 # This will ensure that the AllenSDK is installed.
@@ -30,7 +30,7 @@ except ImportError as e:
 # 
 # Below we will execute `get_session_table()` on our `EcephysProjectCache` object which will return a dataframe with metadata on each session.
 
-# In[21]:
+# In[2]:
 
 
 # # Import packages necessary to plot behavior
@@ -67,7 +67,7 @@ sessions.head()
 # - the average number of units recorded per session
 # - what brain structures were used in our sessions
 
-# In[22]:
+# In[ ]:
 
 
 genotypes = sessions['full_genotype'].value_counts()
@@ -93,7 +93,7 @@ print(brain_areas)
 
 # Let's say we only want sessions where the data has recordings from primary visual cortex (VISp). We can do the following to create a session list that we want.
 
-# In[23]:
+# In[ ]:
 
 
 session_list = []
@@ -120,7 +120,7 @@ print(session_list)
 
 # **Note**: The session files are very large files that will take some time to download depending on your connection speed. It is important that you do not stop the download as the cell is running because this will truncate the file and you will not be able to work with the data.
 
-# In[33]:
+# In[ ]:
 
 
 # Download our single session data 
@@ -143,7 +143,7 @@ print('Session downloaded.')
 # 
 # For a full list of methods and attributes that can be called on an `EcephysSession` object, please review the original documentation for the <a href = 'https://allensdk.readthedocs.io/en/v1.7.1/allensdk.brain_observatory.ecephys.ecephys_session.html'> ecephys_session module</a>.
 
-# In[26]:
+# In[ ]:
 
 
 # Return units dataframe
@@ -153,7 +153,7 @@ units_df.head()
 
 # To ensure that the recordings we use in our analysis are all reliable and of good quality, we will filter the data according to the signal-to-noise ratio (`snr`) and the `ISI_Violations` of our neurons. Below we will plot the distributions of both.
 
-# In[27]:
+# In[ ]:
 
 
 fig,ax = plt.subplots(1,2,figsize=(10,3))
@@ -173,7 +173,7 @@ plt.show()
 
 # For the purposes of this tutorial, we will focus on units with `snr` values greater than 2 and `ISI_violation` values less than 0.1.
 
-# In[30]:
+# In[ ]:
 
 
 # Create dataframe from units that fit criteria
@@ -190,7 +190,7 @@ good_units_df.head()
 # 
 # To access the mean spike waveforms for all units in a session, use the attribute `mean_waveforms` on your `EcephysSession` object. 
 
-# In[29]:
+# In[ ]:
 
 
 all_mean_waveforms = session.mean_waveforms
@@ -201,7 +201,7 @@ print('Total number of waveforms:',len(all_mean_waveforms))
 # 
 # Below we will compare mean waveforms from units of different brain areas. We will be looking at one wavefrom from the `CA1`, `LP`, `DG`, `VISp`. We first need to create a list of unit_id's for the units we are interested in. 
 
-# In[31]:
+# In[ ]:
 
 
 # Assign Unit IDs of different brain areas of interest
@@ -225,7 +225,7 @@ uoi_df
 
 # Using the `unit_ids`, we can create our own dictionary that maps our units of interest to their `mean_waveforms` array.
 
-# In[32]:
+# In[ ]:
 
 
 # Create dictionary of waveforms that only include units of interest

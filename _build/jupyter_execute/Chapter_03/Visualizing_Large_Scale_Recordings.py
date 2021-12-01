@@ -4,13 +4,13 @@
 # # Visualizing Large Scale Recordings
 # Now that we are familiar with the structure of an NWB file as well as the groups encapsulated within it, we are ready to work with the data. In this chapter you will learn to search the NWB file for its available data and plot visualizations such as raster plots.
 # 
-# Below, we'll import some now familiar packages and once again work with the dataset we obtained in [Chapter 2.1](https://neuraldatascience.github.io/Chapter_02/Obtaining_Datasets_with_DANDI.html).
+# Below, we'll import some now familiar packages and once again work with the dataset we obtained in Chapter 2.1.
 
 # In[1]:
 
 
 # Import necessary packages
-import h5py # version '2.10.0' is needed
+import h5py 
 import numpy as np
 from matplotlib import pyplot as plt
 from pynwb import NWBHDF5IO
@@ -23,7 +23,7 @@ print(type(nwb_file))
 
 # The first group that we will look at is `units` because it contains information about spikes times in the data. This time, we will subset our dataframe to only contain neurons with `Fair` spike sorting quality. This means that the researchers are more confident that these are indeed isolated neurons.  
 
-# In[5]:
+# In[2]:
 
 
 # Get the units data frame
@@ -36,9 +36,9 @@ fair_units_df = units_df[units_df['quality']=='Fair']
 fair_units_df.head()
 
 
-# The `spike_times` column contains the times at which the recorded neuron fired an action potential. Each neuron has a list of spike times for their `spike_times` column. 
+# The `spike_times` column contains the times at which the recorded neuron fired an action potential. Each neuron has a list of spike times for their `spike_times` column. Below, we'll return the first 10 spike times for a given neuron. 
 
-# In[9]:
+# In[20]:
 
 
 # Return the first 10 spike times for your neuron of choice
@@ -56,7 +56,7 @@ print(units_df['spike_times'][unit_id][:10])
 # - `start_time`: start time for desired time interval 
 # - `end_time`: end time for desired time interval
 
-# In[6]:
+# In[16]:
 
 
 # Function for creating raster plots for Units group in NWB file 
@@ -68,11 +68,11 @@ def plot_raster(units_df,neuron_start,neuron_end,start_time,end_time):
     # Calculate # of neurons
     num_neurons = neuron_end - neuron_start
     
-    #Generate colors
-    colors1 = ['C{}'.format(i) for i in range(num_neurons)] 
+    #Generate a list of colors (C0, C1...)
+    my_colors = ['C{}'.format(i) for i in range(num_neurons)] 
     
     # Plot our raster plot 
-    plt.eventplot(neural_data,colors=colors1)
+    plt.eventplot(neural_data,colors=my_colors)
 
     # Set our axis limits to only include points in our data
     plt.xlim([start_time,end_time])
@@ -82,11 +82,10 @@ def plot_raster(units_df,neuron_start,neuron_end,start_time,end_time):
     plt.ylabel('Neuron #')
     plt.xlabel('Time (s)')
     plt.yticks(np.arange(0,num_neurons))
+    plt.show()
 
+# Use our new function
 plot_raster(units_df, neuron_start = 2, neuron_end = 11, start_time = 330, end_time = 333)
-
-# Show our plot 
-plt.show()
 
 
 # The plot above is only contains neural spikes from a 3 second time interval. While there are many spikes to consider in this one graph, each neuron has much more than 3 seconds worth of spike recordings! To summarize these spikes over time, we can compute a **firing rate**.
@@ -101,17 +100,17 @@ plt.show()
 # 
 # The function plots the overall firing rate for each array of spike times in the list it is given, in 1 second time bins.
 
-# In[7]:
+# In[30]:
 
 
 def plot_firing_rates(spike_times, start_time = None, end_time = None):
     
     # Assign total number of bins 
-    numbins = int(np.ceil(spike_times[-1]))
-    binned_spikes = np.empty((numbins))
+    num_bins = int(np.ceil(spike_times[-1]))
+    binned_spikes = np.empty(num_bins)
   
     # Assign the frequency of spikes over time
-    for j in range(numbins):
+    for j in range(num_bins):
         binned_spikes[j] = len(spike_times[(spike_times>j)&(spike_times<j+1)])
           
     plt.plot(binned_spikes)
@@ -120,13 +119,11 @@ def plot_firing_rates(spike_times, start_time = None, end_time = None):
         
     if (start_time != None) and (end_time != None):
         plt.xlim(start_time, end_time)
-        
-    return 
 
 
 # Let's use the function we just created to plot our data. Below, we will store all of the spike times from the same unit as above as `single_unit` and plot the firing rates over time.
 
-# In[10]:
+# In[31]:
 
 
 # Plot our data
@@ -139,7 +136,7 @@ plt.show()
 # 
 # The units in our data were recorded from various cortical depths, therefore we can compare the firing units from differing cortical depths to test for differing firing rates. Let's first take a look at the distribution of depth from our units.
 
-# In[35]:
+# In[27]:
 
 
 # Plot distribution of neuron depth 
@@ -152,7 +149,7 @@ plt.show()
 
 # We will compare the units that were recorded from 1165 um and 715 um cortical depths.
 
-# In[42]:
+# In[33]:
 
 
 # Assign dataframes for different depths 
@@ -170,8 +167,9 @@ plt.legend(['1165','715'])
 plt.show()
 
 
-# It looks like the neuron that's more superficial has a higher firing rate! But we'd certainly need more data to make a conclusive argument about that.
+# It looks like the neuron that's more superficial (at a depth of 715 microns) has a higher firing rate! But we'd certainly need more data to make a conclusive argument about that.
 # 
+# <hr>
 # 
 # ## Additional resources
 # 

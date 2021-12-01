@@ -10,16 +10,24 @@
 # 
 # ## About this online textbook
 # 
-# A standardized data format like NWB also opens possibilities for more easily integrating these cutting-edge datasets into the classroom. This online textbook aims to provide interactive and self-guided resources for researchers, educators, and students who would like to use open neuroscience datasets for research and/or teaching. Within, you'll find tutorials in the form of interactive notebooks for how to use Python to wrangle NWB datasets. At the end of each chapter, there are problem sets so that you can test your skills at wrangling and analyzing the data.
+# A standardized data format like NWB also opens possibilities for more easily integrating these cutting-edge datasets into the classroom. This online textbook aims to provide interactive and self-guided resources for researchers, educators, and students who would like to use open neuroscience datasets for research and/or teaching. Within, you'll find tutorials in the form of interactive Python notebooks that will enable you to wrangle NWB datasets. At the end of each chapter, there are problem sets so that you can test your skills at wrangling and analyzing the data.
 # 
 # ## Using this textbook
 # 
-# This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though Chapter 1 reviews some of the specialized packages we'll use. Throughout the book, you'll also find many recommendations for places to learn more. Chapters 2-5 are self-contained and can be completed out of order, depending on which type of data you're most interested in working with.
+# This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though Chapter 1 will give you a refresher on the most pertinent information. Throughout the book, you'll also find many recommendations for places to learn more.
+# 
+# ### Chapter Outline
+# 
+# Chapter 1 reviews some of the packages, functions, and workflows we'll use throughout the rest of the book.
+# 
+# Chapter 2 will give you important information about how to access and explore NWB files. 
+# 
+# Chapters 3, 4, and 5 are self-contained and can be completed out of order, depending on which type of data you're most interested in working with.
 # 
 # Using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder.
 
 # ## Support
-# <img src="https://github.com/NeuralDataScience/NeuralDataScience.github.io/blob/master/The_Kavli_Foundation_Logo_Blue_Red.png?raw=true"
+# <img src="https://github.com/nwb4edu/nwb4edu.github.io/blob/master/The_Kavli_Foundation_Logo_Blue_Red.png?raw=true"
 #      alt="Kavli Logo"
 #      style="float: left; margin-right: 10px;"
 #      width="500"/>

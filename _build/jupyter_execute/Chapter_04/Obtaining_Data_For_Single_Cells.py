@@ -55,7 +55,7 @@ print('Packages were successfully imported.')
 # The `get_cells()` method downloads metadata for cells in the database. The database contains human cells and mouse cells. By default, `get_cells()` downloads metadata for *all* cells in the database. Alternatively, you can filter the database to only include cells collected from a certain species.
 # Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.cell_types_cache.html">the documentation for the CellTypesCache</a> for more information on the `get_cells` method.
 
-# In[3]:
+# In[24]:
 
 
 # Download metadata for all cells in the database
@@ -72,7 +72,7 @@ all_cells_df.head()
 # 
 # We can take a look at how many different values are stored within a column using the `.unique()` method.
 
-# In[4]:
+# In[25]:
 
 
 all_cells_df['transgenic_line'].unique()
@@ -84,7 +84,7 @@ all_cells_df['transgenic_line'].unique()
 # 
 # The dataframe above only contains metadeta about our cells and no information on the morphology or electrophysiology of our cells. In order to get information about the morphology of these cells, we need to use the `get_morphology_features()` method on our instance of the cell types cache. We will set the indices to be the `specimen_id` because these ids will align with those in `all_cells_df`.
 
-# In[5]:
+# In[26]:
 
 
 # Downloads the morphology features and sets up the dataframe all in one line
@@ -99,7 +99,7 @@ morphology_df.head()
 # 
 # **Note**: Above, in get the `get_cells()` method, you can also restrict to experiments with morphology data by usnig the `require_morphology = True` argument.
 
-# In[6]:
+# In[27]:
 
 
 # Combine our metadata with our morphology data
@@ -110,7 +110,7 @@ meta_morph_df.head()
 
 # The Cell Types Database also contains 3D reconstructions of neuronal morphologies. You can create these single cell reconstructions by executing the `get_reconstruction()` method on your instance of the cells type cache. To do so, you must specify what cell you want to reconstruct by inputing a `specimen_id`. This method returns a class instance with methods for accessing morphology compartments. 
 
-# In[7]:
+# In[28]:
 
 
 # Get the cell_id for the first cell in our dataframe
@@ -127,7 +127,7 @@ single_cell_morphology.soma
 # 
 # Morphologies also come with marker files, which contain points of interest in the reconstruction. The marker file contains locations where dendrites have been truncated due to slicing and when axons were not reconstructed. The `name` field indicates the type of marker (10 for dendrite truncation, 20 for no reconstruction).
 
-# In[8]:
+# In[29]:
 
 
 # Download and store markers for 3D reconstruction 
@@ -139,7 +139,7 @@ markers
 # 
 # **Note**: Since we're reconstructing what is likely to be a very complicated neuron, this might take a minute to plot.
 
-# In[9]:
+# In[30]:
 
 
 # Import necessary toolboxes
@@ -181,7 +181,7 @@ plt.show()
 # 
 # Below we go over methods that can be used to access the electrophysiology data for single cells, the source documentation for all the methods we cover can be found on the <a href = 'https://allensdk.readthedocs.io/en/latest/allensdk.core.nwb_data_set.html'> Allen Brain Atlas website</a>. The `get_experiment_sweep_numbers()` method returns all of the sweep numbers for experiments in the file. Each sweep contains metadata and electrophysiology data.
 
-# In[10]:
+# In[31]:
 
 
 # Get electrophysiological traces of our cell

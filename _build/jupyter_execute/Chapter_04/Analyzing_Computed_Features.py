@@ -56,7 +56,7 @@ mouse_aspiny_df = mouse_ephys_df[mouse_ephys_df['dendrite_type'] == cell_type2]
 
 # Now that we have two cell types we would like to compare, we can now use the precomputed features to plot some our cells' characteristics. Let's start by using a boxplot to compare the input resistance between our two cell types.
 
-# In[4]:
+# In[6]:
 
 
 # Select our pre computed feature that we would like to compare 
@@ -86,7 +86,7 @@ plt.show()
 
 # The cell below will dig up the dendrite type of these cells and add that to our dataframe. Then, it'll create a scatterplot to compare the depth of the trough with the upstroke:downstroke ratio, where each dot is colored by dendrite type.
 
-# In[5]:
+# In[10]:
 
 
 # Create our plot! Calling scatter twice like this will draw both of these on the same plot.

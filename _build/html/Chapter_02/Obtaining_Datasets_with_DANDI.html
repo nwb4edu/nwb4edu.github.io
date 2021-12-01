@@ -145,8 +145,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_03/Large_Scale_Electrophysiology.html">
-   3. Large Scale Electrophysiology
+  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
+   3. Single-Cell Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -155,35 +155,20 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Visualizing_Large_Scale_Recordings.html">
-     3.1. Visualizing Large Scale Recordings
+    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
+     3.1. Obtaining Data for Single Cells
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Obtaining_Raw_Electrophysiology_Data.html">
-     3.2. Obtaining  Electrophysiology Data from the AllenSDK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     3.3. Aligning Spike Trains with Visual Stimuli and Behavior
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Identifying_Cells_with_Optogenetics.html">
-     3.4. Identifying Cells with Optogenetics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
+     3.2. Analyzing Computed Features
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
-   4. Single-Cell Electrophysiology
+  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
+   4. Two Photon Imaging
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -192,40 +177,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
-     4.1. Obtaining Data for Single Cells
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
-     4.2. Analyzing Computed Features
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
-   5. Two Photon Imaging
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Retrieving_Brain_Observatory_Data.html">
-     5.1. Retrieving Calcium Imaging Data
+     4.1. Retrieving Calcium Imaging Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Analyzing_Two_Photon_Data.html">
-     5.2. Analyzing Two Photon Data
+     4.2. Analyzing Two Photon Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Correlations_in_Two_Photon_Data.html">
-     5.3. Correlations in Two Photon Data
+     4.3. Correlations in Two Photon Data
     </a>
    </li>
   </ul>
@@ -346,11 +309,11 @@
                 
   <div class="section" id="obtaining-datasets-with-dandi">
 <h1><span class="section-number">2.1. </span>Obtaining Datasets with DANDI<a class="headerlink" href="#obtaining-datasets-with-dandi" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a> is an open source data archive for neuroscience datasets, called <strong>Dandisets</strong>. DANDI allows scientists to submit and download neural datasets to promote research collaboration and consistent and transparent data standards. DANDI also <a class="reference external" href="https://www.dandiarchive.org/handbook/01_introduction/">provides a solution</a> to the difficulties that come from housing data in the many other general domains (i.e. Dropbox, Google Drive, etc.). Usefully for our purposes here, many of the datasets on DANDI are in NWB format.</p>
+<p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a> is an open source data archive for neuroscience datasets, called <strong>Dandisets</strong>. DANDI allows scientists to submit and download neural datasets to promote research collaboration and consistent and transparent data standards. DANDI also provides a solution to the difficulties that come from housing data in the many other general domains (i.e. Dropbox, Google Drive, etc.). Usefully for our purposes here, many of the datasets on DANDI are in NWB format. If you’d like to know more about DANDI, check out the <a class="reference external" href="https://www.dandiarchive.org/handbook/">DANDI handbook</a>.</p>
 <p>There are two primary ways to work with Dandisets:</p>
 <ol class="simple">
 <li><p>You can <strong>download the datasets locally</strong>, either via the <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset">DANDI Web Application</a> or using the DANDI Python client below. If you download via the website, you’ll need to create an account.</p></li>
-<li><p>You can <strong>stream datasets directly</strong> from DANDI (under development).</p></li>
+<li><p>You can <strong>stream datasets directly</strong> from DANDI.</p></li>
 </ol>
 <p>Below, we demonstrate how to do both of these. For additional information on either of these methods, please refer to the <a class="reference external" href="https://gui.dandiarchive.org/">DANDI documentation</a>.</p>
 <div class="section" id="option-1-downloading-dandisets-using-python">
@@ -360,7 +323,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">dandi</span>
-    <span class="k">if</span> <span class="n">dandi</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;0.26.0&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">dandi</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;0.32.0&#39;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DANDI installed &amp; imported.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of DANDI installed. Would you like to install a newer version of DANDI? (Y/N)&#39;</span><span class="p">)</span>
@@ -377,7 +340,7 @@
 </div>
 </div>
 </div>
-<p>The cell below will download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000006">this dataset</a> from DANDI. This dataset contains 32-channel extracellular recordings from mouse cortex.</p>
+<p>The cell below will download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000006">this dataset</a> from DANDI. This dataset contains 32-channel extracellular recordings from mouse cortex. If you have previously run this cell, you do not need to run it again.</p>
 <p><mark><strong>Note:</strong> Downloading this dataset may take several minutes, depending on your internet connection.</mark></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -386,38 +349,315 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-11-16 15:12:43,571 [ WARNING] A newer version (0.31.0) of dandi/dandi-cli is available. You are using 0.26.0
-DANDI CLI has detected that you are using a version that is known to contain bugs, is incompatible with our current data archive, or has other significant performance limitations. To continue using DANDI CLI, please upgrade your dandi client to a newer version (e.g., using pip install --upgrade dandi if you installed using pip). If you have any issues, please contact the DANDI helpdesk at https://github.com/dandi/helpdesk/issues/new/choose .
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PATH                                         SIZE      DONE            DONE% CHECKSUM STATUS          MESSAGE   
+dandiset.yaml                                                                         done            updated   
+sub-anm369962/sub-anm369962_ses-20170309.nwb 796.9 kB  796.9 kB         100%    ok    done                      
+sub-anm369962/sub-anm369962_ses-20170316.nwb 609.6 kB  609.6 kB         100%    ok    done                      
+sub-anm369962/sub-anm369962_ses-20170310.nwb 6.6 MB    6.6 MB           100%    ok    done                      
+sub-anm369962/sub-anm369962_ses-20170314.nwb 7.5 MB    7.5 MB           100%    ok    done                      
+sub-anm369962/sub-anm369962_ses-20170313.nwb 11.5 MB   11.5 MB          100%    ok    done                      
+sub-anm369962/sub-anm369962_ses-20170317.nwb 8.2 MB    8.2 MB           100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170227.nwb 6.5 MB    6.5 MB           100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170226.nwb 6.4 MB    6.4 MB           100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170228.nwb 276.6 kB  276.6 kB         100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170301.nwb 493.5 kB  493.5 kB         100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170302.nwb 281.0 kB  281.0 kB         100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170306.nwb 6.7 MB    6.7 MB           100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170309.nwb 450.9 kB  450.9 kB         100%    ok    done                      
+sub-anm369963/sub-anm369963_ses-20170310.nwb 604.8 kB  604.8 kB         100%    ok    done                      
+sub-anm369964/sub-anm369964_ses-20170321.nwb 499.9 kB  499.9 kB         100%    ok    done                      
+sub-anm369964/sub-anm369964_ses-20170320.nwb 7.7 MB    7.7 MB           100%    ok    done                      
+sub-anm369964/sub-anm369964_ses-20170322.nwb 5.0 MB    5.0 MB           100%    ok    done                      
+sub-anm369964/sub-anm369964_ses-20170323.nwb 426.4 kB  426.4 kB         100%    ok    done                      
+sub-anm372793/sub-anm372793_ses-20170504.nwb 357.8 kB  357.8 kB         100%    ok    done                      
+sub-anm372793/sub-anm372793_ses-20170508.nwb 357.4 kB  357.4 kB         100%    ok    done                      
+sub-anm372793/sub-anm372793_ses-20170512.nwb 470.8 kB  470.8 kB         100%    ok    done                      
+sub-anm372793/sub-anm372793_ses-20170513.nwb 5.5 MB    5.5 MB           100%    ok    done                      
+sub-anm372794/sub-anm372794_ses-20170621.nwb 654.2 kB  654.2 kB         100%    ok    done                      
+sub-anm372794/sub-anm372794_ses-20170622.nwb 602.8 kB  602.8 kB         100%    ok    done                      
+sub-anm372793/sub-anm372793_ses-20170514.nwb 5.5 MB    5.5 MB           100%    ok    done                      
+sub-anm372794/sub-anm372794_ses-20170624.nwb 4.8 MB    4.8 MB           100%    ok    done                      
+sub-anm372794/sub-anm372794_ses-20170625.nwb 5.7 MB    5.7 MB           100%    ok    done                      
+sub-anm372794/sub-anm372794_ses-20170626.nwb 4.9 MB    4.9 MB           100%    ok    done                      
+sub-anm372794/sub-anm372794_ses-20170627.nwb 553.4 kB  553.4 kB         100%    ok    done                      
+sub-anm372795/sub-anm372795_ses-20170715.nwb 323.2 kB  323.2 kB         100%    ok    done                      
+sub-anm372795/sub-anm372795_ses-20170714.nwb 465.5 kB  465.5 kB         100%    ok    done                      
+sub-anm372795/sub-anm372795_ses-20170716.nwb 813.2 kB  813.2 kB         100%    ok    done                      
+sub-anm372795/sub-anm372795_ses-20170718.nwb 452.3 kB  452.3 kB         100%    ok    done                      
+sub-anm372797/sub-anm372797_ses-20170617.nwb 338.9 kB  338.9 kB         100%    ok    done                      
+sub-anm372904/sub-anm372904_ses-20170615.nwb 388.2 kB  388.2 kB         100%    ok    done                      
+sub-anm372797/sub-anm372797_ses-20170615.nwb 6.0 MB    6.0 MB           100%    ok    done                      
+sub-anm372904/sub-anm372904_ses-20170617.nwb 384.9 kB  384.9 kB         100%    ok    done                      
+sub-anm372904/sub-anm372904_ses-20170616.nwb 362.6 kB  362.6 kB         100%    ok    done                      
+sub-anm372904/sub-anm372904_ses-20170618.nwb 9.4 MB    9.4 MB           100%    ok    done                      
+sub-anm372904/sub-anm372904_ses-20170619.nwb 4.1 MB    4.1 MB           100%    ok    done                      
+sub-anm372905/sub-anm372905_ses-20170715.nwb 344.0 kB  344.0 kB         100%    ok    done                      
+sub-anm372905/sub-anm372905_ses-20170716.nwb 554.0 kB  554.0 kB         100%    ok    done                      
+sub-anm372905/sub-anm372905_ses-20170717.nwb 448.4 kB  448.4 kB         100%    ok    done                      
+sub-anm372906/sub-anm372906_ses-20170608.nwb 6.9 MB    6.9 MB           100%    ok    done                      
+sub-anm372906/sub-anm372906_ses-20170610.nwb 374.8 kB  374.8 kB         100%    ok    done                      
+sub-anm372906/sub-anm372906_ses-20170611.nwb 338.7 kB  338.7 kB         100%    ok    done                      
+sub-anm372906/sub-anm372906_ses-20170612.nwb 324.3 kB  324.3 kB         100%    ok    done                      
+sub-anm372907/sub-anm372907_ses-20170608.nwb 438.9 kB  438.9 kB         100%    ok    done                      
+sub-anm372907/sub-anm372907_ses-20170610.nwb 349.7 kB  349.7 kB         100%    ok    done                      
+sub-anm372907/sub-anm372907_ses-20170613.nwb 259.0 kB  259.0 kB         100%    ok    done                      
+sub-anm372907/sub-anm372907_ses-20170612.nwb 444.5 kB  444.5 kB         100%    ok    done                      
+sub-anm372909/sub-anm372909_ses-20170520.nwb 352.9 kB  352.9 kB         100%    ok    done                      
+sub-anm372909/sub-anm372909_ses-20170522.nwb 5.7 MB    5.7 MB           100%    ok    done                      
+Summary:                                     139.6 MB  139.6 MB                       54 done         1 updated 
+                                                       100.00%                                                  
+2021-11-30 13:59:57,041 [    INFO] Logs saved in /Users/ashley/Library/Logs/dandi-cli/20211130215928Z-5328.log
 </pre></div>
 </div>
 </div>
 </div>
-<p>Once the cell above completes running, you will see a new folder 📁”00006” wherever you’re running this notebook.</p>
+<p>Once the cell above completes running, you will see a new folder 📁”00006” wherever you’re running this notebook. Usefully, the code above will also print a list of individual NWB files that have been downloaded in this folder.</p>
 </div>
 <div class="section" id="option-2-streaming-the-dandiset">
 <h2><span class="section-number">2.1.2. </span>Option 2: Streaming the Dandiset<a class="headerlink" href="#option-2-streaming-the-dandiset" title="Permalink to this headline">¶</a></h2>
-<p><strong>This is under development.</strong></p>
+<p>The folks at NWB have also developed a clever way to stream Dandisets so that small bits of them can be viewed without downloading the entire dataset. First, you need to set up your environment with the right version of a package called <code class="docutils literal notranslate"><span class="pre">h5py</span></code>. <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html#sphx-glr-tutorials-advanced-io-streaming-py">There are instructions here for how to do that.</a>. Once you’re done, you can restart the kernel for this notebook, and run the code below.</p>
+<p>First, we need to figure out the correct URL for the dataset on the Amazon S3 storage system. There is a tool to do so within the dandiapi, which we’ll use below to get the URL for one session from the data we downloaded above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary packages</span>
-<span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
-<span class="kn">from</span> <span class="nn">nwbwidgets</span> <span class="kn">import</span> <span class="n">nwb2widget</span>
-<span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.dandiapi</span> <span class="kn">import</span> <span class="n">DandiAPIClient</span>
 
-<span class="o">...</span>
+<span class="n">dandiset_id</span> <span class="o">=</span> <span class="s1">&#39;000006&#39;</span>  <span class="c1"># ephys dataset from the Svoboda Lab</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;sub-anm372795/sub-anm372795_ses-20170718.nwb&#39;</span>  <span class="c1"># 450 kB file</span>
+<span class="k">with</span> <span class="n">DandiAPIClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_dandiset</span><span class="p">(</span><span class="n">dandiset_id</span><span class="p">,</span> <span class="s1">&#39;draft&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_asset_by_path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="n">s3_path</span> <span class="o">=</span> <span class="n">asset</span><span class="o">.</span><span class="n">get_content_url</span><span class="p">(</span><span class="n">follow_redirects</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">strip_query</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">s3_path</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/lib/python3.7/site-packages/dask/config.py:168: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
-  data = yaml.load(f.read()) or {}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dandiarchive.s3.amazonaws.com/blobs/43b/f3a/43bf3a81-4a0b-433f-b471-1f10303f9d35
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/lib/python3.7/site-packages/distributed/config.py:20: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
-  defaults = yaml.load(f)
+</div>
+</div>
+<p>Now, we can read this path, but we’ll stream it, rather than downloading it!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+
+<span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
+    <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;lick_times&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">time_series</span><span class="p">[</span><span class="s1">&#39;lick_left_times&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:])</span>
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ellipsis
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/h5py/lib/python3.8/site-packages/hdmf/spec/namespace.py:532: UserWarning: Ignoring cached namespace &#39;core&#39; version 2.0.2 because version 2.4.0 is already loaded.
+  warn(&quot;Ignoring cached namespace &#39;%s&#39; version %s because version %s is already loaded.&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>root pynwb.file.NWBFile at 0x140329115488016
+Fields:
+  acquisition: {
+    lick_times &lt;class &#39;pynwb.behavior.BehavioralEvents&#39;&gt;
+  }
+  devices: {
+    H-19 &lt;class &#39;pynwb.device.Device&#39;&gt;
+  }
+  electrode_groups: {
+    H-19: 64 &lt;class &#39;pynwb.ecephys.ElectrodeGroup&#39;&gt;
+  }
+  electrodes: electrodes &lt;class &#39;hdmf.common.table.DynamicTable&#39;&gt;
+  experiment_description: Extracellular electrophysiology recordings performed on mouse anterior lateral motor cortex (ALM) in delay response task. Neural activity from two neuron populations, pyramidal track upper and lower, were characterized, in relation to movement execution.
+  experimenter: [&#39;Mike Economo&#39;]
+  file_create_date: [datetime.datetime(2019, 10, 7, 17, 45, 0, 289664, tzinfo=tzoffset(None, -18000))]
+  identifier: anm372795_2017-07-18_5
+  institution: Janelia Research Campus
+  intervals: {
+    trials &lt;class &#39;pynwb.epoch.TimeIntervals&#39;&gt;
+  }
+  keywords: &lt;StrDataset for HDF5 dataset &quot;keywords&quot;: shape (4,), type &quot;|O&quot;&gt;
+  related_publications: [&#39;doi:10.1038/s41586-018-0642-9&#39;]
+  session_start_time: 2017-07-18 00:00:00-05:00
+  subject: subject pynwb.file.Subject at 0x140329115833920
+Fields:
+  sex: U
+  species: Mus musculus
+  subject_id: anm372795
+
+  timestamps_reference_time: 2017-07-18 00:00:00-05:00
+  trials: trials &lt;class &#39;pynwb.epoch.TimeIntervals&#39;&gt;
+  units: units &lt;class &#39;pynwb.misc.Units&#39;&gt;
+
+[1. 1. 1. ... 1. 1. 1.]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nwbwidgets</span> <span class="kn">import</span> <span class="n">nwb2widget</span>
+
+<span class="n">nwb2widget</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "08c40d2b36c949db986ebc47225dacde", "version_major": 2, "version_minor": 0}
+</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/ipywidgets/widgets/widget.py</span> in <span class="ni">_handle_msg</span><span class="nt">(self, msg)</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span>                 <span class="k">if</span> <span class="s1">&#39;buffer_paths&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span>                     <span class="n">_put_buffers</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;buffer_paths&#39;</span><span class="p">],</span> <span class="n">msg</span><span class="p">[</span><span class="s1">&#39;buffers&#39;</span><span class="p">])</span>
+<span class="ne">--&gt; </span><span class="mi">676</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span> 
+<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="c1"># Handle a state request.</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/ipywidgets/widgets/widget.py</span> in <span class="ni">set_state</span><span class="nt">(self, sync_data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>                     <span class="n">from_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trait_metadata</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;from_json&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span>                                                     <span class="bp">self</span><span class="o">.</span><span class="n">_trait_from_json</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">545</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">set_trait</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">from_json</span><span class="p">(</span><span class="n">sync_data</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="bp">self</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span> 
+<span class="g g-Whitespace">    </span><span class="mi">547</span>     <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">buffers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/contextlib.py</span> in <span class="ni">__exit__</span><span class="nt">(self, type, value, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>         <span class="k">if</span> <span class="nb">type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">120</span>                 <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>             <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>                 <span class="k">return</span> <span class="kc">False</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/traitlets/traitlets.py</span> in <span class="ni">hold_trait_notifications</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1214</span>                 <span class="k">for</span> <span class="n">changes</span> <span class="ow">in</span> <span class="n">cache</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="g g-Whitespace">   </span><span class="mi">1215</span>                     <span class="k">for</span> <span class="n">change</span> <span class="ow">in</span> <span class="n">changes</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1216</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">notify_change</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1217</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1218</span>     <span class="k">def</span> <span class="nf">_notify_trait</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">old_value</span><span class="p">,</span> <span class="n">new_value</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/ipywidgets/widgets/widget.py</span> in <span class="ni">notify_change</span><span class="nt">(self, change)</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span>                 <span class="c1"># Send new state to front-end</span>
+<span class="g g-Whitespace">    </span><span class="mi">605</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">send_state</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">606</span>         <span class="nb">super</span><span class="p">(</span><span class="n">Widget</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">notify_change</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> 
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/traitlets/traitlets.py</span> in <span class="ni">notify_change</span><span class="nt">(self, change)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1227</span>     <span class="k">def</span> <span class="nf">notify_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">change</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1228</span>         <span class="sd">&quot;&quot;&quot;Notify observers of a change event&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1229</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_notify_observers</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1230</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1231</span>     <span class="k">def</span> <span class="nf">_notify_observers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/traitlets/traitlets.py</span> in <span class="ni">_notify_observers</span><span class="nt">(self, event)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1264</span>                 <span class="n">c</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span> 
+<span class="ne">-&gt; </span><span class="mi">1266</span>             <span class="n">c</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1267</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1268</span>     <span class="k">def</span> <span class="nf">_add_notifiers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/nwbwidgets/base.py</span> in <span class="ni">on_selected_index</span><span class="nt">(change)</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>             <span class="n">change</span><span class="o">.</span><span class="n">owner</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">],</span> <span class="n">widgets</span><span class="o">.</span><span class="n">HTML</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">223</span>             <span class="n">children</span><span class="p">[</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">]</span> <span class="o">=</span> <span class="n">vis2widget</span><span class="p">(</span><span class="n">func_</span><span class="p">(</span><span class="n">list_</span><span class="p">[</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">]))</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span>             <span class="n">change</span><span class="o">.</span><span class="n">owner</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">children</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> 
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/nwbwidgets/view.py</span> in <span class="ni">nwb2widget</span><span class="nt">(node, neurodata_vis_spec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> 
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">def</span> <span class="nf">nwb2widget</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">neurodata_vis_spec</span><span class="o">=</span><span class="n">default_neurodata_vis_spec</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="k">return</span> <span class="n">base</span><span class="o">.</span><span class="n">nwb2widget</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">neurodata_vis_spec</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/nwbwidgets/base.py</span> in <span class="ni">nwb2widget</span><span class="nt">(node, neurodata_vis_spec, **pass_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>             <span class="k">elif</span> <span class="n">callable</span><span class="p">(</span><span class="n">spec</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>                 <span class="k">return</span> <span class="n">vis2widget</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">239</span>                     <span class="n">spec</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">neurodata_vis_spec</span><span class="o">=</span><span class="n">neurodata_vis_spec</span><span class="p">,</span> <span class="o">**</span><span class="n">pass_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>                 <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="n">out1</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/nwbwidgets/view.py</span> in <span class="ni">show_dynamic_table</span><span class="nt">(node, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="k">def</span> <span class="nf">show_dynamic_table</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Widget</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;electrodes&quot;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">29</span>         <span class="k">return</span> <span class="n">ecephys</span><span class="o">.</span><span class="n">show_electrodes</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="k">return</span> <span class="n">base</span><span class="o">.</span><span class="n">render_dataframe</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> 
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/nwbwidgets/ecephys.py</span> in <span class="ni">show_electrodes</span><span class="nt">(electrodes_table)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">def</span> <span class="nf">show_electrodes</span><span class="p">(</span><span class="n">electrodes_table</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span>     <span class="n">in_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">render_dataframe</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">85</span>     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">electrodes_table</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>  <span class="c1"># position is not defined</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>         <span class="n">in_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">electrode_groups</span><span class="o">=</span><span class="n">ElectrodeGroupsWidget</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>     <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/hdmf/container.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span> 
+<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">539</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span> 
+<span class="g g-Whitespace">    </span><span class="mi">541</span>     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/hdmf/common/table.py</span> in <span class="ni">get</span><span class="nt">(self, key, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>         <span class="p">:</span><span class="n">param</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Ignored</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">57</span><span class="sd">         return super().get(key)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="sd">     def extend(self, ar, **kwargs):</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/hdmf/container.py</span> in <span class="ni">get</span><span class="nt">(self, args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span><span class="sd">             # This is needed for h5py 2.9 compatability</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span><span class="sd">             args = args.tolist()</span>
+<span class="ne">--&gt; </span><span class="mi">547</span><span class="sd">         return self.data[args]</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span><span class="sd">     def append(self, arg):</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/h5py/_hl/dataset.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, args, new_dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span><span class="sd">             new_dtype = getattr(self._local, &#39;astype&#39;, None)</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span><span class="sd"> </span>
+<span class="ne">--&gt; </span><span class="mi">708</span><span class="sd">         if self._fast_read_ok and (new_dtype is None):</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span><span class="sd">             try:</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span><span class="sd">                 return self._fast_reader.read(args)</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/functools.py</span> in <span class="ni">__get__</span><span class="nt">(self, instance, owner)</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span><span class="sd">                 val = cache.get(self.attrname, _NOT_FOUND)</span>
+<span class="g g-Whitespace">    </span><span class="mi">966</span><span class="sd">                 if val is _NOT_FOUND:</span>
+<span class="ne">--&gt; </span><span class="mi">967</span><span class="sd">                     val = self.func(instance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span><span class="sd">                     try:</span>
+<span class="g g-Whitespace">    </span><span class="mi">969</span><span class="sd">                         cache[self.attrname] = val</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/h5py/_hl/dataset.py</span> in <span class="ni">_fast_read_ok</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Is</span> <span class="n">this</span> <span class="n">dataset</span> <span class="n">suitable</span> <span class="k">for</span> <span class="n">simple</span> <span class="n">reading</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">686</span><span class="s2">         return (</span>
+<span class="ne">--&gt; </span><span class="mi">687</span><span class="s2">             self._extent_type == h5s.SIMPLE</span>
+<span class="g g-Whitespace">    </span><span class="mi">688</span><span class="s2">             and isinstance(self.id.get_type(), (h5t.TypeIntegerID, h5t.TypeFloatID))</span>
+<span class="g g-Whitespace">    </span><span class="mi">689</span><span class="s2">         )</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/functools.py</span> in <span class="ni">__get__</span><span class="nt">(self, instance, owner)</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span><span class="s2">                 val = cache.get(self.attrname, _NOT_FOUND)</span>
+<span class="g g-Whitespace">    </span><span class="mi">966</span><span class="s2">                 if val is _NOT_FOUND:</span>
+<span class="ne">--&gt; </span><span class="mi">967</span><span class="s2">                     val = self.func(instance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span><span class="s2">                     try:</span>
+<span class="g g-Whitespace">    </span><span class="mi">969</span><span class="s2">                         cache[self.attrname] = val</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">~/anaconda3/envs/h5py/lib/python3.8/site-packages/h5py/_hl/dataset.py</span> in <span class="ni">_extent_type</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span><span class="s2">     def _extent_type(self):</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span><span class="s2">         &quot;&quot;&quot;</span><span class="n">Get</span> <span class="n">extent</span> <span class="nb">type</span> <span class="k">for</span> <span class="n">this</span> <span class="n">dataset</span> <span class="o">-</span> <span class="n">SIMPLE</span><span class="p">,</span> <span class="n">SCALAR</span> <span class="ow">or</span> <span class="n">NULL</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">576</span><span class="s2">         return self.id.get_space().get_simple_extent_type()</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">578</span><span class="s2">     @cached_property</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/h5d.pyx</span> in <span class="ni">h5py.h5d.DatasetID.get_space</span><span class="nt">()</span>
+
+<span class="ne">ValueError</span>: Invalid dataset identifier (invalid dataset identifier)
 </pre></div>
 </div>
 </div>

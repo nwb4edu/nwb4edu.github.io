@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Large Scale Electrophysiology" href="../Chapter_03/Large_Scale_Electrophysiology.html" />
+    <link rel="next" title="3. Single-Cell Electrophysiology" href="../Chapter_04/Single-Cell_Electrophysiology.html" />
     <link rel="prev" title="2.2. Working with NWB in Python" href="Working_with_NWB_format_in_Python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -145,8 +145,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_03/Large_Scale_Electrophysiology.html">
-   3. Large Scale Electrophysiology
+  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
+   3. Single-Cell Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -155,35 +155,20 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Visualizing_Large_Scale_Recordings.html">
-     3.1. Visualizing Large Scale Recordings
+    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
+     3.1. Obtaining Data for Single Cells
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Obtaining_Raw_Electrophysiology_Data.html">
-     3.2. Obtaining  Electrophysiology Data from the AllenSDK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     3.3. Aligning Spike Trains with Visual Stimuli and Behavior
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Identifying_Cells_with_Optogenetics.html">
-     3.4. Identifying Cells with Optogenetics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
+     3.2. Analyzing Computed Features
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
-   4. Single-Cell Electrophysiology
+  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
+   4. Two Photon Imaging
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -192,40 +177,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
-     4.1. Obtaining Data for Single Cells
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
-     4.2. Analyzing Computed Features
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
-   5. Two Photon Imaging
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Retrieving_Brain_Observatory_Data.html">
-     5.1. Retrieving Calcium Imaging Data
+     4.1. Retrieving Calcium Imaging Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Analyzing_Two_Photon_Data.html">
-     5.2. Analyzing Two Photon Data
+     4.2. Analyzing Two Photon Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Correlations_in_Two_Photon_Data.html">
-     5.3. Correlations in Two Photon Data
+     4.3. Correlations in Two Photon Data
     </a>
    </li>
   </ul>
@@ -318,6 +281,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-instructors">
+   2.3.1. For instructors
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -329,9 +305,20 @@
   <div class="section" id="chapter-2-problem-set">
 <h1><span class="section-number">2.3. </span>Chapter 2 Problem Set<a class="headerlink" href="#chapter-2-problem-set" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
-<li><p>In <a class="reference external" href="https://neuraldatascience.github.io/Chapter_02/Obtaining_Datasets_with_DANDI.html">Chapter 2.1</a>, we demonstrated how to download a particular DANDIset. Modify this code to download another dataset, and dig in to see what’s there.</p></li>
-<li><p>In <a class="reference external" href="https://neuraldatascience.github.io/Chapter_02/Working_with_NWB_format_in_Python.html">Chapter 2.2</a> we demonstrated how to create a dataframe with all of the units (possible neurons) that were recorded. How would you filter this dataframe for only “good” units?</p></li>
+<li><p>In <a class="reference external" href="https://nwb4edu.github.io/Chapter_02/Obtaining_Datasets_with_DANDI.html">Chapter 2.1</a>, we demonstrated how to download a particular DANDIset. Modify this code to download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000130/draft">this dataset</a>, and use the additional code you encountered in 2.2 to answer the following questions:</p>
+<ul class="simple">
+<li><p>What publication is this dataset affiliated with? Include the title, journal, and authors.</p></li>
+<li><p>In 2-3 sentences, summarize the main approaches and goals of this paper.</p></li>
+<li><p>Describe two columns of data in <code class="docutils literal notranslate"><span class="pre">intervals</span></code>. What information do these columns provide?</p></li>
+<li><p>How many units (putative neurons) are in this dataset?</p></li>
+</ul>
+</li>
+<li><p>In <a class="reference external" href="https://nwb4edu.github.io/Chapter_02/Working_with_NWB_format_in_Python.html">Chapter 2.2</a> we demonstrated how to create a dataframe with all of the units (possible neurons) that were recorded. How would you filter this dataframe for only “Fair” units? Provide a code snippet for your answer.</p></li>
 </ol>
+<div class="section" id="for-instructors">
+<h2><span class="section-number">2.3.1. </span>For instructors<a class="headerlink" href="#for-instructors" title="Permalink to this headline">¶</a></h2>
+<p>Need a solutions notebook? Email <a class="reference external" href="mailto:ajuavine&#37;&#52;&#48;ucsd&#46;edu">ajuavine<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -360,7 +347,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Working_with_NWB_format_in_Python.html" title="previous page"><span class="section-number">2.2. </span>Working with NWB in Python</a>
-    <a class='right-next' id="next-link" href="../Chapter_03/Large_Scale_Electrophysiology.html" title="next page"><span class="section-number">3. </span>Large Scale Electrophysiology</a>
+    <a class='right-next' id="next-link" href="../Chapter_04/Single-Cell_Electrophysiology.html" title="next page"><span class="section-number">3. </span>Single-Cell Electrophysiology</a>
 
         </div>
         
