@@ -11,7 +11,7 @@
 # 
 # ## Step 1. Setup
 
-# In[1]:
+# In[6]:
 
 
 # Import modules from the PyNWB package
@@ -23,12 +23,10 @@ try:
     if h5py.__version__ == '2.10.0':
          print('h5py version ' + h5py.__version__ + ' already installed')
     else:
-        print('h5py installed with an older version. some features may not work.')
+        print(h5py.__version__ +' h5py installed; some features may not work.')
         
 except ImportError as e:
     get_ipython().system("pip install h5py == '2.10.0'")
-    
-get_ipython().run_line_magic('whos', '')
 
 
 # ## Step 2. Read the NWB file
@@ -44,7 +42,7 @@ get_ipython().run_line_magic('whos', '')
 # 
 # <mark>**Note**: Each dataset may contain multiple NWB files for different subjects and sessions for a given experiment. Make sure you specify the exact file path to the single NWB file you wish to read. Below, we'll give the filename for one .nwb file within the folder that you downloaded in the last chapter.</mark>
 
-# In[2]:
+# In[7]:
 
 
 # read the NWB file
@@ -57,9 +55,13 @@ print(type(nwb_file))
 
 # ## Step 3. Access Groups, Datasets, and Attributes within the File Hierarchy
 # 
-# One of the first steps when working with a new dataset is to figure out what is in the dataset, and where. Each NWB file is composed of various Groups, Datasets, and Attributes. The data and corresponding **metadata** are encapsulated within these Groups. The `fields` attribute returns a dictionary containing the the Groups of our NWB file. The dictionary keys are the various Groups within the file which we will use to access the data we're ultimately interested in.
+# One of the first steps when working with a new dataset is to figure out what is in the dataset, and where. Each NWB file is composed of various groups, which either contain attributes of our file **metadata**) or entire datasets. Here are the main components:
+# 
+# ![NWB_file_structure.png](NWB_file_structure.png)
+# 
+# In order to see which groups are in our file, we can use the `fields` attribute to return a dictionary containing the the Groups of our NWB file. The dictionary **keys** are the various groups within the file which we will use to access the data we're ultimately interested in.
 
-# In[3]:
+# In[8]:
 
 
 # Get the Groups for the nwb file 
@@ -73,7 +75,7 @@ print(nwb_fields.keys())
 # 
 # If you wish to access the related publications of the experimental data that you just downloaded, you can do so by accessing the `related_publications` attribute of your NWB file object. Plug in the "doi:" address that prints below into a browser window to check out the original publication describing this data.
 
-# In[4]:
+# In[12]:
 
 
 # Print the related publication
@@ -82,14 +84,14 @@ nwb_file.related_publications
 
 # Each NWB file will also have information on where the experiment was conducted, what lab conducted the experiment, as well as a description of the experiment. These Groups can be accessed using `institution`, `lab`, and `experiment_description`, attributes on our nwb_file, respectively.
 
-# In[5]:
+# In[10]:
 
 
 # Get metadata from NWB file 
 print('The experiment within this NWB file was conducted at ',nwb_file.institution,'.'      ,nwb_file.experiment_description)
 
 
-# We can access datasets from each group in our nwb_file with the following syntax: `nwb_file.group`. This is no different than executing a method and/or attribute. Below we will demonstrate some of the useful groups within an `NWBFile` object. 
+# As you might have noticed at this point, we can access datasets from each group in our nwb_file with the following syntax: `nwb_file.GROUPNAME`, just as we would typically access an attribute of object in Python. Below we will demonstrate some of the most useful groups within an NWB object. 
 
 # ### Acquisition 
 # 
@@ -101,7 +103,7 @@ print('The experiment within this NWB file was conducted at ',nwb_file.instituti
 nwb_file.acquisition
 
 
-# In this file, the acquisition group contains one dataset, `lick_times`. This dataset has one `Field`, `time_series`, which contains two time series objects, `lick_left_times` and `lick_right_times`. To access the actual data arrays of these objects we must first subset our dataset of interest from the group. We can then use `timestamps[:]` to return a list of timestamps for when the animal licked.
+# In this file, the acquisition group contains one dataset, `lick_times`. This dataset has one field, `time_series`, which contains two time series objects, `lick_left_times` and `lick_right_times`. To access the actual data arrays of these objects we must first subset our dataset of interest from the group. We can then use `timestamps[:]` to return a list of timestamps for when the animal licked.
 
 # In[5]:
 
@@ -145,7 +147,7 @@ for col in interval_trials_df:
 
 # ### Units
 # 
-# But wait, where's all of the neural data? The `units` group in our NWB file contains the neural activity of our units, including information about the spike sorting quality as well as the spike times -- when each of these cells fired an action potential. Much like the `intervals` group, `units` can also be assigned to a dataframe.
+# But wait, where's all of the neural data? The `units` group in our NWB file contains the neural activity of our individual neurons (**units**), including information about the spike sorting quality as well as the spike times -- when each of these cells fired an action potential. Much like the `intervals` group, `units` can also be assigned to a dataframe.
 
 # In[10]:
 
@@ -155,14 +157,7 @@ units_df = units.to_dataframe()
 units_df.head()
 
 
-# In[16]:
-
-
-fair_units_df = units_df[units_df['quality']=='Fair']
-fair_units_df.head()
-
-
-# The `electrodes` group contains metadata about the electrodes used in the experiment, including the location of the electrodes, the type of filtering done on that channel, and which electrode group the electrode belongs to. 
+# If we'd like to know where these spikes are coming from, we can look at the `electrodes` attribute. The `electrodes` group contains metadata about the electrodes used in the experiment, including the location of the electrodes, the type of filtering done on that channel, and which electrode group the electrode belongs to. 
 
 # In[11]:
 

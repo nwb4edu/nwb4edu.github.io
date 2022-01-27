@@ -44,7 +44,7 @@ print('Packages imported.')
 # 
 # The `get_ophys_experiment_analysis()` method returns a data accessor object that we will use to create our signal correlation object. This object will contain many precomputed metrics of the neuron, one being the signal correlation between neurons. The signal correlations can be accessed through the `signal_correltation` attriubute of our data accessor object. 
 
-# In[2]:
+# In[3]:
 
 
 # Create an instance of the Brain Observatory cache

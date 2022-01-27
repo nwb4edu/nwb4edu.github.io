@@ -20,7 +20,7 @@
 
 try:
     import dandi
-    if dandi.__version__>='0.32.0':
+    if dandi.__version__>='0.35.0':
         print('DANDI installed & imported.')
     else:
         response = input('Old version of DANDI installed. Would you like to install a newer version of DANDI? (Y/N)')
@@ -37,24 +37,48 @@ except ImportError as e:
 # In[2]:
 
 
-get_ipython().system('dandi download https://dandiarchive.org/dandiset/000006/draft')
+from dandi.download import download as dandi_download
+import os 
+
+#url = "https://gui.dandiarchive.org/#/folder/5e72b6ac3da50caa9adb0498"
+url = 'https://dandiarchive.org/dandiset/000006/draft'
+dandi_download([url], os.getcwd(), existing="skip")
+
+# Alternate way below -- this does not enable "skip" option
+#!dandi download https://dandiarchive.org/dandiset/000006/draft
 
 
 # Once the cell above completes running, you will see a new folder 📁"00006" wherever you're running this notebook. Usefully, the code above will also print a list of individual NWB files that have been downloaded in this folder.
+# 
+# **Once the data is done downloading, you're ready for the next step.**
 
 # ## Option 2: Streaming the Dandiset
 # 
-# The folks at NWB have also developed a clever way to stream Dandisets so that small bits of them can be viewed without downloading the entire dataset. First, you need to set up your environment with the right version of a package called `h5py`. [There are instructions here for how to do that.](https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html#sphx-glr-tutorials-advanced-io-streaming-py). Once you're done, you can restart the kernel for this notebook, and run the code below.
+# The folks at NWB have also developed a clever way to stream Dandisets so that small bits of them can be viewed without downloading the entire dataset. This is particularly useful for very large datasets! **This step is optional, and maybe a better option if you have limited hard drive space and/or are having issues with Option 1 above.**
 # 
+# ### Configuring your environment
+# 
+# With some configuration, you can use this method on your local computer. First, you need to set up your environment with the right version of a package called `h5py`. [There are instructions here for how to do that.](https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html#sphx-glr-tutorials-advanced-io-streaming-py). Once you're done, you can restart the kernel for this notebook, and run the code below.
+# 
+# ### Streaming via the DANDI hub
+# Alternatively, you can run the code below on the DANDI Jupyter Hub (https://hub.dandiarchive.org/). **JupyterHub** is an online coding environment in which you can run code on a remote server. Usefully, the folks at DANDI have set up a JupyterHub so that you can easily access the tools and data. To do so, follow these directions:
+# 1. If you do not have already, set up a [GitHub account](https://github.com/signup). It's free, and it's a great way to start tracking your code!
+# 2. Go to the Dandihub at [https://hub.dandiarchive.org/](https://hub.dandiarchive.org/) and log in using your GitHub account.
+# 3. Choose "Base" as your server option.
+# 4. Create a new Python 3 notebook and copy and paste the three code cells below.
+# 
+# 
+# ### Code for Data Streaming
 # First, we need to figure out the correct URL for the dataset on the Amazon S3 storage system. There is a tool to do so within the dandiapi, which we'll use below to get the URL for one session from the data we downloaded above.
 
-# In[1]:
+# In[3]:
 
 
 from dandi.dandiapi import DandiAPIClient
 
 dandiset_id = '000006'  # ephys dataset from the Svoboda Lab
 filepath = 'sub-anm372795/sub-anm372795_ses-20170718.nwb'  # 450 kB file
+
 with DandiAPIClient() as client:
     asset = client.get_dandiset(dandiset_id, 'draft').get_asset_by_path(filepath)
     s3_path = asset.get_content_url(follow_redirects=1, strip_query=True)
@@ -62,9 +86,9 @@ with DandiAPIClient() as client:
 print(s3_path)
 
 
-# Now, we can read this path, but we'll stream it, rather than downloading it!
+# Now, we can read this path, but we'll stream it, rather than downloading it! The cell below will print some of the data about this experiment.
 
-# In[2]:
+# In[4]:
 
 
 from pynwb import NWBHDF5IO
@@ -75,7 +99,9 @@ with NWBHDF5IO(s3_path, mode='r', load_namespaces=True, driver='ros3') as io:
     print(nwbfile.acquisition['lick_times'].time_series['lick_left_times'].data[:])
 
 
-# In[4]:
+# In addition, we can use a fancy widget to create an interactive display of this dataset. More on this later!
+
+# In[ ]:
 
 
 from nwbwidgets import nwb2widget

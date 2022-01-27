@@ -38,7 +38,7 @@ print('Packages installed.')
 
 # Below, we'll create an instance of the [`BrainObservatoryCache`](https://alleninstitute.github.io/AllenSDK/allensdk.core.brain_observatory_cache.html). This object will allow us to retrieve and analyze the Allen Brain Observatory data.
 
-# In[12]:
+# In[3]:
 
 
 # We will create an instance of the Brain Observatory Cache as an object, "boc."
@@ -49,7 +49,7 @@ boc = BrainObservatoryCache(manifest_file='manifest.json')
 # 
 # You can find more info about the Cre-lines on the Allen Brain Atlas <a href="http://observatory.brain-map.org/visualcoding/transgenic"> Transgenic Mouse Lines page</a>. Refer back to the <a href="http://observatory.brain-map.org/visualcoding">Brain Observatory landing page</a> to learn more about the different visual areas. Make sure to visit the <a href = 'https://alleninstitute.github.io/AllenSDK/allensdk.core.brain_observatory_cache.html'>BrainObservatoryCache doucumentation </a> for additional help with the methods used in this notebook. 
 
-# In[13]:
+# In[4]:
 
 
 # We'll assign the list of cre lines to a variable, 'cre-lines'.
@@ -69,7 +69,7 @@ print("all brain regions: " + str(brain_areas))
 # 
 # *Note*: Not every cre line and brain region combination will have data. If no data is availabe for a certain combindation, an empty dataframe will be created. You can use the `empty` attribute on your new datafram to check if it is empty. 
 
-# In[21]:
+# In[5]:
 
 
 # Assign visual area and cre line of interest for analysis 
@@ -94,7 +94,7 @@ exp_cont_df
 
 # Let's look into one of these experiment containers, most of which have three different sessions for different types of visual stimuli. We can call `get_ophys_experiments()` on our `boc` object to return the experiments within a container. This method takes in the arguments `experiment_container_ids` and `stimuli` which both require lists. We can select an id from our dataframe and choose a stimuli. In our case, we'll filter for experiments with the `natural_scenes` stimuli. 
 
-# In[15]:
+# In[6]:
 
 
 # Assign experiment container id and stimuli 
@@ -111,7 +111,7 @@ print(experiments)
 
 # **Note**: You can execute `get_all_stimuli()` on the `boc` object if you are unsure of what stimuli are available. Not all experiments or experiment contiainers will have every stimuli in their datasets. 
 
-# In[16]:
+# In[7]:
 
 
 print('Stimuli found in Brain Observatory:')
@@ -122,7 +122,7 @@ boc.get_all_stimuli()
 # 
 # **Note**: The cell below downloads some data, and make take a minute or so to run. It is important that you do not interrupt the download of the data or else the file will become corrupted and you will have to delete it and try again. 
 
-# In[13]:
+# In[8]:
 
 
 # Note: This id is different from our experiment container id 
