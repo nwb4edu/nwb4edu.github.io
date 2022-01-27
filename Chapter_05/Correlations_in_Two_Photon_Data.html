@@ -137,8 +137,13 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_02/Interactive_NWB_Data_Exploration.html">
+     2.3. Interactive NWB Data Exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Chapter_2_ProblemSet.html">
-     2.3. Chapter 2 Problem Set
+     2.4. Chapter 2 Problem Set
     </a>
    </li>
   </ul>
@@ -349,30 +354,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mf">4e88567322</span><span class="n">f7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import toolboxes</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">allensdk.brain_observatory.stimulus_info</span> <span class="k">as</span> <span class="nn">stim_info</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">allensdk.core.brain_observatory_cache</span> <span class="kn">import</span> <span class="n">BrainObservatoryCache</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">allensdk</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">brain_observatory_cache</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="kn">from</span> <span class="nn">allensdk.api.queries.brain_observatory_api</span> <span class="kn">import</span> <span class="n">BrainObservatoryApi</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="kn">from</span> <span class="nn">allensdk.config.manifest_builder</span> <span class="kn">import</span> <span class="n">ManifestBuilder</span>
-<span class="ne">---&gt; </span><span class="mi">46</span> <span class="kn">from</span> <span class="nn">.brain_observatory_nwb_data_set</span> <span class="kn">import</span> <span class="n">BrainObservatoryNwbDataSet</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="kn">import</span> <span class="nn">allensdk.brain_observatory.stimulus_info</span> <span class="k">as</span> <span class="nn">stim_info</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> 
-
-<span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">allensdk</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">brain_observatory_nwb_data_set</span><span class="o">.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="kn">from</span> <span class="nn">pkg_resources</span> <span class="kn">import</span> <span class="n">parse_version</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> 
-<span class="ne">---&gt; </span><span class="mi">45</span> <span class="kn">import</span> <span class="nn">h5py</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;h5py&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/lib/python3.7/site-packages/dask/config.py:168: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(f.read()) or {}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages imported.
 </pre></div>
 </div>
 </div>
@@ -409,7 +395,64 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal correlation acquired.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">5013</span><span class="n">c7279da9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Import the natural scenes analysis</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">ns</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiment_analysis</span><span class="p">(</span><span class="n">ophys_experiment_id</span><span class="o">=</span> <span class="n">experiment_id</span><span class="p">,</span> 
+<span class="ne">---&gt; </span><span class="mi">17</span>                                        <span class="n">stimulus_type</span><span class="o">=</span> <span class="n">stim</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> 
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># Get the signal correlation</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_cache.py</span> in <span class="ni">get_ophys_experiment_analysis</span><span class="nt">(self, ophys_experiment_id, stimulus_type, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">BrainObservatoryNwbDataSet</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">512</span><span class="s2">         data_set = self.get_ophys_experiment_data(ophys_experiment_id, file_name=None)</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span><span class="s2">         session_type = data_set.get_session_type()</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span><span class="s2"> </span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_cache.py</span> in <span class="ni">get_ophys_experiment_data</span><span class="nt">(self, ophys_experiment_id, file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span><span class="s2">         self.api.save_ophys_experiment_data(ophys_experiment_id, file_name, strategy=&#39;lazy&#39;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">489</span><span class="s2">         return BrainObservatoryNwbDataSet(file_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span><span class="s2">     def get_ophys_experiment_analysis(self, ophys_experiment_id, stimulus_type, file_name=None):</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_nwb_data_set.py</span> in <span class="ni">__init__</span><span class="nt">(self, nwb_file)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="s2">         if os.path.exists(self.nwb_file):</span>
+<span class="ne">--&gt; </span><span class="mi">145</span><span class="s2">             meta = self.get_metadata()</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span><span class="s2">             if meta and &#39;pipeline_version&#39; in meta:</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span><span class="s2">                 pipeline_version_str = meta[&#39;pipeline_version&#39;]</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_nwb_data_set.py</span> in <span class="ni">get_metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">737</span><span class="s2">         meta = </span><span class="si">{}</span><span class="s2"></span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">739</span><span class="s2">         with h5py.File(self.nwb_file, &#39;r&#39;) as f:</span>
+<span class="g g-Whitespace">    </span><span class="mi">740</span><span class="s2">             for memory_key, disk_key in BrainObservatoryNwbDataSet.FILE_METADATA_MAPPING.items():</span>
+<span class="g g-Whitespace">    </span><span class="mi">741</span><span class="s2">                 try:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span><span class="s2">                 fid = make_fid(name, mode, userblock_size,</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span><span class="s2">                                fapl, fcpl=make_fcpl(track_order=track_order),</span>
+<span class="ne">--&gt; </span><span class="mi">408</span><span class="s2">                                swmr=swmr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span><span class="s2">             if isinstance(libver, tuple):</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span><span class="s2">         if swmr and swmr_support:</span>
+<span class="g g-Whitespace">    </span><span class="mi">172</span><span class="s2">             flags |= h5f.ACC_SWMR_READ</span>
+<span class="ne">--&gt; </span><span class="mi">173</span><span class="s2">         fid = h5f.open(name, flags, fapl=fapl)</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span><span class="s2">     elif mode == &#39;r+&#39;:</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span><span class="s2">         fid = h5f.open(name, h5f.ACC_RDWR, fapl=fapl)</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">h5py/h5f.pyx</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
+
+<span class="ne">OSError</span>: Unable to open file (truncated file: eof = 13312, sblock-&gt;base_addr = 0, stored_eof = 281107866)
 </pre></div>
 </div>
 </div>
