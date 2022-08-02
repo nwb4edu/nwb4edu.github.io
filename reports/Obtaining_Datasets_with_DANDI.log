@@ -26,7 +26,7 @@ with NWBHDF5IO(s3_path, mode='r', load_namespaces=True, driver='ros3') as io:
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
+[0;31mTypeError[0m                                 Traceback (most recent call last)
 [0;32m<ipython-input-4-73fc9b98b614>[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;32mfrom[0m [0mpynwb[0m [0;32mimport[0m [0mNWBHDF5IO[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      2[0m [0;34m[0m[0m
@@ -35,47 +35,19 @@ with NWBHDF5IO(s3_path, mode='r', load_namespaces=True, driver='ros3') as io:
 [1;32m      5[0m     [0mprint[0m[0;34m([0m[0mnwbfile[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/anaconda3/lib/python3.7/site-packages/hdmf/utils.py[0m in [0;36mfunc_call[0;34m(*args, **kwargs)[0m
-[1;32m    581[0m             [0;32mdef[0m [0mfunc_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    582[0m                 [0mpargs[0m [0;34m=[0m [0m_check_args[0m[0;34m([0m[0margs[0m[0;34m,[0m [0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 583[0;31m                 [0;32mreturn[0m [0mfunc[0m[0;34m([0m[0margs[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m,[0m [0;34m**[0m[0mpargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    584[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    585[0m             [0;32mdef[0m [0mfunc_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    577[0m         [0;32mif[0m [0mis_method[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    578[0m             [0;32mdef[0m [0mfunc_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 579[0;31m                 [0mpargs[0m [0;34m=[0m [0m_check_args[0m[0;34m([0m[0margs[0m[0;34m,[0m [0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    580[0m                 [0;32mreturn[0m [0mfunc[0m[0;34m([0m[0margs[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m,[0m [0;34m**[0m[0mpargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    581[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/anaconda3/lib/python3.7/site-packages/pynwb/__init__.py[0m in [0;36m__init__[0;34m(self, **kwargs)[0m
-[1;32m    228[0m [0;34m[0m[0m
-[1;32m    229[0m             [0mtm[0m [0;34m=[0m [0mget_type_map[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 230[0;31m             [0msuper[0m[0;34m([0m[0mNWBHDF5IO[0m[0;34m,[0m [0mself[0m[0;34m)[0m[0;34m.[0m[0mload_namespaces[0m[0;34m([0m[0mtm[0m[0;34m,[0m [0mpath[0m[0;34m,[0m [0mfile[0m[0;34m=[0m[0mfile_obj[0m[0;34m,[0m [0mdriver[0m[0;34m=[0m[0mdriver[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    231[0m             [0mmanager[0m [0;34m=[0m [0mBuildManager[0m[0;34m([0m[0mtm[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    232[0m [0;34m[0m[0m
+[0;32m~/anaconda3/lib/python3.7/site-packages/hdmf/utils.py[0m in [0;36m_check_args[0;34m(args, kwargs)[0m
+[1;32m    570[0m                 [0;32mif[0m [0mparse_err[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    571[0m                     [0mmsg[0m [0;34m=[0m [0;34m'%s: %s'[0m [0;34m%[0m [0;34m([0m[0mfunc[0m[0;34m.[0m[0m__qualname__[0m[0;34m,[0m [0;34m', '[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mparse_err[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 572[0;31m                     [0;32mraise[0m [0mExceptionType[0m[0;34m([0m[0mmsg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    573[0m [0;34m[0m[0m
+[1;32m    574[0m             [0;32mreturn[0m [0mparsed[0m[0;34m[[0m[0;34m'args'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/anaconda3/lib/python3.7/site-packages/hdmf/utils.py[0m in [0;36mfunc_call[0;34m(*args, **kwargs)[0m
-[1;32m    581[0m             [0;32mdef[0m [0mfunc_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    582[0m                 [0mpargs[0m [0;34m=[0m [0m_check_args[0m[0;34m([0m[0margs[0m[0;34m,[0m [0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 583[0;31m                 [0;32mreturn[0m [0mfunc[0m[0;34m([0m[0margs[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m,[0m [0;34m**[0m[0mpargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    584[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    585[0m             [0;32mdef[0m [0mfunc_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/anaconda3/lib/python3.7/site-packages/hdmf/backends/hdf5/h5tools.py[0m in [0;36mload_namespaces[0;34m(cls, **kwargs)[0m
-[1;32m    142[0m             'namespace_catalog', 'path', 'namespaces', 'file', 'driver', kwargs)
-[1;32m    143[0m [0;34m[0m[0m
-[0;32m--> 144[0;31m         [0mopen_file_obj[0m [0;34m=[0m [0mcls[0m[0;34m.[0m[0m__resolve_file_obj[0m[0;34m([0m[0mpath[0m[0;34m,[0m [0mfile_obj[0m[0;34m,[0m [0mdriver[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    145[0m         [0;32mif[0m [0mfile_obj[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m  [0;31m# need to close the file object that we just opened[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    146[0m             [0;32mwith[0m [0mopen_file_obj[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m~/anaconda3/lib/python3.7/site-packages/hdmf/backends/hdf5/h5tools.py[0m in [0;36m__resolve_file_obj[0;34m(path, file_obj, driver)[0m
-[1;32m    117[0m             [0;32mif[0m [0mdriver[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    118[0m                 [0mfile_kwargs[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mdriver[0m[0;34m=[0m[0mdriver[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 119[0;31m             [0mfile_obj[0m [0;34m=[0m [0mFile[0m[0;34m([0m[0mpath[0m[0;34m,[0m [0;34m'r'[0m[0;34m,[0m [0;34m**[0m[0mfile_kwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    120[0m         [0;32mreturn[0m [0mfile_obj[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    121[0m [0;34m[0m[0m
-
-[0;32m~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py[0m in [0;36m__init__[0;34m(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, fs_page_size, page_buf_size, min_meta_keep, min_raw_keep, locking, **kwds)[0m
-[1;32m    461[0m         [0;32mif[0m [0mdriver[0m [0;34m==[0m [0;34m'ros3'[0m [0;32mand[0m [0;32mnot[0m [0mros3[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    462[0m             raise ValueError(
-[0;32m--> 463[0;31m                 "h5py was built without ROS3 support, can't use ros3 driver")
-[0m[1;32m    464[0m [0;34m[0m[0m
-[1;32m    465[0m         if locking is not None and hdf5_version < (1, 12, 1) and (
-
-[0;31mValueError[0m: h5py was built without ROS3 support, can't use ros3 driver
-ValueError: h5py was built without ROS3 support, can't use ros3 driver
+[0;31mTypeError[0m: NWBHDF5IO.__init__: unrecognized argument: 'driver'
+TypeError: NWBHDF5IO.__init__: unrecognized argument: 'driver'
 

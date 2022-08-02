@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aligning Spike Trains with Visual Stimuli and Behavior &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>3.3. Aligning Spike Trains with Visual Stimuli and Behavior &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.4. Identifying Cells with Optogenetics" href="Identifying_Cells_with_Optogenetics.html" />
+    <link rel="prev" title="3.2. Obtaining Electrophysiology Data from the AllenSDK" href="Obtaining_Raw_Electrophysiology_Data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,7 +89,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter_01/Data_Science_In_Python.html">
    1. Data Science in Python
@@ -147,31 +149,46 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
-   3. Single-Cell Electrophysiology
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Large_Scale_Electrophysiology.html">
+   3. Large-Scale Electrophysiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
-     3.1. Obtaining Data for Single Cells
+    <a class="reference internal" href="Visualizing_Large_Scale_Recordings.html">
+     3.1. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
-     3.2. Analyzing Computed Features
+    <a class="reference internal" href="Obtaining_Raw_Electrophysiology_Data.html">
+     3.2. Obtaining  Electrophysiology Data from the AllenSDK
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.3. Aligning Spike Trains with Visual Stimuli and Behavior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Identifying_Cells_with_Optogenetics.html">
+     3.4. Identifying Cells with Optogenetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Chapter_3_ProblemSet.html">
+     3.5. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
-   4. Two Photon Imaging
+  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
+   4. Single-Cell Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -180,18 +197,40 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
+     4.1. Obtaining Data for Single Cells
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
+     4.2. Analyzing Computed Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
+   5. Two Photon Imaging
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Retrieving_Brain_Observatory_Data.html">
-     4.1. Retrieving Calcium Imaging Data
+     5.1. Retrieving Calcium Imaging Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Analyzing_Two_Photon_Data.html">
-     4.2. Analyzing Two Photon Data
+     5.2. Analyzing Two Photon Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Correlations_in_Two_Photon_Data.html">
-     4.3. Correlations in Two Photon Data
+     5.3. Correlations in Two Photon Data
     </a>
    </li>
   </ul>
@@ -291,22 +330,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spike-times">
-   Spike Times
+   3.3.1. Spike Times
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stimulus-presentations">
-   Stimulus Presentations
+   3.3.2. Stimulus Presentations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-the-spykes-module-to-plot-electrophysiology-data">
-   Using the Spykes module to plot electrophysiology data
+   3.3.3. Using the Spykes module to plot electrophysiology data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-speed">
-   Running Speed
+   3.3.4. Running Speed
   </a>
  </li>
 </ul>
@@ -321,7 +360,7 @@
               <div>
                 
   <div class="section" id="aligning-spike-trains-with-visual-stimuli-and-behavior">
-<h1>Aligning Spike Trains with Visual Stimuli and Behavior<a class="headerlink" href="#aligning-spike-trains-with-visual-stimuli-and-behavior" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.3. </span>Aligning Spike Trains with Visual Stimuli and Behavior<a class="headerlink" href="#aligning-spike-trains-with-visual-stimuli-and-behavior" title="Permalink to this headline">¶</a></h1>
 <p>In the previous section, we learned how to access metadata about the Allen Institute’s Visual Coding and download a Neuropixels dataset. Here, we’ll pull in additional information about the visual stimuli and the behavior of the mouse in order to see if we can explain our neural activity in terms of either of these.</p>
 <p>In this notebook, we’ll work with the same data you worked with in the last chapter. If you did not work through that notebook, the cells below will not work for you.</p>
 <div class="cell docutils container">
@@ -359,47 +398,36 @@
 <span class="ne">--&gt; </span><span class="mi">750</span>     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">751</span> 
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/util/_decorators.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>                 <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> 
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">parser_f</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span> 
+<span class="ne">--&gt; </span><span class="mi">685</span>         <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">686</span> 
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span> 
-<span class="ne">--&gt; </span><span class="mi">586</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> 
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">457</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span> 
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">483</span> 
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span> 
+<span class="ne">--&gt; </span><span class="mi">895</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span> 
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">810</span> 
-<span class="ne">--&gt; </span><span class="mi">811</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">812</span> 
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1134</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1135</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span>         <span class="k">else</span><span class="p">:</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1039</span>         <span class="c1"># error: Too many arguments for &quot;ParserBase&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1040</span>         <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>  <span class="c1"># type: ignore[call-arg]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1041</span> 
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1916</span> 
+<span class="ne">-&gt; </span><span class="mi">1917</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1918</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers/c_parser_wrapper.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>         <span class="c1"># open handles</span>
-<span class="ne">---&gt; </span><span class="mi">51</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_open_handles</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/parsers/base_parser.py</span> in <span class="ni">_open_handles</span><span class="nt">(self, src, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span>             <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="ne">--&gt; </span><span class="mi">229</span>             <span class="n">errors</span><span class="o">=</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>         <span class="p">)</span>
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">705</span>                 <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">706</span>                 <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>             <span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/ashley/Documents/nwb4edu.github.io/Chapter_03/units.csv&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] File b&#39;/Users/ashley/Documents/nwb4edu.github.io/Chapter_03/units.csv&#39; does not exist: b&#39;/Users/ashley/Documents/nwb4edu.github.io/Chapter_03/units.csv&#39;
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -615,7 +643,7 @@
 </div>
 </div>
 <div class="section" id="spike-times">
-<h2>Spike Times<a class="headerlink" href="#spike-times" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.1. </span>Spike Times<a class="headerlink" href="#spike-times" title="Permalink to this headline">¶</a></h2>
 <p>Our <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object contains spike times for each unit and they can be accessed via the <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> attribute. This returns a dictionary where the <code class="docutils literal notranslate"><span class="pre">unit_id</span></code> of the neural units are mapped to a list of spike times.  With this data, we are able to compare <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> across units and across stimuli by plotting rasterplots and peristimulus time histograms (PSTHs).</p>
 <p>Because there are many units in a given session, we first need to select a subgroup of units to focus on. For the purposes of this notebook we will work with units that were taken from the primary visual area (<code class="docutils literal notranslate"><span class="pre">VISp</span></code>). Below, we will assign spike times of units from the <code class="docutils literal notranslate"><span class="pre">VISp</span></code> area.</p>
 <div class="cell docutils container">
@@ -663,7 +691,7 @@ Spikes found for unit 951132062 : 16606
 </div></blockquote>
 </div>
 <div class="section" id="stimulus-presentations">
-<h2>Stimulus Presentations<a class="headerlink" href="#stimulus-presentations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.2. </span>Stimulus Presentations<a class="headerlink" href="#stimulus-presentations" title="Permalink to this headline">¶</a></h2>
 <p>The spike data can be sorted according to the type of stimulus that was presented to the mouse. You can access the different stimuli that were presented in the session by using the attribute <code class="docutils literal notranslate"><span class="pre">stimulus_names</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1141,7 +1169,7 @@ Spikes found for unit 951132062 : 16606
 <p>You are not limited to only plotting the times where a certain image was presented, nor are you limited to only plotting <code class="docutils literal notranslate"><span class="pre">natural_scenes</span></code> stimuli. You can create a similar graph with <code class="docutils literal notranslate"><span class="pre">gabors</span></code>, <code class="docutils literal notranslate"><span class="pre">flashes</span></code>, or any other availabe <code class="docutils literal notranslate"><span class="pre">stimulus_name</span></code>. For example, you can plot all the times when a <code class="docutils literal notranslate"><span class="pre">gabors</span></code> stimulus was presented at a certain spatial frequncy, temporal frequency, or orientaion. You can use <code class="docutils literal notranslate"><span class="pre">get_stimulus_parameter_values</span></code> to return a dictionary of all parameters used in a session.</p>
 </div>
 <div class="section" id="using-the-spykes-module-to-plot-electrophysiology-data">
-<h2>Using the Spykes module to plot electrophysiology data<a class="headerlink" href="#using-the-spykes-module-to-plot-electrophysiology-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.3. </span>Using the Spykes module to plot electrophysiology data<a class="headerlink" href="#using-the-spykes-module-to-plot-electrophysiology-data" title="Permalink to this headline">¶</a></h2>
 <p>Peristimulus time histograms and raster plots can also be created with classes and methods from a package called <code class="docutils literal notranslate"><span class="pre">spykes</span></code>, which contains useful tools for plotting electrophysiology data. If you do not have <code class="docutils literal notranslate"><span class="pre">spykes</span></code> installed, run the cell below. Otherwise, you can skip to the next cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1180,7 +1208,7 @@ Spikes found for unit 951132062 : 16606
 </div>
 </div>
 <div class="section" id="running-speed">
-<h2>Running Speed<a class="headerlink" href="#running-speed" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.4. </span>Running Speed<a class="headerlink" href="#running-speed" title="Permalink to this headline">¶</a></h2>
 <p>The Allen Institute researchers also collected data on the running speed of their mice. You can access the running speed by calling <code class="docutils literal notranslate"><span class="pre">running_speed</span></code> on our <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object. This will return a dataframe that contains the <code class="docutils literal notranslate"><span class="pre">start_time</span></code>, <code class="docutils literal notranslate"><span class="pre">end_time</span></code>, and <code class="docutils literal notranslate"><span class="pre">velocity</span></code> of our session.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1255,6 +1283,8 @@ Spikes found for unit 951132062 : 16606
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Obtaining_Raw_Electrophysiology_Data.html" title="previous page"><span class="section-number">3.2. </span>Obtaining  Electrophysiology Data from the AllenSDK</a>
+    <a class='right-next' id="next-link" href="Identifying_Cells_with_Optogenetics.html" title="next page"><span class="section-number">3.4. </span>Identifying Cells with Optogenetics</a>
 
         </div>
         

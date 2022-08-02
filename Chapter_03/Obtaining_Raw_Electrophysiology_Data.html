@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Obtaining Electrophysiology Data from the AllenSDK &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>3.2. Obtaining Electrophysiology Data from the AllenSDK &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.3. Aligning Spike Trains with Visual Stimuli and Behavior" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html" />
+    <link rel="prev" title="3.1. Visualizing Large Scale Recordings" href="Visualizing_Large_Scale_Recordings.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,7 +89,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter_01/Data_Science_In_Python.html">
    1. Data Science in Python
@@ -147,31 +149,46 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
-   3. Single-Cell Electrophysiology
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Large_Scale_Electrophysiology.html">
+   3. Large-Scale Electrophysiology
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
-     3.1. Obtaining Data for Single Cells
+    <a class="reference internal" href="Visualizing_Large_Scale_Recordings.html">
+     3.1. Visualizing Large Scale Recordings
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.2. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
-     3.2. Analyzing Computed Features
+    <a class="reference internal" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
+     3.3. Aligning Spike Trains with Visual Stimuli and Behavior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Identifying_Cells_with_Optogenetics.html">
+     3.4. Identifying Cells with Optogenetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Chapter_3_ProblemSet.html">
+     3.5. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
-   4. Two Photon Imaging
+  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
+   4. Single-Cell Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -180,18 +197,40 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
+     4.1. Obtaining Data for Single Cells
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
+     4.2. Analyzing Computed Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
+   5. Two Photon Imaging
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Retrieving_Brain_Observatory_Data.html">
-     4.1. Retrieving Calcium Imaging Data
+     5.1. Retrieving Calcium Imaging Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Analyzing_Two_Photon_Data.html">
-     4.2. Analyzing Two Photon Data
+     5.2. Analyzing Two Photon Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Correlations_in_Two_Photon_Data.html">
-     4.3. Correlations in Two Photon Data
+     5.3. Correlations in Two Photon Data
     </a>
    </li>
   </ul>
@@ -291,22 +330,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#downloading-a-single-session-the-structure-of-session-files">
-   Downloading a Single Session &amp; the Structure of Session Files
+   3.2.1. Downloading a Single Session &amp; the Structure of Session Files
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#obtaining-single-units">
-   Obtaining Single Units
+   3.2.2. Obtaining Single Units
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#obtaining-single-action-potential-waveforms">
-   Obtaining Single Action Potential Waveforms
+   3.2.3. Obtaining Single Action Potential Waveforms
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#additional-resources">
-     Additional Resources
+     3.2.3.1. Additional Resources
     </a>
    </li>
   </ul>
@@ -323,7 +362,7 @@
               <div>
                 
   <div class="section" id="obtaining-electrophysiology-data-from-the-allensdk">
-<h1>Obtaining  Electrophysiology Data from the AllenSDK<a class="headerlink" href="#obtaining-electrophysiology-data-from-the-allensdk" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2. </span>Obtaining  Electrophysiology Data from the AllenSDK<a class="headerlink" href="#obtaining-electrophysiology-data-from-the-allensdk" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference external" href="https://portal.brain-map.org/explore/circuits/visual-coding-neuropixels">Visual Coding - Neuropixels dataset from the Allen Institute of Brain Sciences</a> records spiking activity in the visual system of the mouse brain. At the time of writing, this dataset contains a total of 58 experiment sessions from Neuropixels probes in the cortex, hippocampus, and thalamus. There are three different trangenic mouse lines used in the experiments alongside the wild-type mice, which mark three different inhibitory cell types. The stimuli presented in this dataset range from natural scenes to drifting gratings.</p>
 <p>In this chapter you will learn how to download and sort through the Neuropixels dataset. Once you learn the basics, you will learn how to perform possible analyses to explain the neural activity within, as well as how to use optogenetics to identify different cell types within the data.</p>
 <p>This section will teach you how to interact with the Allen Institute Neuropixels dataset, specifically how to download experimental sessions, return processed data, and subset your data to contain only brain regions you are interested in.</p>
@@ -344,7 +383,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>incompatible version of allensdk installed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk already installed.
 </pre></div>
 </div>
 </div>
@@ -610,7 +649,7 @@
 </div>
 </div>
 <div class="section" id="downloading-a-single-session-the-structure-of-session-files">
-<h2>Downloading a Single Session &amp; the Structure of Session Files<a class="headerlink" href="#downloading-a-single-session-the-structure-of-session-files" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.1. </span>Downloading a Single Session &amp; the Structure of Session Files<a class="headerlink" href="#downloading-a-single-session-the-structure-of-session-files" title="Permalink to this headline">¶</a></h2>
 <p>Now, we can use the session list to get the data we need. Unfortunately, we can only extract one experiment at a time, so if you want to do this for multiple experiments, you’ll need to loop over the <code class="docutils literal notranslate"><span class="pre">get_session_data</span></code> method for your entire session_list. For example, your workflow might be:</p>
 <ol class="simple">
 <li><p>Extract one session.</p></li>
@@ -632,7 +671,7 @@
 </div>
 </div>
 <div class="section" id="obtaining-single-units">
-<h2>Obtaining Single Units<a class="headerlink" href="#obtaining-single-units" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.2. </span>Obtaining Single Units<a class="headerlink" href="#obtaining-single-units" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have downloaded the single session file, we can begin to explore our <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object. The <code class="docutils literal notranslate"><span class="pre">units</span></code> property of our session object returns a dataframe that contains the recorded activity of sorted neurons from a mouse brain. There are many metrics stored within <code class="docutils literal notranslate"><span class="pre">units</span></code> that can be used in your potential analyses. Some key metrics include:</p>
 <ul class="simple">
 <li><p><strong>firing rate</strong>: mean spike rate during the entire session</p></li>
@@ -689,7 +728,7 @@
 </div>
 </div>
 <div class="section" id="obtaining-single-action-potential-waveforms">
-<h2>Obtaining Single Action Potential Waveforms<a class="headerlink" href="#obtaining-single-action-potential-waveforms" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.3. </span>Obtaining Single Action Potential Waveforms<a class="headerlink" href="#obtaining-single-action-potential-waveforms" title="Permalink to this headline">¶</a></h2>
 <p>Each session contains a dictionary of mean waveforms for all the units recorded in that session. They are stored inside a xarray DataArray where the <code class="docutils literal notranslate"><span class="pre">unit_id</span></code> are mapped to the mean spike waveform values. The dimensions of the DataArrays are <code class="docutils literal notranslate"><span class="pre">channel</span></code> and <code class="docutils literal notranslate"><span class="pre">time</span></code> which are recorded in microvolts and seconds, respectivley. For more information on <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code>, please visit the <a href = 'http://xarray.pydata.org/en/stable/generated/xarray.DataArray.html'> xarray original documentation</a>.</p>
 <p>To access the mean spike waveforms for all units in a session, use the attribute <code class="docutils literal notranslate"><span class="pre">mean_waveforms</span></code> on your <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object.</p>
 <div class="cell docutils container">
@@ -749,7 +788,7 @@
 </div>
 </div>
 <div class="section" id="additional-resources">
-<h3>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3.1. </span>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://allensdk.readthedocs.io/en/latest/_static/examples/nb/ecephys_session.html">Allen Institute Tutorial Notebook</a></p></li>
 </ul>
@@ -782,6 +821,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="Visualizing_Large_Scale_Recordings.html" title="previous page"><span class="section-number">3.1. </span>Visualizing Large Scale Recordings</a>
+    <a class='right-next' id="next-link" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html" title="next page"><span class="section-number">3.3. </span>Aligning Spike Trains with Visual Stimuli and Behavior</a>
 
         </div>
         
