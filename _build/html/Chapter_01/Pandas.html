@@ -150,8 +150,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
-   3. Single-Cell Electrophysiology
+  <a class="reference internal" href="../Chapter_03/Large_Scale_Electrophysiology.html">
+   3. Large-Scale Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -160,20 +160,35 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
-     3.1. Obtaining Data for Single Cells
+    <a class="reference internal" href="../Chapter_03/Visualizing_Large_Scale_Recordings.html">
+     3.1. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
-     3.2. Analyzing Computed Features
+    <a class="reference internal" href="../Chapter_03/Obtaining_Raw_Electrophysiology_Data.html">
+     3.2. Obtaining  Electrophysiology Data from the AllenSDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
+     3.3. Aligning Spike Trains with Visual Stimuli and Behavior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Identifying_Cells_with_Optogenetics.html">
+     3.4. Identifying Cells with Optogenetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
+     3.5. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
-   4. Two Photon Imaging
+  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
+   4. Single-Cell Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -182,18 +197,40 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
+     4.1. Obtaining Data for Single Cells
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
+     4.2. Analyzing Computed Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
+   5. Two Photon Imaging
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Retrieving_Brain_Observatory_Data.html">
-     4.1. Retrieving Calcium Imaging Data
+     5.1. Retrieving Calcium Imaging Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Analyzing_Two_Photon_Data.html">
-     4.2. Analyzing Two Photon Data
+     5.2. Analyzing Two Photon Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_05/Correlations_in_Two_Photon_Data.html">
-     4.3. Correlations in Two Photon Data
+     5.3. Correlations in Two Photon Data
     </a>
    </li>
   </ul>
@@ -360,7 +397,7 @@ pd         module    &lt;module &#39;pandas&#39; from &#39;/U&lt;...&gt;ages/pan
 <div class="section" id="create-and-manipulate-dataframes">
 <h2><span class="section-number">1.4.1. </span>Create and Manipulate Dataframes<a class="headerlink" href="#create-and-manipulate-dataframes" title="Permalink to this headline">¶</a></h2>
 <p>The two data structures of Pandas are the <code class="docutils literal notranslate"><span class="pre">Series</span></code> and the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. A <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a one-dimensional onject similar to a list. A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can be thought of as a two-dimensional numpy array or a collection of <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects. Series and dataframes can contain multiple different data types such as integers, strings, and floats, similar to an Excel spreadsheet. Pandas also supports <code class="docutils literal notranslate"><span class="pre">string</span></code> lables unlike numpy arrays which only have numeric labels for their rows and columns. For a more in depth explanation, please visit the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">Introduction to Data Structures</a> section in the Pandas User Guide.</p>
-<p>You can create a Pandas dataframe by inputting dictionaries into the Pandas function <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>, by reading files, or through functions built into the Pandas package. The function <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code></a> reads a comma-seperated file and returns it as a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>.</p>
+<p>You can create a Pandas dataframe by inputting dictionaries into the Pandas function <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>, by reading files, or through functions built into the Pandas package. The function <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code></a> reads a comma- or tab-separated file and returns it as a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>.</p>
 <div class="section" id="dataframe-example">
 <h3><span class="section-number">1.4.1.1. </span>DataFrame example<a class="headerlink" href="#dataframe-example" title="Permalink to this headline">¶</a></h3>
 <p>Below we will create a dataframe by reading the file <code class="docutils literal notranslate"><span class="pre">brainarea_vs_genes_exp_w_reannotations.tsv</span></code> which contains information on gene expression accross multiple brain areas.</p>
@@ -547,7 +584,7 @@ This dataset was created by Derek Howard and Abigail Mayes for the purpose of ac
 <p>5 rows × 233 columns</p>
 </div></div></div>
 </div>
-<p>At the moment, our rows and columns don’t have any useful information – they’re simply a list of indices. We can reassign the row values by using the method <code class="docutils literal notranslate"><span class="pre">set_index()</span></code>. We can choose any column in our present dataframe to be the row values. Let’s assign the row lables to be the <code class="docutils literal notranslate"><span class="pre">gene_symbol</span></code> and reassign the dataframe.</p>
+<p>At the moment, the first column  of information above, the <strong>index</strong> just contains a list of numbers. We can reassign the row labels by using the method <code class="docutils literal notranslate"><span class="pre">set_index()</span></code>. We can choose any column in our present dataframe to be the row values. Let’s assign the row lables to be the <code class="docutils literal notranslate"><span class="pre">gene_symbol</span></code> and reassign the dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row_index</span> <span class="o">=</span> <span class="s1">&#39;gene_symbol&#39;</span>

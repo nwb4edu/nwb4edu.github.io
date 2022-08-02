@@ -22,7 +22,7 @@ get_ipython().run_line_magic('whos', '')
 # ## Create and Manipulate Dataframes 
 # The two data structures of Pandas are the `Series` and the `DataFrame`. A `Series` is a one-dimensional onject similar to a list. A `DataFrame` can be thought of as a two-dimensional numpy array or a collection of `Series` objects. Series and dataframes can contain multiple different data types such as integers, strings, and floats, similar to an Excel spreadsheet. Pandas also supports `string` lables unlike numpy arrays which only have numeric labels for their rows and columns. For a more in depth explanation, please visit the [Introduction to Data Structures](https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html) section in the Pandas User Guide. 
 # 
-# You can create a Pandas dataframe by inputting dictionaries into the Pandas function `pd.DataFrame()`, by reading files, or through functions built into the Pandas package. The function [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) reads a comma-seperated file and returns it as a `dataframe`.
+# You can create a Pandas dataframe by inputting dictionaries into the Pandas function `pd.DataFrame()`, by reading files, or through functions built into the Pandas package. The function [`pd.read_csv()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) reads a comma- or tab-separated file and returns it as a `dataframe`.
 # 
 # 
 # ### DataFrame example
@@ -42,7 +42,7 @@ gene_df = pd.read_csv(file_name, sep='\t')
 gene_df.head()
 
 
-# At the moment, our rows and columns don't have any useful information -- they're simply a list of indices. We can reassign the row values by using the method `set_index()`. We can choose any column in our present dataframe to be the row values. Let's assign the row lables to be the `gene_symbol` and reassign the dataframe. 
+# At the moment, the first column  of information above, the **index** just contains a list of numbers. We can reassign the row labels by using the method `set_index()`. We can choose any column in our present dataframe to be the row values. Let's assign the row lables to be the `gene_symbol` and reassign the dataframe. 
 
 # In[3]:
 

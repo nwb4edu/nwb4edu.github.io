@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Large Scale Electrophysiology &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>3. Large-Scale Electrophysiology &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3.1. Visualizing Large Scale Recordings" href="Visualizing_Large_Scale_Recordings.html" />
-    <link rel="prev" title="2.3. Chapter 2 Problem Set" href="../Chapter_02/Chapter_2_ProblemSet.html" />
+    <link rel="prev" title="2.4. Chapter 2 Problem Set" href="../Chapter_02/Chapter_2_ProblemSet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -138,15 +138,20 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_02/Interactive_NWB_Data_Exploration.html">
+     2.3. Interactive NWB Data Exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Chapter_2_ProblemSet.html">
-     2.3. Chapter 2 Problem Set
+     2.4. Chapter 2 Problem Set
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   3. Large Scale Electrophysiology
+   3. Large-Scale Electrophysiology
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -327,19 +332,26 @@
               <div>
                 
   <div class="section" id="large-scale-electrophysiology">
-<h1><span class="section-number">3. </span>Large Scale Electrophysiology<a class="headerlink" href="#large-scale-electrophysiology" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Large-Scale Electrophysiology<a class="headerlink" href="#large-scale-electrophysiology" title="Permalink to this headline">¶</a></h1>
 <p>A single neuron can not carry out tasks such as reading by itself – it requires the surrounding, interconnected neurons to send and receive signals and accomplish the simplest of tasks. In modern large-scale electrophysiology, the activity of hundreds of neurons are recorded in an attempt to determine where neuron activity occurs and how these cells communicate with each other when presented with certain tasks.</p>
+<p>Many NWB datasets feature extracellular electrophysiology, with technology ranging from tetrodes to cutting-edge silicon recording probes. Regardless of the technology, the principles of dealing with extracellular electrophysiology data are very similar.</p>
+<p><strong>Processing Extracellular Recordings</strong></p>
+<p>Extracellular recordings are taken from outside of the cell, and are therefore a bit messier than intracellular recordings. In addition to filtering the data to remove any slow, non-biological shifts in the recorded potential, raw extracellular recordings also need to be spike sorted. Because these recordings are taken from outside of the cell, it’s possible that each electrode may be listening to multiple cells nearby. <strong>Spike sorting</strong> allows us to identify action potentials (“spikes”) and assign them to <strong>units</strong>, or <em>putative</em> neurons. In other words, we can’t say with utmost certainty that we’ve correctly identified the source of our spikes, but we can use spatial and temporal information to say with some confidence that we <em>likely</em> have.</p>
+<p>Thankfully, most of the data in NWB files have already been sorted for us. Most often, the authors of these files will provide a list of spike times for each unit, and we can use these spike times along with the behavioral and environmental context of the experiment to try to make some sense of what neurons are doing.</p>
+<p>In addition to spike times, researchers are often interested in studying the <strong>local field potential</strong> (LFP), or the collective sum of all of the neurons in a given area. We can filter this LFP for particular frequencies, and even use it to distinguish between layers of cortex.</p>
+<hr>
 <p><img src="https://brainmapportal-live-4cc80a57cd6e400d854-f7fdcae.divio-media.net/filer_public/88/00/8800429b-8811-471f-9f04-82d19b3851b0/neuropixels_visual_coding_cms_images-04.png"
      alt="Neuropixels Logo"
      align="right"
      float="left"
      width="250"/>
 <strong>Neuropixels Probes</strong></p>
-<p>The technological advancement of the Neuropixels probe has significantly propelled systems neuroscience research in recent years (<a class="reference external" href="https://www.nature.com/articles/nature24636">Jun et al., 2017</a>). Each probe is approximately the size of a strand of hair and has 960 recording sites allowing for hundreds of neurons to be recorded simultaneously. The reduced size of these recording devices allows for mutliple probes to be inserted into the same brain, providing real time recordings of multiple brain areas.
+<p>In one section of this chapter, you’ll encounter Neuropixels data from the Allen Institute for Brain Science. The technological advancement of the Neuropixels probe (seen at right) has significantly propelled systems neuroscience research in recent years (<a class="reference external" href="https://www.nature.com/articles/nature24636">Jun et al., 2017</a>). Each probe is approximately the size of a strand of hair and has 960 recording sites allowing for hundreds of neurons to be recorded simultaneously. The reduced size of these recording devices allows for several probes to be inserted into the same brain, providing real time recordings of multiple brain areas.
 <br clear="left"/></p>
 <hr>
 <p><strong>Additional Resources</strong></p>
 <ul class="simple">
+<li><p>For a useful overview of electrophysiology, see the <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/B9780128005118000046">Guide to Research Techniques</a>.</p></li>
 <li><p>To read more about the potential of Neuropixels probes, read this <a class="reference external" href="https://www.simonsfoundation.org/2018/01/04/neuropixels-offer-new-ways-to-map-cells/">Simons Foundation article</a>.</p></li>
 <li><p>For technical information about the Neuropixel probes or to learn how to obtain them, please visit <a href = 'https://www.neuropixels.org/'> neuropixels.org</a>.</p></li>
 </ul>
@@ -372,7 +384,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Chapter_02/Chapter_2_ProblemSet.html" title="previous page"><span class="section-number">2.3. </span>Chapter 2 Problem Set</a>
+    <a class='left-prev' id="prev-link" href="../Chapter_02/Chapter_2_ProblemSet.html" title="previous page"><span class="section-number">2.4. </span>Chapter 2 Problem Set</a>
     <a class='right-next' id="next-link" href="Visualizing_Large_Scale_Recordings.html" title="next page"><span class="section-number">3.1. </span>Visualizing Large Scale Recordings</a>
 
         </div>
