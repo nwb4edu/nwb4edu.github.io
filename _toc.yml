@@ -3,30 +3,36 @@ root: landing_page
 options:
   numbered: true
 chapters:
-- file: Chapter_01/Data_Science_In_Python
+- file: Chapter_01/Introduction
   sections:
-  - file: Chapter_01/NumPy
-  - file: Chapter_01/Pandas
-  - file: Chapter_01/SciPy
-- file: Chapter_02/Obtaining_and_Working_with_NWB_Datasets
+  - file: Chapter_01/Using_This_Book
+  - file: Chapter_01/Setup
+  - file: Chapter_01/For_Educators
+- file: Chapter_02/Data_Science_In_Python
   sections:
-  - file: Chapter_02/Obtaining_Datasets_with_DANDI
-  - file: Chapter_02/Working_with_NWB_format_in_Python
-  - file: Chapter_02/Interactive_NWB_Data_Exploration
-  - file: Chapter_02/Chapter_2_ProblemSet
-- file: Chapter_03/Large_Scale_Electrophysiology
+  - file: Chapter_02/NumPy
+  - file: Chapter_02/Pandas
+  - file: Chapter_02/SciPy
+- file: Chapter_03/NWB_Dataset_Structure
   sections:
-  - file: Chapter_03/Visualizing_Large_Scale_Recordings
-  - file: Chapter_03/Obtaining_Raw_Electrophysiology_Data
-  - file: Chapter_03/Aligning_Spike_Trains_with_Stimuli_and_Behavior
-  - file: Chapter_03/Identifying_Cells_with_Optogenetics
+  - file: Chapter_03/Obtaining_Datasets_with_DANDI
+  - file: Chapter_03/Working_with_NWB_format_in_Python
+  - file: Chapter_03/Interactive_NWB_Data_Exploration
   - file: Chapter_03/Chapter_3_ProblemSet
-- file: Chapter_04/Single-Cell_Electrophysiology
+- file: Chapter_04/Large_Scale_Electrophysiology
   sections:
-  - file: Chapter_04/Obtaining_Data_For_Single_Cells
-  - file: Chapter_04/Analyzing_Computed_Features
-- file: Chapter_05/Two_Photon_Imaging
+  - file: Chapter_04/SpikeSorting
+  - file: Chapter_04/Visualizing_Extracellular_Recordings
+  - file: Chapter_04/AllenSDK_Neuropixels
+  - file: Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior
+  - file: Chapter_04/Identifying_Cells_with_Optogenetics
+  - file: Chapter_04/Chapter_4_ProblemSet
+- file: Chapter_05/Single-Cell_Electrophysiology
   sections:
-  - file: Chapter_05/Retrieving_Brain_Observatory_Data
-  - file: Chapter_05/Analyzing_Two_Photon_Data
-  - file: Chapter_05/Correlations_in_Two_Photon_Data
+  - file: Chapter_05/Obtaining_Data_For_Single_Cells
+  - file: Chapter_05/Analyzing_Computed_Features
+- file: Chapter_06/Two_Photon_Imaging
+  sections:
+  - file: Chapter_06/Retrieving_Brain_Observatory_Data
+  - file: Chapter_06/Analyzing_Two_Photon_Data
+  - file: Chapter_06/Correlations_in_Two_Photon_Data

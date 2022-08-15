@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Chapter 3 Problem Set
+# ## Chapter 3 Problem Set
 # 
-# 1. In 3.1, we created two functions. One of these functions plots binned firing rates over time. Modify this function to accept a NumPy array that is neurons x spike times, and to plot an average firing rate of all neurons over time. Bonus: add a shaded standard deviation around your average firing rate.
+# 1. In [Chapter 3.1](https://nwb4edu.github.io/Chapter_03/Obtaining_Datasets_with_DANDI.html), we demonstrated how to download a particular DANDIset. Modify this code to download [this dataset](https://gui.dandiarchive.org/#/dandiset/000130/draft), and use the additional code you encountered in 3.2 to answer the following questions:
+#     - What publication is this dataset affiliated with? Include the title, journal, and authors.
+#     - In 2-3 sentences, summarize the main approaches and goals of this paper.
+#     - Describe two columns of data in `intervals`. What information do these columns provide?
+#     - How many units (putative neurons) are in this dataset?
+#     
+#     
+# 2. In [Chapter 3.2](https://nwb4edu.github.io/Chapter_03/Working_with_NWB_format_in_Python.html) we demonstrated how to create a dataframe with all of the units (possible neurons) that were recorded. How would you filter this dataframe for only "Fair" units? Provide a code snippet for your answer.
 # 
-# 2. In 3.1, we looked at the Economo & Svoboda (2018) extracellular data and produced a table of trial times. In 3.2, we showed how to plot a PSTH for single neurons. Use the `interval_trial` table we created in 2.2 to find trials where the mouse either had a "correct" or "incorrect" response. Take an average of firing rates across all neurons in the incorrect and correct trials, and plot. Is there a difference?
+# <hr>
+
+# ### For instructors
 # 
-# 3. Create a plot that compares the average firing rate for each brain area.
-# 
-# 4. Using the `spykes` package, create a plot that is a peristimulus histogram for all gabor stimuli at 90 degrees.
-# 
-# 5. Use the code provided in 3.3 to compare the waveforms of Sst+ cells with non-Sst+ cells and PV+ cells. Are they the same?
+# Need a solutions notebook? Email ajuavine@ucsd.edu
