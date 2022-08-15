@@ -69,7 +69,7 @@ sessions.head()
 # - the average number of units recorded per session
 # - what brain structures were used in our sessions
 
-# In[3]:
+# In[ ]:
 
 
 genotypes = sessions['full_genotype'].value_counts()
@@ -95,7 +95,7 @@ print(brain_areas)
 
 # Let's say we only want sessions where the data has recordings from primary visual cortex (VISp). We can do the following to create a session list that we want.
 
-# In[4]:
+# In[ ]:
 
 
 session_list = []
@@ -122,7 +122,7 @@ print(session_list)
 
 # **Note**: The session files are very large files that will take some time to download depending on your connection speed. It is important that you do not stop the download as the cell is running because this will truncate the file and you will not be able to work with the data.
 
-# In[5]:
+# In[ ]:
 
 
 # Download our single session data 

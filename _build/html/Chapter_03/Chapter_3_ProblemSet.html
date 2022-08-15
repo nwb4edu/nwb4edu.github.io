@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.5. Chapter 3 Problem Set &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>3.4. Chapter 3 Problem Set &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,15 +44,15 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Large-Scale Electrophysiology" href="../Chapter_04/Large_Scale_Electrophysiology.html" />
-    <link rel="prev" title="3.4. Interactive NWB Data Exploration" href="Interactive_NWB_Data_Exploration.html" />
+    <link rel="prev" title="3.3. Interactive NWB Data Exploration" href="Interactive_NWB_Data_Exploration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -129,17 +129,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/NumPy.html">
-     2.3. NumPy
+     2.1. NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Pandas.html">
-     2.4. Pandas
+     2.2. Pandas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/SciPy.html">
-     2.5. SciPy
+     2.3. SciPy
     </a>
    </li>
   </ul>
@@ -156,22 +156,22 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Obtaining_Datasets_with_DANDI.html">
-     3.2. Obtaining Datasets with DANDI
+     3.1. Obtaining Datasets with DANDI
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Working_with_NWB_format_in_Python.html">
-     3.3. Working with NWB in Python
+     3.2. Working with NWB in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Interactive_NWB_Data_Exploration.html">
-     3.4. Interactive NWB Data Exploration
+     3.3. Interactive NWB Data Exploration
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.5. Chapter 3 Problem Set
+     3.4. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
@@ -188,27 +188,32 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/SpikeSorting.html">
-     4.3. Spike Sorting
+     4.1. Spike Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">
+     4.2. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.3. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.4. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.5. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.6. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -357,7 +365,7 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-instructors">
-   3.5.1. For instructors
+   For instructors
   </a>
  </li>
 </ul>
@@ -372,7 +380,7 @@
               <div>
                 
   <div class="section" id="chapter-3-problem-set">
-<h1><span class="section-number">3.5. </span>Chapter 3 Problem Set<a class="headerlink" href="#chapter-3-problem-set" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.4. </span>Chapter 3 Problem Set<a class="headerlink" href="#chapter-3-problem-set" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>In <a class="reference external" href="https://nwb4edu.github.io/Chapter_03/Obtaining_Datasets_with_DANDI.html">Chapter 3.1</a>, we demonstrated how to download a particular DANDIset. Modify this code to download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000130/draft">this dataset</a>, and use the additional code you encountered in 3.2 to answer the following questions:</p>
 <ul class="simple">
@@ -385,7 +393,7 @@
 <li><p>In <a class="reference external" href="https://nwb4edu.github.io/Chapter_03/Working_with_NWB_format_in_Python.html">Chapter 3.2</a> we demonstrated how to create a dataframe with all of the units (possible neurons) that were recorded. How would you filter this dataframe for only “Fair” units? Provide a code snippet for your answer.</p></li>
 </ol>
 <hr><div class="section" id="for-instructors">
-<h2><span class="section-number">3.5.1. </span>For instructors<a class="headerlink" href="#for-instructors" title="Permalink to this headline">¶</a></h2>
+<h2>For instructors<a class="headerlink" href="#for-instructors" title="Permalink to this headline">¶</a></h2>
 <p>Need a solutions notebook? Email <a class="reference external" href="mailto:ajuavine&#37;&#52;&#48;ucsd&#46;edu">ajuavine<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p>
 </div>
 </div>
@@ -394,7 +402,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -415,7 +423,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Interactive_NWB_Data_Exploration.html" title="previous page"><span class="section-number">3.4. </span>Interactive NWB Data Exploration</a>
+    <a class='left-prev' id="prev-link" href="Interactive_NWB_Data_Exploration.html" title="previous page"><span class="section-number">3.3. </span>Interactive NWB Data Exploration</a>
     <a class='right-next' id="next-link" href="../Chapter_04/Large_Scale_Electrophysiology.html" title="next page"><span class="section-number">4. </span>Large-Scale Electrophysiology</a>
 
         </div>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.4. Obtaining Electrophysiology Data from the AllenSDK &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>4.3. Obtaining Electrophysiology Data from the AllenSDK &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,15 +44,15 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.5. Aligning Spike Trains with Visual Stimuli and Behavior" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html" />
-    <link rel="prev" title="4.3. Spike Sorting" href="SpikeSorting.html" />
+    <link rel="next" title="4.4. Aligning Spike Trains with Visual Stimuli and Behavior" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html" />
+    <link rel="prev" title="4.2. Visualizing Large Scale Recordings" href="Visualizing_Recordings.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -129,17 +129,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/NumPy.html">
-     2.3. NumPy
+     2.1. NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Pandas.html">
-     2.4. Pandas
+     2.2. Pandas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/SciPy.html">
-     2.5. SciPy
+     2.3. SciPy
     </a>
    </li>
   </ul>
@@ -156,22 +156,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Obtaining_Datasets_with_DANDI.html">
-     3.2. Obtaining Datasets with DANDI
+     3.1. Obtaining Datasets with DANDI
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Working_with_NWB_format_in_Python.html">
-     3.3. Working with NWB in Python
+     3.2. Working with NWB in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Interactive_NWB_Data_Exploration.html">
-     3.4. Interactive NWB Data Exploration
+     3.3. Interactive NWB Data Exploration
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+     3.4. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
@@ -188,27 +188,32 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="SpikeSorting.html">
-     4.3. Spike Sorting
+     4.1. Spike Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Visualizing_Recordings.html">
+     4.2. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.3. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.4. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.5. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.6. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -357,22 +365,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#downloading-a-single-session-the-structure-of-session-files">
-   4.4.1. Downloading a Single Session &amp; the Structure of Session Files
+   Downloading a Single Session &amp; the Structure of Session Files
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#obtaining-single-units">
-   4.4.2. Obtaining Single Units
+   Obtaining Single Units
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#obtaining-single-action-potential-waveforms">
-   4.4.3. Obtaining Single Action Potential Waveforms
+   Obtaining Single Action Potential Waveforms
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#additional-resources">
-     4.4.3.1. Additional Resources
+     Additional Resources
     </a>
    </li>
   </ul>
@@ -389,7 +397,7 @@
               <div>
                 
   <div class="section" id="obtaining-electrophysiology-data-from-the-allensdk">
-<h1><span class="section-number">4.4. </span>Obtaining  Electrophysiology Data from the AllenSDK<a class="headerlink" href="#obtaining-electrophysiology-data-from-the-allensdk" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.3. </span>Obtaining  Electrophysiology Data from the AllenSDK<a class="headerlink" href="#obtaining-electrophysiology-data-from-the-allensdk" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference external" href="https://portal.brain-map.org/explore/circuits/visual-coding-neuropixels">Visual Coding - Neuropixels dataset from the Allen Institute of Brain Sciences</a> records spiking activity in the visual system of the mouse brain. At the time of writing, this dataset contains a total of 58 experiment sessions from Neuropixels probes in the cortex, hippocampus, and thalamus. There are three different trangenic mouse lines used in the experiments alongside the wild-type mice, which mark three different inhibitory cell types. The stimuli presented in this dataset range from natural scenes to drifting gratings.</p>
 <p>In this chapter you will learn how to download and sort through the Neuropixels dataset. Once you learn the basics, you will learn how to perform possible analyses to explain the neural activity within, as well as how to use optogenetics to identify different cell types within the data.</p>
 <p>This section will teach you how to interact with the Allen Institute Neuropixels dataset, specifically how to download experimental sessions, return processed data, and subset your data to contain only brain regions you are interested in.</p>
@@ -412,7 +420,23 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk already installed.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mf">6e7089</span><span class="n">a20d11</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>         <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of AllenSDK installed. Would you like to install a newer version? (Y/N)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>             <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install --upgrade allensdk&#39;</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
@@ -596,21 +620,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Genotype Count:
-wt/wt                                              30
-Sst-IRES-Cre/wt;Ai32(RCL-ChR2(H134R)_EYFP)/wt      12
-Pvalb-IRES-Cre/wt;Ai32(RCL-ChR2(H134R)_EYFP)/wt     8
-Vip-IRES-Cre/wt;Ai32(RCL-ChR2(H134R)_EYFP)/wt       8
-Name: full_genotype, dtype: int64
-
-Average Units: 689.8275862068965
-
-All brain areas:
-[&#39;CA1&#39;, &#39;VISrl&#39;, nan, &#39;PO&#39;, &#39;LP&#39;, &#39;LGd&#39;, &#39;CA3&#39;, &#39;DG&#39;, &#39;VISl&#39;, &#39;PoT&#39;, &#39;VISp&#39;, &#39;grey&#39;, &#39;VISpm&#39;, &#39;APN&#39;, &#39;MB&#39;, &#39;VISam&#39;, &#39;TH&#39;, &#39;Eth&#39;, &#39;POL&#39;, &#39;NOT&#39;, &#39;SUB&#39;, &#39;VL&#39;, &#39;CA2&#39;, &#39;VPM&#39;, &#39;VISal&#39;, &#39;SCig&#39;, &#39;PPT&#39;, &#39;VIS&#39;, &#39;ProS&#39;, &#39;LGv&#39;, &#39;HPF&#39;, &#39;VISmma&#39;, &#39;PP&#39;, &#39;PIL&#39;, &#39;MGv&#39;, &#39;VPL&#39;, &#39;IGL&#39;, &#39;SGN&#39;, &#39;IntG&#39;, &#39;LD&#39;, &#39;MGm&#39;, &#39;MGd&#39;, &#39;POST&#39;, &#39;MRN&#39;, &#39;VISli&#39;, &#39;OP&#39;, &#39;ZI&#39;, &#39;VISmmp&#39;, &#39;PF&#39;, &#39;LT&#39;, &#39;RPF&#39;, &#39;PRE&#39;, &#39;SCiw&#39;, &#39;CP&#39;, &#39;COAa&#39;, &#39;RT&#39;, &#39;SCop&#39;, &#39;SCsg&#39;, &#39;SCzo&#39;, &#39;COApm&#39;, &#39;OLF&#39;, &#39;BMAa&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s say we only want sessions where the data has recordings from primary visual cortex (VISp). We can do the following to create a session list that we want.</p>
 <div class="cell docutils container">
@@ -626,15 +635,9 @@ All brain areas:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>There are 56 sessions that meet this criteria:
-[715093703, 719161530, 721123822, 732592105, 737581020, 739448407, 742951821, 743475441, 744228101, 746083955, 750332458, 750749662, 751348571, 754312389, 754829445, 755434585, 756029989, 757216464, 757970808, 758798717, 759883607, 760345702, 760693773, 761418226, 762120172, 762602078, 763673393, 766640955, 767871931, 768515987, 771160300, 771990200, 773418906, 774875821, 778240327, 778998620, 779839471, 781842082, 786091066, 787025148, 789848216, 791319847, 793224716, 794812542, 797828357, 798911424, 799864342, 816200189, 821695405, 829720705, 831882777, 835479236, 839068429, 839557629, 840012044, 847657808]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="downloading-a-single-session-the-structure-of-session-files">
-<h2><span class="section-number">4.4.1. </span>Downloading a Single Session &amp; the Structure of Session Files<a class="headerlink" href="#downloading-a-single-session-the-structure-of-session-files" title="Permalink to this headline">¶</a></h2>
+<h2>Downloading a Single Session &amp; the Structure of Session Files<a class="headerlink" href="#downloading-a-single-session-the-structure-of-session-files" title="Permalink to this headline">¶</a></h2>
 <p>Now, we can use the session list to get the data we need. Unfortunately, we can only extract one experiment at a time, so if you want to do this for multiple experiments, you’ll need to loop over the <code class="docutils literal notranslate"><span class="pre">get_session_data</span></code> method for your entire session_list. For example, your workflow might be:</p>
 <ol class="simple">
 <li><p>Extract one session.</p></li>
@@ -653,169 +656,10 @@ All brain areas:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:downloading a 2929.156MiB file from http://api.brain-map.org//api/v2/well_known_file_download/1026124034
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "8da3200d60fe4f5d8ea43a4dd558d9e9"}
-</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/caching_utilities.py</span> in <span class="ni">call_caching</span><span class="nt">(fetch, write, read, pre_write, cleanup, lazy, num_tries, failure_message)</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span>             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Reading data from cache&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">104</span>             <span class="k">return</span> <span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_project_cache.py</span> in <span class="ni">read</span><span class="nt">(_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span>         <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">_path</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">348</span>             <span class="n">session_api</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_nwb_api_for_session</span><span class="p">(</span><span class="n">_path</span><span class="p">,</span> <span class="n">session_id</span><span class="p">,</span> <span class="n">filter_by_validity</span><span class="p">,</span> <span class="o">**</span><span class="n">unit_filter_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span>             <span class="k">return</span> <span class="n">EcephysSession</span><span class="p">(</span><span class="n">api</span><span class="o">=</span><span class="n">session_api</span><span class="p">,</span> <span class="n">test</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_project_cache.py</span> in <span class="ni">_build_nwb_api_for_session</span><span class="nt">(self, path, session_id, filter_by_validity, **unit_filter_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>             <span class="n">filter_by_validity</span><span class="o">=</span><span class="n">filter_by_validity</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">375</span>             <span class="o">**</span><span class="n">unit_filter_kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span>         <span class="p">)</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_session_api/ecephys_nwb_session_api.py</span> in <span class="ni">__init__</span><span class="nt">(self, path, probe_lfp_paths, additional_unit_metrics, external_channel_columns, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>                 <span class="n">warning_msg</span><span class="o">=</span><span class="p">(</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>                     <span class="sa">f</span><span class="s2">&quot;It looks like the Visual Coding Neuropixels nwbfile &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>                     <span class="sa">f</span><span class="s2">&quot;you are trying to access (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">)&quot;</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/nwb/__init__.py</span> in <span class="ni">check_nwbfile_version</span><span class="nt">(nwbfile_path, desired_minimum_version, warning_msg)</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span>                           <span class="n">warning_msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">55</span>     <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">nwbfile_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="c1"># nwb 2.x files store version as an attribute</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>                                <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="o">=</span><span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">),</span>
-<span class="ne">--&gt; </span><span class="mi">408</span>                                <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span> 
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>             <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>         <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
-
-<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
-
-<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
-
-<span class="nn">h5py/h5f.pyx</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
-
-<span class="ne">OSError</span>: Unable to open file (unable to open file: name = &#39;/Users/ashley/Documents/nwb4edu.github.io/Chapter_04/session_719161530/session_719161530.nwb&#39;, errno = 2, error message = &#39;No such file or directory&#39;, flags = 0, o_flags = 0)
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="n">a531a6e2748</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Download our single session data</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">session</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">get_session_data</span><span class="p">(</span><span class="n">session_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Session downloaded.&#39;</span><span class="p">)</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_project_cache.py</span> in <span class="ni">get_session_data</span><span class="nt">(self, session_id, filter_by_validity, **unit_filter_kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span>             <span class="bp">self</span><span class="o">.</span><span class="n">stream_writer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span>             <span class="n">read</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">356</span>             <span class="n">num_tries</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">fetch_tries</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span> 
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/caching_utilities.py</span> in <span class="ni">one_file_call_caching</span><span class="nt">(path, fetch, write, read, pre_write, cleanup, lazy, num_tries, failure_message)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>         <span class="n">lazy</span><span class="o">=</span><span class="n">lazy</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>         <span class="n">num_tries</span><span class="o">=</span><span class="n">num_tries</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">187</span>         <span class="n">failure_message</span><span class="o">=</span><span class="n">failure_message</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="p">)</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/caching_utilities.py</span> in <span class="ni">call_caching</span><span class="nt">(fetch, write, read, pre_write, cleanup, lazy, num_tries, failure_message)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>             <span class="n">lazy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>             <span class="n">num_tries</span><span class="o">=</span><span class="n">num_tries</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">137</span>             <span class="n">failure_message</span><span class="o">=</span><span class="n">failure_message</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> 
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/caching_utilities.py</span> in <span class="ni">call_caching</span><span class="nt">(fetch, write, read, pre_write, cleanup, lazy, num_tries, failure_message)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">pre_write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Writing data to cache&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">100</span>             <span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span> 
-<span class="g g-Whitespace">    </span><span class="mi">102</span>         <span class="k">if</span> <span class="n">read</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/caching_utilities.py</span> in <span class="ni">safe_write</span><span class="nt">(data)</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span>     <span class="k">def</span> <span class="nf">safe_write</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Q</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">170</span>         <span class="n">Manifest</span><span class="o">.</span><span class="n">safe_make_parent_dirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">171</span>         <span class="n">write</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span> 
-<span class="g g-Whitespace">    </span><span class="mi">173</span>     <span class="k">if</span> <span class="n">read</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_project_api/http_engine.py</span> in <span class="ni">write_bytes</span><span class="nt">(path, stream)</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span>     <span class="nd">@staticmethod</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>     <span class="k">def</span> <span class="nf">write_bytes</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">stream</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]):</span>
-<span class="ne">---&gt; </span><span class="mi">87</span>         <span class="n">write_from_stream</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">stream</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> 
-<span class="g g-Whitespace">     </span><span class="mi">89</span> 
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_project_api/http_engine.py</span> in <span class="ni">write_from_stream</span><span class="nt">(path, stream)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span><span class="s2">     with open(path, &quot;wb&quot;) as fil:</span>
-<span class="ne">--&gt; </span><span class="mi">234</span><span class="s2">         for chunk in stream:</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span><span class="s2">             fil.write(chunk)</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_project_api/http_engine.py</span> in <span class="ni">stream</span><span class="nt">(self, route)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="s2">         progress = tqdm( unit=&quot;B&quot;, total=response_b, unit_scale=True,  desc=&quot;Downloading&quot;)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="s2"> </span>
-<span class="ne">---&gt; </span><span class="mi">76</span><span class="s2">         for chunk in response.iter_content(self.chunksize):</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span><span class="s2">             if chunk: # filter out keep-alive new chunks</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2">                 progress.update(len(chunk))</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/requests/models.py</span> in <span class="ni">generate</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">751</span><span class="s2">             if hasattr(self.raw, &#39;stream&#39;):</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span><span class="s2">                 try:</span>
-<span class="ne">--&gt; </span><span class="mi">753</span><span class="s2">                     for chunk in self.raw.stream(chunk_size, decode_content=True):</span>
-<span class="g g-Whitespace">    </span><span class="mi">754</span><span class="s2">                         yield chunk</span>
-<span class="g g-Whitespace">    </span><span class="mi">755</span><span class="s2">                 except ProtocolError as e:</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">stream</span><span class="nt">(self, amt, decode_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span><span class="s2">             while not is_fp_closed(self._fp):</span>
-<span class="ne">--&gt; </span><span class="mi">576</span><span class="s2">                 data = self.read(amt=amt, decode_content=decode_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span><span class="s2">                 if data:</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/urllib3/response.py</span> in <span class="ni">read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
-<span class="g g-Whitespace">    </span><span class="mi">517</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">518</span><span class="s2">                 cache_content = False</span>
-<span class="ne">--&gt; </span><span class="mi">519</span><span class="s2">                 data = self._fp.read(amt) if not fp_closed else b&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">520</span><span class="s2">                 if (</span>
-<span class="g g-Whitespace">    </span><span class="mi">521</span><span class="s2">                     amt != 0 and not data</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/http/client.py</span> in <span class="ni">read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span><span class="s2">             # Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span><span class="s2">             b = bytearray(amt)</span>
-<span class="ne">--&gt; </span><span class="mi">447</span><span class="s2">             n = self.readinto(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span><span class="s2">             return memoryview(b)[:n].tobytes()</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span><span class="s2">         else:</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/http/client.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span><span class="s2">         # connection, and the user is reading more bytes than will be provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span><span class="s2">         # (for example, reading in 1k chunks)</span>
-<span class="ne">--&gt; </span><span class="mi">491</span><span class="s2">         n = self.fp.readinto(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span><span class="s2">         if not n and b:</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span><span class="s2">             # Ideally, we would raise IncompleteRead if the content-length</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span><span class="s2">         while True:</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span><span class="s2">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">589</span><span class="s2">                 return self._sock.recv_into(b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span><span class="s2">             except timeout:</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span><span class="s2">                 self._timeout_occurred = True</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="obtaining-single-units">
-<h2><span class="section-number">4.4.2. </span>Obtaining Single Units<a class="headerlink" href="#obtaining-single-units" title="Permalink to this headline">¶</a></h2>
+<h2>Obtaining Single Units<a class="headerlink" href="#obtaining-single-units" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have downloaded the single session file, we can begin to explore our <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object. The <code class="docutils literal notranslate"><span class="pre">units</span></code> property of our session object returns a dataframe that contains the recorded activity of sorted neurons from a mouse brain. There are many metrics stored within <code class="docutils literal notranslate"><span class="pre">units</span></code> that can be used in your potential analyses. Some key metrics include:</p>
 <ul class="simple">
 <li><p><strong>firing rate</strong>: mean spike rate during the entire session</p></li>
@@ -872,7 +716,7 @@ All brain areas:
 </div>
 </div>
 <div class="section" id="obtaining-single-action-potential-waveforms">
-<h2><span class="section-number">4.4.3. </span>Obtaining Single Action Potential Waveforms<a class="headerlink" href="#obtaining-single-action-potential-waveforms" title="Permalink to this headline">¶</a></h2>
+<h2>Obtaining Single Action Potential Waveforms<a class="headerlink" href="#obtaining-single-action-potential-waveforms" title="Permalink to this headline">¶</a></h2>
 <p>Each session contains a dictionary of mean waveforms for all the units recorded in that session. They are stored inside a xarray DataArray where the <code class="docutils literal notranslate"><span class="pre">unit_id</span></code> are mapped to the mean spike waveform values. The dimensions of the DataArrays are <code class="docutils literal notranslate"><span class="pre">channel</span></code> and <code class="docutils literal notranslate"><span class="pre">time</span></code> which are recorded in microvolts and seconds, respectivley. For more information on <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code>, please visit the <a href = 'http://xarray.pydata.org/en/stable/generated/xarray.DataArray.html'> xarray original documentation</a>.</p>
 <p>To access the mean spike waveforms for all units in a session, use the attribute <code class="docutils literal notranslate"><span class="pre">mean_waveforms</span></code> on your <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object.</p>
 <div class="cell docutils container">
@@ -932,7 +776,7 @@ All brain areas:
 </div>
 </div>
 <div class="section" id="additional-resources">
-<h3><span class="section-number">4.4.3.1. </span>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h3>
+<h3>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://allensdk.readthedocs.io/en/latest/_static/examples/nb/ecephys_session.html">Allen Institute Tutorial Notebook</a></p></li>
 </ul>
@@ -944,7 +788,7 @@ All brain areas:
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -965,8 +809,8 @@ All brain areas:
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="SpikeSorting.html" title="previous page"><span class="section-number">4.3. </span>Spike Sorting</a>
-    <a class='right-next' id="next-link" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html" title="next page"><span class="section-number">4.5. </span>Aligning Spike Trains with Visual Stimuli and Behavior</a>
+    <a class='left-prev' id="prev-link" href="Visualizing_Recordings.html" title="previous page"><span class="section-number">4.2. </span>Visualizing Large Scale Recordings</a>
+    <a class='right-next' id="next-link" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html" title="next page"><span class="section-number">4.4. </span>Aligning Spike Trains with Visual Stimuli and Behavior</a>
 
         </div>
         

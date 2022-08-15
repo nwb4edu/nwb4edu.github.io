@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -192,23 +192,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">
+     4.4. Visualizing Large Scale Recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.5. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.6. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.7. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.8. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -357,12 +365,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#compare-features-across-cells">
-   5.2.1. Compare Features Across Cells
+   Compare Features Across Cells
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#compare-features-within-cells">
-   5.2.2. Compare Features Within Cells
+   Compare Features Within Cells
   </a>
  </li>
 </ul>
@@ -394,14 +402,6 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/lib/python3.7/site-packages/dask/config.py:168: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
-  data = yaml.load(f.read()) or {}
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/lib/python3.7/site-packages/distributed/config.py:20: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
-  defaults = yaml.load(f)
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages successfully downloaded.
 </pre></div>
 </div>
@@ -614,7 +614,7 @@
 Image from the <a href="http://help.brain-map.org/download/attachments/8323525/CellTypes_Ephys_Overview.pdf">Allen Institute Cell Types Database Technical Whitepaper.</a>
 <br><br></p>
 <div class="section" id="compare-features-across-cells">
-<h2><span class="section-number">5.2.1. </span>Compare Features Across Cells<a class="headerlink" href="#compare-features-across-cells" title="Permalink to this headline">¶</a></h2>
+<h2>Compare Features Across Cells<a class="headerlink" href="#compare-features-across-cells" title="Permalink to this headline">¶</a></h2>
 <p>The Allen has many precomputed features that you might consider comparing across cells. Some of these features include input resistance (‘input_resistance_mohm’), Adaptation ratio (‘adaptation’), Average interspike interval (‘avg_isi’), and many others. We’ve compiled <a class="reference external" href="https://docs.google.com/document/d/1YGLwkMTebwrXd_1E817LFbztMjSTCWh83Mlp3_3ZMEo/edit#heading=h.t0p3wngfkxc1">a complete glossary</a> for you.</p>
 <p>To compare cell types, we can subset our electrophysiology dataframe for a specific transgenic line, structure layer, brain area, and more. Below, we’ll create two dataframes to compare cells with spiny dendrites to those with aspiny dendrites. While most excitatory cells are spiny, most inhibitory cells are aspiny.</p>
 <div class="cell docutils container">
@@ -657,7 +657,7 @@ Image from the <a href="http://help.brain-map.org/download/attachments/8323525/C
 </div>
 </div>
 <div class="section" id="compare-features-within-cells">
-<h2><span class="section-number">5.2.2. </span>Compare Features Within Cells<a class="headerlink" href="#compare-features-within-cells" title="Permalink to this headline">¶</a></h2>
+<h2>Compare Features Within Cells<a class="headerlink" href="#compare-features-within-cells" title="Permalink to this headline">¶</a></h2>
 <p>The power in this dataset is not only the ability to compare two cell types, but to look across all of the data for trends that emerge. Even if we dig into the weeds of the action potential shape, we can make some interesting observations.</p>
 <p>Let’s look at the speed of the trough, and the ratio between the upstroke and downstroke of the action potential:</p>
 <ul class="simple">
@@ -691,7 +691,7 @@ Image from the <a href="http://help.brain-map.org/download/attachments/8323525/C
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {

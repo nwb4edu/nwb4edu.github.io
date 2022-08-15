@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.3. Spike Sorting &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>4.1. Spike Sorting &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,14 +44,14 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.4. Obtaining Electrophysiology Data from the AllenSDK" href="AllenSDK_Neuropixels.html" />
+    <link rel="next" title="4.2. Visualizing Large Scale Recordings" href="Visualizing_Recordings.html" />
     <link rel="prev" title="4. Large-Scale Electrophysiology" href="Large_Scale_Electrophysiology.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -129,17 +129,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/NumPy.html">
-     2.3. NumPy
+     2.1. NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Pandas.html">
-     2.4. Pandas
+     2.2. Pandas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/SciPy.html">
-     2.5. SciPy
+     2.3. SciPy
     </a>
    </li>
   </ul>
@@ -156,22 +156,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Obtaining_Datasets_with_DANDI.html">
-     3.2. Obtaining Datasets with DANDI
+     3.1. Obtaining Datasets with DANDI
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Working_with_NWB_format_in_Python.html">
-     3.3. Working with NWB in Python
+     3.2. Working with NWB in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Interactive_NWB_Data_Exploration.html">
-     3.4. Interactive NWB Data Exploration
+     3.3. Interactive NWB Data Exploration
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+     3.4. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
@@ -188,27 +188,32 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.3. Spike Sorting
+     4.1. Spike Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Visualizing_Recordings.html">
+     4.2. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.3. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.4. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.5. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.6. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -357,12 +365,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#notebook-summary">
-   4.3.1. Notebook summary
+   Notebook summary
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#additional-resources">
-   4.3.2. Additional resources
+   Additional resources
   </a>
  </li>
 </ul>
@@ -377,10 +385,10 @@
               <div>
                 
   <div class="section" id="spike-sorting">
-<h1><span class="section-number">4.3. </span>Spike Sorting<a class="headerlink" href="#spike-sorting" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.1. </span>Spike Sorting<a class="headerlink" href="#spike-sorting" title="Permalink to this headline">¶</a></h1>
 <p>When you record extracellular electrophysiology data, the first step is figuring out which action potentials (or “spikes”) came from which neurons. The process of doing this is called <strong>spike sorting</strong>.</p>
 <p>Below, we’ll work with <a class="reference external" href="https://dandiarchive.org/dandiset/000053/0.210819.0345">this dataset</a> from <a class="reference external" href="https://giocomolab.weebly.com/">Lisa Giocomo’s lab at Stanford</a> to demonstrate the simplest form of spike sorting: thresholding, followed by feature detection.</p>
-<p><mark><strong>Note</strong>:  The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, the best way to work with it is through the Dandihub. Check out the Setup page for instructions on how to run this on the Dandihub.</mark></p>
+<p><mark><strong>Note</strong>:  The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, the best way to work with it is through the Dandihub. Check out the <a class="reference external" href="https://nwb4edu.github.io/Chapter_01/Setup.html">Setup page</a> for instructions on how to run this on the Dandihub.</mark></p>
 <p>First, we need to find the correct URL for the dataset on the NWB’s Amazon S3 storage system. There is a tool to do so within the dandiapi, which we’ll use below to get the URL for one session within the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,11 +565,11 @@ s3_path                      str                https://dandiarchive.s3.a&lt;...
 </div>
 <p>Looking at the scatterplot above, would you say there is more than one cluster of waveforms?</p>
 <div class="section" id="notebook-summary">
-<h2><span class="section-number">4.3.1. </span>Notebook summary<a class="headerlink" href="#notebook-summary" title="Permalink to this headline">¶</a></h2>
+<h2>Notebook summary<a class="headerlink" href="#notebook-summary" title="Permalink to this headline">¶</a></h2>
 <p>In this notebook, we’ve looked closely at just 100 seconds of one channel in a 384-channel recording. You can imagine how long spike sorting would take if we needed to do this for <em>all</em> of the data. Thankfully, there are more automated spikesorting tools which enable researchers to automatically sort their data, with just a little bit of sorting by hand. In the next notebook, we’ll work with data that has already been sorted for us. The resulting data simply has spike times for each sorted neuron (or “unit”) – the moments in the experiment where a spike happened. This is the most common format for data sharing of extracellularly recorded data, since it’s much more concise, and the hard work of spike sorting has already happened.</p>
 </div>
 <div class="section" id="additional-resources">
-<h2><span class="section-number">4.3.2. </span>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://pynwb.readthedocs.io/en/stable/pynwb.ecephys.html">https://pynwb.readthedocs.io/en/stable/pynwb.ecephys.html</a></p>
 <p><a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/domain/ecephys.html">https://pynwb.readthedocs.io/en/stable/tutorials/domain/ecephys.html</a></p>
 </div>
@@ -571,7 +579,7 @@ s3_path                      str                https://dandiarchive.s3.a&lt;...
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -593,7 +601,7 @@ s3_path                      str                https://dandiarchive.s3.a&lt;...
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="Large_Scale_Electrophysiology.html" title="previous page"><span class="section-number">4. </span>Large-Scale Electrophysiology</a>
-    <a class='right-next' id="next-link" href="AllenSDK_Neuropixels.html" title="next page"><span class="section-number">4.4. </span>Obtaining  Electrophysiology Data from the AllenSDK</a>
+    <a class='right-next' id="next-link" href="Visualizing_Recordings.html" title="next page"><span class="section-number">4.2. </span>Visualizing Large Scale Recordings</a>
 
         </div>
         

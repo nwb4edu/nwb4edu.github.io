@@ -1,7 +1,7 @@
 format: jb-book
 root: landing_page
 options:
-  numbered: true
+  numbered: 2
 chapters:
 - file: Chapter_01/Introduction
   sections:
@@ -22,7 +22,7 @@ chapters:
 - file: Chapter_04/Large_Scale_Electrophysiology
   sections:
   - file: Chapter_04/SpikeSorting
-  - file: Chapter_04/Visualizing_Extracellular_Recordings
+  - file: Chapter_04/Visualizing_Recordings
   - file: Chapter_04/AllenSDK_Neuropixels
   - file: Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior
   - file: Chapter_04/Identifying_Cells_with_Optogenetics

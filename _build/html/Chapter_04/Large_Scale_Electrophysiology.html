@@ -44,15 +44,15 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.3. Spike Sorting" href="SpikeSorting.html" />
-    <link rel="prev" title="3.5. Chapter 3 Problem Set" href="../Chapter_03/Chapter_3_ProblemSet.html" />
+    <link rel="next" title="4.1. Spike Sorting" href="SpikeSorting.html" />
+    <link rel="prev" title="3.4. Chapter 3 Problem Set" href="../Chapter_03/Chapter_3_ProblemSet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -129,17 +129,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/NumPy.html">
-     2.3. NumPy
+     2.1. NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Pandas.html">
-     2.4. Pandas
+     2.2. Pandas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/SciPy.html">
-     2.5. SciPy
+     2.3. SciPy
     </a>
    </li>
   </ul>
@@ -156,22 +156,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Obtaining_Datasets_with_DANDI.html">
-     3.2. Obtaining Datasets with DANDI
+     3.1. Obtaining Datasets with DANDI
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Working_with_NWB_format_in_Python.html">
-     3.3. Working with NWB in Python
+     3.2. Working with NWB in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Interactive_NWB_Data_Exploration.html">
-     3.4. Interactive NWB Data Exploration
+     3.3. Interactive NWB Data Exploration
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+     3.4. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
@@ -188,27 +188,32 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="SpikeSorting.html">
-     4.3. Spike Sorting
+     4.1. Spike Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Visualizing_Recordings.html">
+     4.2. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.3. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.4. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.5. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.6. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -350,46 +358,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-objectives">
-   4.1. Learning Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#background-information">
-   4.2. Background information
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduction-to-electrophysiology">
-     4.2.1. Introduction to Electrophysiology
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#processing-extracellular-recordings">
-     4.2.2. Processing Extracellular Recordings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#neuropixels-probes">
-     4.2.3. Neuropixels Probes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#additional-resources">
-     4.2.4. Additional Resources
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -403,19 +371,14 @@
 <p>A single neuron cannot carry out complex tasks by itself – it requires the surrounding, interconnected neurons to send and receive signals and accomplish the simplest of tasks. In modern large-scale electrophysiology, the activity of hundreds of neurons are recorded in an attempt to determine where neuron activity occurs and how these cells communicate with each other when presented with certain tasks.</p>
 <p>Many NWB datasets feature extracellular electrophysiology, with technology ranging from tetrodes to cutting-edge silicon recording probes. Regardless of the technology, the principles of dealing with extracellular electrophysiology data are very similar.</p>
 <p>In this chapter, we’ll explore an extracellular electrophysiology dataset.</p>
-<div class="section" id="learning-objectives">
-<h2><span class="section-number">4.1. </span>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p><strong>Learning Objectives</strong></p>
 <ul class="simple">
 <li><p>Identify the processing steps in extracellular experiments</p></li>
 <li><p>Implement spike sorting on extracellular recording data</p></li>
 <li><p>Generate and interpret common visualizations of extracellular recording data</p></li>
 </ul>
 <hr>
-</div>
-<div class="section" id="background-information">
-<h2><span class="section-number">4.2. </span>Background information<a class="headerlink" href="#background-information" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="introduction-to-electrophysiology">
-<h3><span class="section-number">4.2.1. </span>Introduction to Electrophysiology<a class="headerlink" href="#introduction-to-electrophysiology" title="Permalink to this headline">¶</a></h3>
+<p><strong>Introduction to Electrophysiology</strong></p>
 <p><strong>Electrophysiology</strong> is the study of the electrical activity created by neurons. There are three main ways of collecting electrophysiology data:</p>
 <ol class="simple">
 <li><p>Extracellular Recordings: electrode outside of the cell</p></li>
@@ -423,10 +386,9 @@
 <li><p>Patch Clamp Recordings: electrode continuous with cell membrane</p></li>
 </ol>
 <p><img alt="" src="https://www.researchgate.net/publication/349446871/figure/fig1/AS:993163909025795&#64;1613800136978/Overview-of-the-patch-clamp-method-a-Comparison-between-extracellular-and.ppm" />
-*From <a class="reference external" href="https://www.researchgate.net/publication/349446871_In_Vivo_Whole-Cell_Patch-Clamp_Methods_Recent_Technical_Progress_and_Future_Perspectives">Noguchi et al. 2021</a> under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 License</a></p>
-</div>
-<div class="section" id="processing-extracellular-recordings">
-<h3><span class="section-number">4.2.2. </span>Processing Extracellular Recordings<a class="headerlink" href="#processing-extracellular-recordings" title="Permalink to this headline">¶</a></h3>
+<em>From <a class="reference external" href="https://www.researchgate.net/publication/349446871_In_Vivo_Whole-Cell_Patch-Clamp_Methods_Recent_Technical_Progress_and_Future_Perspectives">Noguchi et al. 2021</a> under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 License</a></em></p>
+<hr>
+<p><strong>Processing Extracellular Recordings</strong></p>
 <p>Extracellular recordings are taken from outside of the cell, and are therefore a bit messier than intracellular recordings. In addition to filtering the data to remove any slow, non-biological shifts in the recorded potential, raw extracellular recordings also need to be spike sorted. Because these recordings are taken from outside of the cell, it’s possible that each electrode may be listening to multiple cells nearby. <strong>Spike sorting</strong> allows us to identify action potentials (“spikes”) and assign them to <strong>units</strong>, or <em>putative</em> neurons. In other words, we can’t say with utmost certainty that we’ve correctly identified the source of our spikes, but we can use spatial and temporal information to say with some confidence that we <em>likely</em> have.</p>
 <p>Thankfully, most of the data in NWB files have already been sorted for us. Most often, the authors of these files will provide a list of spike times for each unit, and we can use these spike times along with the behavioral and environmental context of the experiment to try to make some sense of what neurons are doing.</p>
 <p>In addition to spike times, researchers are often interested in studying the <strong>local field potential</strong> (LFP), or the collective sum of all of the neurons in a given area. We can filter this LFP for particular brain waves, and even use it to distinguish between layers of cortex.</p>
@@ -436,22 +398,16 @@
      align="right"
      float="left"
      width="250"/></p>
-</div>
-<div class="section" id="neuropixels-probes">
-<h3><span class="section-number">4.2.3. </span>Neuropixels Probes<a class="headerlink" href="#neuropixels-probes" title="Permalink to this headline">¶</a></h3>
+<p><strong>Neuropixels Probes</strong></p>
 <p>In one section of this chapter, you’ll encounter Neuropixels data from the Allen Institute for Brain Science. The technological advancement of the Neuropixels probe (seen at right) has significantly propelled systems neuroscience research in recent years (<a class="reference external" href="https://www.nature.com/articles/nature24636">Jun et al., 2017</a>). Each probe is approximately the size of a strand of hair and has 960 recording sites allowing for hundreds of neurons to be recorded simultaneously. The reduced size of these recording devices allows for several probes to be inserted into the same brain, providing real time recordings of multiple brain areas.
 <br clear="left"/></p>
 <hr>
-</div>
-<div class="section" id="additional-resources">
-<h3><span class="section-number">4.2.4. </span>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h3>
+<p><strong>Additional Resources</strong></p>
 <ul class="simple">
 <li><p>For a thorough overview of electrophysiology, see the <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/B9780128005118000046">Guide to Research Techniques</a>.</p></li>
 <li><p>To read more about the potential of Neuropixels probes, read this <a class="reference external" href="https://www.simonsfoundation.org/2018/01/04/neuropixels-offer-new-ways-to-map-cells/">Simons Foundation article</a>.</p></li>
 <li><p>For technical information about the Neuropixel probes or to learn how to obtain them, please visit <a href = 'https://www.neuropixels.org/'> neuropixels.org</a>.</p></li>
 </ul>
-</div>
-</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -460,7 +416,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -481,8 +437,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Chapter_03/Chapter_3_ProblemSet.html" title="previous page"><span class="section-number">3.5. </span>Chapter 3 Problem Set</a>
-    <a class='right-next' id="next-link" href="SpikeSorting.html" title="next page"><span class="section-number">4.3. </span>Spike Sorting</a>
+    <a class='left-prev' id="prev-link" href="../Chapter_03/Chapter_3_ProblemSet.html" title="previous page"><span class="section-number">3.4. </span>Chapter 3 Problem Set</a>
+    <a class='right-next' id="next-link" href="SpikeSorting.html" title="next page"><span class="section-number">4.1. </span>Spike Sorting</a>
 
         </div>
         

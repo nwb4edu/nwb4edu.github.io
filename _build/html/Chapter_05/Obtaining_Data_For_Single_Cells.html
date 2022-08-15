@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -192,23 +192,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">
+     4.4. Visualizing Large Scale Recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.5. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.6. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.7. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.8. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -357,17 +365,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-available-cells">
-   5.1.1. Get Available Cells
+   Get Available Cells
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-morphology-data">
-   5.1.2. Get Morphology data
+   Get Morphology data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-electrophysiology-data">
-   5.1.3. Get Electrophysiology Data
+   Get Electrophysiology Data
   </a>
  </li>
 </ul>
@@ -402,176 +410,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>incompatible version of allensdk installed
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk==2.11.2
-  Using cached allensdk-2.11.2-py3-none-any.whl (1.7 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests&lt;3.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.25.1)
-Requirement already satisfied: xarray&lt;0.16.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.15.0)
-Requirement already satisfied: matplotlib&lt;4.0.0,&gt;=1.4.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.4.2)
-Requirement already satisfied: statsmodels&lt;=0.13.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.13.0)
-Requirement already satisfied: scikit-build&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.10.0)
-Requirement already satisfied: scikit-image&lt;0.17.0,&gt;=0.14.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.14.2)
-Requirement already satisfied: seaborn&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.11.2)
-Requirement already satisfied: h5py&lt;3.0.0,&gt;=2.8 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.10.0)
-Requirement already satisfied: scipy&lt;2.0.0,&gt;=1.4.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.6.3)
-Requirement already satisfied: glymur==0.8.19 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.8.19)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting marshmallow==3.0.0rc6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached marshmallow-3.0.0rc6-py2.py3-none-any.whl (42 kB)
-Requirement already satisfied: aiohttp==3.7.4 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.7.4)
-Requirement already satisfied: pynwb&lt;2.0.0,&gt;=1.3.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.4.0)
-Requirement already satisfied: future&lt;1.0.0,&gt;=0.14.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.17.1)
-Requirement already satisfied: simplejson&lt;4.0.0,&gt;=3.10.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.17.0)
-Requirement already satisfied: semver in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.13.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas&lt;=0.25.3,&gt;=0.25.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached pandas-0.25.3-cp37-cp37m-macosx_10_9_x86_64.whl (10.2 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hdmf&lt;2.5.0
-  Using cached hdmf-2.4.0-py2.py3-none-any.whl (149 kB)
-Requirement already satisfied: six&lt;2.0.0,&gt;=1.9.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.16.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pynrrd&lt;1.0.0,&gt;=0.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.4.2)
-Requirement already satisfied: tables&lt;4.0.0,&gt;=3.6.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.6.1)
-Requirement already satisfied: simpleitk&lt;3.0.0,&gt;=2.0.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.0.2)
-Requirement already satisfied: ndx-events&lt;=0.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.2.0)
-Requirement already satisfied: requests-toolbelt&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.9.1)
-Requirement already satisfied: jinja2&lt;2.12.0,&gt;=2.7.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.11.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.19.0,&gt;=1.15.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached numpy-1.18.5-cp37-cp37m-macosx_10_9_x86_64.whl (15.1 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: psycopg2-binary&lt;3.0.0,&gt;=2.7 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.8.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting argschema&lt;3.0.0
-  Using cached argschema-2.0.2-py2.py3-none-any.whl
-Requirement already satisfied: boto3==1.17.21 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.17.21)
-Requirement already satisfied: tqdm&gt;=4.27 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (4.62.0)
-Requirement already satisfied: nest-asyncio==1.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.2.0)
-Requirement already satisfied: attrs&gt;=17.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (20.3.0)
-Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (3.0.1)
-Requirement already satisfied: typing-extensions&gt;=3.6.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (3.10.0.0)
-Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (3.0.4)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (4.7.4)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (1.4.2)
-Requirement already satisfied: botocore&lt;1.21.0,&gt;=1.20.21 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk==2.11.2) (1.20.86)
-Requirement already satisfied: s3transfer&lt;0.4.0,&gt;=0.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk==2.11.2) (0.3.7)
-Requirement already satisfied: jmespath&lt;1.0.0,&gt;=0.7.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk==2.11.2) (0.10.0)
-Requirement already satisfied: setuptools in /Users/ashley/anaconda3/lib/python3.7/site-packages (from glymur==0.8.19-&gt;allensdk==2.11.2) (57.0.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jsonschema&lt;4,&gt;=2.6.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (3.2.0)
-Requirement already satisfied: ruamel.yaml&lt;1,&gt;=0.15 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (0.15.46)
-Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jinja2&lt;2.12.0,&gt;=2.7.3-&gt;allensdk==2.11.2) (2.0.1)
-Requirement already satisfied: pillow&gt;=6.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (9.1.0)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (0.10.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (2.4.7)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.7 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (2.8.1)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (1.0.1)
-Requirement already satisfied: pytz&gt;=2017.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from pandas&lt;=0.25.3,&gt;=0.25.1-&gt;allensdk==2.11.2) (2021.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk==2.11.2) (1.26.5)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk==2.11.2) (2021.5.30)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk==2.11.2) (2.10)
-Requirement already satisfied: wheel&gt;=0.29.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk==2.11.2) (0.36.2)
-Requirement already satisfied: packaging in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk==2.11.2) (21.3)
-Requirement already satisfied: PyWavelets&gt;=0.4.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (1.0.2)
-Requirement already satisfied: dask[array]&gt;=1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (1.1.4)
-Requirement already satisfied: networkx&gt;=1.8 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (2.2)
-Requirement already satisfied: cloudpickle&gt;=0.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (0.8.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: patsy&gt;=0.5.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from statsmodels&lt;=0.13.0-&gt;allensdk==2.11.2) (0.5.2)
-Requirement already satisfied: numexpr&gt;=2.6.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from tables&lt;4.0.0,&gt;=3.6.0-&gt;allensdk==2.11.2) (2.7.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: toolz&gt;=0.7.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from dask[array]&gt;=1.0.0-&gt;scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (0.9.0)
-Requirement already satisfied: importlib-metadata in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jsonschema&lt;4,&gt;=2.6.0-&gt;hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (4.5.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jsonschema&lt;4,&gt;=2.6.0-&gt;hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (0.17.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator&gt;=4.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from networkx&gt;=1.8-&gt;scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (5.0.9)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=0.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from importlib-metadata-&gt;jsonschema&lt;4,&gt;=2.6.0-&gt;hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (3.4.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: numpy, marshmallow, pandas, argschema, hdmf, allensdk
-  Attempting uninstall: numpy
-    Found existing installation: numpy 1.20.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling numpy-1.20.3:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Successfully uninstalled numpy-1.20.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: marshmallow
-    Found existing installation: marshmallow 3.17.0
-    Uninstalling marshmallow-3.17.0:
-      Successfully uninstalled marshmallow-3.17.0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: pandas
-    Found existing installation: pandas 1.3.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling pandas-1.3.5:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Successfully uninstalled pandas-1.3.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: argschema
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found existing installation: argschema 3.0.4
-    Uninstalling argschema-3.0.4:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Successfully uninstalled argschema-3.0.4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: hdmf
-    Found existing installation: hdmf 2.5.8
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling hdmf-2.5.8:
-      Successfully uninstalled hdmf-2.5.8
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: allensdk
-    Found existing installation: allensdk 2.13.6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling allensdk-2.13.6:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Successfully uninstalled allensdk-2.13.6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed allensdk-2.11.2 argschema-2.0.2 hdmf-2.4.0 marshmallow-3.0.0rc6 numpy-1.18.5 pandas-0.25.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk already installed.
 </pre></div>
 </div>
 </div>
@@ -608,7 +447,7 @@ Requirement already satisfied: pyrsistent&gt;=0.14.0 in /Users/ashley/anaconda3/
 </div>
 </div>
 <div class="section" id="get-available-cells">
-<h2><span class="section-number">5.1.1. </span>Get Available Cells<a class="headerlink" href="#get-available-cells" title="Permalink to this headline">¶</a></h2>
+<h2>Get Available Cells<a class="headerlink" href="#get-available-cells" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">get_cells()</span></code> method downloads metadata for cells in the database. The database contains human cells and mouse cells. By default, <code class="docutils literal notranslate"><span class="pre">get_cells()</span></code> downloads metadata for <em>all</em> cells in the database. Alternatively, you can filter the database to only include cells collected from a certain species.
 Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.cell_types_cache.html">the documentation for the CellTypesCache</a> for more information on the <code class="docutils literal notranslate"><span class="pre">get_cells</span></code> method.</p>
 <div class="cell docutils container">
@@ -807,7 +646,7 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 <p>For more information on the Allen Cell Types Cre lines, please visit <a href="https://docs.google.com/document/d/1ZMMZgc7cS5BHhoWNqzjw95BdxOuj5wrYl9I7PV2HeUI/edit">the Allen Cell Types Cre Lines Glossary</a> for a short description of the cortical expression patterns of the transgenic Cre lines available in the Allen Cell Types dataset.</p>
 </div>
 <div class="section" id="get-morphology-data">
-<h2><span class="section-number">5.1.2. </span>Get Morphology data<a class="headerlink" href="#get-morphology-data" title="Permalink to this headline">¶</a></h2>
+<h2>Get Morphology data<a class="headerlink" href="#get-morphology-data" title="Permalink to this headline">¶</a></h2>
 <p>The dataframe above only contains metadeta about our cells and no information on the morphology or electrophysiology of our cells. In order to get information about the morphology of these cells, we need to use the <code class="docutils literal notranslate"><span class="pre">get_morphology_features()</span></code> method on our instance of the cell types cache. We will set the indices to be the <code class="docutils literal notranslate"><span class="pre">specimen_id</span></code> because these ids will align with those in <code class="docutils literal notranslate"><span class="pre">all_cells_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1299,7 +1138,7 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <div class="section" id="get-electrophysiology-data">
-<h2><span class="section-number">5.1.3. </span>Get Electrophysiology Data<a class="headerlink" href="#get-electrophysiology-data" title="Permalink to this headline">¶</a></h2>
+<h2>Get Electrophysiology Data<a class="headerlink" href="#get-electrophysiology-data" title="Permalink to this headline">¶</a></h2>
 <p>Now that we know what our cell looks like, let’s take a look at its action potentials. The <code class="docutils literal notranslate"><span class="pre">get_ephys_data()</span></code> method can download electrophysiology traces for a single cell in the database. This method returns a class instance with helper methods for retrieving stimulus and response traces out of an NWB file. If we take a look at <code class="docutils literal notranslate"><span class="pre">specimen_ephys_data</span></code> we can see that it is an NWBDataSet object.  In order to use <code class="docutils literal notranslate"><span class="pre">get_ephys_data()</span></code>, you must specify the id of the cell specimen whose electrophysiology you would like to download.</p>
 <p>Below we go over methods that can be used to access the electrophysiology data for single cells, the source documentation for all the methods we cover can be found on the <a href = 'https://allensdk.readthedocs.io/en/latest/allensdk.core.nwb_data_set.html'> Allen Brain Atlas website</a>. The <code class="docutils literal notranslate"><span class="pre">get_experiment_sweep_numbers()</span></code> method returns all of the sweep numbers for experiments in the file. Each sweep contains metadata and electrophysiology data.</p>
 <div class="cell docutils container">
@@ -1429,7 +1268,7 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
