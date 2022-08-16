@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -194,23 +194,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">
+     4.4. Visualizing Large Scale Recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.5. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.6. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.7. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.8. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -343,6 +348,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -359,27 +367,27 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
-   6.2.1. Setup
+   Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-inspect-the-natural-scenes-imaging-session">
-   6.2.2. Download &amp; inspect the natural scenes imaging session
+   Download &amp; inspect the natural scenes imaging session
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#converting-calcium-imaging-into-spikes">
-   6.2.3. Converting Calcium Imaging into Spikes
+   Converting Calcium Imaging into Spikes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#look-at-the-response-of-your-cells-to-natural-scenes">
-   6.2.4. Look at the response of your cells to natural scenes
+   Look at the response of your cells to natural scenes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examine-the-direction-selectivity-of-your-cell">
-   6.2.5. Examine the direction selectivity of your cell
+   Examine the direction selectivity of your cell
   </a>
  </li>
 </ul>
@@ -397,7 +405,7 @@
 <h1><span class="section-number">6.2. </span>Analyzing Two Photon Data<a class="headerlink" href="#analyzing-two-photon-data" title="Permalink to this headline">¶</a></h1>
 <p>On the previous page, we introduced how to retrieve specific experiments from the Allen Institute SDK’s Brain Observatory. Here we’ll introduce how researchers analyze this data, from processing single cell activity to understanding tuning curves.</p>
 <div class="section" id="setup">
-<h2><span class="section-number">6.2.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>We need a variety of standard Python packages in addition to two different <code class="docutils literal notranslate"><span class="pre">allensdk</span></code> toolboxes. If you have not yet installed the <code class="docutils literal notranslate"><span class="pre">allensdk</span></code>, run the cell below. Otherwise, you can skip to the cell that imports our toolboxes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -444,7 +452,7 @@
 </div>
 </div>
 <div class="section" id="download-inspect-the-natural-scenes-imaging-session">
-<h2><span class="section-number">6.2.2. </span>Download &amp; inspect the natural scenes imaging session<a class="headerlink" href="#download-inspect-the-natural-scenes-imaging-session" title="Permalink to this headline">¶</a></h2>
+<h2>Download &amp; inspect the natural scenes imaging session<a class="headerlink" href="#download-inspect-the-natural-scenes-imaging-session" title="Permalink to this headline">¶</a></h2>
 <p>First, we’ll look at an experiment where the mouse viewed natural scenes. Below, we’ll assign an experiment container ID (the same one we worked with in the previous section), designate that we’re interested in only the natural scenes experiments, and download the data for the first experiment in the container.</p>
 <p><strong>Note</strong>: The cell below downloads some data, and make take a minute or so to run. It is important that you do not interrupt the download of the data or else the file will become corrupted and you will have to delete it and try again.</p>
 <div class="cell docutils container">
@@ -551,7 +559,7 @@
 </div>
 </div>
 <div class="section" id="converting-calcium-imaging-into-spikes">
-<h2><span class="section-number">6.2.3. </span>Converting Calcium Imaging into Spikes<a class="headerlink" href="#converting-calcium-imaging-into-spikes" title="Permalink to this headline">¶</a></h2>
+<h2>Converting Calcium Imaging into Spikes<a class="headerlink" href="#converting-calcium-imaging-into-spikes" title="Permalink to this headline">¶</a></h2>
 <p>Now we’ll plot the data of each of our cells (from the field of view above) across time. Each line shows the change in fluorescence over baseline (<span class="math notranslate nohighlight">\(\Delta\)</span>)F/F) of the individual cells. When there are sharp increases, that’s when the cells are responding.</p>
 <p>In the example below, we will plot the first 10 cells from our data. the <code class="docutils literal notranslate"><span class="pre">get_dff_traces()</span></code> method returns the timestamps (in seconds) and deltaF/F.</p>
 <p>Below, we’ve also added a line in our loop that offsets each cell by a predetermined amount so that we can see individual calcium traces. Each line is a different neuron, and the small blips in the data are calcium-mediated changes in fluorescence.</p>
@@ -583,7 +591,7 @@
 </div>
 </div>
 <div class="section" id="look-at-the-response-of-your-cells-to-natural-scenes">
-<h2><span class="section-number">6.2.4. </span>Look at the response of your cells to natural scenes<a class="headerlink" href="#look-at-the-response-of-your-cells-to-natural-scenes" title="Permalink to this headline">¶</a></h2>
+<h2>Look at the response of your cells to natural scenes<a class="headerlink" href="#look-at-the-response-of-your-cells-to-natural-scenes" title="Permalink to this headline">¶</a></h2>
 <p>There are clearly some responses above, but it’s tough to see whether this corresponds to different behaviors or visual stimuli with just the raw fluorescence traces.</p>
 <p>Let’s see how these cells actually responded to different types of images. To do so, we’ll need to use the <code class="docutils literal notranslate"><span class="pre">get_cell_specimens()</span></code> method on our <code class="docutils literal notranslate"><span class="pre">boc</span></code>, giving it the name of the experiment container ID.</p>
 <p>The dataframe that this creates will have a lot more information about what the cells in our experiment prefer. Each row is a different cell, each with its own preferences and response patterns.</p>
@@ -826,7 +834,7 @@
 </div>
 </div>
 <div class="section" id="examine-the-direction-selectivity-of-your-cell">
-<h2><span class="section-number">6.2.5. </span>Examine the direction selectivity of your cell<a class="headerlink" href="#examine-the-direction-selectivity-of-your-cell" title="Permalink to this headline">¶</a></h2>
+<h2>Examine the direction selectivity of your cell<a class="headerlink" href="#examine-the-direction-selectivity-of-your-cell" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, the function of a cell is not particularly clear from natural stimuli. Those stimuli have a lot of information in them, and it might be hard to tell what a cell is actually responding to. Instead, we can use simple drifting gratings to look at one straightforward property of a cell: <b>does it respond to specific directions of movement?</b></br> To do so, we’ll examine the <strong>drifting gratings</strong> experiments.</p>
 <p>We will now show how to plot a heatmap of a cell’s response organized by orientation and temporal frequency. We will be using one of the three cells from the dataframe above which showed direction selectivity from the significantly preferred images. Please visit the <a href = 'https://allensdk.readthedocs.io/en/latest/allensdk.brain_observatory.drifting_gratings.html'> Drifting Gratings module documentation </a> for additional help on the methods used in the drifting gratings section.</p>
 <p>Below, we’ll use the same experiment container but a different stimulus to create a separate experiment dataset, <code class="docutils literal notranslate"><span class="pre">dg_experiment</span></code>.</p>
@@ -1073,7 +1081,7 @@ Preferred temporal frequency: 1
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {

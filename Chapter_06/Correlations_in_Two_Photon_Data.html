@@ -44,9 +44,9 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -191,23 +191,28 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">
+     4.4. Visualizing Large Scale Recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.5. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.6. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.7. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.8. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -340,6 +345,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -356,12 +364,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#accessing-signal-correlation">
-   6.3.1. Accessing Signal Correlation
+   Accessing Signal Correlation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plotting">
-   6.3.2. Plotting
+   Plotting
   </a>
  </li>
 </ul>
@@ -428,7 +436,7 @@
 </div>
 </div>
 <div class="section" id="accessing-signal-correlation">
-<h2><span class="section-number">6.3.1. </span>Accessing Signal Correlation<a class="headerlink" href="#accessing-signal-correlation" title="Permalink to this headline">¶</a></h2>
+<h2>Accessing Signal Correlation<a class="headerlink" href="#accessing-signal-correlation" title="Permalink to this headline">¶</a></h2>
 <p>We will be using the Two Photon Imaging Data from the Allen SDK that we have used in the previous sections. Like before, we will start by assigning an experiment container and stimulus that we will use to download our desired experiments using <code class="docutils literal notranslate"><span class="pre">get_ophys_experiments()</span></code> to return an experiment id.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">get_ophys_experiment_analysis()</span></code> method returns a data accessor object that we will use to create our signal correlation object. This object will contain many precomputed metrics of the neuron, one being the signal correlation between neurons. The signal correlations can be accessed through the <code class="docutils literal notranslate"><span class="pre">signal_correltation</span></code> attriubute of our data accessor object.</p>
 <div class="cell docutils container">
@@ -548,7 +556,7 @@
 <p>By looking at the shape of our signal correlation object, we can see that there are 122 cells in our data. When we print out the signal correlation object, we can see that it is multi-dimentional because each cell’s signal correlation is computed across every other cell in our data.</p>
 </div>
 <div class="section" id="plotting">
-<h2><span class="section-number">6.3.2. </span>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
 <p>We can now plot a heatmap of the signal correltations between neurons. The heatmap will plot our 122 neurons against each other to determine functional connectivity. The idea behind this is that if brain areas are active together, they may be coming together to accomplish the same task in the brain, forming neuronal networks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -694,7 +702,7 @@ pearson&#39;s r: -0.023194    pearson&#39;s p: 0.046302
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {

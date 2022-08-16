@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.5. Aligning Spike Trains with Visual Stimuli and Behavior &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>4.4. Aligning Spike Trains with Visual Stimuli and Behavior &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,15 +44,15 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4.6. Identifying Cells with Optogenetics" href="Identifying_Cells_with_Optogenetics.html" />
-    <link rel="prev" title="4.4. Obtaining Electrophysiology Data from the AllenSDK" href="AllenSDK_Neuropixels.html" />
+    <link rel="next" title="4.5. Identifying Cells with Optogenetics" href="Identifying_Cells_with_Optogenetics.html" />
+    <link rel="prev" title="4.3. Obtaining Electrophysiology Data from the AllenSDK" href="AllenSDK_Neuropixels.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -129,17 +129,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/NumPy.html">
-     2.3. NumPy
+     2.1. NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Pandas.html">
-     2.4. Pandas
+     2.2. Pandas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/SciPy.html">
-     2.5. SciPy
+     2.3. SciPy
     </a>
    </li>
   </ul>
@@ -156,22 +156,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Obtaining_Datasets_with_DANDI.html">
-     3.2. Obtaining Datasets with DANDI
+     3.1. Obtaining Datasets with DANDI
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Working_with_NWB_format_in_Python.html">
-     3.3. Working with NWB in Python
+     3.2. Working with NWB in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Interactive_NWB_Data_Exploration.html">
-     3.4. Interactive NWB Data Exploration
+     3.3. Interactive NWB Data Exploration
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+     3.4. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
@@ -188,27 +188,32 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="SpikeSorting.html">
-     4.3. Spike Sorting
+     4.1. Spike Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Visualizing_Recordings.html">
+     4.2. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.3. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.4. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.5. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.6. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -357,22 +365,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#spike-times">
-   4.5.1. Spike Times
+   Spike Times
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stimulus-presentations">
-   4.5.2. Stimulus Presentations
+   Stimulus Presentations
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-the-spykes-module-to-plot-electrophysiology-data">
-   4.5.3. Using the Spykes module to plot electrophysiology data
+   Using the Spykes module to plot electrophysiology data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-speed">
-   4.5.4. Running Speed
+   Running Speed
   </a>
  </li>
 </ul>
@@ -387,7 +395,7 @@
               <div>
                 
   <div class="section" id="aligning-spike-trains-with-visual-stimuli-and-behavior">
-<h1><span class="section-number">4.5. </span>Aligning Spike Trains with Visual Stimuli and Behavior<a class="headerlink" href="#aligning-spike-trains-with-visual-stimuli-and-behavior" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4.4. </span>Aligning Spike Trains with Visual Stimuli and Behavior<a class="headerlink" href="#aligning-spike-trains-with-visual-stimuli-and-behavior" title="Permalink to this headline">¶</a></h1>
 <p>In the previous section, we learned how to access metadata about the Allen Institute’s Visual Coding and download a Neuropixels dataset. Here, we’ll pull in additional information about the visual stimuli and the behavior of the mouse in order to see if we can explain our neural activity in terms of either of these.</p>
 <p>In this notebook, we’ll work with the same data you worked with in the last chapter. If you did not work through that notebook, the cells below will not work for you.</p>
 <div class="cell docutils container">
@@ -417,7 +425,7 @@
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9acd986d29454252a34c15004deea5ba"}
+{"version_major": 2, "version_minor": 0, "model_id": "a96c1466c02d42ec995c2cb2d250f5a8"}
 </script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
 <span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/caching_utilities.py</span> in <span class="ni">call_caching</span><span class="nt">(fetch, write, read, pre_write, cleanup, lazy, num_tries, failure_message)</span>
@@ -436,14 +444,14 @@
 <span class="g g-Whitespace">    </span><span class="mi">376</span>         <span class="p">)</span>
 
 <span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/ecephys/ecephys_session_api/ecephys_nwb_session_api.py</span> in <span class="ni">__init__</span><span class="nt">(self, path, probe_lfp_paths, additional_unit_metrics, external_channel_columns, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>                 <span class="n">warning_msg</span><span class="o">=</span><span class="p">(</span>
-<span class="ne">---&gt; </span><span class="mi">61</span>                     <span class="sa">f</span><span class="s2">&quot;It looks like the Visual Coding Neuropixels nwbfile &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span>                     <span class="sa">f</span><span class="s2">&quot;you are trying to access (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>                 <span class="n">warning_msg</span><span class="o">=</span><span class="p">(</span>
+<span class="ne">---&gt; </span><span class="mi">66</span>                     <span class="sa">f</span><span class="s2">&quot;It looks like the Visual Coding Neuropixels nwbfile &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>                     <span class="sa">f</span><span class="s2">&quot;you are trying to access (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">)&quot;</span>
 
 <span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/brain_observatory/nwb/__init__.py</span> in <span class="ni">check_nwbfile_version</span><span class="nt">(nwbfile_path, desired_minimum_version, warning_msg)</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span>                           <span class="n">warning_msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">55</span>     <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">nwbfile_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="c1"># nwb 2.x files store version as an attribute</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>                           <span class="n">warning_msg</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">58</span>     <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">nwbfile_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>         <span class="c1"># nwb 2.x files store version as an attribute</span>
 
 <span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, **kwds)</span>
 <span class="g g-Whitespace">    </span><span class="mi">407</span>                                <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="o">=</span><span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">),</span>
@@ -461,7 +469,7 @@
 
 <span class="nn">h5py/h5f.pyx</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
 
-<span class="ne">OSError</span>: Unable to open file (unable to open file: name = &#39;/Users/ashley/Documents/nwb4edu.github.io/Chapter_04/session_829720705/session_829720705.nwb&#39;, errno = 2, error message = &#39;No such file or directory&#39;, flags = 0, o_flags = 0)
+<span class="ne">OSError</span>: Unable to open file (truncated file: eof = 211312640, sblock-&gt;base_addr = 0, stored_eof = 1679648916)
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -574,7 +582,7 @@
 </div>
 </div>
 <div class="section" id="spike-times">
-<h2><span class="section-number">4.5.1. </span>Spike Times<a class="headerlink" href="#spike-times" title="Permalink to this headline">¶</a></h2>
+<h2>Spike Times<a class="headerlink" href="#spike-times" title="Permalink to this headline">¶</a></h2>
 <p>Our <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object contains spike times for each unit and they can be accessed via the <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> attribute. This returns a dictionary where the <code class="docutils literal notranslate"><span class="pre">unit_id</span></code> of the neural units are mapped to a list of spike times.  With this data, we are able to compare <code class="docutils literal notranslate"><span class="pre">spike_times</span></code> across units and across stimuli by plotting rasterplots and peristimulus time histograms (PSTHs).</p>
 <p>Because there are many units in a given session, we first need to select a subgroup of units to focus on. For the purposes of this notebook we will work with units that were taken from the primary visual area (<code class="docutils literal notranslate"><span class="pre">VISp</span></code>). Below, we will assign spike times of units from the <code class="docutils literal notranslate"><span class="pre">VISp</span></code> area.</p>
 <div class="cell docutils container">
@@ -622,7 +630,7 @@ Spikes found for unit 951132062 : 16606
 </div></blockquote>
 </div>
 <div class="section" id="stimulus-presentations">
-<h2><span class="section-number">4.5.2. </span>Stimulus Presentations<a class="headerlink" href="#stimulus-presentations" title="Permalink to this headline">¶</a></h2>
+<h2>Stimulus Presentations<a class="headerlink" href="#stimulus-presentations" title="Permalink to this headline">¶</a></h2>
 <p>The spike data can be sorted according to the type of stimulus that was presented to the mouse. You can access the different stimuli that were presented in the session by using the attribute <code class="docutils literal notranslate"><span class="pre">stimulus_names</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1100,7 +1108,7 @@ Spikes found for unit 951132062 : 16606
 <p>You are not limited to only plotting the times where a certain image was presented, nor are you limited to only plotting <code class="docutils literal notranslate"><span class="pre">natural_scenes</span></code> stimuli. You can create a similar graph with <code class="docutils literal notranslate"><span class="pre">gabors</span></code>, <code class="docutils literal notranslate"><span class="pre">flashes</span></code>, or any other availabe <code class="docutils literal notranslate"><span class="pre">stimulus_name</span></code>. For example, you can plot all the times when a <code class="docutils literal notranslate"><span class="pre">gabors</span></code> stimulus was presented at a certain spatial frequncy, temporal frequency, or orientaion. You can use <code class="docutils literal notranslate"><span class="pre">get_stimulus_parameter_values</span></code> to return a dictionary of all parameters used in a session.</p>
 </div>
 <div class="section" id="using-the-spykes-module-to-plot-electrophysiology-data">
-<h2><span class="section-number">4.5.3. </span>Using the Spykes module to plot electrophysiology data<a class="headerlink" href="#using-the-spykes-module-to-plot-electrophysiology-data" title="Permalink to this headline">¶</a></h2>
+<h2>Using the Spykes module to plot electrophysiology data<a class="headerlink" href="#using-the-spykes-module-to-plot-electrophysiology-data" title="Permalink to this headline">¶</a></h2>
 <p>Peristimulus time histograms and raster plots can also be created with classes and methods from a package called <code class="docutils literal notranslate"><span class="pre">spykes</span></code>, which contains useful tools for plotting electrophysiology data. If you do not have <code class="docutils literal notranslate"><span class="pre">spykes</span></code> installed, run the cell below. Otherwise, you can skip to the next cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1139,7 +1147,7 @@ Spikes found for unit 951132062 : 16606
 </div>
 </div>
 <div class="section" id="running-speed">
-<h2><span class="section-number">4.5.4. </span>Running Speed<a class="headerlink" href="#running-speed" title="Permalink to this headline">¶</a></h2>
+<h2>Running Speed<a class="headerlink" href="#running-speed" title="Permalink to this headline">¶</a></h2>
 <p>The Allen Institute researchers also collected data on the running speed of their mice. You can access the running speed by calling <code class="docutils literal notranslate"><span class="pre">running_speed</span></code> on our <code class="docutils literal notranslate"><span class="pre">EcephysSession</span></code> object. This will return a dataframe that contains the <code class="docutils literal notranslate"><span class="pre">start_time</span></code>, <code class="docutils literal notranslate"><span class="pre">end_time</span></code>, and <code class="docutils literal notranslate"><span class="pre">velocity</span></code> of our session.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1193,7 +1201,7 @@ Spikes found for unit 951132062 : 16606
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -1214,8 +1222,8 @@ Spikes found for unit 951132062 : 16606
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="AllenSDK_Neuropixels.html" title="previous page"><span class="section-number">4.4. </span>Obtaining  Electrophysiology Data from the AllenSDK</a>
-    <a class='right-next' id="next-link" href="Identifying_Cells_with_Optogenetics.html" title="next page"><span class="section-number">4.6. </span>Identifying Cells with Optogenetics</a>
+    <a class='left-prev' id="prev-link" href="AllenSDK_Neuropixels.html" title="previous page"><span class="section-number">4.3. </span>Obtaining  Electrophysiology Data from the AllenSDK</a>
+    <a class='right-next' id="next-link" href="Identifying_Cells_with_Optogenetics.html" title="next page"><span class="section-number">4.5. </span>Identifying Cells with Optogenetics</a>
 
         </div>
         

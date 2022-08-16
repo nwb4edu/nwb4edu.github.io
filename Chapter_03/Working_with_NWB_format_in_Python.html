@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.3. Working with NWB in Python &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>3.2. Working with NWB in Python &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,15 +44,15 @@
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3.4. Interactive NWB Data Exploration" href="Interactive_NWB_Data_Exploration.html" />
-    <link rel="prev" title="3.2. Obtaining Datasets with DANDI" href="Obtaining_Datasets_with_DANDI.html" />
+    <link rel="next" title="3.3. Interactive NWB Data Exploration" href="Interactive_NWB_Data_Exploration.html" />
+    <link rel="prev" title="3.1. Obtaining Datasets with DANDI" href="Obtaining_Datasets_with_DANDI.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -129,17 +129,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/NumPy.html">
-     2.3. NumPy
+     2.1. NumPy
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/Pandas.html">
-     2.4. Pandas
+     2.2. Pandas
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_02/SciPy.html">
-     2.5. SciPy
+     2.3. SciPy
     </a>
    </li>
   </ul>
@@ -156,22 +156,22 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Obtaining_Datasets_with_DANDI.html">
-     3.2. Obtaining Datasets with DANDI
+     3.1. Obtaining Datasets with DANDI
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.3. Working with NWB in Python
+     3.2. Working with NWB in Python
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Interactive_NWB_Data_Exploration.html">
-     3.4. Interactive NWB Data Exploration
+     3.3. Interactive NWB Data Exploration
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Chapter_3_ProblemSet.html">
-     3.5. Chapter 3 Problem Set
+     3.4. Chapter 3 Problem Set
     </a>
    </li>
   </ul>
@@ -188,27 +188,32 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/SpikeSorting.html">
-     4.3. Spike Sorting
+     4.1. Spike Sorting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">
+     4.2. Visualizing Large Scale Recordings
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/AllenSDK_Neuropixels.html">
-     4.4. Obtaining  Electrophysiology Data from the AllenSDK
+     4.3. Obtaining  Electrophysiology Data from the AllenSDK
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     4.5. Aligning Spike Trains with Visual Stimuli and Behavior
+     4.4. Aligning Spike Trains with Visual Stimuli and Behavior
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Identifying_Cells_with_Optogenetics.html">
-     4.6. Identifying Cells with Optogenetics
+     4.5. Identifying Cells with Optogenetics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_04/Chapter_4_ProblemSet.html">
-     4.7. Chapter 4 Problem Set
+     4.6. Chapter 4 Problem Set
     </a>
    </li>
   </ul>
@@ -341,6 +346,9 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -357,44 +365,44 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-1-setup">
-   3.3.1. Step 1. Setup
+   Step 1. Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-2-read-the-nwb-file">
-   3.3.2. Step 2. Read the NWB file
+   Step 2. Read the NWB file
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-3-access-information-within-the-nwb-file-hierarchy">
-   3.3.3. Step 3. Access Information within the NWB File Hierarchy
+   Step 3. Access Information within the NWB File Hierarchy
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#experiment-metadata">
-     3.3.3.1. Experiment Metadata
+     Experiment Metadata
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#acquisition">
-     3.3.3.2. Acquisition
+     Acquisition
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#intervals">
-     3.3.3.3. Intervals
+     Intervals
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#units">
-     3.3.3.4. Units
+     Units
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#additional-resources">
-   3.3.4. Additional Resources
+   Additional Resources
   </a>
  </li>
 </ul>
@@ -409,12 +417,12 @@
               <div>
                 
   <div class="section" id="working-with-nwb-in-python">
-<h1><span class="section-number">3.3. </span>Working with NWB in Python<a class="headerlink" href="#working-with-nwb-in-python" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.2. </span>Working with NWB in Python<a class="headerlink" href="#working-with-nwb-in-python" title="Permalink to this headline">¶</a></h1>
 <p>On the previous page, we demonstrated how to obtain a dataset with DANDI. Now that you have a dataset downloaded, let’s take a closer look at what it contains.</p>
 <p>Working with our NWB file in Python requires yet another package, <strong>PyNWB</strong>. This is a package specifically designed to work with NWB files. As you might expect, this won’t be the last time we see this package. Below, we’ll use the <code class="docutils literal notranslate"><span class="pre">NWBHDF5IO</span></code> class from this package, which will allow us to easily read NWB files. For more information about PyNWB, <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/index.html">please read their documentation</a>.</p>
 <p><mark><strong>Note</strong>: Please ensure that you have run the environment [setup] before running this notebook.</p>
 <div class="section" id="step-1-setup">
-<h2><span class="section-number">3.3.1. </span>Step 1. Setup<a class="headerlink" href="#step-1-setup" title="Permalink to this headline">¶</a></h2>
+<h2>Step 1. Setup<a class="headerlink" href="#step-1-setup" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import modules from the PyNWB package</span>
@@ -425,7 +433,7 @@
 </div>
 </div>
 <div class="section" id="step-2-read-the-nwb-file">
-<h2><span class="section-number">3.3.2. </span>Step 2. Read the NWB file<a class="headerlink" href="#step-2-read-the-nwb-file" title="Permalink to this headline">¶</a></h2>
+<h2>Step 2. Read the NWB file<a class="headerlink" href="#step-2-read-the-nwb-file" title="Permalink to this headline">¶</a></h2>
 <p>We can access the data in our NWB file in two steps:</p>
 <ol class="simple">
 <li><p>Assign our file as an NWBHDF5IO object</p></li>
@@ -459,7 +467,7 @@
 </div>
 </div>
 <div class="section" id="step-3-access-information-within-the-nwb-file-hierarchy">
-<h2><span class="section-number">3.3.3. </span>Step 3. Access Information within the NWB File Hierarchy<a class="headerlink" href="#step-3-access-information-within-the-nwb-file-hierarchy" title="Permalink to this headline">¶</a></h2>
+<h2>Step 3. Access Information within the NWB File Hierarchy<a class="headerlink" href="#step-3-access-information-within-the-nwb-file-hierarchy" title="Permalink to this headline">¶</a></h2>
 <p>One of the first steps when working with a new dataset is to figure out what is in the dataset, and where. Each NWB file is composed of various groups, which either contain attributes of our file (<strong>metadata</strong>) or the data itself.</p>
 <blockquote>
 <div><p><strong>Metadata</strong> is a common term to describe all of the information about an experiment. This could include everything from when the experiment was conducted, the ID of the subject (animal, human, goblin, etc.), the equipment details, etc. In essence, the metadata provides the context of the experiment. This is one of the first things you should review when you’re encountering a new dataset.</p>
@@ -479,13 +487,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;session_description&#39;, &#39;identifier&#39;, &#39;session_start_time&#39;, &#39;timestamps_reference_time&#39;, &#39;file_create_date&#39;, &#39;acquisition&#39;, &#39;keywords&#39;, &#39;epoch_tags&#39;, &#39;electrodes&#39;, &#39;electrode_groups&#39;, &#39;devices&#39;, &#39;intervals&#39;, &#39;subject&#39;, &#39;trials&#39;, &#39;units&#39;, &#39;experiment_description&#39;, &#39;institution&#39;, &#39;experimenter&#39;, &#39;related_publications&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;acquisition&#39;, &#39;analysis&#39;, &#39;scratch&#39;, &#39;stimulus&#39;, &#39;stimulus_template&#39;, &#39;processing&#39;, &#39;devices&#39;, &#39;electrode_groups&#39;, &#39;imaging_planes&#39;, &#39;icephys_electrodes&#39;, &#39;ogen_sites&#39;, &#39;intervals&#39;, &#39;lab_meta_data&#39;, &#39;session_description&#39;, &#39;identifier&#39;, &#39;session_start_time&#39;, &#39;timestamps_reference_time&#39;, &#39;file_create_date&#39;, &#39;keywords&#39;, &#39;epoch_tags&#39;, &#39;electrodes&#39;, &#39;subject&#39;, &#39;trials&#39;, &#39;units&#39;, &#39;experiment_description&#39;, &#39;institution&#39;, &#39;experimenter&#39;, &#39;related_publications&#39;])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="experiment-metadata">
-<h3><span class="section-number">3.3.3.1. </span>Experiment Metadata<a class="headerlink" href="#experiment-metadata" title="Permalink to this headline">¶</a></h3>
+<h3>Experiment Metadata<a class="headerlink" href="#experiment-metadata" title="Permalink to this headline">¶</a></h3>
 <p>Let’s first pull out some metadata for the experiment we downloaded.</p>
 <p>If you wish to access the related publications of the experimental data that you just downloaded, you can do so by accessing the <code class="docutils literal notranslate"><span class="pre">related_publications</span></code> attribute of your NWB file object. Plug in the “doi:” address that prints below into a browser window to check out the original publication describing this data.</p>
 <div class="cell docutils container">
@@ -519,7 +527,7 @@
 <p>As you might have noticed at this point, we can access datasets from each group in our nwb_file with the following syntax: <code class="docutils literal notranslate"><span class="pre">nwb_file.GROUPNAME</span></code>, just as we would typically access an attribute of object in Python. Below we will demonstrate some of the most useful groups within an NWB object.</p>
 </div>
 <div class="section" id="acquisition">
-<h3><span class="section-number">3.3.3.2. </span>Acquisition<a class="headerlink" href="#acquisition" title="Permalink to this headline">¶</a></h3>
+<h3>Acquisition<a class="headerlink" href="#acquisition" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">acquisition</span></code> group contains datasets of acquisition data, mainly <code class="docutils literal notranslate"><span class="pre">TimeSeries</span></code> objects belonging to this NWBFile.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,7 +536,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x140632150855920
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x140194348090928
  Fields:
    time_series: {
      lick_left_times &lt;class &#39;pynwb.base.TimeSeries&#39;&gt;,
@@ -563,7 +571,7 @@
 </div>
 </div>
 <div class="section" id="intervals">
-<h3><span class="section-number">3.3.3.3. </span>Intervals<a class="headerlink" href="#intervals" title="Permalink to this headline">¶</a></h3>
+<h3>Intervals<a class="headerlink" href="#intervals" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">intervals</span></code> group contains all time interval tables from the experiment – things like, did the animal respond on the behavioral trial? Usefully, we can take <code class="docutils literal notranslate"><span class="pre">intervals</span></code> and convert it to a tidy dataframe using <code class="docutils literal notranslate"><span class="pre">to_dataframe()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -708,7 +716,7 @@ pole_out_time : onset of the delay period
 </div>
 </div>
 <div class="section" id="units">
-<h3><span class="section-number">3.3.3.4. </span>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h3>
+<h3>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h3>
 <p>But wait, where’s all of the neural data? The <code class="docutils literal notranslate"><span class="pre">units</span></code> group in our NWB file contains the processed signals from our individual neurons (<strong>units</strong>), including information about the spike sorting quality as well as the spike times – when each of these cells fired an action potential. Much like the <code class="docutils literal notranslate"><span class="pre">intervals</span></code> group, <code class="docutils literal notranslate"><span class="pre">units</span></code> can also be assigned to a dataframe.</p>
 <blockquote>
 <div><p><strong>Why “units”</strong>? In extracellular electrophysiology, we aren’t recording <em>directly</em> from neurons. Instead, we’re recording from the space around many neurons. As a result, researchers need to take the recorded voltage streams and determine which spikes in voltage originated in different neurons. This process is called <strong>spike sorting</strong>. Although we can do spike sorting fairly automatically and be fairly confident that we’ve correctly identified different neurons, we can’t know <em>with complete confidence</em>. So, researchers tend to call “neurons” in extracellular recordings “units,” reflecting that we <em>think</em> it’s a separate neuron, but don’t know for sure. You’ll also see “multi-unit activity” (MUA) in some papers, in which case the researchers were unable to separate single neurons.</p>
@@ -942,7 +950,7 @@ group_name : the name of the ElectrodeGroup this electrode is a part of
 </div>
 </div>
 <div class="section" id="additional-resources">
-<h2><span class="section-number">3.3.4. </span>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Permalink to this headline">¶</a></h2>
 <p>For a detailed explanation of all groups contained within an NWB File object please visit the <a href = 'https://pynwb.readthedocs.io/en/stable/pynwb.file.html'> pynwb.file.NWBFile </a> section of the PyNWB documentation.</p>
 </div>
 </div>
@@ -951,7 +959,7 @@ group_name : the name of the ElectrodeGroup this electrode is a part of
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -972,8 +980,8 @@ group_name : the name of the ElectrodeGroup this electrode is a part of
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Obtaining_Datasets_with_DANDI.html" title="previous page"><span class="section-number">3.2. </span>Obtaining Datasets with DANDI</a>
-    <a class='right-next' id="next-link" href="Interactive_NWB_Data_Exploration.html" title="next page"><span class="section-number">3.4. </span>Interactive NWB Data Exploration</a>
+    <a class='left-prev' id="prev-link" href="Obtaining_Datasets_with_DANDI.html" title="previous page"><span class="section-number">3.1. </span>Obtaining Datasets with DANDI</a>
+    <a class='right-next' id="next-link" href="Interactive_NWB_Data_Exploration.html" title="next page"><span class="section-number">3.3. </span>Interactive NWB Data Exploration</a>
 
         </div>
         
