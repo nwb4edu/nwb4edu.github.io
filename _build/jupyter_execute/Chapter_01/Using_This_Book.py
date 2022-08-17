@@ -12,9 +12,18 @@
 # This, dear reader, is our preferred mode of interaction so that you really engage with the materials! And even here, you have two options:
 # 
 # ### DANDI Jupyter Hub
-# [DANDI](https://www.dandiarchive.org/), a platform for publishing, sharing, and processing neurophysiology data funded by the BRAIN Initiative, has a platform called a [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/). This JupyterHub (nicknamed the [Dandihub](http://hub.dandiarchive.org/)) allows you to run code on servers that they are supporting. There are instructions on the setup page for how to get the code in this book into the Dandihub.
+# [DANDI](https://www.dandiarchive.org/), a platform for publishing, sharing, and processing neurophysiology data funded by the BRAIN Initiative, has a platform called a [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/). This JupyterHub (nicknamed the [Dandihub](http://hub.dandiarchive.org/)) allows you to run code on servers that they are supporting. To do so, follow these directions:
+# 
+# 1. If you do not have already, set up a [GitHub account](https://github.com/signup). It's free, and it's a great way to start tracking your code!
+# 2. Go to the Dandihub at [https://hub.dandiarchive.org/](https://hub.dandiarchive.org/) and log in using your GitHub account.
+# 3. Choose "Base" as your server option.
+# 4. Open a Terminal by going to File > New > Terminal or by clicking the Terminal button under "Other" on the Launcher window.
+# 5. Type `git clone https://github.com/nwb4edu/nwb4edu-dandi` and enter.
+# 6. Look for the new `nwb4edu-dandi` folder on the left side list of folders and double click to open it.
+# 7. Double click on a notebook to open it!
 # 
 # **Note**: Regardless of whether or not you're using the code on the DANDI Jupyter Hub, we'll be using dandi to interact with NWB datasets.
+# 
 # 
 # ### Colab or Binder
 # If you're viewing this page from nwb4edu.github.io, you'll see a little rocket icon on the top of your screen. The little rocket button will offer two options: Google Colab or Binder. Which you use is up to you, but we generally find Google Colab to be faster to load and to install packages. 
@@ -32,3 +41,5 @@
 # 
 # * If you're running the notebooks one after the other, keep in mind that **each notebook functions separately**. Any packages that are imported, variables that are created, etc. will need to be regenerated in each notebook.
 # * Occassionally, a cell might produce a red warning message saying something is "**deprecated**." Don't fret! This is just a warning that something deep in the code *may not work soon*.  It usually does not mean it won't work for you now.
+
+# 

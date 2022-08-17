@@ -5,17 +5,6 @@
 # 
 # This notebook will ensure that your coding environment is set up for the interactive activities in this textbook.
 
-# ## DANDIhub setup
-# 
-# As mentioned in "how to use this book," you can run the code in this book on the DANDI Jupyter Hub (https://hub.dandiarchive.org/). **JupyterHub** is an online coding environment in which you can run code on a remote server. Usefully, the folks at DANDI have set up a JupyterHub so that you can easily access the tools and data. To do so, follow these directions:
-# 1. If you do not have already, set up a [GitHub account](https://github.com/signup). It's free, and it's a great way to start tracking your code!
-# 2. Go to the Dandihub at [https://hub.dandiarchive.org/](https://hub.dandiarchive.org/) and log in using your GitHub account.
-# 3. Choose "Base" as your server option.
-# 4. Open a Terminal.
-# 5. Type `git clone https://github.com/nwb4edu/nwb4edu-dandi` and enter.
-# 6. Look for the new `nwb4edu-dandi` folder on the left side list of folders.
-# 7. Double click on a notebook to open it!
-
 # ## Package Requirements
 # 
 # If you're *not* running the code on the Dandihub, then we have to ensure that your coding environment has all of the proper packages installed. The packages required are:

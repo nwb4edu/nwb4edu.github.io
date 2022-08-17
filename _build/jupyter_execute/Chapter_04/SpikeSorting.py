@@ -26,7 +26,9 @@ with DandiAPIClient() as client:
 print(s3_path)
 
 
-# Now, we can read this path, but we'll stream it, rather than downloading it! Below, we'll print some useful information about this experiment. We will also access a dataset we haven't interacted with yet: "ElectricalSeries". As the name suggests, this contains raw electrophysiology data -- exactly what we need to sort! We will assign a portion of this to an object called `ephys_data`.
+# Now that we have this path, we can stream the data rather than downloading it. Below, we'll print some useful information about this experiment. We will also access a dataset we haven't interacted with yet: [`ElectricalSeries`](https://pynwb.readthedocs.io/en/stable/tutorials/domain/ecephys.html). As the name suggests, this group contains raw electrophysiology data -- exactly what we need to sort! We will assign a portion of this to an object called `ephys_data`.
+# 
+# <mark>**Note**: The cell below will take about a minute to run, depending on the speed of your internet connection.</mark>
 
 # In[2]:
 
@@ -35,7 +37,6 @@ from pynwb import NWBHDF5IO
 
 with NWBHDF5IO(s3_path, mode='r', load_namespaces=True, driver='ros3') as io:
     nwbfile = io.read()
-    print(nwb_file.experiment_description)
     print(nwbfile.acquisition['ElectricalSeries'].data.shape)
     sampling_freq = nwbfile.acquisition['ElectricalSeries'].resolution # get the sampling frequency in Hz
     ephys_data = (nwbfile.acquisition['ElectricalSeries'].data[:3000000, 99])*nwbfile.acquisition['ElectricalSeries'].conversion
@@ -51,7 +52,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # generate a vector of timestamps
-timestamps = np.arange(start=0,stop=100,1/sampling_frequency)
+timestamps = (np.arange(0, len(ephys_data)) * (1.0 / sampling_freq))
 
 fig,ax = plt.subplots(1,1,figsize=(15,3))
 plt.plot(timestamps,ephys_data)

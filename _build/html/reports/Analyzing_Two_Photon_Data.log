@@ -85,6 +85,6 @@ print('Data acquired.')
 
 [0;32mh5py/h5f.pyx[0m in [0;36mh5py.h5f.open[0;34m()[0m
 
-[0;31mOSError[0m: Unable to open file (truncated file: eof = 13312, sblock->base_addr = 0, stored_eof = 281107866)
-OSError: Unable to open file (truncated file: eof = 13312, sblock->base_addr = 0, stored_eof = 281107866)
+[0;31mOSError[0m: Unable to open file (truncated file: eof = 1327616, sblock->base_addr = 0, stored_eof = 281107866)
+OSError: Unable to open file (truncated file: eof = 1327616, sblock->base_addr = 0, stored_eof = 281107866)
 

@@ -19,9 +19,9 @@
 # 
 # ## Using this textbook
 # 
-# This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though Chapter 2 will give you a refresher on the most pertinent information, if you need it. Throughout the book, you'll also find many recommendations for places to learn more.
+# This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though [Chapter 2](https://nwb4edu.github.io/Chapter_02/Data_Science_In_Python.html) will give you a refresher on the most pertinent information, if you need it. Throughout the book, you'll also find many recommendations for places to learn more.
 # 
-# Using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder. There's much more information in Chapter 1 about how to set up your coding environment and interact with this textbook.
+# Using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder. There's much more information in [Chapter 1](https://nwb4edu.github.io/Chapter_01/Using_This_Book.html) about how to set up your coding environment and interact with this textbook.
 # 
 # 
 # ## Chapter outline
