@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapter 4 Problem Set &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>Lesson #2 Problem Set &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -91,10 +91,10 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  pynwb
+  Introduction
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter_01/Introduction.html">
    Introduction
@@ -149,9 +149,16 @@
    </li>
   </ul>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  pynwb
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter_03/NWB_Dataset_Structure.html">
-   The Structure of NWB Datasets
+   Lesson #1: The Structure of NWB Datasets
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -176,14 +183,14 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     Chapter 3 Problem Set
+     Lesson #1 Problem Set
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Large_Scale_Electrophysiology.html">
-   Large-Scale Electrophysiology
+   Lesson #2: Analyzing Extracellular Recordings
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -203,7 +210,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Chapter 4 Problem Set
+     Lesson #2 Problem Set
     </a>
    </li>
   </ul>
@@ -385,14 +392,19 @@
         
               <div>
                 
-  <div class="section" id="chapter-4-problem-set">
-<h1>Chapter 4 Problem Set<a class="headerlink" href="#chapter-4-problem-set" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lesson-2-problem-set">
+<h1>Lesson #2 Problem Set<a class="headerlink" href="#lesson-2-problem-set" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
-<li><p>In 4.1, we created two functions. One of these functions plots binned firing rates over time. Modify this function to accept a NumPy array that is neurons x spike times, and to plot an average firing rate of all neurons over time. Bonus: add a shaded standard deviation around your average firing rate.</p></li>
-<li><p>In 4.1, we looked at the Economo &amp; Svoboda (2018) extracellular data and produced a table of trial times. In 4.2, we showed how to plot a PSTH for single neurons. Use the <code class="docutils literal notranslate"><span class="pre">interval_trial</span></code> table we created in 3.2 to find trials where the mouse either had a “correct” or “incorrect” response. Take an average of firing rates across all neurons in the incorrect and correct trials, and plot. Is there a difference?</p></li>
+<li><p>In 4.1, we performed simple spike sorting using threshold detection and then feature extraction on one channel (index 99) in the Giocomo dataset. Use the same code to look at a different channel, index 89, and do the following:</p>
+<ul class="simple">
+<li><p>Zoom in on this data to show about one second of the recording by changing the <code class="docutils literal notranslate"><span class="pre">xlim</span></code> on the plot. How does this change your interpretation of this signal?</p></li>
+<li><p>Run the spike detection &amp; feature extraction code as is. How many units does this suggest there are?</p></li>
+<li><p>Take a closer look at the recommended threshold and lower it (make it closer to zero). How does this change your conclusions? Does the amplitude feature extraction capture the two different waveforms well?</p></li>
+</ul>
+</li>
+<li><p>In 4.2, we created two functions. One of these functions plots binned firing rates over time. Modify this function to accept a NumPy array that is neurons x spike times, and to plot an average firing rate of all neurons over time. Bonus: add a shaded standard deviation around your average firing rate.</p></li>
+<li><p>In 4.2, we looked at the Economo &amp; Svoboda (2018) extracellular data and produced a table of trial times. In 4.2, we showed how to plot a PSTH for single neurons. Use the <code class="docutils literal notranslate"><span class="pre">interval_trial</span></code> table we created in 3.2 to find trials where the mouse either had a “correct” or “incorrect” response. Take an average of firing rates across all neurons in the incorrect and correct trials, and plot. Is there a difference?</p></li>
 <li><p>Create a plot that compares the average firing rate for each brain area.</p></li>
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">spykes</span></code> package, create a plot that is a peristimulus histogram for all gabor stimuli at 90 degrees.</p></li>
-<li><p>Use the code provided in 4.3 to compare the waveforms of Sst+ cells with non-Sst+ cells and PV+ cells. Are they the same?</p></li>
 </ol>
 </div>
 
