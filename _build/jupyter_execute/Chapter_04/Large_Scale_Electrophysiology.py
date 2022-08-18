@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Large-Scale Electrophysiology
+# # Lesson #2: Analyzing Extracellular Recordings
 # 
 # A single neuron cannot carry out complex tasks by itself -- it requires the surrounding, interconnected neurons to send and receive signals and accomplish the simplest of tasks. In modern large-scale electrophysiology, the activity of hundreds of neurons are recorded in an attempt to determine where neuron activity occurs and how these cells communicate with each other when presented with certain tasks.  
 # 
@@ -56,3 +56,5 @@
 # * For a thorough overview of electrophysiology, see the [Guide to Research Techniques](https://www.sciencedirect.com/science/article/pii/B9780128005118000046).
 # * To read more about the potential of Neuropixels probes, read this [Simons Foundation article](https://www.simonsfoundation.org/2018/01/04/neuropixels-offer-new-ways-to-map-cells/).
 # * For technical information about the Neuropixel probes or to learn how to obtain them, please visit <a href = 'https://www.neuropixels.org/'> neuropixels.org</a>.
+
+# 

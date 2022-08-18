@@ -1,9 +1,10 @@
 format: jb-book
 root: landing_page
 options:
-  numbered: 2
+  numbered: True
 parts:
-    - caption: pynwb
+    - caption: Introduction
+      numbered: 0
       chapters:
       - file: Chapter_01/Introduction
         sections:
@@ -15,6 +16,9 @@ parts:
         - file: Chapter_02/NumPy
         - file: Chapter_02/Pandas
         - file: Chapter_02/SciPy
+    - caption: pynwb
+      numbered: 0
+      chapters:
       - file: Chapter_03/NWB_Dataset_Structure
         sections:
         - file: Chapter_03/Obtaining_Datasets_with_DANDI
@@ -27,6 +31,7 @@ parts:
         - file: Chapter_04/Visualizing_Recordings
         - file: Chapter_04/Chapter_4_ProblemSet
     - caption: allensdk
+      numbered: 0
       chapters:
       - file: Chapter_05/AllenSDK_Neuropixels
         sections:

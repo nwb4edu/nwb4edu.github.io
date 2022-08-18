@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The Structure of NWB Datasets
+# # Lesson #1: The Structure of NWB Datasets
 # 
 # NWB datasets can be found in a few different places. Throughout this online textbook, we'll introduce two primary ways to obtain NWB datasets: through DANDI and through the Allen Institute SDK (Chapter X). In this chapter, we'll show you how to download a sample dataset via DANDI.
 # 

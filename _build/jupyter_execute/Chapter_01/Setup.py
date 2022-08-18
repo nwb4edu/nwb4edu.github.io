@@ -3,7 +3,7 @@
 
 # #  Setup
 # 
-# This notebook will ensure that your coding environment is set up for the interactive activities in this textbook.
+# This notebook will ensure that your coding environment is set up for the interactive activities in this textbook. You **do not** need to worry about these requirements if you are running code on the Dandihub. You can simply move past this page and get on with the data!
 
 # ## Package Requirements
 # 
@@ -64,3 +64,5 @@ try:
 except ImportError as e:
     get_ipython().system('pip install numpy')
 
+
+# <font color="red">Is there a more efficient way to run these checks? Just a requirements.txt file?</font>
