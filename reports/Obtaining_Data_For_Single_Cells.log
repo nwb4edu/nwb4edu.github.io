@@ -29,7 +29,7 @@ print(sweep_numbers)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mOSError[0m                                   Traceback (most recent call last)
-[0;32m<ipython-input-10-38f021f6f0f9>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-9-38f021f6f0f9>[0m in [0;36m<module>[0;34m[0m
 [1;32m      3[0m [0;34m[0m[0m
 [1;32m      4[0m [0;31m# Retrieve sweep numbers for cell[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 5[0;31m [0msweep_numbers[0m [0;34m=[0m [0mspecimen_ephys_data[0m[0;34m.[0m[0mget_experiment_sweep_numbers[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
@@ -37,11 +37,11 @@ print(sweep_numbers)
 [1;32m      7[0m [0mprint[0m[0;34m([0m[0mtype[0m[0;34m([0m[0mspecimen_ephys_data[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/anaconda3/lib/python3.7/site-packages/allensdk/core/nwb_data_set.py[0m in [0;36mget_experiment_sweep_numbers[0;34m(self)[0m
-[1;32m    310[0m         [0;34m""" Get all of the sweep numbers for experiment epochs in the file, not including test sweeps. """[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    311[0m [0;34m[0m[0m
-[0;32m--> 312[0;31m         [0;32mwith[0m [0mh5py[0m[0;34m.[0m[0mFile[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mfile_name[0m[0;34m,[0m [0;34m'r'[0m[0;34m)[0m [0;32mas[0m [0mf[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    313[0m             sweeps = [int(e.split('_')[1])
-[1;32m    314[0m                       for e in f['epochs'].keys() if e.startswith('Experiment_')]
+[1;32m    316[0m         not including test sweeps. """
+[1;32m    317[0m [0;34m[0m[0m
+[0;32m--> 318[0;31m         [0;32mwith[0m [0mh5py[0m[0;34m.[0m[0mFile[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mfile_name[0m[0;34m,[0m [0;34m'r'[0m[0;34m)[0m [0;32mas[0m [0mf[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    319[0m             sweeps = [int(e.split('_')[1])
+[1;32m    320[0m                       [0;32mfor[0m [0me[0m [0;32min[0m [0mf[0m[0;34m[[0m[0;34m'epochs'[0m[0;34m][0m[0;34m.[0m[0mkeys[0m[0;34m([0m[0;34m)[0m [0;32mif[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py[0m in [0;36m__init__[0;34m(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, **kwds)[0m
 [1;32m    406[0m                 fid = make_fid(name, mode, userblock_size,
