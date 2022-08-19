@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson #3: Single-Cell Electrophysiology &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>Lesson 3 Problem Set &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Obtaining Data for Single Cells" href="Obtaining_Data_For_Single_Cells.html" />
-    <link rel="prev" title="Lesson #2 Problem Set" href="../Chapter_04/Chapter_4_ProblemSet.html" />
+    <link rel="next" title="Lesson #4: Two Photon Imaging" href="../Chapter_07/Two_Photon_Imaging.html" />
+    <link rel="prev" title="Analyzing Computed Features" href="Analyzing_Computed_Features.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -223,7 +223,7 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Single-Cell_Electrophysiology.html">
    Lesson #3: Single-Cell Electrophysiology
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -231,7 +231,7 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Obtaining_Data_For_Single_Cells.html">
      Obtaining Data for Single Cells
@@ -242,8 +242,8 @@
      Analyzing Computed Features
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Lesson3_ProblemSet.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Lesson 3 Problem Set
     </a>
    </li>
@@ -317,7 +317,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Chapter_06/Single-Cell_Electrophysiology.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Chapter_06/Lesson3_ProblemSet.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -342,7 +342,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Chapter_06/Single-Cell_Electrophysiology.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Chapter_06/Lesson3_ProblemSet.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -350,7 +350,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Chapter_06/Single-Cell_Electrophysiology.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Chapter_06/Lesson3_ProblemSet.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -375,46 +375,17 @@
         
               <div>
                 
-  <div class="section" id="lesson-3-single-cell-electrophysiology">
-<h1>Lesson #3: Single-Cell Electrophysiology<a class="headerlink" href="#lesson-3-single-cell-electrophysiology" title="Permalink to this headline">¶</a></h1>
-<p>While extracellular electrophysiology enables us to record from many neurons simultaneously, it cannot give us detailed information about single cells. Single-cell electrophysiology is conducted in two different ways: <strong>intracellular</strong>, where the electrode is inside of the cell, and <strong>patch clamp</strong>, where the electrode forms a continuous recording space with the inside of the cell.</p>
-<p>The data in the Allen Cell Types Database was collected using whole-cell patch clamp. Patch clamp allows for very precise measurements of either whole-cell activity or specific ion channels. The video below shows what patch clamping looks like.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;mF7Vd5olw18&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="400"
-    height="300"
-    src="https://www.youtube.com/embed/mF7Vd5olw18"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
-</div>
-<p><strong>About the Allen Brain Cell Types DataBase</strong></p>
-<p>The Allen Brain Cell Types dataset contains data recorded from cells using whole-cell patch clamp while injecting different current waveforms into to the cells. The dataset also includes many computed neuron metrics such as adaptivity, interspike interval, and spike rate, and interacelluar characteristics including like resting membrane potential, rheobase, and more.</p>
-<p><strong>Targeting different cell types</strong></p>
-<p>How did the Allen Institute actually distinguish between different cell types? To do so, they capitalized on the fact that different cells in the brain often express different genes. With genetic engineering, we can express glowing proteins (such as green fluorescent protein) in cells that express a specific gene. This approach takes advantage of an enzyme called Cre recombinase, which is found in bacteriophages, but not mammals. When we artificially express Cre recombinase in a specific cell type and include LoxP sites around our glowing protein, the Cre recombinase comes and flips those LoxP sites around, leading to protein expression and a gorgeous glowing neuron. This system is called the <a class="reference external" href="https://www.google.com/url?q=https%3A%2F%2Fwww.jax.org%2Fnews-and-insights%2F2006%2Fmay%2Fthe-cre-lox-and-flp-frt-systems&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3Bd1-ytiLSqWA2QDto8bwT">Cre-LoxP system</a> and is one of the main tools that neuroscientists use to identify and target specific cells in the brain.</p>
-<p><strong>Learning objectives</strong></p>
-<p>After completing this lesson, you’ll be able to:</p>
+  <div class="section" id="lesson-3-problem-set">
+<h1>Lesson 3 Problem Set<a class="headerlink" href="#lesson-3-problem-set" title="Permalink to this headline">¶</a></h1>
+<p>In this lesson, we compared spiny cells to aspiny cells. However, the Allen Institute data has many more comparisons we could make!</p>
+<p>For this problem set, it’s up to you to choose which cell types to compare.</p>
 <ul class="simple">
-<li><p>download single cell electophysiology data from the Allen Brain Cell Types Database</p></li>
-<li><p>access and plot pre-computed features8</p></li>
-<li><p>plot the morphology of single cells</p></li>
-<li><p>compare different types of cells (i.e. spiny vs aspiny dendritic cells)</p></li>
+<li><p>If you’d like to compare cells from different species, the column name is <code class="docutils literal notranslate"><span class="pre">species</span></code>.</p></li>
+<li><p>If you’d like to compare two transgenic lines (mouse cells only), the column name is <code class="docutils literal notranslate"><span class="pre">transgenic_line</span></code>.</p></li>
+<li><p>For different layers of cortex, use <code class="docutils literal notranslate"><span class="pre">structure_layer_name</span></code>.</p></li>
 </ul>
-<p><strong>Additional Resources</strong></p>
-<ul class="simple">
-<li><p>The Allen Brain Cell Types Dataset uses hundreds of different Cre-driver lines. For a list of all the available lines, please visit the <a href = 'http://connectivity.brain-map.org/transgenic'> Transgenic Characterization</a> section of the Allen Mouse Connectivity site.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
+<p>You’ll also decide which pre-computed feature to compare between these cell types.</p>
+<p>Choose your comparison and pre-computed feature, and generate a visualization to show whether or not those two cell types are similar or different for your feature. You may also want to generate a plot of the recording trace, for example, to demonstrate a difference in spike waveform.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -442,8 +413,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Chapter_04/Chapter_4_ProblemSet.html" title="previous page">Lesson #2 Problem Set</a>
-    <a class='right-next' id="next-link" href="Obtaining_Data_For_Single_Cells.html" title="next page">Obtaining Data for Single Cells</a>
+    <a class='left-prev' id="prev-link" href="Analyzing_Computed_Features.html" title="previous page">Analyzing Computed Features</a>
+    <a class='right-next' id="next-link" href="../Chapter_07/Two_Photon_Imaging.html" title="next page">Lesson #4: Two Photon Imaging</a>
 
         </div>
         

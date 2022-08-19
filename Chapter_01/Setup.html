@@ -223,33 +223,11 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/AllenSDK_Neuropixels.html">
-   Obtaining  Electrophysiology Data from the AllenSDK
+  <a class="reference internal" href="../Chapter_06/Single-Cell_Electrophysiology.html">
+   Lesson #3: Single-Cell Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     Aligning Spike Trains with Visual Stimuli and Behavior
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_05/Identifying_Cells_with_Optogenetics.html">
-     Identifying Cells with Optogenetics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_06/Single-Cell_Electrophysiology.html">
-   Single-Cell Electrophysiology
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -264,14 +242,19 @@
      Analyzing Computed Features
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_06/Lesson3_ProblemSet.html">
+     Lesson 3 Problem Set
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter_07/Two_Photon_Imaging.html">
-   Two Photon Imaging
+   Lesson #4: Two Photon Imaging
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -496,6 +479,152 @@
 </div>
 </div>
 </div>
+<p>First things first, let’s make sure you have the AllenSDK installed. See the <a class="reference external" href="https://alleninstitute.github.io/AllenSDK/install.html">Allen Institute website</a> for information on installing it, otherwise, the cell below will do it for you.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the AllenSDK is installed.</span>
+<span class="c1"># If not, it will install it for you.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">allensdk</span>
+    <span class="k">if</span> <span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s1">&#39;2.13.6&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of AllenSDK installed. Would you like to install a newer version? (Y/N)&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
+            <span class="o">!</span>pip install --upgrade allensdk
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip install allensdk
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Old version of AllenSDK installed. Would you like to install a newer version? (Y/N)y
+Requirement already satisfied: allensdk in /Users/ashley/anaconda3/lib/python3.7/site-packages (2.11.2)
+Collecting allensdk
+  Using cached allensdk-2.13.6-py3-none-any.whl (1.9 MB)
+Requirement already satisfied: seaborn&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.11.2)
+Requirement already satisfied: future&lt;1.0.0,&gt;=0.14.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.17.1)
+Requirement already satisfied: requests-toolbelt&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.9.1)
+Collecting argschema&lt;4.0.0,&gt;=3.0.1
+  Using cached argschema-3.0.4-py2.py3-none-any.whl
+Requirement already satisfied: scipy&lt;2.0.0,&gt;=1.4.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (1.6.3)
+Requirement already satisfied: sqlalchemy in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (1.3.24)
+Collecting jinja2&gt;=3.0.0
+  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Requirement already satisfied: boto3==1.17.21 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (1.17.21)
+Requirement already satisfied: simplejson&lt;4.0.0,&gt;=3.10.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (3.17.0)
+Requirement already satisfied: scikit-build&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.10.0)
+Requirement already satisfied: nest-asyncio in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (1.2.0)
+Requirement already satisfied: aiohttp==3.7.4 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (3.7.4)
+Requirement already satisfied: cachetools&lt;5.0.0,&gt;=4.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (4.2.4)
+Requirement already satisfied: ndx-events&lt;=0.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.2.0)
+Requirement already satisfied: xarray&lt;0.16.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.15.0)
+Collecting pandas&gt;=1.1.5
+  Using cached pandas-1.3.5-cp37-cp37m-macosx_10_9_x86_64.whl (11.0 MB)
+Requirement already satisfied: tqdm&gt;=4.27 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (4.62.0)
+Requirement already satisfied: scikit-image&lt;0.17.0,&gt;=0.14.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.14.2)
+Requirement already satisfied: pynwb in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (1.4.0)
+Requirement already satisfied: semver in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (2.13.0)
+Requirement already satisfied: simpleitk&lt;3.0.0,&gt;=2.0.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (2.0.2)
+Requirement already satisfied: numpy in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (1.21.6)
+Requirement already satisfied: six&lt;2.0.0,&gt;=1.9.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (1.16.0)
+Requirement already satisfied: matplotlib&lt;3.4.3,&gt;=1.4.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (3.4.2)
+Collecting hdmf&gt;=2.5.8
+  Using cached hdmf-3.4.0-py3-none-any.whl (186 kB)
+Requirement already satisfied: statsmodels&lt;=0.13.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.13.0)
+Requirement already satisfied: glymur==0.8.19 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.8.19)
+Requirement already satisfied: psycopg2-binary&lt;3.0.0,&gt;=2.7 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (2.8.4)
+Requirement already satisfied: tables&lt;3.7.0,&gt;=3.6.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (3.6.1)
+Requirement already satisfied: h5py in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (2.10.0)
+Requirement already satisfied: requests&lt;3.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (2.25.1)
+Requirement already satisfied: pynrrd&lt;1.0.0,&gt;=0.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk) (0.4.2)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk) (1.4.2)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk) (4.7.4)
+Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk) (3.0.1)
+Requirement already satisfied: attrs&gt;=17.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk) (20.3.0)
+Requirement already satisfied: typing-extensions&gt;=3.6.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk) (3.10.0.0)
+Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk) (3.0.4)
+Requirement already satisfied: jmespath&lt;1.0.0,&gt;=0.7.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk) (0.10.0)
+Requirement already satisfied: botocore&lt;1.21.0,&gt;=1.20.21 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk) (1.20.86)
+Requirement already satisfied: s3transfer&lt;0.4.0,&gt;=0.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk) (0.3.7)
+Requirement already satisfied: setuptools in /Users/ashley/anaconda3/lib/python3.7/site-packages (from glymur==0.8.19-&gt;allensdk) (57.0.0)
+Requirement already satisfied: pyyaml in /Users/ashley/anaconda3/lib/python3.7/site-packages (from argschema&lt;4.0.0,&gt;=3.0.1-&gt;allensdk) (5.4.1)
+Collecting marshmallow&lt;4.0,&gt;=3.0.0
+  Using cached marshmallow-3.17.0-py3-none-any.whl (48 kB)
+Collecting ruamel.yaml&lt;1,&gt;=0.16
+  Using cached ruamel.yaml-0.17.21-py3-none-any.whl (109 kB)
+Requirement already satisfied: jsonschema&lt;5,&gt;=2.6.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from hdmf&gt;=2.5.8-&gt;allensdk) (3.2.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jinja2&gt;=3.0.0-&gt;allensdk) (2.0.1)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (2.8.1)
+Requirement already satisfied: pillow&gt;=6.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (9.1.0)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (0.10.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (1.0.1)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (2.4.7)
+Requirement already satisfied: pytz&gt;=2017.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from pandas&gt;=1.1.5-&gt;allensdk) (2021.1)
+Collecting hdmf&gt;=2.5.8
+  Using cached hdmf-2.5.8-py2.py3-none-any.whl (164 kB)
+Collecting numpy
+  Using cached numpy-1.20.3-cp37-cp37m-macosx_10_9_x86_64.whl (16.0 MB)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk) (2021.5.30)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk) (1.26.5)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk) (2.10)
+Requirement already satisfied: packaging in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk) (21.3)
+Requirement already satisfied: wheel&gt;=0.29.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk) (0.36.2)
+Requirement already satisfied: cloudpickle&gt;=0.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk) (0.8.0)
+Requirement already satisfied: PyWavelets&gt;=0.4.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk) (1.0.2)
+Requirement already satisfied: dask[array]&gt;=1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk) (1.1.4)
+Requirement already satisfied: networkx&gt;=1.8 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk) (2.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: patsy&gt;=0.5.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from statsmodels&lt;=0.13.0-&gt;allensdk) (0.5.2)
+Requirement already satisfied: numexpr&gt;=2.6.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from tables&lt;3.7.0,&gt;=3.6.0-&gt;allensdk) (2.7.0)
+Requirement already satisfied: toolz&gt;=0.7.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from dask[array]&gt;=1.0.0-&gt;scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk) (0.9.0)
+Requirement already satisfied: importlib-metadata in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jsonschema&lt;5,&gt;=2.6.0-&gt;hdmf&gt;=2.5.8-&gt;allensdk) (4.5.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jsonschema&lt;5,&gt;=2.6.0-&gt;hdmf&gt;=2.5.8-&gt;allensdk) (0.17.3)
+Requirement already satisfied: decorator&gt;=4.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from networkx&gt;=1.8-&gt;scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk) (5.0.9)
+Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.6 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from ruamel.yaml&lt;1,&gt;=0.16-&gt;hdmf&gt;=2.5.8-&gt;allensdk) (0.2.6)
+Requirement already satisfied: zipp&gt;=0.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from importlib-metadata-&gt;jsonschema&lt;5,&gt;=2.6.0-&gt;hdmf&gt;=2.5.8-&gt;allensdk) (3.4.1)
+Installing collected packages: ruamel.yaml, numpy, jinja2, pandas, marshmallow, hdmf, argschema, allensdk
+  Attempting uninstall: ruamel.yaml
+    Found existing installation: ruamel.yaml 0.17.21
+    Uninstalling ruamel.yaml-0.17.21:
+      Successfully uninstalled ruamel.yaml-0.17.21
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.21.6
+    Uninstalling numpy-1.21.6:
+      Successfully uninstalled numpy-1.21.6
+  Attempting uninstall: jinja2
+    Found existing installation: Jinja2 2.11.3
+    Uninstalling Jinja2-2.11.3:
+      Successfully uninstalled Jinja2-2.11.3
+  Attempting uninstall: pandas
+    Found existing installation: pandas 0.25.3
+    Uninstalling pandas-0.25.3:
+      Successfully uninstalled pandas-0.25.3
+  Attempting uninstall: marshmallow
+    Found existing installation: marshmallow 3.0.0rc6
+    Uninstalling marshmallow-3.0.0rc6:
+      Successfully uninstalled marshmallow-3.0.0rc6
+  Attempting uninstall: hdmf
+    Found existing installation: hdmf 2.4.0
+    Uninstalling hdmf-2.4.0:
+      Successfully uninstalled hdmf-2.4.0
+  Attempting uninstall: argschema
+    Found existing installation: argschema 2.0.2
+    Uninstalling argschema-2.0.2:
+      Successfully uninstalled argschema-2.0.2
+  Attempting uninstall: allensdk
+    Found existing installation: allensdk 2.11.2
+    Uninstalling allensdk-2.11.2:
+      Successfully uninstalled allensdk-2.11.2
+<span class=" -Color -Color-Red">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.</span>
+<span class=" -Color -Color-Red">myst-nb 0.12.3 requires nbconvert~=5.6, but you have nbconvert 6.5.3 which is incompatible.</span>
+<span class=" -Color -Color-Red">jupyter-book 0.11.1 requires nbconvert&lt;6, but you have nbconvert 6.5.3 which is incompatible.</span>
+Successfully installed allensdk-2.13.6 argschema-3.0.4 hdmf-2.5.8 jinja2-3.1.2 marshmallow-3.17.0 numpy-1.20.3 pandas-1.3.5 ruamel.yaml-0.17.21
+</pre></div>
+</div>
+</div>
+</div>
 <p><font color="red">Is there a more efficient way to run these checks? Just a requirements.txt file?</font></p>
 </div>
 </div>
@@ -536,7 +665,7 @@
     <div class="container">
       <p>
         
-          By Victor Magdaleno-Garcia & Ashley Juavinett<br/>
+          By Ashley Juavinett & Victor Magdaleno-Garcia<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
