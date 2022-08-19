@@ -65,4 +65,23 @@ except ImportError as e:
     get_ipython().system('pip install numpy')
 
 
+# First things first, let's make sure you have the AllenSDK installed. See the [Allen Institute website](https://alleninstitute.github.io/AllenSDK/install.html) for information on installing it, otherwise, the cell below will do it for you.
+
+# In[1]:
+
+
+# This will ensure that the AllenSDK is installed.
+# If not, it will install it for you.
+try:
+    import allensdk
+    if allensdk.__version__ == '2.13.6':
+        print('allensdk already installed.')
+    else:
+        response = input('Old version of AllenSDK installed. Would you like to install a newer version? (Y/N)')
+        if response.upper() == 'Y':
+            get_ipython().system('pip install --upgrade allensdk')
+except ImportError as e:
+    get_ipython().system('pip install allensdk')
+
+
 # <font color="red">Is there a more efficient way to run these checks? Just a requirements.txt file?</font>

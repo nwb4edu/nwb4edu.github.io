@@ -19,20 +19,18 @@
 # 
 # ## Using this textbook
 # 
-# This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though [Chapter 2](https://nwb4edu.github.io/Chapter_02/Data_Science_In_Python.html) will give you a refresher on the most pertinent information, if you need it. Throughout the book, you'll also find many recommendations for places to learn more.
+# This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though [Data Science in Python](https://nwb4edu.github.io/Chapter_02/Data_Science_In_Python.html) will give you a refresher on the most pertinent information, if you need it. Throughout the book, you'll also find many recommendations for places to learn more.
 # 
-# Using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder. There's much more information in [Chapter 1](https://nwb4edu.github.io/Chapter_01/Using_This_Book.html) about how to set up your coding environment and interact with this textbook.
+# We recommend interacting with the content provided here via the Danihub. Alternatively, by using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder. There's much more information in [Using this Book](https://nwb4edu.github.io/Chapter_01/Using_This_Book.html) about how to set up your coding environment and interact with this textbook.
 # 
 # 
-# ## Chapter outline
+# ## Content outline
 # 
-# **Chapter 1** will set you up for success with options for interacting with these materials and some technical environment setup.
+# The [introduction](https://nwb4edu.github.io/Chapter_01/Introduction.html) will set you up for success with options for interacting with these materials and some technical environment setup.
 # 
-# **Chapter 2** reviews some of the packages, data structures, and coding skills that we'll use throughout the rest of the book. You are welcome to skip this chapter if you're very comfortable in Python.
+# [Data Science in Python](https://nwb4edu.github.io/Chapter_02/Data_Science_In_Python.html) reviews some of the packages, data structures, and coding skills that we'll use throughout the rest of the book. You are welcome to skip this chapter if you're very comfortable in Python.
 # 
-# **Chapter 3** will give you important information about how to access and explore NWB files. 
-# 
-# **Chapters 4, 5, and 6** are self-contained and can be completed out of order, depending on which type of data you're most interested in working with.
+# The lessons are organized into two groups: one that interacts with "native NWB" format using the `pyNWB` package, and a second that interacts with the Allen Institute for Brain Science data via the `allenSDK`. Each of these lessons are self-contained and can be completed out of order, depending on which type of data you're most interested in working with.
 
 # ## Support
 # <img src="https://github.com/nwb4edu/nwb4edu.github.io/blob/master/The_Kavli_Foundation_Logo_Blue_Red.png?raw=true"
@@ -54,9 +52,10 @@
 # <hr>
 # 
 # ## Additional resources 
-# There are several great online resources for neural data science beyond NWB formats:
+# There are several great online resources for neural data processing & data science beyond NWB formats:
 # 
 # - [Data Science in Practice](https://datascienceinpractice.github.io/)
+# - [Case Studies in Neural Data Analysis](https://mark-kramer.github.io/Case-Studies-Python/intro.html)
 # - [Neural Data Science by Nylen & Wallisch](https://www.sciencedirect.com/book/9780128040430/neural-data-science)
 # - [Foundations of Data Science](https://www.inferentialthinking.com/chapters/intro.html)
 # - [Computational Neuroscience](https://mrgreene09.github.io/computational-neuroscience-textbook/index.html), open textbook written by students

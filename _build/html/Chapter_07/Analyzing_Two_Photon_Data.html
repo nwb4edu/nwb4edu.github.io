@@ -225,33 +225,11 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/AllenSDK_Neuropixels.html">
-   Obtaining  Electrophysiology Data from the AllenSDK
+  <a class="reference internal" href="../Chapter_06/Single-Cell_Electrophysiology.html">
+   Lesson #3: Single-Cell Electrophysiology
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     Aligning Spike Trains with Visual Stimuli and Behavior
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_05/Identifying_Cells_with_Optogenetics.html">
-     Identifying Cells with Optogenetics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_06/Single-Cell_Electrophysiology.html">
-   Single-Cell Electrophysiology
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -266,14 +244,19 @@
      Analyzing Computed Features
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_06/Lesson3_ProblemSet.html">
+     Lesson 3 Problem Set
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Two_Photon_Imaging.html">
-   Two Photon Imaging
+   Lesson #4: Two Photon Imaging
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -504,56 +487,113 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">721</span><span class="n">ebef5e10c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Get experiments for our container id and stimuli of interest</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">experiments</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>                                      <span class="n">stimuli</span> <span class="o">=</span> <span class="n">stim</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Assign the experiment id</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">experiment_id</span> <span class="o">=</span> <span class="n">experiments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">14</span> <span class="n">experiment_data</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiment_data</span><span class="p">(</span><span class="n">experiment_id</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> 
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data acquired.&#39;</span><span class="p">)</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_cache.py</span> in <span class="ni">get_ophys_experiment_data</span><span class="nt">(self, ophys_experiment_id, file_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span>         <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">save_ophys_experiment_data</span><span class="p">(</span><span class="n">ophys_experiment_id</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;lazy&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">488</span> 
-<span class="ne">--&gt; </span><span class="mi">489</span>         <span class="k">return</span> <span class="n">BrainObservatoryNwbDataSet</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span> 
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="k">def</span> <span class="nf">get_ophys_experiment_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ophys_experiment_id</span><span class="p">,</span> <span class="n">stimulus_type</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_cache.py</span> in <span class="ni">get_ophys_experiments</span><span class="nt">(self, file_name, ids, experiment_container_ids, targeted_structures, imaging_depths, cre_lines, reporter_lines, transgenic_lines, stimuli, session_types, cell_specimen_ids, include_failed, require_eye_tracking, simple)</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>         <span class="n">exps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>                                               <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;lazy&#39;</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">328</span>                                               <span class="o">**</span><span class="n">Cache</span><span class="o">.</span><span class="n">cache_json</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span> 
+<span class="g g-Whitespace">    </span><span class="mi">330</span>         <span class="c1"># NOTE: Ugly hack to update the &#39;fail_eye_tracking&#39; field</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_nwb_data_set.py</span> in <span class="ni">__init__</span><span class="nt">(self, nwb_file)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> 
-<span class="g g-Whitespace">    </span><span class="mi">144</span>         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nwb_file</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">145</span>             <span class="n">meta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_metadata</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span>             <span class="k">if</span> <span class="n">meta</span> <span class="ow">and</span> <span class="s1">&#39;pipeline_version&#39;</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span>                 <span class="n">pipeline_version_str</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;pipeline_version&#39;</span><span class="p">]</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/cache.py</span> in <span class="ni">w</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">cacher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>                                   <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">663</span>                                   <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>             <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span> 
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/brain_observatory_nwb_data_set.py</span> in <span class="ni">get_metadata</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">737</span>         <span class="n">meta</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">    </span><span class="mi">738</span> 
-<span class="ne">--&gt; </span><span class="mi">739</span>         <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nwb_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">740</span>             <span class="k">for</span> <span class="n">memory_key</span><span class="p">,</span> <span class="n">disk_key</span> <span class="ow">in</span> <span class="n">BrainObservatoryNwbDataSet</span><span class="o">.</span><span class="n">FILE_METADATA_MAPPING</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">741</span>                 <span class="k">try</span><span class="p">:</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/warehouse_cache/cache.py</span> in <span class="ni">cacher</span><span class="nt">(fn, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span> 
+<span class="g g-Whitespace">    </span><span class="mi">382</span>             <span class="k">if</span> <span class="n">writer</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">383</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">pre</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>                 <span class="n">writer</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span>                 <span class="n">fid</span> <span class="o">=</span> <span class="n">make_fid</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">userblock_size</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>                                <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="o">=</span><span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">),</span>
-<span class="ne">--&gt; </span><span class="mi">408</span>                                <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span> 
-<span class="g g-Whitespace">    </span><span class="mi">410</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/queries/brain_observatory_api.py</span> in <span class="ni">get_ophys_experiments</span><span class="nt">(self, ophys_experiment_ids)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_query</span><span class="p">(</span><span class="s1">&#39;brain_observatory_queries&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>                                    <span class="s1">&#39;ophys_experiment_by_ids&#39;</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">217</span>                                    <span class="n">ophys_experiment_ids</span><span class="o">=</span><span class="n">ophys_experiment_ids</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span> 
+<span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="k">return</span> <span class="n">data</span>
 
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>         <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>             <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>         <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/queries/rma_template.py</span> in <span class="ni">template_query</span><span class="nt">(self, template_name, entry_name, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>         <span class="n">query_args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> 
+<span class="ne">--&gt; </span><span class="mi">132</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_query</span><span class="p">(</span><span class="o">**</span><span class="n">query_args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> 
+<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="k">return</span> <span class="n">data</span>
 
-<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/queries/rma_api.py</span> in <span class="ni">model_query</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_msg_query</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span>             <span class="bp">self</span><span class="o">.</span><span class="n">build_query_url</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">259</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">model_stage</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span> 
+<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="k">def</span> <span class="nf">service_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 
-<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/api.py</span> in <span class="ni">json_msg_query</span><span class="nt">(self, url, dataframe)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span> 
+<span class="g g-Whitespace">    </span><span class="mi">164</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_query</span><span class="p">(</span><span class="k">lambda</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">165</span>                              <span class="bp">self</span><span class="o">.</span><span class="n">read_data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> 
+<span class="g g-Whitespace">    </span><span class="mi">167</span>         <span class="k">if</span> <span class="n">dataframe</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
 
-<span class="nn">h5py/h5f.pyx</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/api.py</span> in <span class="ni">do_query</span><span class="nt">(self, url_builder_fn, json_traversal_fn, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="n">post</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> 
+<span class="ne">--&gt; </span><span class="mi">204</span>         <span class="n">json_parsed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_parsed_json_over_http</span><span class="p">(</span><span class="n">api_url</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span> 
+<span class="g g-Whitespace">    </span><span class="mi">206</span>         <span class="k">return</span> <span class="n">json_traversal_fn</span><span class="p">(</span><span class="n">json_parsed_data</span><span class="p">)</span>
 
-<span class="ne">OSError</span>: Unable to open file (truncated file: eof = 1327616, sblock-&gt;base_addr = 0, stored_eof = 281107866)
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/api/api.py</span> in <span class="ni">retrieve_parsed_json_over_http</span><span class="nt">(self, url, post)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span>             <span class="n">data</span> <span class="o">=</span> <span class="n">json_utilities</span><span class="o">.</span><span class="n">read_url_get</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span>                 <span class="n">requests</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">url</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">371</span>                                      <span class="s1">&#39;;/?:@&amp;=+$,&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span>             <span class="n">data</span> <span class="o">=</span> <span class="n">json_utilities</span><span class="o">.</span><span class="n">read_url_post</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/json_utilities.py</span> in <span class="ni">read_url_get</span><span class="nt">(url)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="s1">&#39;&#39;&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s1">     response = urllib_request.urlopen(url)</span>
+<span class="ne">--&gt; </span><span class="mi">110</span><span class="s1">     json_string = response.read().decode(&#39;utf-8&#39;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s1">     return json.loads(json_string)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/http/client.py</span> in <span class="ni">read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span><span class="s1">             if self.chunked:</span>
+<span class="ne">--&gt; </span><span class="mi">454</span><span class="s1">                 return self._readall_chunked()</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span><span class="s1">             if self.length is None:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/http/client.py</span> in <span class="ni">_readall_chunked</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span><span class="s1">                 if chunk_left is None:</span>
+<span class="g g-Whitespace">    </span><span class="mi">563</span><span class="s1">                     break</span>
+<span class="ne">--&gt; </span><span class="mi">564</span><span class="s1">                 value.append(self._safe_read(chunk_left))</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span><span class="s1">                 self.chunk_left = 0</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span><span class="s1">             return b&#39;&#39;.join(value)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/http/client.py</span> in <span class="ni">_safe_read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span><span class="s1">         s = []</span>
+<span class="g g-Whitespace">    </span><span class="mi">609</span><span class="s1">         while amt &gt; 0:</span>
+<span class="ne">--&gt; </span><span class="mi">610</span><span class="s1">             chunk = self.fp.read(min(amt, MAXAMOUNT))</span>
+<span class="g g-Whitespace">    </span><span class="mi">611</span><span class="s1">             if not chunk:</span>
+<span class="g g-Whitespace">    </span><span class="mi">612</span><span class="s1">                 raise IncompleteRead(b&#39;&#39;.join(s), amt)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span><span class="s1">         while True:</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span><span class="s1">             try:</span>
+<span class="ne">--&gt; </span><span class="mi">589</span><span class="s1">                 return self._sock.recv_into(b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">590</span><span class="s1">             except timeout:</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span><span class="s1">                 self._timeout_occurred = True</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1139,7 +1179,7 @@ Preferred temporal frequency: 1
     <div class="container">
       <p>
         
-          By Victor Magdaleno-Garcia & Ashley Juavinett<br/>
+          By Ashley Juavinett & Victor Magdaleno-Garcia<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

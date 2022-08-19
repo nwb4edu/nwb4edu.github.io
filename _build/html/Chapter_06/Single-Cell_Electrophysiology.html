@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Single-Cell Electrophysiology &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>Lesson #3: Single-Cell Electrophysiology &#8212; Teaching &amp; Learning with NWB Datasets</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Obtaining Data for Single Cells" href="Obtaining_Data_For_Single_Cells.html" />
-    <link rel="prev" title="Identifying Cells with Optogenetics" href="../Chapter_05/Identifying_Cells_with_Optogenetics.html" />
+    <link rel="prev" title="Lesson #2 Problem Set" href="../Chapter_04/Chapter_4_ProblemSet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -222,34 +222,12 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_05/AllenSDK_Neuropixels.html">
-   Obtaining  Electrophysiology Data from the AllenSDK
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
-     Aligning Spike Trains with Visual Stimuli and Behavior
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_05/Identifying_Cells_with_Optogenetics.html">
-     Identifying Cells with Optogenetics
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   Single-Cell Electrophysiology
+   Lesson #3: Single-Cell Electrophysiology
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -264,14 +242,19 @@
      Analyzing Computed Features
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lesson3_ProblemSet.html">
+     Lesson 3 Problem Set
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Chapter_07/Two_Photon_Imaging.html">
-   Two Photon Imaging
+   Lesson #4: Two Photon Imaging
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -392,16 +375,10 @@
         
               <div>
                 
-  <div class="section" id="single-cell-electrophysiology">
-<h1>Single-Cell Electrophysiology<a class="headerlink" href="#single-cell-electrophysiology" title="Permalink to this headline">¶</a></h1>
-<p>Electrophysiology is the study of the electrical activity created by neurons. There are three main ways of collecting electrophysiology data:</p>
-<ol class="simple">
-<li><p>Extracellular Recordings: electrode outside of the cell</p></li>
-<li><p>Intracellular Recordings: electrode inside of the cell</p></li>
-<li><p>Patch Clamp Recordings: electrode continuous with cell membrane</p></li>
-</ol>
-<p><img alt="" src="https://www.researchgate.net/publication/349446871/figure/fig1/AS:993163909025795&#64;1613800136978/Overview-of-the-patch-clamp-method-a-Comparison-between-extracellular-and.ppm" /></p>
-<p>The data in the Allen Cell Types Database was collected through the Whole Cell Patch Clamp method. Patch clamp allows for very precise measurements of either whole-cell activity or specific ion channels. The video below shows what patch clamping looks like.</p>
+  <div class="section" id="lesson-3-single-cell-electrophysiology">
+<h1>Lesson #3: Single-Cell Electrophysiology<a class="headerlink" href="#lesson-3-single-cell-electrophysiology" title="Permalink to this headline">¶</a></h1>
+<p>While extracellular electrophysiology enables us to record from many neurons simultaneously, it cannot give us detailed information about single cells. Single-cell electrophysiology is conducted in two different ways: <strong>intracellular</strong>, where the electrode is inside of the cell, and <strong>patch clamp</strong>, where the electrode forms a continuous recording space with the inside of the cell.</p>
+<p>The data in the Allen Cell Types Database was collected using whole-cell patch clamp. Patch clamp allows for very precise measurements of either whole-cell activity or specific ion channels. The video below shows what patch clamping looks like.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -421,9 +398,17 @@
 </div></div>
 </div>
 <p><strong>About the Allen Brain Cell Types DataBase</strong></p>
-<p>The Allen Brain Cell Types Dataset utilizes Whole-Cell Patch Clamp recordings while injecting different current waveforms into to the cells. The dataset also includes many computed neuron metrics such as adaptivity, interspike interval, and spike rate, and interacelluar characteristics including like resting membrane potential, rheobase, and more.</p>
-<p>The Allen Brain Cell Types Dataset uses the Cre/LoxP system to target specific cells in mice. The Cre/LoxP system enables conditional knockouts of genes of interest by crossing a Driver mouse with a Reporter mouse, where the Driver mouse contains genes expressing Cre recombinase and the Reporter mouse express LoxP binding sites around the gene of interest. Crossing Cre-driver mouse lines with fluorescent reporter lines mark specific subsets of cells and allow researchers to target specific cells for recording.</p>
-<p>In this chapter, you learn how to downlaod single cell electophysiology data from the Allen Brain Cell Types Database, access and plot pre-computed features, plot the morphology of single cells, and compare different types of cells (i.e. spiny vs aspiny dendritic cells).</p>
+<p>The Allen Brain Cell Types dataset contains data recorded from cells using whole-cell patch clamp while injecting different current waveforms into to the cells. The dataset also includes many computed neuron metrics such as adaptivity, interspike interval, and spike rate, and interacelluar characteristics including like resting membrane potential, rheobase, and more.</p>
+<p><strong>Targeting different cell types</strong></p>
+<p>How did the Allen Institute actually distinguish between different cell types? To do so, they capitalized on the fact that different cells in the brain often express different genes. With genetic engineering, we can express glowing proteins (such as green fluorescent protein) in cells that express a specific gene. This approach takes advantage of an enzyme called Cre recombinase, which is found in bacteriophages, but not mammals. When we artificially express Cre recombinase in a specific cell type and include LoxP sites around our glowing protein, the Cre recombinase comes and flips those LoxP sites around, leading to protein expression and a gorgeous glowing neuron. This system is called the <a class="reference external" href="https://www.google.com/url?q=https%3A%2F%2Fwww.jax.org%2Fnews-and-insights%2F2006%2Fmay%2Fthe-cre-lox-and-flp-frt-systems&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw3Bd1-ytiLSqWA2QDto8bwT">Cre-LoxP system</a> and is one of the main tools that neuroscientists use to identify and target specific cells in the brain.</p>
+<p><strong>Learning objectives</strong></p>
+<p>After completing this lesson, you’ll be able to:</p>
+<ul class="simple">
+<li><p>download single cell electophysiology data from the Allen Brain Cell Types Database</p></li>
+<li><p>access and plot pre-computed features8</p></li>
+<li><p>plot the morphology of single cells</p></li>
+<li><p>compare different types of cells (i.e. spiny vs aspiny dendritic cells)</p></li>
+</ul>
 <p><strong>Additional Resources</strong></p>
 <ul class="simple">
 <li><p>The Allen Brain Cell Types Dataset uses hundreds of different Cre-driver lines. For a list of all the available lines, please visit the <a href = 'http://connectivity.brain-map.org/transgenic'> Transgenic Characterization</a> section of the Allen Mouse Connectivity site.</p></li>
@@ -457,7 +442,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Chapter_05/Identifying_Cells_with_Optogenetics.html" title="previous page">Identifying Cells with Optogenetics</a>
+    <a class='left-prev' id="prev-link" href="../Chapter_04/Chapter_4_ProblemSet.html" title="previous page">Lesson #2 Problem Set</a>
     <a class='right-next' id="next-link" href="Obtaining_Data_For_Single_Cells.html" title="next page">Obtaining Data for Single Cells</a>
 
         </div>
@@ -468,7 +453,7 @@
     <div class="container">
       <p>
         
-          By Victor Magdaleno-Garcia & Ashley Juavinett<br/>
+          By Ashley Juavinett & Victor Magdaleno-Garcia<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

@@ -24,23 +24,24 @@ parts:
         - file: Chapter_03/Obtaining_Datasets_with_DANDI
         - file: Chapter_03/Working_with_NWB_format_in_Python
         - file: Chapter_03/Interactive_NWB_Data_Exploration
-        - file: Chapter_03/Chapter_3_ProblemSet
+        - file: Chapter_03/Lesson1_ProblemSet
       - file: Chapter_04/Large_Scale_Electrophysiology
         sections:
         - file: Chapter_04/SpikeSorting
         - file: Chapter_04/Visualizing_Recordings
-        - file: Chapter_04/Chapter_4_ProblemSet
+        - file: Chapter_04/Lesson2_ProblemSet
     - caption: allensdk
       numbered: 0
       chapters:
-      - file: Chapter_05/AllenSDK_Neuropixels
-        sections:
-        - file: Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior
-        - file: Chapter_05/Identifying_Cells_with_Optogenetics
+#      - file: Chapter_05/AllenSDK_Neuropixels
+#        sections:
+#        - file: Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior
+#        - file: Chapter_05/Identifying_Cells_with_Optogenetics
       - file: Chapter_06/Single-Cell_Electrophysiology
         sections:
         - file: Chapter_06/Obtaining_Data_For_Single_Cells
         - file: Chapter_06/Analyzing_Computed_Features
+        - file: Chapter_06/Lesson3_ProblemSet
       - file: Chapter_07/Two_Photon_Imaging
         sections:
         - file: Chapter_07/Retrieving_Brain_Observatory_Data

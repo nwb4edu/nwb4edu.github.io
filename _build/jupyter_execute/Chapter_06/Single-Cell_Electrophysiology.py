@@ -1,16 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Single-Cell Electrophysiology
+# # Lesson #3: Single-Cell Electrophysiology
 
-# Electrophysiology is the study of the electrical activity created by neurons. There are three main ways of collecting electrophysiology data: 
-#  1. Extracellular Recordings: electrode outside of the cell
-#  2. Intracellular Recordings: electrode inside of the cell 
-#  3. Patch Clamp Recordings: electrode continuous with cell membrane
+# While extracellular electrophysiology enables us to record from many neurons simultaneously, it cannot give us detailed information about single cells. Single-cell electrophysiology is conducted in two different ways: **intracellular**, where the electrode is inside of the cell, and **patch clamp**, where the electrode forms a continuous recording space with the inside of the cell.
 #  
-# ![](https://www.researchgate.net/publication/349446871/figure/fig1/AS:993163909025795@1613800136978/Overview-of-the-patch-clamp-method-a-Comparison-between-extracellular-and.ppm)
-#  
-# The data in the Allen Cell Types Database was collected through the Whole Cell Patch Clamp method. Patch clamp allows for very precise measurements of either whole-cell activity or specific ion channels. The video below shows what patch clamping looks like. 
+# The data in the Allen Cell Types Database was collected using whole-cell patch clamp. Patch clamp allows for very precise measurements of either whole-cell activity or specific ion channels. The video below shows what patch clamping looks like. 
 
 # In[1]:
 
@@ -21,11 +16,20 @@ YouTubeVideo('mF7Vd5olw18')
 
 # **About the Allen Brain Cell Types DataBase** 
 # 
-# The Allen Brain Cell Types Dataset utilizes Whole-Cell Patch Clamp recordings while injecting different current waveforms into to the cells. The dataset also includes many computed neuron metrics such as adaptivity, interspike interval, and spike rate, and interacelluar characteristics including like resting membrane potential, rheobase, and more. 
+# The Allen Brain Cell Types dataset contains data recorded from cells using whole-cell patch clamp while injecting different current waveforms into to the cells. The dataset also includes many computed neuron metrics such as adaptivity, interspike interval, and spike rate, and interacelluar characteristics including like resting membrane potential, rheobase, and more. 
 # 
-# The Allen Brain Cell Types Dataset uses the Cre/LoxP system to target specific cells in mice. The Cre/LoxP system enables conditional knockouts of genes of interest by crossing a Driver mouse with a Reporter mouse, where the Driver mouse contains genes expressing Cre recombinase and the Reporter mouse express LoxP binding sites around the gene of interest. Crossing Cre-driver mouse lines with fluorescent reporter lines mark specific subsets of cells and allow researchers to target specific cells for recording.
+# **Targeting different cell types**
 # 
-# In this chapter, you learn how to downlaod single cell electophysiology data from the Allen Brain Cell Types Database, access and plot pre-computed features, plot the morphology of single cells, and compare different types of cells (i.e. spiny vs aspiny dendritic cells).
+# How did the Allen Institute actually distinguish between different cell types? To do so, they capitalized on the fact that different cells in the brain often express different genes. With genetic engineering, we can express glowing proteins (such as green fluorescent protein) in cells that express a specific gene. This approach takes advantage of an enzyme called Cre recombinase, which is found in bacteriophages, but not mammals. When we artificially express Cre recombinase in a specific cell type and include LoxP sites around our glowing protein, the Cre recombinase comes and flips those LoxP sites around, leading to protein expression and a gorgeous glowing neuron. This system is called the [Cre-LoxP system](https://www.google.com/url?q=https%3A%2F%2Fwww.jax.org%2Fnews-and-insights%2F2006%2Fmay%2Fthe-cre-lox-and-flp-frt-systems&sa=D&sntz=1&usg=AOvVaw3Bd1-ytiLSqWA2QDto8bwT) and is one of the main tools that neuroscientists use to identify and target specific cells in the brain.
+# 
+# 
+# **Learning objectives**
+# 
+# After completing this lesson, you'll be able to:
+# * download single cell electophysiology data from the Allen Brain Cell Types Database
+# * access and plot pre-computed features8
+# * plot the morphology of single cells
+# * compare different types of cells (i.e. spiny vs aspiny dendritic cells)
 
 # **Additional Resources**
 # 
