@@ -1,0 +1,785 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Obtaining Datasets with DANDI &#8212; Teaching &amp; Learning with NWB Datasets</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'NWB_Dataset_Structure/01-Obtaining_Datasets_with_DANDI';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Working with NWB in Python" href="02-Working_with_NWB_format_in_Python.html" />
+    <link rel="prev" title="Lesson #1: The Structure of NWB Datasets" href="00-Introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Teaching and Learning with NWB Datasets
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_01/Introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/Using_This_Book.html">How to Use this Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/Setup.html">Setup for Colab/Binder or Local Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/For_Educators.html">For Educators</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_02/Data_Science_In_Python.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/NumPy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/Pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/SciPy.html">SciPy</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PYNWB</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Obtaining Datasets with DANDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-Working_with_NWB_format_in_Python.html">Working with NWB in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-Interactive_NWB_Data_Exploration.html">Interactive NWB Data Exploration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lesson1_ProblemSet.html">Lesson #1 Problem Set</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_04/Large_Scale_Electrophysiology.html">Lesson #2: Analyzing Extracellular Recordings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/SpikeSorting.html">Spike Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">Visualizing Large Scale Recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/Lesson2_ProblemSet.html">Lesson #2 Problem Set</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ALLENSDK</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_06/Single-Cell_Electrophysiology.html">Lesson #3: Single-Cell Electrophysiology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_06/Obtaining_Data_For_Single_Cells.html">Obtaining Data for Single Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_06/Analyzing_Computed_Features.html">Analyzing Computed Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_06/Lesson3_ProblemSet.html">Lesson 3 Problem Set</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_07/Two_Photon_Imaging.html">Lesson #4: Two Photon Imaging</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_07/Retrieving_Brain_Observatory_Data.html">Retrieving Calcium Imaging Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_07/Analyzing_Two_Photon_Data.html">Analyzing Two Photon Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_07/Correlations_in_Two_Photon_Data.html">Correlations in Two Photon Data</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/NWB_Dataset_Structure/01-Obtaining_Datasets_with_DANDI.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/NWB_Dataset_Structure/01-Obtaining_Datasets_with_DANDI.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Obtaining Datasets with DANDI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-downloading-dandisets-using-python">Option 1: Downloading Dandisets using Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-streaming-the-dandiset">Option 2: Streaming the Dandiset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-via-the-dandi-hub">Streaming via the DANDI hub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-locally-after-configuring-your-environment">Streaming locally, after configuring your environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-data-streaming">Code for Data Streaming</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="obtaining-datasets-with-dandi">
+<h1>Obtaining Datasets with DANDI<a class="headerlink" href="#obtaining-datasets-with-dandi" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a> is an open source data archive for neuroscience datasets, called <strong>Dandisets</strong>. DANDI allows scientists to submit and download neural datasets to promote research collaboration and consistent and transparent data standards. DANDI also provides a solution to the difficulties that come from housing data in the many other general domains (i.e. Dropbox, Google Drive, etc.). Usefully for our purposes here, many of the datasets on DANDI are in NWB format. If you’d like to know more about DANDI, check out the <a class="reference external" href="https://www.dandiarchive.org/handbook/">DANDI handbook</a>.</p>
+<p>There are two primary ways to work with Dandisets:</p>
+<ol class="arabic simple">
+<li><p>You can <strong>download the datasets</strong>, either via the <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset">DANDI Web Application</a> or using the DANDI Python client below. If you download via the website, you’ll need to create an account.</p></li>
+<li><p>You can <strong>stream datasets directly</strong> from DANDI. We’ll show you how to do this online as well as on your local computer.</p></li>
+</ol>
+<p>Below, we demonstrate how to do both of these. For additional information on either of these methods, please refer to the <a class="reference external" href="https://gui.dandiarchive.org/">DANDI documentation</a>.</p>
+<section id="option-1-downloading-dandisets-using-python">
+<h2>Option 1: Downloading Dandisets using Python<a class="headerlink" href="#option-1-downloading-dandisets-using-python" title="Permalink to this heading">#</a></h2>
+<p>The cell below will download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000006">this dataset</a> from DANDI. This dataset contains 32-channel extracellular recordings from mouse cortex. We’re using the <a class="reference external" href="https://dandi.readthedocs.io/en/latest/cmdline/download.html"><code class="docutils literal notranslate"><span class="pre">download</span></code></a> tool from dandi below.</p>
+<p><mark><strong>Note:</strong> Downloading this dataset may take several minutes, depending on your internet connection.</mark></p>
+<p><mark><strong>Note #2:</strong> This step is <em>only possible</em> after completing the setup steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.download</span> <span class="kn">import</span> <span class="n">download</span> <span class="k">as</span> <span class="n">dandi_download</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+
+<span class="c1"># Set the URL for the DANDI file</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dandiarchive.org/dandiset/000006/draft&#39;</span>
+
+<span class="c1"># Download the file into the current working directory</span>
+<span class="c1"># It will skip downloading any files you&#39;ve already downloaded</span>
+<span class="n">dandi_download</span><span class="p">([</span><span class="n">url</span><span class="p">],</span> <span class="n">output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">existing</span> <span class="o">=</span> <span class="s2">&quot;skip&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PATH                                                SIZE      DONE           DONE% CHECKSUM STATUS          MESSAGE   
+000006/dandiset.yaml                                                                        done            updated   
+000006/sub-anm369962/sub-anm369962_ses-20170309.nwb 796.9 kB  796.9 kB        100%    ok    done                      
+000006/sub-anm369962/sub-anm369962_ses-20170316.nwb 609.6 kB  609.6 kB        100%    ok    done                      
+000006/sub-anm369962/sub-anm369962_ses-20170310.nwb 6.6 MB    6.6 MB          100%    ok    done                      
+000006/sub-anm369962/sub-anm369962_ses-20170314.nwb 7.5 MB    7.5 MB          100%    ok    done                      
+000006/sub-anm369962/sub-anm369962_ses-20170313.nwb 11.5 MB                                 downloading               
+Summary:                                            27.0 MB   15.5 MB                       5 done          1 updated 
+                                                    +112.6 MB 11.11%                        1 downloading             
+                                                              ETA: 3 minutes                                          
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dandiarchive.org/dandiset/000006/draft&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Download the file into the current working directory</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># It will skip downloading any files you&#39;ve already downloaded</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">dandi_download</span><span class="p">([</span><span class="n">url</span><span class="p">],</span> <span class="n">output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">existing</span> <span class="o">=</span> <span class="s2">&quot;skip&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/dandi/download.py:146,</span> in <span class="ni">download</span><span class="nt">(urls, output_dir, format, existing, jobs, jobs_per_zarr, get_metadata, get_assets, sync, path_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="k">elif</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;pyout&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="k">with</span> <span class="n">out</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">146</span>         <span class="k">for</span> <span class="n">rec</span> <span class="ow">in</span> <span class="n">gen_</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>             <span class="n">out</span><span class="p">(</span><span class="n">rec</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/dandi/download.py:132,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="n">lgr</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>             <span class="s2">&quot;Parallel downloads are not yet implemented for non-pyout format=</span><span class="si">%r</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>             <span class="s2">&quot;Download will proceed serially.&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>             <span class="nb">format</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="n">downloaders</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="n">Downloader</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="n">url</span><span class="o">=</span><span class="n">purl</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="k">for</span> <span class="n">purl</span> <span class="ow">in</span> <span class="n">parsed_urls</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="p">]</span>
+<span class="nn">--&gt; 132 gen_ = (r for dl in downloaders for r</span> in <span class="ni">dl.download_generator</span><span class="nt">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="c1"># TODOs:</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="c1">#  - redo frontends similarly to how command_ls did it</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="c1">#  - have a single loop with analysis of `rec` to either any file</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="c1">#    has failed to download.  If any was: exception should probably be</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="c1">#    raised.  API discussion for Python side of API:</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> <span class="k">if</span> <span class="nb">format</span> <span class="o">==</span> <span class="s2">&quot;debug&quot;</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/dandi/download.py:308,</span> in <span class="ni">Downloader.download_generator</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="k">yield</span> <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">yield_generator_for_fields</span><span class="p">:</span> <span class="n">gen</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">308</span>     <span class="k">for</span> <span class="n">resp</span> <span class="ow">in</span> <span class="n">gen</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="k">yield</span> <span class="p">{</span><span class="o">**</span><span class="n">resp</span><span class="p">,</span> <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">}</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/dandi/download.py:334,</span> in <span class="ni">_download_generator_guard</span><span class="nt">(path, generator)</span>
+<span class="g g-Whitespace">    </span><span class="mi">332</span> <span class="k">def</span> <span class="nf">_download_generator_guard</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">generator</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">333</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">334</span>         <span class="k">yield from</span> <span class="n">generator</span>
+<span class="g g-Whitespace">    </span><span class="mi">335</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">336</span>         <span class="n">lgr</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Caught while downloading </span><span class="si">%s</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/dandi/download.py:679,</span> in <span class="ni">_download_file</span><span class="nt">(downloader, path, toplevel_path, lock, size, mtime, existing, digests, digest_callback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">673</span> <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">downloaded</span> <span class="o">==</span> <span class="n">size</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span>     <span class="c1"># Exit early when downloaded == size, as making a Range</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span>     <span class="c1"># request in such a case results in a 416 error from S3.</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span>     <span class="c1"># Problems will result if `size` is None but we&#39;ve already</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span>     <span class="c1"># downloaded everything.</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span>     <span class="k">break</span>
+<span class="ne">--&gt; </span><span class="mi">679</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">downloader</span><span class="p">(</span><span class="n">dldir</span><span class="o">.</span><span class="n">offset</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">680</span>     <span class="k">if</span> <span class="n">digester</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">681</span>         <span class="k">assert</span> <span class="n">downloaded_digest</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/dandi/dandiapi.py:1482,</span> in <span class="ni">BaseRemoteAsset.get_download_file_iter.&lt;locals&gt;.downloader</span><span class="nt">(start_at)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1479</span> <span class="c1"># TODO: apparently we might need retries here as well etc</span>
+<span class="g g-Whitespace">   </span><span class="mi">1480</span> <span class="c1"># if result.status_code not in (200, 201):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1481</span> <span class="n">result</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1482</span> <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1483</span>     <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>  <span class="c1"># could be some &quot;keep alive&quot;?</span>
+<span class="g g-Whitespace">   </span><span class="mi">1484</span>         <span class="k">yield</span> <span class="n">chunk</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/requests/models.py:816,</span> in <span class="ni">Response.iter_content.&lt;locals&gt;.generate</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">814</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s2">&quot;stream&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">815</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">816</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>     <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span>         <span class="k">raise</span> <span class="n">ChunkedEncodingError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/urllib3/response.py:628,</span> in <span class="ni">HTTPResponse.stream</span><span class="nt">(self, amt, decode_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">628</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span>         <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">631</span>             <span class="k">yield</span> <span class="n">data</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/urllib3/response.py:567,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="n">fp_closed</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">,</span> <span class="s2">&quot;closed&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_catcher</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">567</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp_read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fp_closed</span> <span class="k">else</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span>     <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="n">flush_decoder</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/urllib3/response.py:533,</span> in <span class="ni">HTTPResponse._fp_read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="k">return</span> <span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="c1"># StringIO doesn&#39;t like amt=None</span>
+<span class="ne">--&gt; </span><span class="mi">533</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/http/client.py:465,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="c1"># clip the read to the &quot;end of response&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">amt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span>
+<span class="ne">--&gt; </span><span class="mi">465</span> <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/socket.py:705,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">705</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/ssl.py:1278,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1274</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1276</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1277</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1278</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/ssl.py:1134,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1133</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1134</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1135</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the cell above completes running, you will see a new folder 📁”00006” wherever you’re running this notebook. Usefully, the code above will also print a list of individual NWB files that have been downloaded in this folder.</p>
+<p><strong>Once the data is done downloading, you’re ready for the next step.</strong></p>
+</section>
+<section id="option-2-streaming-the-dandiset">
+<h2>Option 2: Streaming the Dandiset<a class="headerlink" href="#option-2-streaming-the-dandiset" title="Permalink to this heading">#</a></h2>
+<p>The folks at NWB have also developed a clever way to stream Dandisets so that small bits of them can be viewed without downloading the entire dataset. This is particularly useful for very large datasets! <strong>This step is optional, and maybe a better option if you have limited hard drive space and/or are having issues with Option 1 above.</strong></p>
+<section id="streaming-via-the-dandi-hub">
+<h3>Streaming via the DANDI hub<a class="headerlink" href="#streaming-via-the-dandi-hub" title="Permalink to this heading">#</a></h3>
+<p>The easiest way to stream data is via the DANDI Jupyter Hub (<a class="reference external" href="https://hub.dandiarchive.org/">https://hub.dandiarchive.org/</a>). There are setup steps for this in Chapter 1. The code below should work without a hitch.</p>
+</section>
+<section id="streaming-locally-after-configuring-your-environment">
+<h3>Streaming locally, after configuring your environment<a class="headerlink" href="#streaming-locally-after-configuring-your-environment" title="Permalink to this heading">#</a></h3>
+<p>With some configuration, you can stream data on your local computer. First, you need to set up your environment with the right version of a package called <code class="docutils literal notranslate"><span class="pre">h5py</span></code>. <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html#sphx-glr-tutorials-advanced-io-streaming-py">There are instructions here for how to do that</a>. Once you’re done, you can restart the kernel for this notebook, and run the code below.</p>
+</section>
+<section id="code-for-data-streaming">
+<h3>Code for Data Streaming<a class="headerlink" href="#code-for-data-streaming" title="Permalink to this heading">#</a></h3>
+<p>First, we need to figure out the correct URL for the dataset on the Amazon S3 storage system. There is a tool to do so within the dandiapi, which we’ll use below to get the URL for one session from the data we downloaded above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.dandiapi</span> <span class="kn">import</span> <span class="n">DandiAPIClient</span>
+
+<span class="n">dandiset_id</span> <span class="o">=</span> <span class="s1">&#39;000006&#39;</span>  <span class="c1"># ephys dataset from the Svoboda Lab</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;sub-anm372795/sub-anm372795_ses-20170718.nwb&#39;</span>  <span class="c1"># 450 kB file</span>
+
+<span class="k">with</span> <span class="n">DandiAPIClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_dandiset</span><span class="p">(</span><span class="n">dandiset_id</span><span class="p">,</span> <span class="s1">&#39;draft&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_asset_by_path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="n">s3_path</span> <span class="o">=</span> <span class="n">asset</span><span class="o">.</span><span class="n">get_content_url</span><span class="p">(</span><span class="n">follow_redirects</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">strip_query</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">s3_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dandiarchive.s3.amazonaws.com/blobs/43b/f3a/43bf3a81-4a0b-433f-b471-1f10303f9d35
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can read this path, but we’ll stream it, rather than downloading it! The cell below will print some of the data about this experiment. It uses another package, <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/index.html"><strong>PyNWB</strong></a>, which is specifically designed to work with NWB files in Python. As you might expect, this won’t be the last time we see this package. Below, we’ll use the <code class="docutils literal notranslate"><span class="pre">NWBHDF5IO</span></code> class from this package, which will allow us to read NWB files.</p>
+<p><mark><strong>Note</strong>: The code below <em>will not work</em> unless you’re on the Dandihub or have properly configured your environment. See above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+
+<span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
+    <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;lick_times&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">time_series</span><span class="p">[</span><span class="s1">&#39;lick_left_times&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In addition, we can use a fancy widget to create an interactive display of this dataset while we are streaming it. More on this <a class="reference external" href="https://nwb4edu.github.io/Chapter_03/Interactive_NWB_Data_Exploration.html">later</a>!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nwbwidgets</span> <span class="kn">import</span> <span class="n">nwb2widget</span>
+
+<span class="n">nwb2widget</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following section will go over the the structure of an NWBFile and how to access data from this new file type.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nwb4edu/nwb4edu.github.io",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./NWB_Dataset_Structure"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="00-Introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lesson #1: The Structure of NWB Datasets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02-Working_with_NWB_format_in_Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Working with NWB in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-downloading-dandisets-using-python">Option 1: Downloading Dandisets using Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-streaming-the-dandiset">Option 2: Streaming the Dandiset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-via-the-dandi-hub">Streaming via the DANDI hub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-locally-after-configuring-your-environment">Streaming locally, after configuring your environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-data-streaming">Code for Data Streaming</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett & Victor Magdaleno-Garcia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,405 +1,417 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Obtaining Data for Single Cells &#8212; Teaching &amp; Learning with NWB Datasets</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter_06/Obtaining_Data_For_Single_Cells';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Analyzing Computed Features" href="Analyzing_Computed_Features.html" />
     <link rel="prev" title="Lesson #3: Single-Cell Electrophysiology" href="Single-Cell_Electrophysiology.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+    
+    
       
-      <img src="../_static/nwb_learning.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Teaching & Learning with NWB Datasets</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../landing_page.html">
-   Teaching and Learning with NWB Datasets
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Introduction
- </span>
-</p>
+    
+    
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Teaching and Learning with NWB Datasets
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_01/Introduction.html">
-   Introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_01/Using_This_Book.html">
-     How to Use this Book
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_01/Setup.html">
-     Setup
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_01/For_Educators.html">
-     For Educators
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_02/Data_Science_In_Python.html">
-   Data Science in Python
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_02/NumPy.html">
-     NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_02/Pandas.html">
-     Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_02/SciPy.html">
-     SciPy
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_01/Introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/Using_This_Book.html">How to Use this Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/Setup.html">Setup for Colab/Binder or Local Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/For_Educators.html">For Educators</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  pynwb
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_02/Data_Science_In_Python.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/NumPy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/Pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/SciPy.html">SciPy</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PYNWB</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_03/NWB_Dataset_Structure.html">
-   Lesson #1: The Structure of NWB Datasets
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Obtaining_Datasets_with_DANDI.html">
-     Obtaining Datasets with DANDI
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Working_with_NWB_format_in_Python.html">
-     Working with NWB in Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Interactive_NWB_Data_Exploration.html">
-     Interactive NWB Data Exploration
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
-     Lesson #1 Problem Set
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_04/Large_Scale_Electrophysiology.html">
-   Lesson #2: Analyzing Extracellular Recordings
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/SpikeSorting.html">
-     Spike Sorting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">
-     Visualizing Large Scale Recordings
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_04/Chapter_4_ProblemSet.html">
-     Lesson #2 Problem Set
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../NWB_Dataset_Structure/00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/01-Obtaining_Datasets_with_DANDI.html">Obtaining Datasets with DANDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/02-Working_with_NWB_format_in_Python.html">Working with NWB in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/03-Interactive_NWB_Data_Exploration.html">Interactive NWB Data Exploration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/Lesson1_ProblemSet.html">Lesson #1 Problem Set</a></li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  allensdk
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_04/Large_Scale_Electrophysiology.html">Lesson #2: Analyzing Extracellular Recordings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/SpikeSorting.html">Spike Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">Visualizing Large Scale Recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/Lesson2_ProblemSet.html">Lesson #2 Problem Set</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ALLENSDK</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Single-Cell_Electrophysiology.html">
-   Lesson #3: Single-Cell Electrophysiology
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Obtaining Data for Single Cells
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Analyzing_Computed_Features.html">
-     Analyzing Computed Features
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Lesson3_ProblemSet.html">
-     Lesson 3 Problem Set
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter_07/Two_Photon_Imaging.html">
-   Lesson #4: Two Photon Imaging
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_07/Retrieving_Brain_Observatory_Data.html">
-     Retrieving Calcium Imaging Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_07/Analyzing_Two_Photon_Data.html">
-     Analyzing Two Photon Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter_07/Correlations_in_Two_Photon_Data.html">
-     Correlations in Two Photon Data
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Single-Cell_Electrophysiology.html">Lesson #3: Single-Cell Electrophysiology</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Obtaining Data for Single Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analyzing_Computed_Features.html">Analyzing Computed Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lesson3_ProblemSet.html">Lesson 3 Problem Set</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_07/Two_Photon_Imaging.html">Lesson #4: Two Photon Imaging</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_07/Retrieving_Brain_Observatory_Data.html">Retrieving Calcium Imaging Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_07/Analyzing_Two_Photon_Data.html">Analyzing Two Photon Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_07/Correlations_in_Two_Photon_Data.html">Correlations in Two Photon Data</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Chapter_06/Obtaining_Data_For_Single_Cells.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+<div class="sbt-scroll-pixel-helper"></div>
 
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Chapter_06/Obtaining_Data_For_Single_Cells.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Chapter_06/Obtaining_Data_For_Single_Cells.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Chapter_06/Obtaining_Data_For_Single_Cells.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter_06/Obtaining_Data_For_Single_Cells.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Obtaining Data for Single Cells</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-available-cells">
-   Get Available Cells
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-morphology-data">
-   Get Morphology data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-electrophysiology-data">
-   Get Electrophysiology Data
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-available-cells">Get Available Cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-morphology-data">Get Morphology data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-electrophysiology-data">Get Electrophysiology Data</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="obtaining-data-for-single-cells">
-<h1>Obtaining Data for Single Cells<a class="headerlink" href="#obtaining-data-for-single-cells" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="obtaining-data-for-single-cells">
+<h1>Obtaining Data for Single Cells<a class="headerlink" href="#obtaining-data-for-single-cells" title="Permalink to this heading">#</a></h1>
 <p>This section will serve as an introduction to the Allen Cell Types database. We’ll work with the AllenSDK to see what information we can gain about our cells.</p>
 <p>First, let’s make sure you have an updated version of the Allen Institute Database installed. If you do not have the version below, this cell will install it for you. There is more information on installing the AllenSDK in the <a href="http://alleninstitute.github.io/AllenSDK/install.html">install guide</a>.</p>
 <div class="cell docutils container">
@@ -412,185 +424,106 @@
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span> 
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;incompatible version of allensdk installed&#39;</span><span class="p">)</span>
-        <span class="o">!</span>pip install <span class="nv">allensdk</span><span class="o">==</span><span class="m">2</span>.11.2
+        <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">allensdk</span><span class="o">==</span><span class="m">2</span>.11.2
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip install <span class="nv">allensdk</span><span class="o">==</span><span class="m">2</span>.11.2
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">allensdk</span><span class="o">==</span><span class="m">2</span>.11.2
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>incompatible version of allensdk installed
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk==2.11.2
   Using cached allensdk-2.11.2-py3-none-any.whl (1.7 MB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: aiohttp==3.7.4 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.7.4)
-Requirement already satisfied: requests&lt;3.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.25.1)
-Requirement already satisfied: statsmodels&lt;=0.13.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.13.0)
-Requirement already satisfied: psycopg2-binary&lt;3.0.0,&gt;=2.7 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.8.4)
-Requirement already satisfied: six&lt;2.0.0,&gt;=1.9.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.16.0)
-Requirement already satisfied: jinja2&lt;2.12.0,&gt;=2.7.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.11.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting marshmallow==3.0.0rc6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached marshmallow-3.0.0rc6-py2.py3-none-any.whl (42 kB)
-Requirement already satisfied: seaborn&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.11.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary&lt;3.0.0,&gt;=2.7
+  Using cached psycopg2_binary-2.9.6-cp311-cp311-macosx_10_9_x86_64.whl (2.2 MB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hdmf&lt;2.5.0
+  Using cached hdmf-2.4.0-py2.py3-none-any.whl (149 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached hdmf-2.4.0-py2.py3-none-any.whl (149 kB)
-Requirement already satisfied: requests-toolbelt&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.9.1)
-Requirement already satisfied: pynrrd&lt;1.0.0,&gt;=0.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.4.2)
-Requirement already satisfied: scipy&lt;2.0.0,&gt;=1.4.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.6.3)
-Requirement already satisfied: glymur==0.8.19 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.8.19)
-Requirement already satisfied: boto3==1.17.21 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.17.21)
-Requirement already satisfied: simpleitk&lt;3.0.0,&gt;=2.0.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.0.2)
-Requirement already satisfied: nest-asyncio==1.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.2.0)
-Requirement already satisfied: semver in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.13.0)
-Requirement already satisfied: tables&lt;4.0.0,&gt;=3.6.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.6.1)
-Requirement already satisfied: scikit-build&lt;1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.10.0)
-Requirement already satisfied: future&lt;1.0.0,&gt;=0.14.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.17.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting h5py&lt;3.0.0,&gt;=2.8
+  Using cached h5py-2.10.0.tar.gz (301 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting argschema&lt;3.0.0
-  Using cached argschema-2.0.2-py2.py3-none-any.whl
-Requirement already satisfied: scikit-image&lt;0.17.0,&gt;=0.14.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.14.2)
-Requirement already satisfied: matplotlib&lt;4.0.0,&gt;=1.4.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.4.2)
-Requirement already satisfied: simplejson&lt;4.0.0,&gt;=3.10.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (3.17.0)
-Requirement already satisfied: tqdm&gt;=4.27 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (4.62.0)
-Requirement already satisfied: pynwb&lt;2.0.0,&gt;=1.3.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (1.4.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas&lt;=0.25.3,&gt;=0.25.1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached pandas-0.25.3-cp37-cp37m-macosx_10_9_x86_64.whl (10.2 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hRequirement already satisfied: matplotlib&lt;4.0.0,&gt;=1.4.3 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk==2.11.2) (3.7.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.19.0,&gt;=1.15.4
+  Using cached numpy-1.18.5.zip (5.4 MB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached numpy-1.18.5-cp37-cp37m-macosx_10_9_x86_64.whl (15.1 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: h5py&lt;3.0.0,&gt;=2.8 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (2.10.0)
-Requirement already satisfied: xarray&lt;0.16.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.15.0)
-Requirement already satisfied: ndx-events&lt;=0.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from allensdk==2.11.2) (0.2.0)
-Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (3.0.4)
-Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (3.0.1)
-Requirement already satisfied: typing-extensions&gt;=3.6.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (3.10.0.0)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (4.7.4)
-Requirement already satisfied: attrs&gt;=17.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (20.3.0)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from aiohttp==3.7.4-&gt;allensdk==2.11.2) (1.4.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: s3transfer&lt;0.4.0,&gt;=0.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk==2.11.2) (0.3.7)
-Requirement already satisfied: jmespath&lt;1.0.0,&gt;=0.7.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk==2.11.2) (0.10.0)
-Requirement already satisfied: botocore&lt;1.21.0,&gt;=1.20.21 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from boto3==1.17.21-&gt;allensdk==2.11.2) (1.20.86)
-Requirement already satisfied: setuptools in /Users/ashley/anaconda3/lib/python3.7/site-packages (from glymur==0.8.19-&gt;allensdk==2.11.2) (57.0.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml&lt;1,&gt;=0.15 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (0.15.46)
-Requirement already satisfied: jsonschema&lt;4,&gt;=2.6.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (3.2.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: MarkupSafe&gt;=0.23 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jinja2&lt;2.12.0,&gt;=2.7.3-&gt;allensdk==2.11.2) (2.0.1)
-Requirement already satisfied: pillow&gt;=6.2.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (9.1.0)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (2.8.1)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (1.0.1)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (0.10.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from matplotlib&lt;4.0.0,&gt;=1.4.3-&gt;allensdk==2.11.2) (2.4.7)
-Requirement already satisfied: pytz&gt;=2017.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from pandas&lt;=0.25.3,&gt;=0.25.1-&gt;allensdk==2.11.2) (2021.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk==2.11.2) (1.26.5)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk==2.11.2) (2021.5.30)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0-&gt;allensdk==2.11.2) (2.10)
-Requirement already satisfied: wheel&gt;=0.29.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk==2.11.2) (0.36.2)
-Requirement already satisfied: packaging in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk==2.11.2) (21.3)
-Requirement already satisfied: networkx&gt;=1.8 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (2.2)
-Requirement already satisfied: cloudpickle&gt;=0.2.1 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (0.8.0)
-Requirement already satisfied: PyWavelets&gt;=0.4.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (1.0.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dask[array]&gt;=1.0.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (1.1.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \ done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: patsy&gt;=0.5.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from statsmodels&lt;=0.13.0-&gt;allensdk==2.11.2) (0.5.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Preparing metadata (pyproject.toml) ... ?25l-
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numexpr&gt;=2.6.2 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from tables&lt;4.0.0,&gt;=3.6.0-&gt;allensdk==2.11.2) (2.7.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: toolz&gt;=0.7.3 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from dask[array]&gt;=1.0.0-&gt;scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (0.9.0)
-Requirement already satisfied: importlib-metadata in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jsonschema&lt;4,&gt;=2.6.0-&gt;hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (4.5.0)
-Requirement already satisfied: pyrsistent&gt;=0.14.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from jsonschema&lt;4,&gt;=2.6.0-&gt;hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (0.17.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator&gt;=4.3.0 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from networkx&gt;=1.8-&gt;scikit-image&lt;0.17.0,&gt;=0.14.0-&gt;allensdk==2.11.2) (5.0.9)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=0.5 in /Users/ashley/anaconda3/lib/python3.7/site-packages (from importlib-metadata-&gt;jsonschema&lt;4,&gt;=2.6.0-&gt;hdmf&lt;2.5.0-&gt;allensdk==2.11.2) (3.4.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: numpy, marshmallow, pandas, argschema, hdmf, allensdk
-  Attempting uninstall: numpy
-    Found existing installation: numpy 1.20.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling numpy-1.20.3:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Successfully uninstalled numpy-1.20.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: marshmallow
-    Found existing installation: marshmallow 3.17.0
-    Uninstalling marshmallow-3.17.0:
-      Successfully uninstalled marshmallow-3.17.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: pandas
-    Found existing installation: pandas 1.3.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling pandas-1.3.5:
-      Successfully uninstalled pandas-1.3.5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: argschema
-    Found existing installation: argschema 3.0.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting pandas&lt;=0.25.3,&gt;=0.25.1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling argschema-3.0.4:
-      Successfully uninstalled argschema-3.0.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pandas-0.25.3.tar.gz (12.6 MB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/12.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: hdmf
-    Found existing installation: hdmf 2.5.8
-    Uninstalling hdmf-2.5.8:
-      Successfully uninstalled hdmf-2.5.8
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: allensdk
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Found existing installation: allensdk 2.13.6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Uninstalling allensdk-2.13.6:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Successfully uninstalled allensdk-2.13.6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed allensdk-2.11.2 argschema-2.0.2 hdmf-2.4.0 marshmallow-3.0.0rc6 numpy-1.18.5 pandas-0.25.3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+
+     ━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.2/12.6 MB</span> <span class=" -Color -Color-Red">29.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+?25h<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+
 </pre></div>
 </div>
 </div>
@@ -626,8 +559,8 @@ Requirement already satisfied: pyrsistent&gt;=0.14.0 in /Users/ashley/anaconda3/
 </div>
 </div>
 </div>
-<div class="section" id="get-available-cells">
-<h2>Get Available Cells<a class="headerlink" href="#get-available-cells" title="Permalink to this headline">¶</a></h2>
+<section id="get-available-cells">
+<h2>Get Available Cells<a class="headerlink" href="#get-available-cells" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">get_cells()</span></code> method downloads metadata for cells in the database. The database contains human cells and mouse cells. By default, <code class="docutils literal notranslate"><span class="pre">get_cells()</span></code> downloads metadata for <em>all</em> cells in the database. Alternatively, you can filter the database to only include cells collected from a certain species.
 Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.cell_types_cache.html">the documentation for the CellTypesCache</a> for more information on the <code class="docutils literal notranslate"><span class="pre">get_cells</span></code> method.</p>
 <div class="cell docutils container">
@@ -824,9 +757,9 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <p>For more information on the Allen Cell Types Cre lines, please visit <a href="https://docs.google.com/document/d/1ZMMZgc7cS5BHhoWNqzjw95BdxOuj5wrYl9I7PV2HeUI/edit">the Allen Cell Types Cre Lines Glossary</a> for a short description of the cortical expression patterns of the transgenic Cre lines available in the Allen Cell Types dataset.</p>
-</div>
-<div class="section" id="get-morphology-data">
-<h2>Get Morphology data<a class="headerlink" href="#get-morphology-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="get-morphology-data">
+<h2>Get Morphology data<a class="headerlink" href="#get-morphology-data" title="Permalink to this heading">#</a></h2>
 <p>The dataframe above only contains metadeta about our cells and no information on the morphology or electrophysiology of our cells. In order to get information about the morphology of these cells, we need to use the <code class="docutils literal notranslate"><span class="pre">get_morphology_features()</span></code> method on our instance of the cell types cache. We will set the indices to be the <code class="docutils literal notranslate"><span class="pre">specimen_id</span></code> because these ids will align with those in <code class="docutils literal notranslate"><span class="pre">all_cells_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1313,12 +1246,12 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Obtaining_Data_For_Single_Cells_20_0.png" src="../_images/Obtaining_Data_For_Single_Cells_20_0.png" />
+<img alt="../_images/93ffe6053bf7d20fcaace78481c73f4ec5ab72e03da3f59e776362eeb989dee8.png" src="../_images/93ffe6053bf7d20fcaace78481c73f4ec5ab72e03da3f59e776362eeb989dee8.png" />
 </div>
 </div>
-</div>
-<div class="section" id="get-electrophysiology-data">
-<h2>Get Electrophysiology Data<a class="headerlink" href="#get-electrophysiology-data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="get-electrophysiology-data">
+<h2>Get Electrophysiology Data<a class="headerlink" href="#get-electrophysiology-data" title="Permalink to this heading">#</a></h2>
 <p>Now that we know what our cell looks like, let’s take a look at its action potentials. The <code class="docutils literal notranslate"><span class="pre">get_ephys_data()</span></code> method can download electrophysiology traces for a single cell in the database. This method returns a class instance with helper methods for retrieving stimulus and response traces out of an NWB file. If we take a look at <code class="docutils literal notranslate"><span class="pre">specimen_ephys_data</span></code> we can see that it is an NWBDataSet object.  In order to use <code class="docutils literal notranslate"><span class="pre">get_ephys_data()</span></code>, you must specify the id of the cell specimen whose electrophysiology you would like to download.</p>
 <p>Below we go over methods that can be used to access the electrophysiology data for single cells, the source documentation for all the methods we cover can be found on the <a href = 'https://allensdk.readthedocs.io/en/latest/allensdk.core.nwb_data_set.html'> Allen Brain Atlas website</a>. The <code class="docutils literal notranslate"><span class="pre">get_experiment_sweep_numbers()</span></code> method returns all of the sweep numbers for experiments in the file. Each sweep contains metadata and electrophysiology data.</p>
 <div class="cell docutils container">
@@ -1335,43 +1268,8 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">38</span><span class="n">f021f6f0f9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Retrieve sweep numbers for cell</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">sweep_numbers</span> <span class="o">=</span> <span class="n">specimen_ephys_data</span><span class="o">.</span><span class="n">get_experiment_sweep_numbers</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">specimen_ephys_data</span><span class="p">))</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/allensdk/core/nwb_data_set.py</span> in <span class="ni">get_experiment_sweep_numbers</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>         <span class="sd">&quot;&quot;&quot; Get all of the sweep numbers for experiment epochs in the file, not including test sweeps. &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> 
-<span class="ne">--&gt; </span><span class="mi">312</span>         <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>             <span class="n">sweeps</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span>                       <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;epochs&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Experiment_&#39;</span><span class="p">)]</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span>                 <span class="n">fid</span> <span class="o">=</span> <span class="n">make_fid</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">userblock_size</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span>                                <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="o">=</span><span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">),</span>
-<span class="ne">--&gt; </span><span class="mi">408</span>                                <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span> 
-<span class="g g-Whitespace">    </span><span class="mi">410</span>             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-
-<span class="nn">~/anaconda3/lib/python3.7/site-packages/h5py/_hl/files.py</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>         <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>             <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
-<span class="ne">--&gt; </span><span class="mi">173</span>         <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
-
-<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
-
-<span class="nn">h5py/_objects.pyx</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
-
-<span class="nn">h5py/h5f.pyx</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
-
-<span class="ne">OSError</span>: Unable to open file (truncated file: eof = 83397120, sblock-&gt;base_addr = 0, stored_eof = 85625732)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;allensdk.core.nwb_data_set.NwbDataSet&#39;&gt;
+[10, 100, 101, 102, 103, 104, 105, 108, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 4, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 5, 50, 51, 52, 53, 54, 55, 57, 58, 59, 6, 60, 61, 62, 63, 64, 65, 66, 68, 69, 7, 71, 72, 73, 74, 75, 76, 77, 78, 79, 8, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 9, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 </pre></div>
 </div>
 </div>
@@ -1437,12 +1335,12 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Obtaining_Data_For_Single_Cells_28_0.png" src="../_images/Obtaining_Data_For_Single_Cells_28_0.png" />
+<img alt="../_images/45cb735e472974ae66bfb3f8b9119c09a2153b007a3cf2331675a5b41cf89de7.png" src="../_images/45cb735e472974ae66bfb3f8b9119c09a2153b007a3cf2331675a5b41cf89de7.png" />
 </div>
 </div>
 <p>That’s how you can dig into the morphology and raw electrophysiology traces for single cells. In the next notebook, we’ll take a look at some of the features of these action potentials.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1456,7 +1354,7 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Chapter_06"
         },
         predefinedOutput: true
@@ -1464,36 +1362,107 @@ Look through <a href="https://allensdk.readthedocs.io/en/latest/allensdk.core.ce
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="Single-Cell_Electrophysiology.html" title="previous page">Lesson #3: Single-Cell Electrophysiology</a>
-    <a class='right-next' id="next-link" href="Analyzing_Computed_Features.html" title="next page">Analyzing Computed Features</a>
 
-        </div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Ashley Juavinett & Victor Magdaleno-Garcia<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Single-Cell_Electrophysiology.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lesson #3: Single-Cell Electrophysiology</p>
       </div>
-    </div>
+    </a>
+    <a class="right-next"
+       href="Analyzing_Computed_Features.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analyzing Computed Features</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-available-cells">Get Available Cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-morphology-data">Get Morphology data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-electrophysiology-data">Get Electrophysiology Data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett & Victor Magdaleno-Garcia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
