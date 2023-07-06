@@ -3,47 +3,48 @@ root: landing_page
 options:
   numbered: True
 parts:
-    - caption: Introduction
+    - caption: INTRODUCTION
       numbered: 0
       chapters:
-      - file: Chapter_01/Introduction
+      - file: Introduction/Introduction
         sections:
-        - file: Chapter_01/Using_This_Book
-        - file: Chapter_01/Setup
-        - file: Chapter_01/For_Educators
-      - file: Chapter_02/Data_Science_In_Python
+        - file: Introduction/Using_This_Book
+        - file: Introduction/Setup
+        - file: Introduction/For_Educators
+      - file: Data_Science_In_Python/Introduction
         sections:
-        - file: Chapter_02/NumPy
-        - file: Chapter_02/Pandas
-        - file: Chapter_02/SciPy
-    - caption: pynwb
+        - file: Data_Science_In_Python/NumPy
+        - file: Data_Science_In_Python/Pandas
+        - file: Data_Science_In_Python/Matplotlib
+        - file: Data_Science_In_Python/SciPy
+    - caption: PYNWB
       numbered: 0
       chapters:
-      - file: Chapter_03/NWB_Dataset_Structure
+      - file: Lesson_1/00-Introduction
         sections:
-        - file: Chapter_03/Obtaining_Datasets_with_DANDI
-        - file: Chapter_03/Working_with_NWB_format_in_Python
-        - file: Chapter_03/Interactive_NWB_Data_Exploration
-        - file: Chapter_03/Lesson1_ProblemSet
-      - file: Chapter_04/Large_Scale_Electrophysiology
+        - file: Lesson_1/01-Obtaining_Datasets_with_DANDI
+        - file: Lesson_1/02-Working_with_NWB_format_in_Python
+        - file: Lesson_1/03-Interactive_NWB_Data_Exploration
+        - file: Lesson_1/Lesson1_ProblemSet
+      - file: Lesson_2/00-LargeEphysIntroduction
         sections:
-        - file: Chapter_04/SpikeSorting
-        - file: Chapter_04/Visualizing_Recordings
-        - file: Chapter_04/Lesson2_ProblemSet
-    - caption: allensdk
+        - file: Lesson_2/01-SpikeSorting
+        - file: Lesson_2/02-Visualizing_Recordings
+        - file: Lesson_2/Lesson_2_ProblemSet
+    - caption: ALLENSDK
       numbered: 0
       chapters:
 #      - file: Chapter_05/AllenSDK_Neuropixels
 #        sections:
 #        - file: Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior
 #        - file: Chapter_05/Identifying_Cells_with_Optogenetics
-      - file: Chapter_06/Single-Cell_Electrophysiology
+      - file: Lesson_3/00-SingleCellIntroduction
         sections:
-        - file: Chapter_06/Obtaining_Data_For_Single_Cells
-        - file: Chapter_06/Analyzing_Computed_Features
-        - file: Chapter_06/Lesson3_ProblemSet
-      - file: Chapter_07/Two_Photon_Imaging
+        - file: Lesson_3/01-Obtaining_Data_For_Single_Cells
+        - file: Lesson_3/02-Analyzing_Computed_Features
+        - file: Lesson_3/Lesson_3_ProblemSet
+      - file: Lesson_4/00-2pIntroduction
         sections:
-        - file: Chapter_07/Retrieving_Brain_Observatory_Data
-        - file: Chapter_07/Analyzing_Two_Photon_Data
-        - file: Chapter_07/Correlations_in_Two_Photon_Data
+        - file: Lesson_4/01-Retrieving_Brain_Observatory_Data
+        - file: Lesson_4/02-Analyzing_Two_Photon_Data
+        - file: Lesson_4/03-Correlations_in_Two_Photon_Data
