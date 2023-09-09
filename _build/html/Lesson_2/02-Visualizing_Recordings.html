@@ -136,14 +136,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Teaching & Learning with NWB Datasets</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -440,15 +434,37 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># import necessary packages</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">nwbwidgets</span> <span class="kn">import</span> <span class="n">nwb2widget</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">UnsupportedOperation</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;../Chapter_03/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># assign file as an NWBHDF5IO object</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">io</span> <span class="o">=</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># read the file</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">nwb_file</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;nwbwidgets&#39;
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/utils.py:645,</span> in <span class="ni">docval.&lt;locals&gt;.dec.&lt;locals&gt;.func_call</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="n">pargs</span> <span class="o">=</span> <span class="n">_check_args</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">645</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">pargs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/pynwb/__init__.py:250,</span> in <span class="ni">NWBHDF5IO.__init__</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>         <span class="n">manager</span> <span class="o">=</span> <span class="n">get_manager</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="c1"># Open the file</span>
+<span class="ne">--&gt; </span><span class="mi">250</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">manager</span><span class="o">=</span><span class="n">manager</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file_obj</span><span class="p">,</span> <span class="n">comm</span><span class="o">=</span><span class="n">comm</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/utils.py:645,</span> in <span class="ni">docval.&lt;locals&gt;.dec.&lt;locals&gt;.func_call</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="n">pargs</span> <span class="o">=</span> <span class="n">_check_args</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">645</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">pargs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/backends/hdf5/h5tools.py:65,</span> in <span class="ni">HDF5IO.__init__</span><span class="nt">(self, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">if</span> <span class="n">file_obj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span> <span class="ow">or</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">driver</span> <span class="o">!=</span> <span class="s1">&#39;ros3&#39;</span><span class="p">:</span>
+<span class="nn">     64     msg = &quot;Unable to open file %s</span> in <span class="ni">&#39;%s&#39; mode. File does not exist.&quot; % </span><span class="nt">(path, mode)</span>
+<span class="ne">---&gt; </span><span class="mi">65</span>     <span class="k">raise</span> <span class="n">UnsupportedOperation</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">if</span> <span class="n">file_obj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;w-&#39;</span> <span class="ow">or</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;x&#39;</span><span class="p">):</span>
+<span class="nn">     68     msg = &quot;Unable to open file %s</span> in <span class="ni">&#39;%s&#39; mode. File already exists.&quot; % </span><span class="nt">(path, mode)</span>
+
+<span class="ne">UnsupportedOperation</span>: Unable to open file ../Chapter_03/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb in &#39;r&#39; mode. File does not exist.
 </pre></div>
 </div>
 </div>

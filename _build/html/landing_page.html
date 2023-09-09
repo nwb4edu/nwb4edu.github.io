@@ -135,14 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">Teaching & Learning with NWB Datasets</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -396,6 +390,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurodata-without-borders">Neurodata Without Borders</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-data-for-education">Standardized data for education</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-textbook">Using this textbook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content outline</a></li>
@@ -415,9 +410,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="teaching-and-learning-with-nwb-datasets">
 <h1>Teaching and Learning with NWB Datasets<a class="headerlink" href="#teaching-and-learning-with-nwb-datasets" title="Permalink to this heading">#</a></h1>
+<p><strong>Neuroscience data is big, complex, and often locked behind the doors of individual laboratories. However, with the help of formats such as Neurodata Without Borders, these datasets now have a more standard format and can easily be shared with researchers and learners alike. This online, interactive textbook is designed to empower you to join this effort.</strong></p>
+<section id="neurodata-without-borders">
+<h2>Neurodata Without Borders<a class="headerlink" href="#neurodata-without-borders" title="Permalink to this heading">#</a></h2>
 <p>For many, many years in neuroscience, the landscape of file formats has been the wild west. Everyone either uses a format either dictated by their lab or by the equipment they’re using. This poses a huge challenge to data sharing: if you want to collaborate with the lab next door and share data with them, one of the first questions is, “what format is your data in?” While static images taken from a microscope and standard biology lab procedures like western blots are fairly straightforward to share, physiology and behavior data types are much more diverse.</p>
 <p>That’s where <a class="reference external" href="https://www.nwb.org/">Neurodata Without Borders</a> (NWB) comes in. NWB is a consortium of researchers who are aiming to <em>standardize neuroscience data on an international scale.</em> The use of this standard dataset format will make sharing and contributing to open source projects easier, ultimately accelerating discovery.</p>
 <p>NWB has pioneered a data format called <a class="reference external" href="https://www.nwb.org/nwb-neurophysiology/">Neurodata Without Borders: Neurophysiology (NWB:N)</a>. NWB:N is a standard to share, store, and build analysis tools for neuroscience data. It is built on <a class="reference external" href="http://davis.lbl.gov/Manuals/HDF5-1.8.7/UG/10_Datasets.html">HDF5 (hierarchical data format)</a>, which was designed for large data storage and multi-language accessibility. In other words, it’s good at doing exactly what we need it to do.</p>
+</section>
 <section id="standardized-data-for-education">
 <h2>Standardized data for education<a class="headerlink" href="#standardized-data-for-education" title="Permalink to this heading">#</a></h2>
 <p>A standardized and accessible data format like NWB also opens possibilities for more easily integrating these cutting-edge datasets into the classroom. <strong>This online textbook aims to provide interactive and self-guided resources for educators, students, and self-guided learners who would like to use open neuroscience datasets for research and/or teaching.</strong> Within, you’ll find tutorials in the form of interactive Python notebooks that will enable you to wrangle and analyze NWB datasets. At the end of each chapter, there are problem sets so that you can test and extend your skills.</p>
@@ -425,8 +424,8 @@ document.write(`
 </section>
 <section id="using-this-textbook">
 <h2>Using this textbook<a class="headerlink" href="#using-this-textbook" title="Permalink to this heading">#</a></h2>
-<p>This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though <a class="reference external" href="https://nwb4edu.github.io/Chapter_02/Data_Science_In_Python.html">Data Science in Python</a> will give you a refresher on the most pertinent information, if you need it. Throughout the book, you’ll also find many recommendations for places to learn more.</p>
-<p>We recommend interacting with the content provided here via the Dandihub. Alternatively, by using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder. There’s much more information in <a class="reference external" href="https://nwb4edu.github.io/Chapter_01/Using_This_Book.html">Using this Book</a> about how to set up your coding environment and interact with this textbook.</p>
+<p>This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though <a class="reference external" href="https://nwb4edu.github.io/Data_Science_In_Python/Introduction.html">Data Science in Python</a> will give you a refresher on the most pertinent information, if you need it. Throughout the book, you’ll also find many recommendations for places to learn more.</p>
+<p>We recommend interacting with the content provided here via the Dandihub. Alternatively, by using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder. There’s much more information in <a class="reference external" href="https://nwb4edu.github.io/Introduction/Using_This_Book.html">Using this Book</a> about how to set up your coding environment and interact with this textbook.</p>
 </section>
 <section id="content-outline">
 <h2>Content outline<a class="headerlink" href="#content-outline" title="Permalink to this heading">#</a></h2>
@@ -468,7 +467,8 @@ document.write(`
 <li><p>Teeters, J. L. et al. (2015). <a class="reference external" href="https://doi.org/10.3389/conf.fnins.2015.91.00033">Development of the Neurodata Without Borders: Neurophysiology file format</a>. Front. Neurosci. Conference Abstract: Neuroinformatics.</p></li>
 <li><p>Rübel, O. et al. (2019). <a class="reference external" href="https://doi.org/10.1101/523035v1">NWB:N 2.0: An Accessible Data Standard for Neurophysiology</a>. Preprint.</p></li>
 </ul>
-<hr></section>
+<hr>
+</section>
 <section id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
 <p>This work is distributed under a <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0 license</a>. You are free to use and adapt these resources, but if you generate a derivative of these resources, they should be distributed with a similar license.</p>
@@ -539,6 +539,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurodata-without-borders">Neurodata Without Borders</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-data-for-education">Standardized data for education</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-textbook">Using this textbook</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content outline</a></li>
