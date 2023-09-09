@@ -43,13 +43,35 @@ print(type(nwb_file))
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 3[0m
-[1;32m      1[0m [38;5;66;03m# import necessary packages[39;00m
-[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpynwb[39;00m [38;5;28;01mimport[39;00m NWBHDF5IO
-[0;32m----> 3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnwbwidgets[39;00m [38;5;28;01mimport[39;00m nwb2widget
-[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;31mUnsupportedOperation[0m                      Traceback (most recent call last)
+Cell [0;32mIn[1], line 11[0m
+[1;32m      8[0m filename [38;5;241m=[39m [38;5;124m'[39m[38;5;124m../Chapter_03/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb[39m[38;5;124m'[39m
+[1;32m     10[0m [38;5;66;03m# assign file as an NWBHDF5IO object[39;00m
+[0;32m---> 11[0m io [38;5;241m=[39m [43mNWBHDF5IO[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mr[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m     13[0m [38;5;66;03m# read the file[39;00m
+[1;32m     14[0m nwb_file [38;5;241m=[39m io[38;5;241m.[39mread()
 
-[0;31mModuleNotFoundError[0m: No module named 'nwbwidgets'
+File [0;32m~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/utils.py:645[0m, in [0;36mdocval.<locals>.dec.<locals>.func_call[0;34m(*args, **kwargs)[0m
+[1;32m    643[0m [38;5;28;01mdef[39;00m [38;5;21mfunc_call[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    644[0m     pargs [38;5;241m=[39m _check_args(args, kwargs)
+[0;32m--> 645[0m     [38;5;28;01mreturn[39;00m [43mfunc[49m[43m([49m[43margs[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mpargs[49m[43m)[49m
+
+File [0;32m~/anaconda3/envs/jb/lib/python3.11/site-packages/pynwb/__init__.py:250[0m, in [0;36mNWBHDF5IO.__init__[0;34m(self, **kwargs)[0m
+[1;32m    248[0m         manager [38;5;241m=[39m get_manager()
+[1;32m    249[0m [38;5;66;03m# Open the file[39;00m
+[0;32m--> 250[0m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[43mmanager[49m[38;5;241;43m=[39;49m[43mmanager[49m[43m,[49m[43m [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m[43m [49m[43mfile[49m[38;5;241;43m=[39;49m[43mfile_obj[49m[43m,[49m[43m [49m[43mcomm[49m[38;5;241;43m=[39;49m[43mcomm[49m[43m,[49m[43m [49m[43mdriver[49m[38;5;241;43m=[39;49m[43mdriver[49m[43m)[49m
+
+File [0;32m~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/utils.py:645[0m, in [0;36mdocval.<locals>.dec.<locals>.func_call[0;34m(*args, **kwargs)[0m
+[1;32m    643[0m [38;5;28;01mdef[39;00m [38;5;21mfunc_call[39m([38;5;241m*[39margs, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m    644[0m     pargs [38;5;241m=[39m _check_args(args, kwargs)
+[0;32m--> 645[0m     [38;5;28;01mreturn[39;00m [43mfunc[49m[43m([49m[43margs[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mpargs[49m[43m)[49m
+
+File [0;32m~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/backends/hdf5/h5tools.py:65[0m, in [0;36mHDF5IO.__init__[0;34m(self, **kwargs)[0m
+[1;32m     63[0m [38;5;28;01mif[39;00m file_obj [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m os[38;5;241m.[39mpath[38;5;241m.[39mexists(path) [38;5;129;01mand[39;00m (mode [38;5;241m==[39m [38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m [38;5;129;01mor[39;00m mode [38;5;241m==[39m [38;5;124m'[39m[38;5;124mr+[39m[38;5;124m'[39m) [38;5;129;01mand[39;00m driver [38;5;241m!=[39m [38;5;124m'[39m[38;5;124mros3[39m[38;5;124m'[39m:
+[1;32m     64[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mUnable to open file [39m[38;5;132;01m%s[39;00m[38;5;124m in [39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m mode. File does not exist.[39m[38;5;124m"[39m [38;5;241m%[39m (path, mode)
+[0;32m---> 65[0m     [38;5;28;01mraise[39;00m UnsupportedOperation(msg)
+[1;32m     67[0m [38;5;28;01mif[39;00m file_obj [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m os[38;5;241m.[39mpath[38;5;241m.[39mexists(path) [38;5;129;01mand[39;00m (mode [38;5;241m==[39m [38;5;124m'[39m[38;5;124mw-[39m[38;5;124m'[39m [38;5;129;01mor[39;00m mode [38;5;241m==[39m [38;5;124m'[39m[38;5;124mx[39m[38;5;124m'[39m):
+[1;32m     68[0m     msg [38;5;241m=[39m [38;5;124m"[39m[38;5;124mUnable to open file [39m[38;5;132;01m%s[39;00m[38;5;124m in [39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m mode. File already exists.[39m[38;5;124m"[39m [38;5;241m%[39m (path, mode)
+
+[0;31mUnsupportedOperation[0m: Unable to open file ../Chapter_03/000006/sub-anm369962/sub-anm369962_ses-20170310.nwb in 'r' mode. File does not exist.
 
