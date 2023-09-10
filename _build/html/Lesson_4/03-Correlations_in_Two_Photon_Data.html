@@ -428,7 +428,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>incompatible version of allensdk installed
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk already installed.
 </pre></div>
 </div>
 </div>
@@ -489,95 +489,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">stim</span> <span class="o">=</span> <span class="s1">&#39;natural_scenes&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Get experiments for our container id and stimuli of interest</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">experiments</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                                      <span class="n">stimuli</span> <span class="o">=</span> <span class="p">[</span><span class="n">stim</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Assign the experiment id </span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">experiment_id</span> <span class="o">=</span> <span class="n">experiments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/brain_observatory_cache.py:359,</span> in <span class="ni">BrainObservatoryCache.get_ophys_experiments</span><span class="nt">(self, file_name, ids, experiment_container_ids, targeted_structures, imaging_depths, cre_lines, reporter_lines, transgenic_lines, stimuli, session_types, cell_specimen_ids, include_failed, require_eye_tracking, simple)</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="n">_assert_not_string</span><span class="p">(</span><span class="n">session_types</span><span class="p">,</span> <span class="s2">&quot;session_types&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cache_path</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">EXPERIMENTS_KEY</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">359</span> <span class="n">exps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">path</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;lazy&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">Cache</span><span class="o">.</span><span class="n">cache_json</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="c1"># NOTE: Ugly hack to update the &#39;fail_eye_tracking&#39; field</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="c1"># which is using True/False values for the previous eye mapping</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="c1"># implementation. This will also need to be fixed in warehouse.</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="c1"># ----- Start of ugly hack -----</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">template_query</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="s2">&quot;brain_observatory_queries&quot;</span><span class="p">,</span> <span class="s2">&quot;all_eye_mapping_files&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:661,</span> in <span class="ni">cacheable.&lt;locals&gt;.decor.&lt;locals&gt;.w</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span> <span class="k">if</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s1">&#39;post in kwargs&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span>
-<span class="ne">--&gt; </span><span class="mi">661</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">cacher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>                       <span class="o">*</span><span class="n">args</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>                       <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:385,</span> in <span class="ni">Cache.cacher</span><span class="nt">(fn, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">pre</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">385</span>     <span class="n">writer</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/json_utilities.py:69,</span> in <span class="ni">write</span><span class="nt">(file_name, obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">69</span>         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_string</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>   <span class="c1"># Python 2.7</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">write_string</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/json_utilities.py:76,</span> in <span class="ni">write_string</span><span class="nt">(obj)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">def</span> <span class="nf">write_string</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="w">     </span><span class="sd">&quot;&quot;&quot; Shortcut for writing JSON to a string.  This also takes care of serializing numpy and data types. &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>                       <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>                       <span class="n">ignore_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>                       <span class="n">default</span><span class="o">=</span><span class="n">json_handler</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>                       <span class="n">iterable_as_array</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/simplejson/__init__.py:395,</span> in <span class="ni">dumps</span><span class="nt">(obj, skipkeys, ensure_ascii, check_circular, allow_nan, cls, indent, separators, encoding, default, use_decimal, namedtuple_as_object, tuple_as_array, bigint_as_string, sort_keys, item_sort_key, for_json, ignore_nan, int_as_string_bitcount, iterable_as_array, **kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONEncoder</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="n">skipkeys</span><span class="o">=</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">check_circular</span><span class="o">=</span><span class="n">check_circular</span><span class="p">,</span> <span class="n">allow_nan</span><span class="o">=</span><span class="n">allow_nan</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">use_decimal</span><span class="o">=</span><span class="n">use_decimal</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">namedtuple_as_object</span><span class="o">=</span><span class="n">namedtuple_as_object</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">tuple_as_array</span><span class="o">=</span><span class="n">tuple_as_array</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="n">iterable_as_array</span><span class="o">=</span><span class="n">iterable_as_array</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="n">bigint_as_string</span><span class="o">=</span><span class="n">bigint_as_string</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">item_sort_key</span><span class="o">=</span><span class="n">item_sort_key</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">for_json</span><span class="o">=</span><span class="n">for_json</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">393</span>     <span class="n">ignore_nan</span><span class="o">=</span><span class="n">ignore_nan</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">394</span>     <span class="n">int_as_string_bitcount</span><span class="o">=</span><span class="n">int_as_string_bitcount</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">395</span>     <span class="o">**</span><span class="n">kw</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/simplejson/encoder.py:300,</span> in <span class="ni">JSONEncoder.encode</span><span class="nt">(self, o)</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">300</span>     <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_ascii</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/simplejson/encoder.py:701,</span> in <span class="ni">_make_iterencode.&lt;locals&gt;._iterencode</span><span class="nt">(o, _current_indent_level)</span>
-<span class="g g-Whitespace">    </span><span class="mi">699</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span>     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">_iterencode_list</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">_current_indent_level</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">701</span>         <span class="k">yield</span> <span class="n">chunk</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="n">_asdict</span> <span class="o">=</span> <span class="n">_namedtuple_as_object</span> <span class="ow">and</span> <span class="n">call_method</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="s1">&#39;_asdict&#39;</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal correlation acquired.
 </pre></div>
 </div>
 </div>
