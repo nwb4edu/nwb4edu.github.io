@@ -401,7 +401,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-inspect-the-natural-scenes-imaging-session">Download &amp; inspect the natural scenes imaging session</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-calcium-imaging-into-spikes">Converting Calcium Imaging into Spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-single-fluorescence-traces">Inspect single fluorescence traces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-response-of-your-cells-to-natural-scenes">Look at the response of your cells to natural scenes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-direction-selectivity-of-your-cell">Examine the direction selectivity of your cell</a></li>
 </ul>
@@ -515,8 +515,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="converting-calcium-imaging-into-spikes">
-<h2>Converting Calcium Imaging into Spikes<a class="headerlink" href="#converting-calcium-imaging-into-spikes" title="Permalink to this heading">#</a></h2>
+<section id="inspect-single-fluorescence-traces">
+<h2>Inspect single fluorescence traces<a class="headerlink" href="#inspect-single-fluorescence-traces" title="Permalink to this heading">#</a></h2>
 <p>Now we’ll plot the data of each of our cells (from the field of view above) across time. Each line shows the change in fluorescence over baseline (<span class="math notranslate nohighlight">\(\Delta\)</span>)F/F) of the individual cells. When there are sharp increases, that’s when the cells are responding.</p>
 <p>In the example below, we will plot the first 10 cells from our data. the <code class="docutils literal notranslate"><span class="pre">get_dff_traces()</span></code> method returns the timestamps (in seconds) and deltaF/F.</p>
 <p>Below, we’ve also added a line in our loop that offsets each cell by a predetermined amount so that we can see individual calcium traces. Each line is a different neuron, and the small blips in the data are calcium-mediated changes in fluorescence.</p>
@@ -1103,7 +1103,7 @@ Preferred temporal frequency: 1
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-inspect-the-natural-scenes-imaging-session">Download &amp; inspect the natural scenes imaging session</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-calcium-imaging-into-spikes">Converting Calcium Imaging into Spikes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-single-fluorescence-traces">Inspect single fluorescence traces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-response-of-your-cells-to-natural-scenes">Look at the response of your cells to natural scenes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examine-the-direction-selectivity-of-your-cell">Examine the direction selectivity of your cell</a></li>
 </ul>
