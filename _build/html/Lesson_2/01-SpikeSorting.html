@@ -411,7 +411,8 @@ document.write(`
 <h1>Spike Sorting<a class="headerlink" href="#spike-sorting" title="Permalink to this heading">#</a></h1>
 <p>When you record extracellular electrophysiology data, one of the first data processing steps is figuring out which action potentials (or “spikes”) came from which neurons. The process of doing this is called <strong>spike sorting</strong>.</p>
 <p>Below, we’ll work with <a class="reference external" href="https://dandiarchive.org/dandiset/000053/0.210819.0345">this dataset</a> from <a class="reference external" href="https://giocomolab.weebly.com/">Lisa Giocomo’s lab at Stanford</a> to demonstrate the simplest form of spike sorting: thresholding, followed by feature extraction.</p>
-<p><mark><strong>Note</strong>:  The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, the best way to work with it is through the Dandihub. If you’re not already running this book on the Dandihub, read <a class="reference external" href="https://nwb4edu.github.io/Chapter_01/Using_This_Book.html">“Using this Book</a> for instructions on how to run this on the Dandihub.</mark></p>
+<p><mark><strong>Note #1</strong>:  The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, the best way to work with it is through the Dandihub. If you’re not already running this book on the Dandihub, read <a class="reference external" href="https://nwb4edu.github.io/Chapter_01/Using_This_Book.html">Using this Book</a> for instructions on how to run this on the Dandihub.</mark></p>
+<p><mark><strong>Note #2</strong>: Some of the cells below contain <code>try</code> and <code>except</code> to catch instances where these notebooks are not run in a properly configured coding environment. You can ignore these and focus on the code <em>after</em> <code>try</code>.</mark></p>
 <section id="step-1-inspect-the-data">
 <h2>Step 1. Inspect the Data<a class="headerlink" href="#step-1-inspect-the-data" title="Permalink to this heading">#</a></h2>
 <p>First, we need to find the correct URL for the dataset on the NWB’s Amazon S3 storage system. There is a tool to do so within the dandiapi, which we’ll use below to get the URL for one session within the dataset.</p>
@@ -443,77 +444,24 @@ document.write(`
 <p><mark><strong>Note</strong>: The cell below will take about a minute to run, depending on the speed of your internet connection.</mark></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
 
-<span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
-    <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="n">sampling_freq</span> <span class="o">=</span> <span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rate</span> <span class="c1"># get the sampling frequency in Hz</span>
-    <span class="n">ephys_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">3000000</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span><span class="o">*</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">conversion</span>
+    <span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
+        <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="n">sampling_freq</span> <span class="o">=</span> <span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rate</span> <span class="c1"># get the sampling frequency in Hz</span>
+        <span class="n">ephys_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">3000000</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span><span class="o">*</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">conversion</span>
+        
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Environment is not configured for pynwb.&#39;</span><span class="p">)</span>
+    <span class="n">ephys_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sampling_freq</span> <span class="o">=</span> <span class="mi">400</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/utils.py:645,</span> in <span class="ni">docval.&lt;locals&gt;.dec.&lt;locals&gt;.func_call</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="n">pargs</span> <span class="o">=</span> <span class="n">_check_args</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">645</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">pargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/pynwb/__init__.py:233,</span> in <span class="ni">NWBHDF5IO.__init__</span><span class="nt">(self, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;cannot load namespaces from file when writing to it&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="n">tm</span> <span class="o">=</span> <span class="n">get_type_map</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">233</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">load_namespaces</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file_obj</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">manager</span> <span class="o">=</span> <span class="n">BuildManager</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="c1"># XXX: Leaving this here in case we want to revert to this strategy for</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="c1">#      loading cached namespaces</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="c1"># ns_catalog = NamespaceCatalog(NWBGroupSpec, NWBDatasetSpec, NWBNamespace)</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="c1"># tm.copy_mappers(get_type_map())</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/utils.py:645,</span> in <span class="ni">docval.&lt;locals&gt;.dec.&lt;locals&gt;.func_call</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span>     <span class="n">pargs</span> <span class="o">=</span> <span class="n">_check_args</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">645</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">pargs</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/backends/hdf5/h5tools.py:149,</span> in <span class="ni">HDF5IO.load_namespaces</span><span class="nt">(cls, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Load cached namespaces from a file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span><span class="sd"> If `file` is not supplied, then an :py:class:`h5py.File` object will be opened for the given `path`, the</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="sd"> :raises ValueError: if both `path` and `file` are supplied but `path` is not the same as the path of `file`.</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="n">namespace_catalog</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">namespaces</span><span class="p">,</span> <span class="n">file_obj</span><span class="p">,</span> <span class="n">driver</span> <span class="o">=</span> <span class="n">popargs</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="s1">&#39;namespace_catalog&#39;</span><span class="p">,</span> <span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="s1">&#39;namespaces&#39;</span><span class="p">,</span> <span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;driver&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">149</span> <span class="n">open_file_obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__resolve_file_obj</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file_obj</span><span class="p">,</span> <span class="n">driver</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">if</span> <span class="n">file_obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># need to close the file object that we just opened</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="k">with</span> <span class="n">open_file_obj</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/hdmf/backends/hdf5/h5tools.py:124,</span> in <span class="ni">HDF5IO.__resolve_file_obj</span><span class="nt">(cls, path, file_obj, driver)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="k">if</span> <span class="n">driver</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>         <span class="n">file_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">driver</span><span class="o">=</span><span class="n">driver</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">124</span>     <span class="n">file_obj</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">file_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="k">return</span> <span class="n">file_obj</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/h5py/_hl/files.py:518,</span> in <span class="ni">File.__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, fs_page_size, page_buf_size, min_meta_keep, min_raw_keep, locking, alignment_threshold, alignment_interval, meta_block_size, **kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">515</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">: S3 location must begin with &#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">516</span>                              <span class="s1">&#39;either &quot;https://&quot;, &quot;http://&quot;, or &quot;s3://&quot;&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">517</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">518</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">519</span>             <span class="s2">&quot;h5py was built without ROS3 support, can&#39;t use ros3 driver&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">if</span> <span class="n">locking</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">hdf5_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">522</span>         <span class="n">hdf5_version</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">or</span> <span class="n">hdf5_version</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;HDF5 version &gt;= 1.12.1 or 1.10.x &gt;= 1.10.7 required for file locking options.&quot;</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: h5py was built without ROS3 support, can&#39;t use ros3 driver
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Environment is not configured for pynwb.
 </pre></div>
 </div>
 </div>
@@ -540,6 +488,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/0097297c5f6014abcd96c6f9ce1ab365542b59aa9b57d0230253f97465abf778.png" src="../_images/0097297c5f6014abcd96c6f9ce1ab365542b59aa9b57d0230253f97465abf778.png" />
+</div>
 </div>
 <p>In the data above, there are clear places where the data “spikes”. These are extracellularly recorded action potentials!</p>
 </section>
@@ -552,6 +503,20 @@ document.write(`
 <span class="n">recommended_threshold</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">*</span> <span class="n">noise_std</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Noise Estimate by Standard Deviation: &#39;</span><span class="p">,</span> <span class="n">noise_std</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Recommended Spike Threshold         : &#39;</span><span class="p">,</span> <span class="n">recommended_threshold</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Noise Estimate by Standard Deviation:  nan
+Recommended Spike Threshold         :  nan
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/numpy/core/_methods.py:206: RuntimeWarning: Degrees of freedom &lt;= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/numpy/core/_methods.py:163: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/numpy/core/_methods.py:198: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
 </pre></div>
 </div>
 </div>
@@ -627,6 +592,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/16af3427e9548d4d351968b013001cde8fd22f150e1be981cab82c7e0bd9fd08.png" src="../_images/16af3427e9548d4d351968b013001cde8fd22f150e1be981cab82c7e0bd9fd08.png" />
+</div>
 </div>
 <p>Finally, we can cut out the waveforms from these detected spikes so that we can look at their shape. To do so, we will cut out a portion of the signal around each spike. Spikes too close to the start or end of the signal that a full cutout is not possible are ignored.</p>
 <p>The location and shape of a waveform is one of the main pieces of evidence to show that the waveform was recorded from a cell. This will help us determine whether or not there is just one or more neurons recorded on this channel.</p>
@@ -681,10 +649,22 @@ document.write(`
 <p>Now, let’s extract &amp; plot the waveforms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># 1 ms</span>
-<span class="n">post</span><span class="o">=</span> <span class="mf">0.002</span> <span class="c1"># 2 ms</span>
-<span class="n">waveforms</span> <span class="o">=</span> <span class="n">extract_waveforms</span><span class="p">(</span><span class="n">ephys_data</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">spks</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
-<span class="n">plot_waveforms</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># 1 ms</span>
+    <span class="n">post</span><span class="o">=</span> <span class="mf">0.002</span> <span class="c1"># 2 ms</span>
+    <span class="n">waveforms</span> <span class="o">=</span> <span class="n">extract_waveforms</span><span class="p">(</span><span class="n">ephys_data</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">spks</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
+    <span class="n">plot_waveforms</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">min_voltage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">max_voltage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No data loaded.&#39;</span><span class="p">)</span>
+    <span class="n">min_voltage</span><span class="p">,</span> <span class="n">max_voltage</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No data loaded.
 </pre></div>
 </div>
 </div>
@@ -696,10 +676,7 @@ document.write(`
 <p>Indeed, it looks like there might be two – one that is very high amplitude, and another that is lower amplitude. We can use <strong>feature extraction</strong> to investigate our waveforms. Below, we’ll plot the minimum and maximum voltages in the recorded waveforms to see if there are distinct clusters of waveforms.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_voltage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">max_voltage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">min_voltage</span><span class="p">,</span> <span class="n">max_voltage</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Minimum Voltage (V)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Maximum Voltage (V)&#39;</span><span class="p">)</span>
@@ -708,6 +685,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c49462262fa7bd02f2cabe391645215c73be8a6d8f255531d256d51cd6890166.png" src="../_images/c49462262fa7bd02f2cabe391645215c73be8a6d8f255531d256d51cd6890166.png" />
 </div>
 </div>
 <p>Looking at the scatterplot above, would you say there is more than one cluster of waveforms?</p>
@@ -809,10 +789,6 @@ All rights reserved.</p>
   
   <div class="footer-item">
     
-<p class="component-author">
-By Ashley Juavinett & Victor Magdaleno-Garcia
-</p>
-
   </div>
   
   <div class="footer-item">
