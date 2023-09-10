@@ -41,15 +41,15 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-# This will ensure that the AllenSDK is installed.
-# If not, it will install it for you.
-try:
-    import allensdk
-    if allensdk.__version__ == '2.11.2':
-        print('allensdk already installed.')
-    else:
-        print('incompatible version of allensdk installed')
-except ImportError as e:
-    !pip install allensdk
+# Assign experiment container id and stimuli 
+exp_container_id = 627823571
+stim = ['natural_scenes']
+
+# Call experiment container for our id and stimuli of interest
+experiments = boc.get_ophys_experiments(experiment_container_ids = [exp_container_id],
+                                   stimuli = stim)
+
+# Print out our container 
+print(experiments)
 -------------------
 

@@ -41,15 +41,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-# This will ensure that the AllenSDK is installed.
-# If not, it will install it for you.
-try:
-    import allensdk
-    if allensdk.__version__ == '2.11.2':
-        print('allensdk already installed.')
-    else:
-        print('incompatible version of allensdk installed')
-except ImportError as e:
-    !pip install allensdk
+['# Create an instance of the Brain Observatory cache', "boc = BrainObservatoryCache(manifest_file='manifest.json')", '', '# Assign container ID', 'exp_container_id = 627823571']
+...
+['', '# Get the signal correlation', 'sc = ns.signal_correlation', '', "print('Signal correlation acquired.')"]
 -------------------
 

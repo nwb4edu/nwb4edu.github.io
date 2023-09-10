@@ -138,8 +138,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
-    <p class="title logo__title">Teaching & Learning with NWB Datasets</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -427,20 +433,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">allensdk.core.cell_types_cache</span> <span class="kn">import</span> <span class="n">CellTypesCache</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">allensdk.api.queries.cell_types_api</span> <span class="kn">import</span> <span class="n">CellTypesApi</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>We will be demonstrating SciPy using the Allen Cell Types Dataset. We will discuss what this dataset contains and how to navigate through it in a later chapter.</p>
 <div class="cell docutils container">
@@ -692,8 +684,18 @@ document.write(`
 Aspiny skew test pvalue: 1.1827442418538926e-09
 </pre></div>
 </div>
-<img alt="../_images/c60867b01f1a3f5cbcf43c553490e1af2b6aab440be48c1d897f1f09336de23c.png" src="../_images/c60867b01f1a3f5cbcf43c553490e1af2b6aab440be48c1d897f1f09336de23c.png" />
-<img alt="../_images/950ef0f8555ebbebf5bc374538f52b1b44ef26d8d0e260a8ef001a1dae3009cc.png" src="../_images/950ef0f8555ebbebf5bc374538f52b1b44ef26d8d0e260a8ef001a1dae3009cc.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/c98a9153428887d461fde3ba1e5811b786d6fa3abe6ef69b3f25bfff00a5a839.png" src="../_images/c98a9153428887d461fde3ba1e5811b786d6fa3abe6ef69b3f25bfff00a5a839.png" />
+<img alt="../_images/b49a88e6a43680e26ae7553c91f2ab34d0f0d8ad505d0f4a2f29e308ad205ae8.png" src="../_images/b49a88e6a43680e26ae7553c91f2ab34d0f0d8ad505d0f4a2f29e308ad205ae8.png" />
 </div>
 </div>
 <p>Our pvalues indicate that both of our samples are skewed, therefore we will continure with the Mann-Whitney U test.</p>
@@ -704,7 +706,7 @@ Aspiny skew test pvalue: 1.1827442418538926e-09
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MannwhitneyuResult(statistic=4759.0, pvalue=3.864465154121331e-18)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MannwhitneyuResult(statistic=20600.0, pvalue=7.728930308242662e-18)
 </pre></div>
 </div>
 </div>
@@ -738,7 +740,7 @@ Aspiny skew test pvalue: 1.1827442418538926e-09
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-237.00000000000006
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-237.0
 </pre></div>
 </div>
 </div>
@@ -944,7 +946,17 @@ Upper Triangle
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f7addf432e91b21daa9f440462f9b48b27ae3f883910b048efef163763ffa1d9.png" src="../_images/f7addf432e91b21daa9f440462f9b48b27ae3f883910b048efef163763ffa1d9.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/ca0947c84ab5e06c27f37350ac3c48f129665aeecda98239ea15dfad919350b2.png" src="../_images/ca0947c84ab5e06c27f37350ac3c48f129665aeecda98239ea15dfad919350b2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -978,11 +990,21 @@ Upper Triangle
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/VictorMagdaleno/opt/anaconda3/lib/python3.7/site-packages/scipy/signal/spectral.py:1966: UserWarning: nperseg = 4096 is greater than input length  = 308, using nperseg = 308
-  .format(nperseg, input_length))
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/scipy/signal/_spectral_py.py:2017: UserWarning: nperseg = 4096 is greater than input length  = 308, using nperseg = 308
+  warnings.warn(&#39;nperseg = {0:d} is greater than input length &#39;
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
 </pre></div>
 </div>
-<img alt="../_images/462939b9a9ede884916ecbe9d3c08f317f00db3dcd3b3bd5ad802e67e17f05fc.png" src="../_images/462939b9a9ede884916ecbe9d3c08f317f00db3dcd3b3bd5ad802e67e17f05fc.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/111d24f6e2411cd8d159beccca35fbc7dc1b14872685c2572c900f390fad6852.png" src="../_images/111d24f6e2411cd8d159beccca35fbc7dc1b14872685c2572c900f390fad6852.png" />
 </div>
 </div>
 <p>The Fourier Transformation shows us the signal frequencies that make up our combined signal.</p>
@@ -1022,7 +1044,17 @@ Upper Triangle
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f582d0ad462a493dc74f6af78760f7323ff9a9a7996a8b1ffbab7d9e8515df81.png" src="../_images/f582d0ad462a493dc74f6af78760f7323ff9a9a7996a8b1ffbab7d9e8515df81.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/c658752f185076b246854e3594127f9f1e9aadf0bc7e458c29f7445b3cc25967.png" src="../_images/c658752f185076b246854e3594127f9f1e9aadf0bc7e458c29f7445b3cc25967.png" />
 </div>
 </div>
 <p>In this real EEG data, the underlying frequencies are much harder to see by eye. So, we’ll compute a bandpass by first applying a low-pass filter_, followed by a _high-pass filter (or vice versa).</p>
@@ -1079,7 +1111,17 @@ Upper Triangle
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c887d69fcee5c578ef636228976869c6a13cd693a0ef5854183203ef71845893.png" src="../_images/c887d69fcee5c578ef636228976869c6a13cd693a0ef5854183203ef71845893.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/553ece670396b29b938b6d3e268ea9897c201b938f1953f8d59513d0bc4cf3d5.png" src="../_images/553ece670396b29b938b6d3e268ea9897c201b938f1953f8d59513d0bc4cf3d5.png" />
 </div>
 </div>
 </section>
@@ -1170,6 +1212,10 @@ Upper Triangle
   
   <div class="footer-item">
     
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
   </div>
   
   <div class="footer-item">
