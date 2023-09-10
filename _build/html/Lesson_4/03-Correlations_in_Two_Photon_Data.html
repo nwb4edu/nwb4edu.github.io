@@ -135,8 +135,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
-    <p class="title logo__title">Teaching & Learning with NWB Datasets</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -422,501 +428,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk
-  Using cached allensdk-2.15.2-py3-none-any.whl (4.0 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary
-  Using cached psycopg2_binary-2.9.7-cp311-cp311-macosx_10_9_x86_64.whl (2.8 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hdmf&lt;=3.4.7
-  Using cached hdmf-3.4.7-py3-none-any.whl (187 kB)
-Requirement already satisfied: h5py in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (3.9.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting matplotlib&lt;3.4.3,&gt;=1.4.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached matplotlib-3.4.2.tar.gz (37.3 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25hRequirement already satisfied: numpy in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (1.25.0)
-Requirement already satisfied: pandas&gt;=1.1.5 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (2.0.3)
-Requirement already satisfied: jinja2&gt;=3.0.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (3.1.2)
-Requirement already satisfied: scipy&lt;2.0.0,&gt;=1.4.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (1.11.1)
-Requirement already satisfied: six&lt;2.0.0,&gt;=1.9.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (1.16.0)
-Collecting pynrrd&lt;1.0.0,&gt;=0.2.1
-  Using cached pynrrd-0.4.3-py2.py3-none-any.whl (18 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting future&lt;1.0.0,&gt;=0.14.3
-  Using cached future-0.18.3-py3-none-any.whl
-Requirement already satisfied: requests&lt;3.0.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (2.31.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting requests-toolbelt&lt;1.0.0
-  Using cached requests_toolbelt-0.10.1-py2.py3-none-any.whl (54 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting simplejson&lt;4.0.0,&gt;=3.10.0
-  Using cached simplejson-3.19.1-cp311-cp311-macosx_10_9_x86_64.whl (75 kB)
-Requirement already satisfied: scikit-image&gt;=0.14.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (0.21.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scikit-build&lt;1.0.0
-  Using cached scikit_build-0.17.6-py3-none-any.whl (84 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting statsmodels
-  Using cached statsmodels-0.14.0-cp311-cp311-macosx_10_9_x86_64.whl (9.9 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting simpleitk&lt;3.0.0,&gt;=2.0.2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached SimpleITK-2.2.1-cp311-cp311-macosx_10_9_x86_64.whl (45.5 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting argschema&lt;4.0.0,&gt;=3.0.1
-  Using cached argschema-3.0.4-py2.py3-none-any.whl
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting glymur==0.8.19
-  Using cached Glymur-0.8.19-py3-none-any.whl
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting xarray
-  Using cached xarray-2023.8.0-py3-none-any.whl (1.0 MB)
-Requirement already satisfied: pynwb in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (2.3.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tables
-  Using cached tables-3.8.0-cp311-cp311-macosx_10_9_x86_64.whl (6.3 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: seaborn&lt;1.0.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (0.12.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting aiohttp==3.7.4
-  Using cached aiohttp-3.7.4-py3-none-any.whl
-Requirement already satisfied: nest-asyncio in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (1.5.6)
-Requirement already satisfied: tqdm&gt;=4.27 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (4.65.0)
-Collecting ndx-events&lt;=0.2.0
-  Using cached ndx_events-0.2.0-py2.py3-none-any.whl (13 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting boto3==1.17.21
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached boto3-1.17.21-py2.py3-none-any.whl (130 kB)
-Collecting semver
-  Using cached semver-3.0.1-py3-none-any.whl (17 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cachetools&lt;5.0.0,&gt;=4.2.1
-  Using cached cachetools-4.2.4-py3-none-any.whl (10 kB)
-Requirement already satisfied: sqlalchemy in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (2.0.17)
-Requirement already satisfied: python-dateutil in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (2.8.2)
-Requirement already satisfied: attrs&gt;=17.3.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from aiohttp==3.7.4-&gt;allensdk) (23.1.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting chardet&lt;4.0,&gt;=2.0
-  Using cached chardet-3.0.4-py2.py3-none-any.whl (133 kB)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from aiohttp==3.7.4-&gt;allensdk) (6.0.4)
-Collecting async-timeout&lt;4.0,&gt;=3.0
-  Using cached async_timeout-3.0.1-py3-none-any.whl (8.2 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from aiohttp==3.7.4-&gt;allensdk) (1.9.2)
-Requirement already satisfied: typing-extensions&gt;=3.6.5 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from aiohttp==3.7.4-&gt;allensdk) (4.7.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting botocore&lt;1.21.0,&gt;=1.20.21
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached botocore-1.20.112-py2.py3-none-any.whl (7.7 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting jmespath&lt;1.0.0,&gt;=0.7.1
-  Using cached jmespath-0.10.0-py2.py3-none-any.whl (24 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting s3transfer&lt;0.4.0,&gt;=0.3.0
-  Using cached s3transfer-0.3.7-py2.py3-none-any.whl (73 kB)
-Requirement already satisfied: setuptools in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from glymur==0.8.19-&gt;allensdk) (65.5.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting marshmallow&lt;4.0,&gt;=3.0.0
-  Using cached marshmallow-3.20.1-py3-none-any.whl (49 kB)
-Requirement already satisfied: pyyaml in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from argschema&lt;4.0.0,&gt;=3.0.1-&gt;allensdk) (6.0)
-Requirement already satisfied: jsonschema&lt;5,&gt;=2.6.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from hdmf&lt;=3.4.7-&gt;allensdk) (4.17.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached numpy-1.23.5-cp311-cp311-macosx_10_9_x86_64.whl (18.1 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pandas&gt;=1.1.5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached pandas-1.5.3-cp311-cp311-macosx_10_9_x86_64.whl (11.9 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml&lt;1,&gt;=0.16 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from hdmf&lt;=3.4.7-&gt;allensdk) (0.17.32)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from jinja2&gt;=3.0.0-&gt;allensdk) (2.1.3)
-Requirement already satisfied: cycler&gt;=0.10 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (0.11.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (1.4.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pillow&gt;=6.2.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (10.0.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from matplotlib&lt;3.4.3,&gt;=1.4.3-&gt;allensdk) (3.1.0)
-Requirement already satisfied: pytz&gt;=2020.1 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from pandas&gt;=1.1.5-&gt;allensdk) (2023.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pynwb
-  Using cached pynwb-2.5.0-py3-none-any.whl (133 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached pynwb-2.4.0-py3-none-any.whl (132 kB)
-  Using cached pynwb-2.3.2-py3-none-any.whl (131 kB)
-  Using cached pynwb-2.3.1-py3-none-any.whl (131 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached pynwb-2.3.0-py3-none-any.whl (131 kB)
-  Using cached pynwb-2.2.0-py3-none-any.whl (126 kB)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from requests&lt;3.0.0-&gt;allensdk) (3.1.0)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from requests&lt;3.0.0-&gt;allensdk) (3.4)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from requests&lt;3.0.0-&gt;allensdk) (1.26.16)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from requests&lt;3.0.0-&gt;allensdk) (2023.5.7)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting distro
-  Using cached distro-1.8.0-py3-none-any.whl (20 kB)
-Requirement already satisfied: packaging in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk) (23.1)
-Requirement already satisfied: wheel&gt;=0.32.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from scikit-build&lt;1.0.0-&gt;allensdk) (0.38.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: networkx&gt;=2.8 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from scikit-image&gt;=0.14.0-&gt;allensdk) (3.1)
-Requirement already satisfied: imageio&gt;=2.27 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from scikit-image&gt;=0.14.0-&gt;allensdk) (2.31.3)
-Requirement already satisfied: tifffile&gt;=2022.8.12 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from scikit-image&gt;=0.14.0-&gt;allensdk) (2023.8.30)
-Requirement already satisfied: PyWavelets&gt;=1.1.1 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from scikit-image&gt;=0.14.0-&gt;allensdk) (1.4.1)
-Requirement already satisfied: lazy_loader&gt;=0.2 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from scikit-image&gt;=0.14.0-&gt;allensdk) (0.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: greenlet!=0.4.17 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from sqlalchemy-&gt;allensdk) (2.0.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting patsy&gt;=0.5.2
-  Using cached patsy-0.5.3-py2.py3-none-any.whl (233 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cython&gt;=0.29.21
-  Using cached Cython-3.0.2-cp311-cp311-macosx_10_9_x86_64.whl (3.1 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numexpr&gt;=2.6.2
-  Using cached numexpr-2.8.5-cp311-cp311-macosx_10_9_x86_64.whl (101 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting blosc2~=2.0.0
-  Using cached blosc2-2.0.0-cp311-cp311-macosx_10_9_x86_64.whl (3.9 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting py-cpuinfo
-  Using cached py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting msgpack
-  Using cached msgpack-1.0.5-cp311-cp311-macosx_10_9_x86_64.whl (73 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from jsonschema&lt;5,&gt;=2.6.0-&gt;hdmf&lt;=3.4.7-&gt;allensdk) (0.19.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from ruamel.yaml&lt;1,&gt;=0.16-&gt;hdmf&lt;=3.4.7-&gt;allensdk) (0.2.7)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: matplotlib
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for matplotlib (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-?25h canceled
-<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>incompatible version of allensdk installed
 </pre></div>
 </div>
 </div>
@@ -977,7 +489,95 @@ Requirement already satisfied: lazy_loader&gt;=0.2 in /Users/ashley/anaconda3/en
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal correlation acquired.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">stim</span> <span class="o">=</span> <span class="s1">&#39;natural_scenes&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Get experiments for our container id and stimuli of interest</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">experiments</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>                                      <span class="n">stimuli</span> <span class="o">=</span> <span class="p">[</span><span class="n">stim</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Assign the experiment id </span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">experiment_id</span> <span class="o">=</span> <span class="n">experiments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/brain_observatory_cache.py:359,</span> in <span class="ni">BrainObservatoryCache.get_ophys_experiments</span><span class="nt">(self, file_name, ids, experiment_container_ids, targeted_structures, imaging_depths, cre_lines, reporter_lines, transgenic_lines, stimuli, session_types, cell_specimen_ids, include_failed, require_eye_tracking, simple)</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="n">_assert_not_string</span><span class="p">(</span><span class="n">session_types</span><span class="p">,</span> <span class="s2">&quot;session_types&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cache_path</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">EXPERIMENTS_KEY</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">359</span> <span class="n">exps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">path</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;lazy&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">Cache</span><span class="o">.</span><span class="n">cache_json</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="c1"># NOTE: Ugly hack to update the &#39;fail_eye_tracking&#39; field</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="c1"># which is using True/False values for the previous eye mapping</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="c1"># implementation. This will also need to be fixed in warehouse.</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="c1"># ----- Start of ugly hack -----</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">template_query</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="s2">&quot;brain_observatory_queries&quot;</span><span class="p">,</span> <span class="s2">&quot;all_eye_mapping_files&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:661,</span> in <span class="ni">cacheable.&lt;locals&gt;.decor.&lt;locals&gt;.w</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span> <span class="k">if</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s1">&#39;post in kwargs&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span>
+<span class="ne">--&gt; </span><span class="mi">661</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">cacher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>                       <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">663</span>                       <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:385,</span> in <span class="ni">Cache.cacher</span><span class="nt">(fn, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">pre</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">385</span>     <span class="n">writer</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/json_utilities.py:69,</span> in <span class="ni">write</span><span class="nt">(file_name, obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">69</span>         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">write_string</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>   <span class="c1"># Python 2.7</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">write_string</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/json_utilities.py:76,</span> in <span class="ni">write_string</span><span class="nt">(obj)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">def</span> <span class="nf">write_string</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="w">     </span><span class="sd">&quot;&quot;&quot; Shortcut for writing JSON to a string.  This also takes care of serializing numpy and data types. &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>                       <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>                       <span class="n">ignore_nan</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>                       <span class="n">default</span><span class="o">=</span><span class="n">json_handler</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>                       <span class="n">iterable_as_array</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/simplejson/__init__.py:395,</span> in <span class="ni">dumps</span><span class="nt">(obj, skipkeys, ensure_ascii, check_circular, allow_nan, cls, indent, separators, encoding, default, use_decimal, namedtuple_as_object, tuple_as_array, bigint_as_string, sort_keys, item_sort_key, for_json, ignore_nan, int_as_string_bitcount, iterable_as_array, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONEncoder</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="n">skipkeys</span><span class="o">=</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">check_circular</span><span class="o">=</span><span class="n">check_circular</span><span class="p">,</span> <span class="n">allow_nan</span><span class="o">=</span><span class="n">allow_nan</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">use_decimal</span><span class="o">=</span><span class="n">use_decimal</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">namedtuple_as_object</span><span class="o">=</span><span class="n">namedtuple_as_object</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">tuple_as_array</span><span class="o">=</span><span class="n">tuple_as_array</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="n">iterable_as_array</span><span class="o">=</span><span class="n">iterable_as_array</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span>     <span class="n">bigint_as_string</span><span class="o">=</span><span class="n">bigint_as_string</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span>     <span class="n">item_sort_key</span><span class="o">=</span><span class="n">item_sort_key</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>     <span class="n">for_json</span><span class="o">=</span><span class="n">for_json</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span>     <span class="n">ignore_nan</span><span class="o">=</span><span class="n">ignore_nan</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span>     <span class="n">int_as_string_bitcount</span><span class="o">=</span><span class="n">int_as_string_bitcount</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">395</span>     <span class="o">**</span><span class="n">kw</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/simplejson/encoder.py:300,</span> in <span class="ni">JSONEncoder.encode</span><span class="nt">(self, o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+<span class="ne">--&gt; </span><span class="mi">300</span>     <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensure_ascii</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/simplejson/encoder.py:701,</span> in <span class="ni">_make_iterencode.&lt;locals&gt;._iterencode</span><span class="nt">(o, _current_indent_level)</span>
+<span class="g g-Whitespace">    </span><span class="mi">699</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">700</span>     <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">_iterencode_list</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">_current_indent_level</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">701</span>         <span class="k">yield</span> <span class="n">chunk</span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span>     <span class="n">_asdict</span> <span class="o">=</span> <span class="n">_namedtuple_as_object</span> <span class="ow">and</span> <span class="n">call_method</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="s1">&#39;_asdict&#39;</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1224,6 +824,10 @@ pearson&#39;s r: -0.023194    pearson&#39;s p: 0.046302
   
   <div class="footer-item">
     
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
   </div>
   
   <div class="footer-item">

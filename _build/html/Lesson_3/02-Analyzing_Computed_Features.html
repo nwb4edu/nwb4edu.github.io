@@ -136,8 +136,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
-    <p class="title logo__title">Teaching & Learning with NWB Datasets</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -391,6 +397,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-features-across-cells">Compare Features Across Cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-features-within-cells">Compare Features Within Cells</a></li>
 </ul>
@@ -407,6 +414,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="analyzing-computed-features">
 <h1>Analyzing Computed Features<a class="headerlink" href="#analyzing-computed-features" title="Permalink to this heading">#</a></h1>
 <p>In addition to the raw electrophysiology and morphology data, the Allen Institute also has computed many electrophysiological features about the cells in their data. These features describe the intrinsic electrophysiological properties of the cell. Here, we will demonstrate how to access and analyze these features both across and within cells.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Import all the necessary packages and initalize an instance of the cache</span>
@@ -422,16 +431,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Import all the necessary packages and initalize an instance of the cache</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">allensdk.core.cell_types_cache</span> <span class="kn">import</span> <span class="n">CellTypesCache</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">allensdk.api.queries.cell_types_api</span> <span class="kn">import</span> <span class="n">CellTypesApi</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages successfully downloaded.
 </pre></div>
 </div>
 </div>
@@ -642,9 +642,10 @@ document.write(`
 <p><img alt="" src="https://github.com/ajuavinett/CellTypesLesson/blob/master/docs/ap_features.png?raw=true" />
 Image from the <a href="http://help.brain-map.org/download/attachments/8323525/CellTypes_Ephys_Overview.pdf">Allen Institute Cell Types Database Technical Whitepaper.</a>
 <br><br></p>
+</section>
 <section id="compare-features-across-cells">
 <h2>Compare Features Across Cells<a class="headerlink" href="#compare-features-across-cells" title="Permalink to this heading">#</a></h2>
-<p>The Allen has many precomputed features that you might consider comparing across cells. Some of these features include input resistance (‘input_resistance_mohm’), Adaptation ratio (‘adaptation’), Average interspike interval (‘avg_isi’), and many others. We’ve compiled <a class="reference external" href="https://docs.google.com/document/d/1YGLwkMTebwrXd_1E817LFbztMjSTCWh83Mlp3_3ZMEo/edit#heading=h.t0p3wngfkxc1">a complete glossary</a> for you.</p>
+<p>The Allen has many precomputed features that you might consider comparing across cells. Some of these features include input resistance (<code class="docutils literal notranslate"><span class="pre">input_resistance_mohm</span></code>), Adaptation ratio (<code class="docutils literal notranslate"><span class="pre">adaptation</span></code>), Average interspike interval (<code class="docutils literal notranslate"><span class="pre">avg_isi</span></code>), and many others. We’ve compiled <a class="reference external" href="https://docs.google.com/document/d/1YGLwkMTebwrXd_1E817LFbztMjSTCWh83Mlp3_3ZMEo/edit#heading=h.t0p3wngfkxc1">a complete glossary</a> for you.</p>
 <p>To compare cell types, we can subset our electrophysiology dataframe for a specific transgenic line, structure layer, brain area, and more. Below, we’ll create two dataframes to compare cells with spiny dendrites to those with aspiny dendrites. While most excitatory cells are spiny, most inhibitory cells are aspiny.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -681,7 +682,17 @@ Image from the <a href="http://help.brain-map.org/download/attachments/8323525/C
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1b52e4171c824d5a4386e450126160248ec5585846e6d2ba2508077ff444b306.png" src="../_images/1b52e4171c824d5a4386e450126160248ec5585846e6d2ba2508077ff444b306.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+  fig.canvas.print_figure(bytes_io, **kw)
+</pre></div>
+</div>
+<img alt="../_images/1816d281f5eac592d058ef0ddea8a6b66e8f9ffb17c047ee168937fbb0396bb2.png" src="../_images/1816d281f5eac592d058ef0ddea8a6b66e8f9ffb17c047ee168937fbb0396bb2.png" />
 </div>
 </div>
 </section>
@@ -709,7 +720,7 @@ Image from the <a href="http://help.brain-map.org/download/attachments/8323525/C
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e1f2b159c8c2bfe1f0d736e2ec53476efdd354cf0251d1441dc8ffbf831cae4f.png" src="../_images/e1f2b159c8c2bfe1f0d736e2ec53476efdd354cf0251d1441dc8ffbf831cae4f.png" />
+<img alt="../_images/671c7230c4908e042dac5c8728cbae65193078a00dda455839b728bc003958f4.png" src="../_images/671c7230c4908e042dac5c8728cbae65193078a00dda455839b728bc003958f4.png" />
 </div>
 </div>
 <p>This is the true power of neural data science! It looks like the two clusters in the data partially relate to the dendritic type. Cells with spiny dendrites (which are typically excitatory cells) have a big ratio of upstroke:downstroke, and a more shallow trough (less negative). Cells with aspiny dendrites (typically inhibitory cells) are a little bit more varied. But </i>only</i> aspiny cells have a low upstroke:downstroke ratio and a deeper trough (more negative).</p>
@@ -783,6 +794,7 @@ Image from the <a href="http://help.brain-map.org/download/attachments/8323525/C
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-features-across-cells">Compare Features Across Cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-features-within-cells">Compare Features Within Cells</a></li>
 </ul>
@@ -798,6 +810,10 @@ Image from the <a href="http://help.brain-map.org/download/attachments/8323525/C
   
   <div class="footer-item">
     
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
   </div>
   
   <div class="footer-item">
