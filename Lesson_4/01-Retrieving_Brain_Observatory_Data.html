@@ -203,6 +203,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GREATEST HITS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_5/00-GreatestHits.html">Greatest Hits in Physiology</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lesson_5/01-PlaceFields.html">How does the brain encode space?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lesson_5/02-RotationalDynamics.html">How to <code class="docutils literal notranslate"><span class="pre">Code</span></code> a Paper</a></li>
+</ul>
+</li>
+</ul>
 
     </div>
 </nav></div>
@@ -643,153 +651,7 @@ all brain regions: [&#39;VISal&#39;, &#39;VISam&#39;, &#39;VISl&#39;, &#39;VISp&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">stim</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Call experiment container for our id and stimuli of interest</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">experiments</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                                    <span class="n">stimuli</span> <span class="o">=</span> <span class="n">stim</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Print out our container </span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">experiments</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/brain_observatory_cache.py:359,</span> in <span class="ni">BrainObservatoryCache.get_ophys_experiments</span><span class="nt">(self, file_name, ids, experiment_container_ids, targeted_structures, imaging_depths, cre_lines, reporter_lines, transgenic_lines, stimuli, session_types, cell_specimen_ids, include_failed, require_eye_tracking, simple)</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="n">_assert_not_string</span><span class="p">(</span><span class="n">session_types</span><span class="p">,</span> <span class="s2">&quot;session_types&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cache_path</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">EXPERIMENTS_KEY</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">359</span> <span class="n">exps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="n">path</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;lazy&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">Cache</span><span class="o">.</span><span class="n">cache_json</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span> <span class="c1"># NOTE: Ugly hack to update the &#39;fail_eye_tracking&#39; field</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="c1"># which is using True/False values for the previous eye mapping</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span> <span class="c1"># implementation. This will also need to be fixed in warehouse.</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="c1"># ----- Start of ugly hack -----</span>
-<span class="g g-Whitespace">    </span><span class="mi">367</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">template_query</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span>     <span class="s2">&quot;brain_observatory_queries&quot;</span><span class="p">,</span> <span class="s2">&quot;all_eye_mapping_files&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:661,</span> in <span class="ni">cacheable.&lt;locals&gt;.decor.&lt;locals&gt;.w</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span> <span class="k">if</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s1">&#39;post in kwargs&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span>
-<span class="ne">--&gt; </span><span class="mi">661</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">cacher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>                       <span class="o">*</span><span class="n">args</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>                       <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:383,</span> in <span class="ni">Cache.cacher</span><span class="nt">(fn, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span> <span class="n">Manifest</span><span class="o">.</span><span class="n">safe_make_parent_dirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> <span class="k">if</span> <span class="n">writer</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">383</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">pre</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">writer</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/queries/brain_observatory_api.py:238,</span> in <span class="ni">BrainObservatoryApi.get_ophys_experiments</span><span class="nt">(self, ophys_experiment_ids)</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="nd">@cacheable</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span> <span class="k">def</span> <span class="nf">get_ophys_experiments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ophys_experiment_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Get OPhys Experiments by id</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span><span class="sd">     Parameters</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span><span class="sd">     dict : ophys experiment metadata</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">238</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_query</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>         <span class="s2">&quot;brain_observatory_queries&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>         <span class="s2">&quot;ophys_experiment_by_ids&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>         <span class="n">ophys_experiment_ids</span><span class="o">=</span><span class="n">ophys_experiment_ids</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="k">return</span> <span class="n">data</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/queries/rma_template.py:132,</span> in <span class="ni">RmaTemplate.template_query</span><span class="nt">(self, template_name, entry_name, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="n">query_args</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">template</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="n">query_args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">132</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_query</span><span class="p">(</span><span class="o">**</span><span class="n">query_args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">return</span> <span class="n">data</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/queries/rma_api.py:257,</span> in <span class="ni">RmaApi.model_query</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">def</span> <span class="nf">model_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span><span class="w">     </span><span class="sd">&#39;&#39;&#39;Construct and execute a model stage of an RMA query string.</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span><span class="sd">     Parameters</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">255</span><span class="sd">     response, including the normalized query.</span>
-<span class="g g-Whitespace">    </span><span class="mi">256</span><span class="sd">     &#39;&#39;&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">257</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_msg_query</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span>         <span class="bp">self</span><span class="o">.</span><span class="n">build_query_url</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>             <span class="bp">self</span><span class="o">.</span><span class="n">model_stage</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)))</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/api.py:164,</span> in <span class="ni">Api.json_msg_query</span><span class="nt">(self, url, dataframe)</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span> <span class="k">def</span> <span class="nf">json_msg_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">dataframe</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span><span class="w">     </span><span class="sd">&#39;&#39;&#39; Common case where the url is fully constructed</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span><span class="sd">         and the response data is stored in the &#39;msg&#39; field.</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">         returned data; type depends on dataframe option</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="sd">     &#39;&#39;&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">164</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_query</span><span class="p">(</span><span class="k">lambda</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>                          <span class="bp">self</span><span class="o">.</span><span class="n">read_data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span>     <span class="k">if</span> <span class="n">dataframe</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;dataframe argument is deprecated&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/api.py:204,</span> in <span class="ni">Api.do_query</span><span class="nt">(self, url_builder_fn, json_traversal_fn, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="n">api_url</span> <span class="o">=</span> <span class="n">url_builder_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="n">post</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">204</span> <span class="n">json_parsed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_parsed_json_over_http</span><span class="p">(</span><span class="n">api_url</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">json_traversal_fn</span><span class="p">(</span><span class="n">json_parsed_data</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/api/api.py:369,</span> in <span class="ni">Api.retrieve_parsed_json_over_http</span><span class="nt">(self, url, post)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading URL: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">if</span> <span class="n">post</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">369</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">json_utilities</span><span class="o">.</span><span class="n">read_url_get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span>         <span class="n">requests</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span>                              <span class="s1">&#39;;/?:@&amp;=+$,&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">json_utilities</span><span class="o">.</span><span class="n">read_url_post</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/allensdk/core/json_utilities.py:110,</span> in <span class="ni">read_url_get</span><span class="nt">(url)</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span><span class="w"> </span><span class="sd">&#39;&#39;&#39;Transform a JSON contained in a file into an equivalent</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span><span class="sd"> nested python dict.</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span><span class="sd"> the output will be of the corresponding type.</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="sd"> &#39;&#39;&#39;</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="n">response</span> <span class="o">=</span> <span class="n">urllib_request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">110</span> <span class="n">json_string</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/http/client.py:459,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">456</span>     <span class="k">return</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">459</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_chunked</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="c1"># clip the read to the &quot;end of response&quot;</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/http/client.py:591,</span> in <span class="ni">HTTPResponse._read_chunked</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="n">chunk_left</span> <span class="o">-</span> <span class="n">amt</span>
-<span class="g g-Whitespace">    </span><span class="mi">589</span>     <span class="k">break</span>
-<span class="ne">--&gt; </span><span class="mi">591</span> <span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="n">chunk_left</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">592</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">593</span>     <span class="n">amt</span> <span class="o">-=</span> <span class="n">chunk_left</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/http/client.py:630,</span> in <span class="ni">HTTPResponse._safe_read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span> <span class="k">def</span> <span class="nf">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amt</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">624</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Read the number of bytes requested.</span>
-<span class="g g-Whitespace">    </span><span class="mi">625</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span><span class="sd">     This function should be used when &lt;amt&gt; bytes &quot;should&quot; be present for</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span><span class="sd">     reading. If the bytes are truly not available (due to EOF), then the</span>
-<span class="g g-Whitespace">    </span><span class="mi">628</span><span class="sd">     IncompleteRead exception can be used to detect the problem.</span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">630</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">amt</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span>         <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">amt</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/socket.py:705,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">705</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
 </div>
@@ -834,7 +696,15 @@ all brain regions: [&#39;VISal&#39;, &#39;VISam&#39;, &#39;VISl&#39;, &#39;VISp&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;allensdk.core.brain_observatory_nwb_data_set.BrainObservatoryNwbDataSet object at 0x7f8b101641d0&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Note: This id is different from our experiment container id </span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">session_id</span> <span class="o">=</span> <span class="n">experiments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiment_data</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Take a look at the kind of object data is </span>
+
+<span class="ne">IndexError</span>: list index out of range
 </pre></div>
 </div>
 </div>
