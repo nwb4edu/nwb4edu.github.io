@@ -34,10 +34,6 @@ parts:
     - caption: ALLENSDK
       numbered: 0
       chapters:
-#      - file: Chapter_05/AllenSDK_Neuropixels
-#        sections:
-#        - file: Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior
-#        - file: Chapter_05/Identifying_Cells_with_Optogenetics
       - file: Lesson_3/00-SingleCellIntroduction
         sections:
         - file: Lesson_3/01-Obtaining_Data_For_Single_Cells
@@ -48,3 +44,14 @@ parts:
         - file: Lesson_4/01-Retrieving_Brain_Observatory_Data
         - file: Lesson_4/02-Analyzing_Two_Photon_Data
         - file: Lesson_4/03-Correlations_in_Two_Photon_Data
+#      - file: Chapter_05/AllenSDK_Neuropixels
+#        sections:
+#        - file: Chapter_05/Aligning_Spike_Trains_with_Stimuli_and_Behavior
+#        - file: Chapter_05/Identifying_Cells_with_Optogenetics
+    - caption: GREATEST HITS
+      numbered: 0
+      chapters:
+      - file: Lesson_5/00-GreatestHits
+        sections:
+        - file: Lesson_5/01-PlaceFields
+        - file: Lesson_5/02-RotationalDynamics
