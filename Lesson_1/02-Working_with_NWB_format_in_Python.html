@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Visualizing with Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
 </li>
@@ -441,6 +441,60 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import modules from the PyNWB package</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.11</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pynwb</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">hdmf.backends.hdf5</span> <span class="kn">import</span> <span class="n">HDF5IO</span> <span class="k">as</span> <span class="n">_HDF5IO</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">hdmf.build</span> <span class="kn">import</span> <span class="n">BuildManager</span><span class="p">,</span> <span class="n">TypeMap</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">import</span> <span class="nn">hdmf.common</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">CORE_NAMESPACE</span> <span class="o">=</span> <span class="s1">&#39;core&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">__core_ns_file_name</span> <span class="o">=</span> <span class="s1">&#39;nwb.namespace.yaml&#39;</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.11</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">hdmf</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">204</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">table</span>  <span class="c1"># noqa: F401,E402</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">alignedtable</span>  <span class="c1"># noqa: F401,E402</span>
+<span class="ne">--&gt; </span><span class="mi">204</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">sparse</span>  <span class="c1"># noqa: F401,E402</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">resources</span>  <span class="c1"># noqa: F401,E402</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">multi</span>  <span class="c1"># noqa: F401,E402</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.11</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">hdmf</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">sparse</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">scipy.sparse</span> <span class="k">as</span> <span class="nn">sps</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">register_class</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">..container</span> <span class="kn">import</span> <span class="n">Container</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.11</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">287</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span> <span class="kn">from</span> <span class="nn">._matrix_io</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="c1"># For backward compatibility with v0.19.</span>
+<span class="ne">--&gt; </span><span class="mi">287</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">csgraph</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span> <span class="c1"># Deprecated namespaces, to be removed in v2.0.0</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>     <span class="n">base</span><span class="p">,</span> <span class="n">bsr</span><span class="p">,</span> <span class="n">compressed</span><span class="p">,</span> <span class="n">construct</span><span class="p">,</span> <span class="n">coo</span><span class="p">,</span> <span class="n">csc</span><span class="p">,</span> <span class="n">csr</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">dia</span><span class="p">,</span> <span class="n">dok</span><span class="p">,</span> <span class="n">extract</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="n">lil</span><span class="p">,</span> <span class="n">sparsetools</span><span class="p">,</span> <span class="n">sputils</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span> <span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.11</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">scipy</span><span class="o">/</span><span class="n">sparse</span><span class="o">/</span><span class="n">csgraph</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">195</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="kn">from</span> <span class="nn">._traversal</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="n">breadth_first_order</span><span class="p">,</span> <span class="n">depth_first_order</span><span class="p">,</span> <span class="n">breadth_first_tree</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="n">depth_first_tree</span><span class="p">,</span> <span class="n">connected_components</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="kn">from</span> <span class="nn">._min_spanning_tree</span> <span class="kn">import</span> <span class="n">minimum_spanning_tree</span>
+<span class="ne">--&gt; </span><span class="mi">195</span> <span class="kn">from</span> <span class="nn">._flow</span> <span class="kn">import</span> <span class="n">maximum_flow</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="kn">from</span> <span class="nn">._matching</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="n">maximum_bipartite_matching</span><span class="p">,</span> <span class="n">min_weight_full_bipartite_matching</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span> <span class="kn">from</span> <span class="nn">._reordering</span> <span class="kn">import</span> <span class="n">reverse_cuthill_mckee</span><span class="p">,</span> <span class="n">structural_rank</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:405,</span> in <span class="ni">parent</span><span class="nt">(self)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="step-2-read-the-nwb-file">
@@ -452,7 +506,7 @@ document.write(`
 </ol>
 <p>The first step is done using the <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/pynwb.html#pynwb.NWBHDF5IO"><code class="docutils literal notranslate"><span class="pre">NWBHDF5IO</span></code> class</a> to create our <code class="docutils literal notranslate"><span class="pre">NWBHDF5IO</span></code> object and map our file to HDF5 format. Once we have done this, we can use the <code class="docutils literal notranslate"><span class="pre">read()</span></code> method to return our nwb file.</p>
 <blockquote>
-<div><p>For more information on how to read NWB files, please visit the <a href = 'https://pynwb.readthedocs.io/en/stable/tutorials/general/file.html'> Reading an NWB file</a> section from the NWB Basics Tutorial.</p>
+<div><p>For more information on how to read NWB files, please visit the <a href = 'https://pynwb.readthedocs.io/en/latest/tutorials/general/plot_file.html#reading-an-nwb-file'> Reading an NWB file</a> section from the NWB Basics Tutorial.</p>
 </div></blockquote>
 <p><mark><strong>Note</strong>: Each dataset may contain multiple NWB files for different subjects and sessions for a given experiment. Make sure you specify the exact file path to the single NWB file you wish to read. Below, we’ll give the filename for one .nwb file within the folder that you downloaded in the last chapter.</mark></p>
 <div class="cell docutils container">
@@ -487,7 +541,7 @@ document.write(`
 </div></blockquote>
 <p>Here is the structure of a typical NWB file:</p>
 <p><img alt="NWB_file_structure.png" src="../_images/NWB_file_structure.png" /></p>
-<p>In order to see which groups are in our file, we can use the <code class="docutils literal notranslate"><span class="pre">fields</span></code> attribute to return a dictionary containing the the Groups of our NWB file. The dictionary <strong>keys</strong> are the various groups within the file which we will use to access the data we’re ultimately interested in.</p>
+<p>In order to see which groups are in our file, we can use the <code class="docutils literal notranslate"><span class="pre">fields</span></code> attribute to return a dictionary containing the Groups of our NWB file. The dictionary <strong>keys</strong> are the various groups within the file which we will use to access the data we’re ultimately interested in.</p>
 <blockquote>
 <div><p>Need a refresher on dictionaries? Consider working through the free <a class="reference external" href="https://www.codecademy.com/enrolled/courses/learn-python-3">Codecademy Python 3 lesson</a>, or check the other resources on the <a class="reference external" href="https://nwb4edu.github.io/Data_Science_In_Python/Introduction.html">Data Science in Python</a> page.</p>
 </div></blockquote>
@@ -500,7 +554,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;session_description&#39;, &#39;identifier&#39;, &#39;session_start_time&#39;, &#39;timestamps_reference_time&#39;, &#39;file_create_date&#39;, &#39;experimenter&#39;, &#39;related_publications&#39;, &#39;acquisition&#39;, &#39;keywords&#39;, &#39;epoch_tags&#39;, &#39;electrodes&#39;, &#39;electrode_groups&#39;, &#39;devices&#39;, &#39;intervals&#39;, &#39;subject&#39;, &#39;trials&#39;, &#39;units&#39;, &#39;experiment_description&#39;, &#39;institution&#39;])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;acquisition&#39;, &#39;analysis&#39;, &#39;scratch&#39;, &#39;stimulus&#39;, &#39;stimulus_template&#39;, &#39;processing&#39;, &#39;devices&#39;, &#39;electrode_groups&#39;, &#39;imaging_planes&#39;, &#39;icephys_electrodes&#39;, &#39;ogen_sites&#39;, &#39;intervals&#39;, &#39;lab_meta_data&#39;, &#39;session_description&#39;, &#39;identifier&#39;, &#39;session_start_time&#39;, &#39;timestamps_reference_time&#39;, &#39;file_create_date&#39;, &#39;keywords&#39;, &#39;epoch_tags&#39;, &#39;electrodes&#39;, &#39;subject&#39;, &#39;trials&#39;, &#39;units&#39;, &#39;experiment_description&#39;, &#39;institution&#39;, &#39;experimenter&#39;, &#39;related_publications&#39;])
 </pre></div>
 </div>
 </div>
@@ -549,7 +603,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x4695344208
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x140730902219800
  Fields:
    time_series: {
      lick_left_times &lt;class &#39;pynwb.base.TimeSeries&#39;&gt;,
@@ -783,7 +837,8 @@ pole_out_time : onset of the delay period
       <td>Poor</td>
       <td>unidentified</td>
       <td>[933.873288, 948.2774710000008, 950.5357110000...</td>
-      <td>x    y    z  imp                        ...</td>
+      <td>x      y      z     imp  \
+id         ...</td>
     </tr>
     <tr>
       <th>2</th>
@@ -791,7 +846,8 @@ pole_out_time : onset of the delay period
       <td>Fair</td>
       <td>unidentified</td>
       <td>[329.95417899999956, 330.01945899999953, 330.0...</td>
-      <td>x    y    z  imp                        ...</td>
+      <td>x      y      z     imp  \
+id         ...</td>
     </tr>
     <tr>
       <th>3</th>
@@ -799,7 +855,8 @@ pole_out_time : onset of the delay period
       <td></td>
       <td>unidentified</td>
       <td>[329.94165899999956, 329.9998989999996, 330.00...</td>
-      <td>x    y    z  imp                        ...</td>
+      <td>x      y      z     imp  \
+id         ...</td>
     </tr>
     <tr>
       <th>4</th>
@@ -807,7 +864,8 @@ pole_out_time : onset of the delay period
       <td>[]</td>
       <td>unidentified</td>
       <td>[329.93145899999956, 330.7492189999995, 330.77...</td>
-      <td>x    y    z  imp                        ...</td>
+      <td>x      y      z     imp  \
+id         ...</td>
     </tr>
     <tr>
       <th>5</th>
@@ -815,7 +873,8 @@ pole_out_time : onset of the delay period
       <td>Fair</td>
       <td>unidentified</td>
       <td>[331.09961899999956, 332.14505899999955, 333.3...</td>
-      <td>x    y    z  imp                        ...</td>
+      <td>x      y      z     imp  \
+id         ...</td>
     </tr>
   </tbody>
 </table>
@@ -880,7 +939,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x46...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x14...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -891,7 +950,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x46...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x14...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -902,7 +961,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x46...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x14...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -913,7 +972,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x46...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x14...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -924,7 +983,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x46...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x14...</td>
       <td>H-129: 64</td>
     </tr>
   </tbody>

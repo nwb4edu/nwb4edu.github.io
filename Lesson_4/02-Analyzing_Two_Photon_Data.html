@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Visualizing with Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
 </li>
@@ -560,6 +560,9 @@ document.write(`
 <p>There are clearly some responses above, but it’s tough to see whether this corresponds to different behaviors or visual stimuli with just the raw fluorescence traces.</p>
 <p>Let’s see how these cells actually responded to different types of images. To do so, we’ll need to use the <code class="docutils literal notranslate"><span class="pre">get_cell_specimens()</span></code> method on our <code class="docutils literal notranslate"><span class="pre">boc</span></code>, giving it the name of the experiment container ID.</p>
 <p>The dataframe that this creates will have a lot more information about what the cells in our experiment prefer. Each row is a different cell, each with its own preferences and response patterns.</p>
+<blockquote>
+<div><p><strong>Note</strong>: This cell may take several minutes to load.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the cell specimens information for this experiment</span>
@@ -1037,8 +1040,8 @@ Preferred temporal frequency: 1
 </div>
 </div>
 </div>
-<p>It is important to not that these are no the only possible analyses that can be done. We could go a step further and also look at the static gratings. We could plot the running speed of the mouse versus the DF/F of our cells to determine what stimlus elicited the fasted response from our mice. We can even use the data to determine the on and off receptive fields all our cells. In the analyses that we performed above we only looked at one experiment container that included one brain area and one cre line, but we are not limited to this and can compare brain areas and cre lines and can begin forming connections between differnt brain regions.</p>
-<p>In conclusion, there are many different analyses that you can perform with the two photon imaging data. It is important to look through the downloaded data to ensure your desired brain regions, cre lines, and computed metrics are all available before beginning your work.</p>
+<p>These are not the only possible analyses that can be done! We could investigate responses to the static gratings, or we could plot the running speed of the mouse versus the DF/F of our cells to determine what stimulus elicited the fasted response from our mice. We can even use the data to determine the on and off receptive fields all our cells. In the analyses that we performed above we only looked at one experiment container that included one brain area and one cre line, but we are not limited to this and can compare brain areas and cre lines and can begin forming connections between differnt brain regions.</p>
+<p>In conclusion, there are many different analyses that you can perform with the two photon imaging data. As with any data science project, it is important to look through the downloaded data to ensure your desired brain regions, transgenic mouse lines, and computed metrics are all available before beginning your work.</p>
 </section>
 </section>
 

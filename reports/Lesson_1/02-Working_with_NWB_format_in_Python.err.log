@@ -41,13 +41,7 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-import numpy as np 
-import pandas as pd 
-from allensdk.core.cell_types_cache import CellTypesCache
-from allensdk.api.queries.cell_types_api import CellTypesApi
-import matplotlib.pyplot as plt
-from scipy import stats 
-from scipy import linalg
-ctc = CellTypesCache(manifest_file='cell_types/manifest.json')
+# Import modules from the PyNWB package
+from pynwb import NWBHDF5IO
 -------------------
 

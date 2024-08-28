@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Data_Science_In_Python/Pandas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Visualizing with Matplotlib" href="Matplotlib.html" />
+    <link rel="next" title="Matplotlib" href="Matplotlib.html" />
     <link rel="prev" title="NumPy" href="NumPy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Data Science in Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="NumPy.html">NumPy</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Visualizing with Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SciPy.html">SciPy</a></li>
 </ul>
 </li>
@@ -426,7 +426,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
 <h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
-<p>In this chapter we will be discussing the advantages to using the <em>Pandas</em> package to analyze large datasets. While NumPy is a useful package, it can only be used with data of the same datatype. <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html#user-guide">Pandas</a>, however, is a package that helps us manipulate and analyze heterogenous data.</p>
+<p>In this chapter we will be discussing the advantages to using the <em>Pandas</em> package to analyze large datasets. While NumPy is a useful package, it can only be used with data of the same datatype. <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html#user-guide">Pandas</a>, however, is a package that helps us manipulate and analyze heterogeneous data.</p>
 <p>We strongly recommend looking at <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">“10 minutes to pandas”</a> for a broader overview, but here we’ll introduce the main concepts needed for the activities in this textbook.</p>
 <p>Before we can use pandas, we need to import it. We can also nickname the modules when we import them. The convention is to import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> as <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
 <div class="cell docutils container">
@@ -449,7 +449,7 @@ pd         module    &lt;module &#39;pandas&#39; from &#39;/U&lt;...&gt;ages/pan
 </div>
 <section id="create-and-manipulate-dataframes">
 <h2>Create and Manipulate Dataframes<a class="headerlink" href="#create-and-manipulate-dataframes" title="Permalink to this heading">#</a></h2>
-<p>The two data structures of Pandas are the <code class="docutils literal notranslate"><span class="pre">Series</span></code> and the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. A <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a one-dimensional onject similar to a list. A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can be thought of as a two-dimensional numpy array or a collection of <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects. Series and dataframes can contain multiple different data types such as integers, strings, and floats, similar to an Excel spreadsheet. Pandas also supports <code class="docutils literal notranslate"><span class="pre">string</span></code> lables unlike numpy arrays which only have numeric labels for their rows and columns. For a more in depth explanation, please visit the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">Introduction to Data Structures</a> section in the Pandas User Guide.</p>
+<p>The two data structures of Pandas are the <code class="docutils literal notranslate"><span class="pre">Series</span></code> and the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. A <code class="docutils literal notranslate"><span class="pre">Series</span></code> is a one-dimensional object similar to a list. A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can be thought of as a two-dimensional numpy array or a collection of <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects. Series and dataframes can contain multiple different data types such as integers, strings, and floats, similar to an Excel spreadsheet. Pandas also supports <code class="docutils literal notranslate"><span class="pre">string</span></code> lables unlike numpy arrays which only have numeric labels for their rows and columns. For a more in depth explanation, please visit the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html">Introduction to Data Structures</a> section in the Pandas User Guide.</p>
 <p>You can create a Pandas dataframe by inputting dictionaries into the Pandas function <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>, by reading files, or through functions built into the Pandas package. The function <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code></a> reads a comma- or tab-separated file and returns it as a <code class="docutils literal notranslate"><span class="pre">dataframe</span></code>.</p>
 <section id="dataframe-example">
 <h3>DataFrame example<a class="headerlink" href="#dataframe-example" title="Permalink to this heading">#</a></h3>
@@ -1523,7 +1523,7 @@ Name: A1BG, Length: 232, dtype: float64
 <p>8 rows × 232 columns</p>
 </div></div></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span></code> method return the mean and standard deviation of each column in the dataframe, respectfully.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span></code> method return the mean and standard deviation of each column in the dataframe, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gene_df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -1891,7 +1891,7 @@ Length: 232, dtype: float64
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Visualizing with Matplotlib</p>
+        <p class="prev-next-title">Matplotlib</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
