@@ -264,6 +264,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Introduction/Using_This_Book.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Introduction/Using_This_Book.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -277,24 +295,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
 </li>
       
   </ul>
@@ -408,7 +408,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-as-a-casual-observer">Option 1: As a casual observer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-cloud-computing">Option 2: Using cloud computing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dandi-jupyter-hub">DANDI Jupyter Hub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab-or-binder">Colab or Binder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab">Colab</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-3-using-your-local-python-environment">Option 3: Using your local Python environment</a></li>
@@ -436,28 +436,25 @@ document.write(`
 <p>This, dear reader, is our preferred mode of interaction so that you really engage with the materials! And even here, you have two options:</p>
 <section id="dandi-jupyter-hub">
 <h3>DANDI Jupyter Hub<a class="headerlink" href="#dandi-jupyter-hub" title="Permalink to this heading">#</a></h3>
-<p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a>, a platform for publishing, sharing, and processing neurophysiology data funded by the BRAIN Initiative, has a platform called a <a class="reference external" href="https://jupyterhub.readthedocs.io/en/stable/">JupyterHub</a>. This JupyterHub (nicknamed the <a class="reference external" href="http://hub.dandiarchive.org/">Dandihub</a>) allows you to run code on servers that they are supporting. To do so, follow these directions:</p>
+<p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a>, a platform for publishing, sharing, and processing neurophysiology data funded by the BRAIN Initiative, has a <a class="reference external" href="https://jupyterhub.readthedocs.io/en/stable/">JupyterHub</a> which is pre-configured for working with their dataset. This JupyterHub (nicknamed the <a class="reference external" href="http://hub.dandiarchive.org/">Dandihub</a>) allows you to run code on servers that they are supporting.</p>
+<p>To launch the code here on the Dandihub, follow these directions:</p>
 <ol class="arabic simple">
 <li><p>If you do not have already, set up a <a class="reference external" href="https://github.com/signup">GitHub account</a>. It’s free, and it’s a great way to start tracking your code!</p></li>
-<li><p>Go to the Dandihub at <a class="reference external" href="https://hub.dandiarchive.org/">https://hub.dandiarchive.org/</a> and log in using your GitHub account. <strong>If this is your first time using Dandihub, you’ll also need to request an account. You can “nwb4edu” to expedite account processing, but it still may take a day or two.</strong></p></li>
-<li><p>Choose “Base” as your server option.</p></li>
-<li><p>Open a Terminal by going to File &gt; New &gt; Terminal or by clicking the Terminal button under “Other” on the Launcher window.</p></li>
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/nwb4edu/nwb4edu-dandi</span></code> and enter.</p></li>
-<li><p>Look for the new <code class="docutils literal notranslate"><span class="pre">nwb4edu-dandi</span></code> folder on the left side list of folders and double click to open it.</p></li>
-<li><p>Double click on a notebook to open it!</p></li>
+<li><p>From the page you’d like to interact with, go to the rocket icon at the top of the screen. In the dropdown menu, choose <strong>JupyterHub</strong>. This will bring you to the Dandihub at <a class="reference external" href="https://hub.dandiarchive.org/">https://hub.dandiarchive.org/</a>.</p></li>
+<li><p>Log in using your GitHub account. <strong>If this is your first time using Dandihub, you’ll also need to request an account. You can “nwb4edu” to expedite account processing, but it still may take a day or two.</strong></p></li>
+<li><p>Choose “Base” as your server option and click the big orange Start button.</p></li>
+<li><p>Dive into the notebook that opens!</p></li>
 </ol>
-<iframe width="640" height="419" src="https://www.loom.com/embed/82b8a929df5c4508a0e328dff31856f6?sid=1077f8ed-3ff9-4711-9553-52551c40766e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><strong>Note</strong>: Regardless of whether or not you’re running the code on the Dandihub, we’ll primarily be using the <code class="docutils literal notranslate"><span class="pre">dandi</span></code> package to interact with NWB datasets.</p>
 </section>
-<section id="colab-or-binder">
-<h3>Colab or Binder<a class="headerlink" href="#colab-or-binder" title="Permalink to this heading">#</a></h3>
-<p>If you’re viewing this page from <a class="reference external" href="http://nwb4edu.github.io">nwb4edu.github.io</a>, you’ll see a little rocket icon on the top of your screen. The little rocket button will offer two options: Google Colab or Binder. Which you use is up to you, but we generally find Google Colab to be faster to load and to install packages.</p>
-<p>When you try to run your first cell in Colab, it will tell you that your notebook was not authored by Google – that’s okay! Click “Run Anyway.” Saving notebooks in Colab is possible if you log into a Google account.</p>
+<section id="colab">
+<h3>Colab<a class="headerlink" href="#colab" title="Permalink to this heading">#</a></h3>
+<p>If you have a strong preference for Colab, there is also an option in the rocket launch menu to open the notebooks here in Colab. Note that when you try to run your first cell in Colab, it will tell you that your notebook was not authored by Google – that’s okay! Click “Run Anyway.” Saving notebooks in Colab is possible if you log into a Google account.</p>
 </section>
 </section>
 <section id="option-3-using-your-local-python-environment">
 <h2>Option 3: Using your local Python environment<a class="headerlink" href="#option-3-using-your-local-python-environment" title="Permalink to this heading">#</a></h2>
-<p>As you would with other code bases, you can <a class="reference external" href="https://github.com/nwb4edu/nwb4edu-dandi">clone our source code from Github</a> and go wild with your local Python install.</p>
+<p>As you would with other code bases, you can <a class="reference external" href="https://github.com/nwb4edu/nwb4edu.github.io">clone our source code from Github</a> and go wild with your local Python install.</p>
 <p>If you’d rather not clone the whole repository, you can use the good ol’ copy and paste technique. Take caution, though: some, but not all, of the code snippets in this book will work on their own. Copy and paste into your own coding environment at your own risk.</p>
 <hr>
 </section>
@@ -474,7 +471,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nwb4edu/nwb4edu.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -540,7 +537,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-as-a-casual-observer">Option 1: As a casual observer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-cloud-computing">Option 2: Using cloud computing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dandi-jupyter-hub">DANDI Jupyter Hub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab-or-binder">Colab or Binder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab">Colab</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-3-using-your-local-python-environment">Option 3: Using your local Python environment</a></li>
@@ -559,7 +556,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Juavinett et al.
 </p>
 
   </div>
@@ -568,7 +565,7 @@ By The Jupyter Book community
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>

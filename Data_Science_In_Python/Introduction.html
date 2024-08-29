@@ -264,6 +264,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Data_Science_In_Python/Introduction.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Data_Science_In_Python/Introduction.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -277,24 +295,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
 </li>
       
   </ul>
@@ -427,6 +427,15 @@ document.write(`
 <li><p>VanderPlas, <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a></p></li>
 <li><p>Software Carpentry, <a class="reference external" href="https://swcarpentry.github.io/python-novice-gapminder/">Plotting and Programming in Python</a></p></li>
 </ul>
+<p><strong>Additional resources for neural data processing &amp; data science beyond NWB formats</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://datascienceinpractice.github.io/">Data Science in Practice</a></p></li>
+<li><p><a class="reference external" href="https://mark-kramer.github.io/Case-Studies-Python/intro.html">Case Studies in Neural Data Analysis</a></p></li>
+<li><p><a class="reference external" href="https://www.sciencedirect.com/book/9780128040430/neural-data-science">Neural Data Science by Nylen &amp; Wallisch</a></p></li>
+<li><p><a class="reference external" href="https://www.inferentialthinking.com/chapters/intro.html">Foundations of Data Science</a></p></li>
+<li><p><a class="reference external" href="https://mrgreene09.github.io/computational-neuroscience-textbook/index.html">Computational Neuroscience</a>, open textbook written by students</p></li>
+<li><p><a class="reference external" href="http://www.neuromatchacademy.org/syllabus">Neuromatch Academy</a>, online computational neuroscience course</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -435,7 +444,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nwb4edu/nwb4edu.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -499,7 +508,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Juavinett et al.
 </p>
 
   </div>
@@ -508,7 +517,7 @@ By The Jupyter Book community
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>

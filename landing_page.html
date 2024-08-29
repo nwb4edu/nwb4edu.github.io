@@ -263,6 +263,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/landing_page.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/landing_page.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -276,24 +294,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
 </li>
       
   </ul>
@@ -404,14 +404,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurodata-without-borders">Neurodata Without Borders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-data-for-education">Standardized data for education</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-textbook">Using this textbook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content outline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contribute">Contribute</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurodata-without-borders">Neurodata Without Borders</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-data-for-education">Standardized data for education</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-book">Using this book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content outline</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-nwb4edu-project">About the nwb4edu project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contribute">Contribute</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -431,66 +438,61 @@ document.write(`
 <p>For many, many years in neuroscience, the landscape of file formats has been the wild west. Everyone either uses a format dictated either by their lab or by the equipment they’re using. This poses a huge challenge to data sharing: if you want to collaborate with the lab next door and share data with them, one of the first questions is, “what format is your data in?” While static images taken from a microscope and standard biology lab procedures like western blots are fairly straightforward to share, physiology and behavior data types are much more diverse.</p>
 <p>That’s where <a class="reference external" href="https://www.nwb.org/">Neurodata Without Borders</a> (NWB) comes in. NWB is a consortium of researchers who are aiming to <em>standardize neuroscience data on an international scale.</em> The use of this standard dataset format will make sharing and contributing to open source projects easier, ultimately accelerating discovery.</p>
 <p>NWB has pioneered a data format called <a class="reference external" href="https://www.nwb.org/nwb-neurophysiology/">Neurodata Without Borders: Neurophysiology (NWB:N)</a>. NWB:N is a standard to share, store, and build analysis tools for neuroscience data. It is built on <a class="reference external" href="http://davis.lbl.gov/Manuals/HDF5-1.8.7/UG/10_Datasets.html">HDF5 (hierarchical data format)</a>, which was designed for large data storage and multi-language accessibility. In other words, it’s good at doing exactly what we need it to do.</p>
-</section>
 <section id="standardized-data-for-education">
-<h2>Standardized data for education<a class="headerlink" href="#standardized-data-for-education" title="Permalink to this heading">#</a></h2>
+<h3>Standardized data for education<a class="headerlink" href="#standardized-data-for-education" title="Permalink to this heading">#</a></h3>
 <p>A standardized and accessible data format like NWB also opens possibilities for more easily integrating these cutting-edge datasets into the classroom. <strong>This online textbook aims to provide interactive and self-guided resources for educators, students, and self-guided learners who would like to use open neuroscience datasets for research and/or teaching.</strong> Within, you’ll find tutorials in the form of interactive Python notebooks that will enable you to wrangle and analyze NWB datasets. At the end of each chapter, there are problem sets so that you can test and extend your skills.</p>
 <p>Along the way, we’ll point you towards the prolific and tremendous documentation that the NWB team has already put together for you, for whenever you’re ready to learn more.</p>
+<p>Read more about the need for data standardization in neuroscience and the NWB format:</p>
+<ul class="simple">
+<li><p>Rübel, O. et al. (2022). <a class="reference external" href="https://elifesciences.org/articles/78362">The Neurodata Without Borders ecosystem for neurophysiological data science</a>. <em>eLife</em>.</p></li>
+<li><p>Teeters, J. L. et al. (2015). <a class="reference external" href="https://doi.org/10.1016/j.neuron.2015.10.025">Neurodata Without Borders: Creating a Common Data Format for Neurophysiology</a>. <em>Neuron</em>.</p></li>
+<li><p>Teeters, J. L. et al. (2015). <a class="reference external" href="https://doi.org/10.3389/conf.fnins.2015.91.00033">Development of the Neurodata Without Borders: Neurophysiology file format</a>. <em>Front. Neurosci. Conference Abstract: Neuroinformatics</em>.</p></li>
+</ul>
+<hr>
 </section>
-<section id="using-this-textbook">
-<h2>Using this textbook<a class="headerlink" href="#using-this-textbook" title="Permalink to this heading">#</a></h2>
-<p>This textbook is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though <a class="reference external" href="https://nwb4edu.github.io/Data_Science_In_Python/Introduction.html">Data Science in Python</a> will give you a refresher on the most pertinent information, if you need it. Throughout the book, you’ll also find many recommendations for places to learn more.</p>
-<p>We recommend interacting with the content provided here via the Dandihub. Alternatively, by using the rocket icon in the top right corner, you can launch any of these notebooks in either Google Colab or Binder. There’s much more information in <a class="reference external" href="https://nwb4edu.github.io/Introduction/Using_This_Book.html">Using this Book</a> about how to set up your coding environment and interact with this textbook.</p>
 </section>
+<section id="using-this-book">
+<h2>Using this book<a class="headerlink" href="#using-this-book" title="Permalink to this heading">#</a></h2>
+<p>This book is designed for educators, students, and self-guided learners who would like to work with NWB datasets. It expects that you have some knowledge of Python, though <a class="reference external" href="https://nwb4edu.github.io/Data_Science_In_Python/Introduction.html">Data Science in Python</a> will give you a refresher on the most pertinent information, if you need it. Throughout the book, you’ll also find many recommendations for places to learn more.</p>
+<p>We recommend interacting with the content provided here via the Dandihub by using the rocket icon in the top right corner. Alternatively, you can launch any of these notebooks in either Google Colab. There’s much more information in <a class="reference external" href="https://nwb4edu.github.io/Introduction/Using_This_Book.html">Using this Book</a> about how to set up your coding environment and interact with this textbook.</p>
 <section id="content-outline">
-<h2>Content outline<a class="headerlink" href="#content-outline" title="Permalink to this heading">#</a></h2>
+<h3>Content outline<a class="headerlink" href="#content-outline" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://nwb4edu.github.io/Chapter_01/Introduction.html">introduction</a> will set you up for success with options for interacting with these materials and some technical environment setup.</p>
 <p><a class="reference external" href="https://nwb4edu.github.io/Chapter_02/Data_Science_In_Python.html">Data Science in Python</a> reviews some of the packages, data structures, and coding skills that we’ll use throughout the rest of the book. You are welcome to skip this chapter if you’re very comfortable in Python.</p>
 <p>The lessons themselves are organized into two groups: one that interacts with “native NWB” format using the <code class="docutils literal notranslate"><span class="pre">pyNWB</span></code> package, and a second that interacts with the Allen Institute for Brain Science data via the <code class="docutils literal notranslate"><span class="pre">allenSDK</span></code>. Each of these lessons are self-contained and can be completed out of order, depending on which type of data you’re most interested in working with.</p>
+<hr>
+</section>
+</section>
+<section id="about-the-nwb4edu-project">
+<h2>About the nwb4edu project<a class="headerlink" href="#about-the-nwb4edu-project" title="Permalink to this heading">#</a></h2>
+<section id="authors">
+<h3>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">#</a></h3>
+<p>This book was authored and edited by <a class="reference external" href="http://ashleyjuavinett.com">Ashley Juavinett</a>. It was originally constructed and drafted by Victor Magdaleno. Thanks also to Tommy Lee for his careful copyediting of the book.</p>
 </section>
 <section id="contribute">
-<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this heading">#</a></h2>
+<h3>Contribute<a class="headerlink" href="#contribute" title="Permalink to this heading">#</a></h3>
 <p>We are actively looking for individuals who would like to contribute a lesson plan here! In particular, we are interested in building out lesson plans to re-create figures from exciting neuroscience papers. If you have an idea or would like to get involved, please email Ashley Juavinett ajuavine(at)ucsd(dot)edu.</p>
 </section>
 <section id="support">
-<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading">#</a></h2>
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this heading">#</a></h3>
 <p><img src="https://github.com/nwb4edu/nwb4edu.github.io/blob/master/The_Kavli_Foundation_Logo_Blue_Red.png?raw=true"
      alt="Kavli Logo"
      style="float: left; margin-right: 10px;"
-     width="500"/>
-<br clear="left"/></p>
+     width="400"/>
+<br clear="right"/></p>
 <p>This work is supported by a <a class="reference external" href="https://www.nwb.org/projects/">Kavli Foundation Seed Grant</a> meant to increase the access to Neurodata Without Borders datasets.</p>
 <br clear="left"/>
 <img src="https://www.braininitiative.org/wp-content/uploads/2017/02/nwb.png"
      alt="Kavli Logo"
-     style="float: left; margin-right: 10px;" />
-<br clear="left"/>
+     style="float: left; margin-right: 10px;"
+     width="400"/>
+<br clear="right"/>
 <p>Many thanks to the NWB team, especially Ben Dichter, for their feedback and input.</p>
-<p>This book was originally constructed and drafted by Victor Magdeleno-Garcia. Thanks also to Tommy Lee for his careful copyediting of the book.</p>
-<hr>
-</section>
-<section id="additional-resources">
-<h2>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h2>
-<p>There are several great online resources for neural data processing &amp; data science beyond NWB formats:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://datascienceinpractice.github.io/">Data Science in Practice</a></p></li>
-<li><p><a class="reference external" href="https://mark-kramer.github.io/Case-Studies-Python/intro.html">Case Studies in Neural Data Analysis</a></p></li>
-<li><p><a class="reference external" href="https://www.sciencedirect.com/book/9780128040430/neural-data-science">Neural Data Science by Nylen &amp; Wallisch</a></p></li>
-<li><p><a class="reference external" href="https://www.inferentialthinking.com/chapters/intro.html">Foundations of Data Science</a></p></li>
-<li><p><a class="reference external" href="https://mrgreene09.github.io/computational-neuroscience-textbook/index.html">Computational Neuroscience</a>, open textbook written by students</p></li>
-<li><p><a class="reference external" href="http://www.neuromatchacademy.org/syllabus">Neuromatch Academy</a>, online computational neuroscience course</p></li>
-</ul>
-<p>Read more about the need for data standardization in neuroscience and the NWB format:</p>
-<ul class="simple">
-<li><p>Rübel, O. et al. (2023). <a class="reference external" href="https://elifesciences.org/articles/78362">The Neurodata Without Borders ecosystem for neurophysiological data science</a>. eLife.</p></li>
-<li><p>Teeters, J. L. et al. (2015). <a class="reference external" href="https://doi.org/10.1016/j.neuron.2015.10.025">Neurodata Without Borders: Creating a Common Data Format for Neurophysiology</a>. Neuron.</p></li>
-<li><p>Teeters, J. L. et al. (2015). <a class="reference external" href="https://doi.org/10.3389/conf.fnins.2015.91.00033">Development of the Neurodata Without Borders: Neurophysiology file format</a>. Front. Neurosci. Conference Abstract: Neuroinformatics.</p></li>
-</ul>
-<hr>
 </section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
+<h3>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h3>
 <p>This work is distributed under a <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0 license</a>. You are free to use and adapt these resources, but if you generate a derivative of these resources, they should be distributed with a similar license.</p>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -506,7 +508,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nwb4edu/nwb4edu.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -560,14 +562,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurodata-without-borders">Neurodata Without Borders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-data-for-education">Standardized data for education</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-textbook">Using this textbook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content outline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contribute">Contribute</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurodata-without-borders">Neurodata Without Borders</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-data-for-education">Standardized data for education</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-book">Using this book</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-outline">Content outline</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-nwb4edu-project">About the nwb4edu project</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authors">Authors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contribute">Contribute</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -582,7 +591,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Juavinett et al.
 </p>
 
   </div>
@@ -591,7 +600,7 @@ By The Jupyter Book community
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>
