@@ -6,4 +6,5 @@ repository:
   branch: master
 launch_buttons: 
   colab_url: "https://colab.research.google.com"
-  jupyterhub_url: "https://hub.dandiarchive.org/ " 
+  thebe                  : true
+  jupyterhub_url: "https://hub.dandiarchive.org/"
