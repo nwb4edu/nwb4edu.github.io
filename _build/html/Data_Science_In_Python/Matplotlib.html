@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Visualizing with Matplotlib &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    <title>Matplotlib &#8212; Teaching &amp; Learning with NWB Datasets</title>
   
   
   
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Data Science in Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Pandas.html">Pandas</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Visualizing with Matplotlib</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SciPy.html">SciPy</a></li>
 </ul>
 </li>
@@ -264,6 +264,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Data_Science_In_Python/Matplotlib.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Data_Science_In_Python/Matplotlib.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -277,24 +295,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
 </li>
       
   </ul>
@@ -395,7 +395,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Visualizing with Matplotlib</h1>
+    <h1>Matplotlib</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -422,9 +422,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="visualizing-with-matplotlib">
-<h1>Visualizing with Matplotlib<a class="headerlink" href="#visualizing-with-matplotlib" title="Permalink to this heading">#</a></h1>
-<p>The mathematician Richard Hamming once said, “The purpose of computing is insight, not numbers,” and the best way to develop insight is often to visualize data. Visualization deserves an entire book of its own, but we can explore a few features of Python’s <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library here. While there is no official plotting library, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is the de facto standard. You’’ll see lots of matplotlib use throughout this book.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="matplotlib">
+<h1>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this heading">#</a></h1>
+<p>The mathematician Richard Hamming once said, “The purpose of computing is insight, not numbers,” and the best way to develop insight is often to visualize data. Visualization deserves an entire book of its own, but we can explore a few features of Python’s <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library here. While there is no official plotting library, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is the de facto standard. You’ll see lots of matplotlib use throughout this book.</p>
 <section id="by-the-end-of-this-notebook-you-ll-be-able-to">
 <h2>By the end of this notebook, you’ll be able to:<a class="headerlink" href="#by-the-end-of-this-notebook-you-ll-be-able-to" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -571,7 +571,9 @@ plt.subplots<span class="o">?</span>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
   fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
   fig.canvas.print_figure(bytes_io, **kw)
 /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
   fig.canvas.print_figure(bytes_io, **kw)
@@ -579,7 +581,7 @@ plt.subplots<span class="o">?</span>
   fig.canvas.print_figure(bytes_io, **kw)
 </pre></div>
 </div>
-<img alt="../_images/05d13f5d32be55b756eef5552f64cc6e3d5af6789f5e72d6212bc9622487a856.png" src="../_images/05d13f5d32be55b756eef5552f64cc6e3d5af6789f5e72d6212bc9622487a856.png" />
+<img alt="../_images/08669d7ef45c5eba815d0d350df5897911ab34feb72a91bcb0f0105a46c70fdd.png" src="../_images/08669d7ef45c5eba815d0d350df5897911ab34feb72a91bcb0f0105a46c70fdd.png" />
 </div>
 </div>
 <p>There are <em>many, many</em> different aspects of a figure that you could manipulate (and spend a lot of time manipulating).</p>
@@ -620,7 +622,7 @@ plt.subplots<span class="o">?</span>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nwb4edu/nwb4edu.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -703,7 +705,7 @@ plt.subplots<span class="o">?</span>
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Juavinett et al.
 </p>
 
   </div>
@@ -712,7 +714,7 @@ By The Jupyter Book community
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>

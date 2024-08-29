@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Visualizing with Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
 </li>
@@ -264,6 +264,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_2/01-SpikeSorting.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Lesson_2/01-SpikeSorting.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -277,24 +295,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
 </li>
       
   </ul>
@@ -429,7 +429,7 @@ document.write(`
 <p><mark><strong>Note #2</strong>: Some of the cells below contain <code>try</code> and <code>except</code> to catch instances where these notebooks are not run in a properly configured coding environment. You can ignore these and focus on the code <em>after</em> <code>try</code>.</mark></p>
 <section id="step-1-inspect-the-data">
 <h2>Step 1. Inspect the Data<a class="headerlink" href="#step-1-inspect-the-data" title="Permalink to this heading">#</a></h2>
-<p>First, we need to find the correct URL for the dataset on the NWB’s Amazon S3 storage system. There is a tool to do so within the dandiapi, which we’ll use below to get the URL for one session within the dataset.</p>
+<p>First, we need to find the correct URL for the dataset on the NWB’s Amazon S3 storage system. There is a tool to do so within the <code class="docutils literal notranslate"><span class="pre">dandiapi</span></code>, which we’ll use below to get the URL for one session within the dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.dandiapi</span> <span class="kn">import</span> <span class="n">DandiAPIClient</span>
@@ -446,9 +446,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A newer version (0.58.0) of dandi/dandi-cli is available. You are using 0.55.1
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dandiarchive.s3.amazonaws.com/blobs/d6d/882/d6d88284-983a-42a7-91e8-48e9f59c2881
 </pre></div>
 </div>
@@ -480,9 +477,10 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="alert alert-success"><b>Task:</b> What is being printed from the cell above? Given what you've learned about Neuropixels probes, what might those numbers tell us?</div>
 <p>Before we dive into spike sorting, let’s take a look at the data. Below, we’ll import a couple additional packages, generate a list of timestamps, and plot it.</p>
 <blockquote>
-<div><p><strong>Note</strong>: Need a reminder on how some of the packages or functions below work? Look through the <a class="reference external" href="https://nwb4edu.github.io/Chapter_02/NumPy.html">NumPy</a> and <a class="reference external" href="https://nwb4edu.github.io/Chapter_02/Matplotlib.html">Matplotlib</a> review pages.</p>
+<div><p>Need a reminder on how some of the packages or functions below work? Look through the <a class="reference external" href="https://nwb4edu.github.io/Data_Science_In_Python/NumPy.html">NumPy</a> and <a class="reference external" href="https://nwb4edu.github.io/Data_Science_In_Python/Matplotlib.html">Matplotlib</a> review pages.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -517,6 +515,7 @@ document.write(`
 </div>
 </div>
 <p>In the data above, there are clear places where the data “spikes”. These are extracellularly recorded action potentials!</p>
+<div class="alert alert-success"><b>Task:</b> Uncomment and edit the <code>plt.xlim()</code> line to change the limits on the x-axis and find a single action potential.</div>
 </section>
 <section id="step-2-spike-detection">
 <h2>Step 2. Spike Detection<a class="headerlink" href="#step-2-spike-detection" title="Permalink to this heading">#</a></h2>
@@ -703,7 +702,7 @@ Recommended Spike Threshold         :  nan
 </div>
 </div>
 </div>
-<p>Looking at the plot above, would you say there is just one waveform here, or multiple?</p>
+<div class="alert alert-success"><b>Task:</b> Looking at the plot above, would you say there is just one waveform here, or multiple?</div>
 </section>
 <section id="step-3-feature-extraction">
 <h2>Step 3. Feature Extraction<a class="headerlink" href="#step-3-feature-extraction" title="Permalink to this heading">#</a></h2>
@@ -729,7 +728,8 @@ Recommended Spike Threshold         :  nan
 </section>
 <section id="notebook-summary">
 <h2>Notebook summary<a class="headerlink" href="#notebook-summary" title="Permalink to this heading">#</a></h2>
-<p>In this notebook, we’ve looked closely at just 100 seconds of one channel in a 384-channel recording. You can imagine how long spike sorting would take if we needed to do this for <em>all</em> of the data. Thankfully, there are more automated spikesorting tools which enable researchers to automatically sort their data, with just a little bit of sorting by hand. In the next notebook, we’ll work with data that has already been sorted for us. The resulting data simply has spike times for each sorted neuron (or “unit”) – the moments in the experiment where a spike happened. This is the most common format for data sharing of extracellularly recorded data, since it’s much more concise, and the hard work of spike sorting has already happened.</p>
+<p>In this notebook, we’ve looked closely at just 100 seconds of one channel in a 384-channel recording. You can imagine how long spike sorting would take if we needed to do this for <em>all</em> of the data. Thankfully, there are more automated spike sorting tools which enable researchers to automatically sort their data, with just a little bit of sorting by hand (e.g., <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2023.01.07.523036v1.full.pdf">Kilosort</a>.</p>
+<p>In the next notebook, we’ll work with data that has already been sorted for us. The resulting dataset has spike times for each sorted neuron (or “unit”) – the moments in the experiment where a spike happened. This is the most common format for data sharing of extracellularly recorded data, since it’s much more concise, and the hard work of spike sorting has already happened.</p>
 </section>
 <section id="notes-resources">
 <h2>Notes &amp; resources<a class="headerlink" href="#notes-resources" title="Permalink to this heading">#</a></h2>
@@ -742,7 +742,7 @@ All rights reserved.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nwb4edu/nwb4edu.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -824,7 +824,7 @@ All rights reserved.</p>
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Juavinett et al.
 </p>
 
   </div>
@@ -833,7 +833,7 @@ By The Jupyter Book community
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>

@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Visualizing with Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
 </li>
@@ -266,6 +266,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_4/02-Analyzing_Two_Photon_Data.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Lesson_4/02-Analyzing_Two_Photon_Data.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -279,24 +297,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
 </li>
       
   </ul>
@@ -560,6 +560,9 @@ document.write(`
 <p>There are clearly some responses above, but it’s tough to see whether this corresponds to different behaviors or visual stimuli with just the raw fluorescence traces.</p>
 <p>Let’s see how these cells actually responded to different types of images. To do so, we’ll need to use the <code class="docutils literal notranslate"><span class="pre">get_cell_specimens()</span></code> method on our <code class="docutils literal notranslate"><span class="pre">boc</span></code>, giving it the name of the experiment container ID.</p>
 <p>The dataframe that this creates will have a lot more information about what the cells in our experiment prefer. Each row is a different cell, each with its own preferences and response patterns.</p>
+<blockquote>
+<div><p><strong>Note</strong>: This cell may take several minutes to load.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the cell specimens information for this experiment</span>
@@ -1037,8 +1040,8 @@ Preferred temporal frequency: 1
 </div>
 </div>
 </div>
-<p>It is important to not that these are no the only possible analyses that can be done. We could go a step further and also look at the static gratings. We could plot the running speed of the mouse versus the DF/F of our cells to determine what stimlus elicited the fasted response from our mice. We can even use the data to determine the on and off receptive fields all our cells. In the analyses that we performed above we only looked at one experiment container that included one brain area and one cre line, but we are not limited to this and can compare brain areas and cre lines and can begin forming connections between differnt brain regions.</p>
-<p>In conclusion, there are many different analyses that you can perform with the two photon imaging data. It is important to look through the downloaded data to ensure your desired brain regions, cre lines, and computed metrics are all available before beginning your work.</p>
+<p>These are not the only possible analyses that can be done! We could investigate responses to the static gratings, or we could plot the running speed of the mouse versus the DF/F of our cells to determine what stimulus elicited the fasted response from our mice. We can even use the data to determine the on and off receptive fields all our cells. In the analyses that we performed above we only looked at one experiment container that included one brain area and one cre line, but we are not limited to this and can compare brain areas and cre lines and can begin forming connections between differnt brain regions.</p>
+<p>In conclusion, there are many different analyses that you can perform with the two photon imaging data. As with any data science project, it is important to look through the downloaded data to ensure your desired brain regions, transgenic mouse lines, and computed metrics are all available before beginning your work.</p>
 </section>
 </section>
 
@@ -1046,7 +1049,7 @@ Preferred temporal frequency: 1
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nwb4edu/nwb4edu.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -1128,7 +1131,7 @@ Preferred temporal frequency: 1
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Juavinett et al.
 </p>
 
   </div>
@@ -1137,7 +1140,7 @@ By The Jupyter Book community
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>

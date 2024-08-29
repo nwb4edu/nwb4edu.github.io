@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Visualizing with Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
 </li>
@@ -264,6 +264,24 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_1/01-Obtaining_Datasets_with_DANDI.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Lesson_1/01-Obtaining_Datasets_with_DANDI.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
@@ -277,24 +295,6 @@ const thebe_selector_output = ".output, .cell_output"
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
 </li>
       
   </ul>
@@ -410,6 +410,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-via-the-dandihub">Streaming via the Dandihub</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-locally-after-configuring-your-environment">Streaming locally, after configuring your environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-data-streaming">Code for Data Streaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
 </ul>
 </li>
 </ul>
@@ -436,7 +437,7 @@ document.write(`
 <h2>Option 1: Downloading Dandisets using Python<a class="headerlink" href="#option-1-downloading-dandisets-using-python" title="Permalink to this heading">#</a></h2>
 <p>The cell below will download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000006">this dataset</a> from DANDI. This dataset contains 32-channel extracellular recordings from mouse cortex. We’re using the <a class="reference external" href="https://dandi.readthedocs.io/en/latest/cmdline/download.html"><code class="docutils literal notranslate"><span class="pre">download</span></code></a> tool from dandi below.</p>
 <p><mark><strong>Note:</strong> Downloading this dataset may take several minutes, depending on your internet connection.</mark></p>
-<p><mark><strong>Note #2:</strong> This step is <em>only possible</em> after completing the setup steps.</p>
+<p><mark><strong>Note #2:</strong> This step is <em>only possible</em> if you’re running this on the Dandihub or if you have completed the <a href="https://nwb4edu.github.io/Introduction/Using_This_Book.html">setup steps</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.download</span> <span class="kn">import</span> <span class="n">download</span> <span class="k">as</span> <span class="n">dandi_download</span>
@@ -553,7 +554,7 @@ Summary:                                            82.3 MB   82.3 MB           
 </div>
 </div>
 <p>Now, we can read this path, but we’ll stream it, rather than downloading it! The cell below will print some of the data about this experiment. It uses another package, <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/index.html"><strong>PyNWB</strong></a>, which is specifically designed to work with NWB files in Python. As you might expect, this won’t be the last time we see this package. Below, we’ll use the <code class="docutils literal notranslate"><span class="pre">NWBHDF5IO</span></code> class from this package, which will allow us to read NWB files.</p>
-<p><mark><strong>Note</strong>: The code below <em>will not work</em> unless you’re on the Dandihub or have properly configured your environment. See above.</p>
+<p><mark><strong>Note</strong>: The code below <em>will not work</em> unless you’re on the Dandihub or have properly configured your environment. If you’d like to run it in Dandihub, copy and paste the code into a new cell below.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
 
 <span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
@@ -570,6 +571,13 @@ Summary:                                            82.3 MB   82.3 MB           
 </div>
 <p>The following section will go over the the structure of an NWBFile and how to access data from this new file type.</p>
 </section>
+<section id="additional-resources">
+<h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>There are many different ways to configure your Dandi file download. <a class="reference external" href="https://alleninstitute.github.io/openscope_databook/basics/download_nwb.html">See this OpenScope page for more details</a>.</p></li>
+<li><p>Similarly, <a class="reference external" href="https://alleninstitute.github.io/openscope_databook/basics/stream_nwb.html">here are alternative ways to configure streaming</a>.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -577,7 +585,7 @@ Summary:                                            82.3 MB   82.3 MB           
     {
         requestKernel: true,
         binderOptions: {
-            repo: "nwb4edu/nwb4edu.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -645,6 +653,7 @@ Summary:                                            82.3 MB   82.3 MB           
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-via-the-dandihub">Streaming via the Dandihub</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streaming-locally-after-configuring-your-environment">Streaming locally, after configuring your environment</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-data-streaming">Code for Data Streaming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional resources</a></li>
 </ul>
 </li>
 </ul>
@@ -661,7 +670,7 @@ Summary:                                            82.3 MB   82.3 MB           
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book community
+By Juavinett et al.
 </p>
 
   </div>
@@ -670,7 +679,7 @@ By The Jupyter Book community
     
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>
