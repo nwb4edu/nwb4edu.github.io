@@ -296,6 +296,24 @@ const thebe_selector_output = ".output, .cell_output"
 </a>
 </li>
       
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
 </div>
 
@@ -460,6 +478,7 @@ document.write(`
 <p>The <a class="reference external" href="https://nwb4edu.github.io/Chapter_01/Introduction.html">introduction</a> will set you up for success with options for interacting with these materials and some technical environment setup.</p>
 <p><a class="reference external" href="https://nwb4edu.github.io/Chapter_02/Data_Science_In_Python.html">Data Science in Python</a> reviews some of the packages, data structures, and coding skills that we’ll use throughout the rest of the book. You are welcome to skip this chapter if you’re very comfortable in Python.</p>
 <p>The lessons themselves are organized into two groups: one that interacts with “native NWB” format using the <code class="docutils literal notranslate"><span class="pre">pyNWB</span></code> package, and a second that interacts with the Allen Institute for Brain Science data via the <code class="docutils literal notranslate"><span class="pre">allenSDK</span></code>. Each of these lessons are self-contained and can be completed out of order, depending on which type of data you’re most interested in working with.</p>
+<p>There is a final, growing group of lessons called <a class="reference external" href="https://nwb4edu.github.io/Lesson_5/00-GreatestHits.html"><strong>Greatest Hits</strong></a> in which users can re-create figures from published scientific papers using their NWB-formatted data.</p>
 <hr>
 </section>
 </section>
@@ -508,7 +527,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -591,7 +610,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Juavinett et al.
+By The Jupyter Book community
 </p>
 
   </div>
@@ -600,7 +619,7 @@ By Juavinett et al.
     
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2022.
       <br/>
     
   </p>
