@@ -296,6 +296,24 @@ const thebe_selector_output = ".output, .cell_output"
 </a>
 </li>
       
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
 </div>
 
@@ -479,9 +497,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A newer version (0.63.0) of dandi/dandi-cli is available. You are using 0.55.1
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dandiarchive.s3.amazonaws.com/blobs/2dd/66a/2dd66ad9-e7d9-4b96-9de1-4a90ca416048
 </pre></div>
 </div>
@@ -507,139 +522,56 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>108
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([[1.60276178, 3.62279645, 1.51476444, ..., 5.60466456, 8.12611812,
-         4.51181022],
-        [1.55470078, 3.61949889, 1.52247338, ..., 5.8348096 , 8.39029125,
-         4.49137067],
-        [1.50889271, 3.6006078 , 1.51828573, ..., 6.10419168, 8.69046855,
-         4.46007445],
-        ...,
-        [4.12529142, 0.82163592, 0.        , ..., 0.93349805, 4.08401884,
-         2.88854864],
-        [4.45614688, 0.75939308, 0.        , ..., 1.02900484, 3.93844586,
-         2.50915528],
-        [4.81611363, 0.71241948, 0.        , ..., 1.11870277, 3.78184694,
-         2.23669761]]),
- array([[1.98988481e+00, 9.18115783e+00, 4.84613933e-01, ...,
-         8.29134273e+00, 1.28676193e+01, 5.34669479e+00],
-        [2.03938737e+00, 8.95338260e+00, 4.71113281e-01, ...,
-         8.66122138e+00, 1.29588883e+01, 5.27734065e+00],
-        [2.11567852e+00, 8.73625972e+00, 4.36420133e-01, ...,
-         9.01331021e+00, 1.30878842e+01, 5.12815676e+00],
-        ...,
-        [0.00000000e+00, 8.89741886e-01, 1.20710063e-01, ...,
-         1.77465655e+00, 5.54310886e+00, 4.64197132e+00],
-        [4.34632238e-01, 8.58363468e-01, 5.94563715e-02, ...,
-         1.77712679e+00, 5.20989508e+00, 4.28237550e+00],
-        [1.23498659e+00, 8.28295046e-01, 1.18584586e-02, ...,
-         1.75649494e+00, 4.79042602e+00, 3.98363834e+00]]),
- array([[ 1.60373245, 10.15764322,  0.29813424, ...,  6.96855588,
-          8.28129753,  3.90105099],
-        [ 1.569838  , 10.021134  ,  0.31419016, ...,  7.28878381,
-          8.51076048,  3.937435  ],
-        [ 1.55323424,  9.75734348,  0.32486749, ...,  7.62972653,
-          8.8555404 ,  3.99531886],
-        ...,
-        [ 0.77569014,  1.61741704,  0.26314808, ...,  2.36269075,
-          5.84946381,  6.43682085],
-        [ 1.31849522,  1.61624415,  0.23164867, ...,  2.23056838,
-          5.62593022,  6.4016482 ],
-        [ 2.02338781,  1.62394422,  0.21108832, ...,  2.10164688,
-          5.39176039,  6.42803701]]),
- array([[2.72760539e+00, 2.88838501e+01, 0.00000000e+00, ...,
-         8.51932370e+00, 1.11985675e+01, 4.52686021e+00],
-        [2.67390640e+00, 2.84223262e+01, 2.53716630e-03, ...,
-         8.87067363e+00, 1.15797916e+01, 4.22883051e+00],
-        [2.60115725e+00, 2.77449432e+01, 9.19432870e-03, ...,
-         9.22141101e+00, 1.20100251e+01, 3.87817751e+00],
-        ...,
-        [1.32059867e+01, 0.00000000e+00, 2.17196058e-02, ...,
-         2.18950438e+00, 8.22869141e+00, 1.62000847e+01],
-        [1.31175366e+01, 0.00000000e+00, 1.81035530e-02, ...,
-         2.27029301e+00, 7.68207040e+00, 1.45853136e+01],
-        [1.29664334e+01, 0.00000000e+00, 1.43236629e-02, ...,
-         2.30341582e+00, 7.07254659e+00, 1.30476296e+01]]),
- array([[ 3.41652625, 15.30420543,  0.31560335, ...,  5.55989529,
-          7.89834632,  2.55235159],
-        [ 3.44291429, 14.94753565,  0.29931779, ...,  5.78522773,
-          8.05902305,  2.51652769],
-        [ 3.4348078 , 14.41107245,  0.27380366, ...,  6.09202126,
-          8.30579099,  2.58677391],
-        ...,
-        [20.97243685,  0.        ,  0.        , ...,  1.0827491 ,
-          5.51890839, 18.01749614],
-        [21.19895812,  0.        ,  0.        , ...,  1.29116673,
-          5.3266248 , 17.86940981],
-        [21.22406973,  0.        ,  0.        , ...,  1.46901007,
-          5.12274536, 17.59725915]]),
- array([[4.03923418e+00, 1.36332909e+01, 0.00000000e+00, ...,
-         5.44131703e+00, 8.48576516e+00, 3.06348630e+00],
-        [4.07191047e+00, 1.32253702e+01, 2.53716630e-03, ...,
-         5.64141161e+00, 8.58871439e+00, 3.04405261e+00],
-        [4.09220598e+00, 1.27503908e+01, 9.19432870e-03, ...,
-         5.90183520e+00, 8.72992838e+00, 3.11563348e+00],
-        ...,
-        [1.82841848e+01, 0.00000000e+00, 2.17196058e-02, ...,
-         6.30578050e-01, 3.96554230e+00, 1.98244539e+01],
-        [1.83640149e+01, 0.00000000e+00, 1.81035530e-02, ...,
-         9.15449621e-01, 3.88906459e+00, 1.98647166e+01],
-        [1.83092114e+01, 0.00000000e+00, 1.43236629e-02, ...,
-         1.16036934e+00, 3.77210293e+00, 1.96804517e+01]]),
- array([[1.6649231 , 1.54846916, 0.23029342, ..., 5.06335567, 9.19511398,
-         5.04997387],
-        [1.68467823, 1.52632859, 0.19169466, ..., 5.28183642, 9.49420333,
-         5.1348521 ],
-        [1.70369659, 1.4793452 , 0.18148143, ..., 5.55075934, 9.8505357 ,
-         5.24377644],
-        ...,
-        [2.31733141, 1.80694326, 0.        , ..., 1.35858661, 5.58251028,
-         5.43404842],
-        [2.16833113, 1.774965  , 0.        , ..., 1.35887535, 5.24024774,
-         4.80467814],
-        [2.00670126, 1.74779926, 0.        , ..., 1.36631926, 4.90706029,
-         4.22998486]]),
- array([[3.79552599, 3.39280084, 0.        , ..., 6.32034651, 5.88440318,
-         3.85917332],
-        [3.86538517, 3.28978386, 0.        , ..., 6.53654853, 5.98880166,
-         3.93190762],
-        [3.97796234, 3.1487481 , 0.        , ..., 6.81210714, 6.20658187,
-         4.04437122],
-        ...,
-        [3.90025433, 3.0066539 , 0.33077066, ..., 6.35071173, 3.46221117,
-         4.33747868],
-        [4.0121167 , 2.94413028, 0.37893628, ..., 5.54029745, 3.62462199,
-         4.6777363 ],
-        [4.15470646, 2.8824668 , 0.43859265, ..., 4.82267132, 3.74731782,
-         5.00949809]]),
- array([[4.25736601, 4.40688495, 0.        , ..., 5.07081411, 6.62688377,
-         3.71489383],
-        [4.32244144, 4.29753924, 0.        , ..., 5.28244275, 6.8641511 ,
-         3.68663197],
-        [4.4330013 , 4.07015713, 0.        , ..., 5.58151686, 7.18845814,
-         3.6953928 ],
-        ...,
-        [4.01073048, 3.1942071 , 0.29335473, ..., 6.44955845, 4.349918  ,
-         4.21620661],
-        [3.73210996, 3.14390731, 0.32311401, ..., 5.57861995, 4.37063976,
-         4.09425406],
-        [3.49415452, 3.10281821, 0.36125002, ..., 4.80957995, 4.34536525,
-         4.05340816]]),
- array([[2.28999702, 7.74126035, 0.07296037, ..., 6.23387879, 9.14562329,
-         3.11584665],
-        [2.3060687 , 7.62697086, 0.07916832, ..., 6.56379207, 9.30814884,
-         3.00823497],
-        [2.34111484, 7.50059092, 0.08822277, ..., 6.88993767, 9.50221832,
-         2.89594494],
-        ...,
-        [2.56678043, 0.66563231, 0.        , ..., 1.76669617, 4.02700293,
-         2.6701241 ],
-        [2.75769703, 0.64591699, 0.        , ..., 1.80855134, 3.81500126,
-         2.87936864],
-        [2.96793386, 0.6293154 , 0.        , ..., 1.80527546, 3.61018331,
-         3.18619669]])]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">data_url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/nwb4edu/development/blob/0f181c8092d79278fcb0320d9f53bc33fbb0df85/exampleData.mat?raw=true&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Get the data and save it locally as &quot;sleep_data.txt&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">path</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="s1">&#39;./exampleData.mat&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">data</span><span class="p">,</span> <span class="n">times</span> <span class="o">=</span> <span class="n">load_churchland_data</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="c1"># Show the length of data</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/urllib/request.py:270,</span> in <span class="ni">urlretrieve</span><span class="nt">(url, filename, reporthook, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span>     <span class="n">reporthook</span><span class="p">(</span><span class="n">blocknum</span><span class="p">,</span> <span class="n">bs</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">270</span>     <span class="n">block</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">block</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span>         <span class="k">break</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/http/client.py:465,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="c1"># clip the read to the &quot;end of response&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">amt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span>
+<span class="ne">--&gt; </span><span class="mi">465</span> <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="c1"># Ideally, we would raise IncompleteRead if the content-length</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="c1"># wasn&#39;t satisfied, but it might break compatibility.</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_close_conn</span><span class="p">()</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/socket.py:705,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">703</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">705</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/ssl.py:1278,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1274</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1275</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1276</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1277</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1278</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/ssl.py:1134,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1133</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1134</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1135</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -2085,10 +2017,7 @@ document.write(`
 <section id="visually-explore-the-data">
 <h2>Visually explore the data<a class="headerlink" href="#visually-explore-the-data" title="Permalink to this heading">#</a></h2>
 <p>Now that we understand the structure of the data, we can take a look at some of these trials. Below, we’ll create a firing rate plot for one trial at a time. In this plot, each neuron will be a different color.</p>
-<blockquote>
-<div><p><strong>Task</strong>: Change the value indexed in <code class="docutils literal notranslate"><span class="pre">data</span></code> below (keeping in mind how many conditions we have in total as well as 0 indexing in Python!) to look through a few different trials for patterns.</p>
-</div></blockquote>
-<div class="cell docutils container">
+<div class="alert alert-success"><b>Task</b>: Change the value indexed in <code>data`</code> below (keeping in mind how many conditions we have in total as well as 0 indexing in Python!) to look through a few different trials for patterns.</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trial</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span> <span class="c1"># You can change the index here if you&#39;d like to look through different trials.</span>
 
@@ -2104,17 +2033,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-</pre></div>
-</div>
-<img alt="../_images/6f21b6668cd128a14c27a18d9ce2ca77605a5ed63b019e8825ffe99c06e31b07.png" src="../_images/6f21b6668cd128a14c27a18d9ce2ca77605a5ed63b019e8825ffe99c06e31b07.png" />
+<img alt="../_images/e68670ef466095c0c1ff272943e5561b6c8cffbd838a041f5e1056fc56ef0759.png" src="../_images/e68670ef466095c0c1ff272943e5561b6c8cffbd838a041f5e1056fc56ef0759.png" />
 </div>
 </div>
 <p>As you can appreciate from this plot, it is hard to make much sense of what this population of neurons are doing. Some neurons respond to the plotted condition, but not others.</p>
@@ -2132,25 +2051,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-</pre></div>
-</div>
-<img alt="../_images/2f7f3685442369014e196aba08069251e46258e5b90c24dd90ab11c052e17712.png" src="../_images/2f7f3685442369014e196aba08069251e46258e5b90c24dd90ab11c052e17712.png" />
+<img alt="../_images/59c5250c1168052befcc5dedf8cd3acd087ef01b8a65a56e63a1553bf6e13c25.png" src="../_images/59c5250c1168052befcc5dedf8cd3acd087ef01b8a65a56e63a1553bf6e13c25.png" />
 </div>
 </div>
 <p>This is also not particularly informative! Clearly, neural activity increases overall when a monkey initiates a reach, but what does this tell us about neural coding?</p>
 <p>Let’s do one final check, where we look at a single cell across multiple conditions. This is similar to Figure 2 of the paper, except we won’t color these by preparatory activity.</p>
-<blockquote>
-<div><p><strong>Task</strong>: Change the value of <code class="docutils literal notranslate"><span class="pre">neuron</span></code> below (keeping in mind how many neurons we have in total as well as 0 indexing in Python!) to look through a few neurons for patterns.</p>
-</div></blockquote>
-<div class="cell docutils container">
+<div class="alert alert-success"><b>Task</b>: Change the value of <code>neuron</code> below (keeping in mind how many neurons we have in total as well as 0 indexing in Python!) to look through a few neurons for patterns.</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">neuron</span> <span class="o">=</span> <span class="mi">200</span>
 
@@ -2164,17 +2070,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-</pre></div>
-</div>
-<img alt="../_images/1a1ff715f053505c31c9b5e900d1af9a37f40752d9bddd81ca41bf483a9364de.png" src="../_images/1a1ff715f053505c31c9b5e900d1af9a37f40752d9bddd81ca41bf483a9364de.png" />
+<img alt="../_images/6c98caf5bd9b3b4f9f68dcaa30b47ba64fa3c95b3c748e9706a86194b4f05e67.png" src="../_images/6c98caf5bd9b3b4f9f68dcaa30b47ba64fa3c95b3c748e9706a86194b4f05e67.png" />
 </div>
 </div>
 <p>In summary, we can learn a few things away from the data exploration above:</p>
@@ -2206,30 +2102,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;orientation&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;facecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;edgecolor&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-/Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages/IPython/core/pylabtools.py:152: MatplotlibDeprecationWarning: savefig() got unexpected keyword argument &quot;bbox_inches_restore&quot; which is no longer supported as of 3.3 and will become an error two minor releases later
-  fig.canvas.print_figure(bytes_io, **kw)
-</pre></div>
-</div>
-<img alt="../_images/12f7be3f0970424b7be8a0217b5c3875e618aff34c1ff938609fa27ea39acb8e.png" src="../_images/12f7be3f0970424b7be8a0217b5c3875e618aff34c1ff938609fa27ea39acb8e.png" />
-</div>
 </div>
 <p>Above, we’ve generated figures really similar to Figure 3. However, the utility of working with this data live is that we can change features of the analysis and observe how this changes the plots (and our interpretation of the data).</p>
-<blockquote>
-<div><p><strong>Task</strong>: Try the following with the code:</p>
-<ul class="simple">
+<div class="alert alert-success"><b>Task</b>: Try the following with the code:
+<ol class="arabic simple">
 <li><p>By default, the jPCA is fit to -50 ms to 150 ms of the data. Change <code class="docutils literal notranslate"><span class="pre">tend</span></code> to include more of the data in the analysis, and observe how this changes the PCA plots.</p></li>
-<li><p><strong>Bonus</strong>: What dicates the coloring of the lines here? Dig into <code class="docutils literal notranslate"><span class="pre">utils</span></code> to find out.</p></li>
-</ul>
-</div></blockquote>
+<li><p><b>Bonus</b>: What dicates the coloring of the lines here? Dig into <code>utils</code> to find out. </div></p></li>
+</ol>
 </section>
 </section>
 
@@ -2237,7 +2116,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "nwb4edu/nwb4edu.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -2309,7 +2188,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Juavinett et al.
+By The Jupyter Book community
 </p>
 
   </div>
@@ -2318,7 +2197,7 @@ By Juavinett et al.
     
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2022.
       <br/>
     
   </p>
