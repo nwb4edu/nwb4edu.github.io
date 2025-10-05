@@ -448,7 +448,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages-required-for-lessons-1-4">Core packages required for Lessons 1-4:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages-for-lesson-5-greatest-hits">Additional packages for Lesson 5 (Greatest Hits):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages">Core Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-5-packages">Lesson 5 Packages</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -465,14 +471,24 @@ document.write(`
 <p>This notebook will ensure that your coding environment is set up for the interactive activities in this textbook. <mark>You <strong>do not</strong> need to worry about these requirements if you are running code on the Dandihub, as recommended in “How to use this book”.</mark> You can simply ignore this page and get on with the data!</p>
 <section id="package-requirements">
 <h2>Package Requirements<a class="headerlink" href="#package-requirements" title="Link to this heading">#</a></h2>
-<p>If you’re <em>not</em> running the code on the Dandihub, then we have to ensure that your coding environment has all of the proper packages installed. The packages required are:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">==</span><span class="mf">1.23.1</span>
-<span class="n">dandi</span><span class="o">==</span><span class="mf">0.45.1</span>
-<span class="n">h5py</span><span class="o">==</span><span class="mf">2.10.0</span>
+<p>If you’re <em>not</em> running the code on the Dandihub, then we have to ensure that your coding environment has all of the proper packages installed.</p>
+<section id="core-packages-required-for-lessons-1-4">
+<h3>Core packages required for Lessons 1-4:<a class="headerlink" href="#core-packages-required-for-lessons-1-4" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dandi</span><span class="o">&gt;=</span><span class="mf">0.45.1</span>          <span class="c1"># Includes: pynwb, h5py, hdmf</span>
+<span class="n">allensdk</span><span class="o">&gt;=</span><span class="mf">2.11.2</span>       <span class="c1"># Includes: numpy, pandas, scipy, matplotlib</span>
+<span class="n">nwbwidgets</span><span class="o">&gt;=</span><span class="mf">0.8.0</span>      <span class="c1"># Includes: ipywidgets</span>
+<span class="n">seaborn</span><span class="o">&gt;=</span><span class="mf">0.11.0</span>        <span class="c1"># Visualization package</span>
 </pre></div>
 </div>
-<p>The code below will ensure that you have these packages or newer.</p>
-<p>First, we need to ensure that you have the <a class="reference external" href="https://pypi.org/project/dandi/"><code class="docutils literal notranslate"><span class="pre">DANDI</span></code> client</a> installed in your coding environment. The cell below will try to import DANDI. If you have an old version of DANDI, it will prompt you to install a newer version. Type “Y” if you would like to install a new version (this is recommended). If you don’t have DANDI at all, it will install the most recent version.</p>
+</section>
+<section id="additional-packages-for-lesson-5-greatest-hits">
+<h3>Additional packages for Lesson 5 (Greatest Hits):<a class="headerlink" href="#additional-packages-for-lesson-5-greatest-hits" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pynapple</span>                <span class="c1"># Neural data analysis</span>
+<span class="n">plotly</span>                  <span class="c1"># Interactive plotting</span>
+<span class="n">fsspec</span>                  <span class="c1"># File system interface</span>
+</pre></div>
+</div>
+<p>The code cells below will check for and install these packages as needed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the correct version of dandi is installed</span>
@@ -495,160 +511,455 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Next, we’ll check for pyNWB, the python package for NWB.</p>
+</section>
+<section id="core-packages">
+<h3>Core Packages<a class="headerlink" href="#core-packages" title="Link to this heading">#</a></h3>
+<p>We’ll check for the essential packages that include all necessary dependencies.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for pynwb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for nwbwidgets (includes pynwb, ipywidgets)</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">pynwb</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pyNWB installed.&#39;</span><span class="p">)</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">nwbwidgets</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nwbwidgets installed.&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pynwb
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nwbwidgets
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pyNWB installed.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting nwbwidgets
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached nwbwidgets-0.11.3-py3-none-any.whl.metadata (6.3 kB)
+Requirement already satisfied: numpy in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.2.3)
+Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.10.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scikit-image (from nwbwidgets)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading scikit_image-0.25.2-cp312-cp312-macosx_12_0_arm64.whl.metadata (14 kB)
+Requirement already satisfied: pynwb in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.1.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipympl (from nwbwidgets)
+  Downloading ipympl-0.9.7-py3-none-any.whl.metadata (8.7 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipydatagrid (from nwbwidgets)
+  Downloading ipydatagrid-1.4.0-py3-none-any.whl.metadata (5.8 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipyvolume&gt;=0.6.0a10 (from nwbwidgets)
+  Downloading ipyvolume-0.6.3-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: ipywidgets&gt;=8.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (8.1.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting plotly==5.13.1 (from nwbwidgets)
+  Downloading plotly-5.13.1-py2.py3-none-any.whl.metadata (7.0 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tqdm&gt;=4.36.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (4.67.1)
+Requirement already satisfied: zarr in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.18.7)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tifffile (from nwbwidgets)
+  Downloading tifffile-2025.9.30-py3-none-any.whl.metadata (30 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ndx-spectrum (from nwbwidgets)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ndx_spectrum-0.2.2-py3-none-any.whl.metadata (385 bytes)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ndx-icephys-meta (from nwbwidgets)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ndx_icephys_meta-0.1.0-py2.py3-none-any.whl.metadata (458 bytes)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ndx-grayscalevolume (from nwbwidgets)
+  Downloading ndx_grayscalevolume-0.0.2-py2.py3-none-any.whl.metadata (345 bytes)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting trimesh (from nwbwidgets)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading trimesh-4.8.3-py3-none-any.whl.metadata (18 kB)
+Requirement already satisfied: dandi&gt;=0.55.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.71.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting importlib-metadata&lt;5.0 (from nwbwidgets)
+  Downloading importlib_metadata-4.13.0-py3-none-any.whl.metadata (4.9 kB)
+Requirement already satisfied: fsspec in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2025.9.0)
+Requirement already satisfied: requests in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.32.3)
+Requirement already satisfied: aiohttp in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.12.15)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipydatawidgets==4.3.2 (from nwbwidgets)
+  Downloading ipydatawidgets-4.3.2-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting ipyfilechooser==0.6.0 (from nwbwidgets)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ipyfilechooser-0.6.0-py3-none-any.whl.metadata (6.4 kB)
+Collecting traittypes&gt;=0.2.0 (from ipydatawidgets==4.3.2-&gt;nwbwidgets)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading traittypes-0.2.1-py2.py3-none-any.whl.metadata (1.0 kB)
+Requirement already satisfied: tenacity&gt;=6.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from plotly==5.13.1-&gt;nwbwidgets) (9.1.2)
+Requirement already satisfied: bidsschematools~=1.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.1.0)
+Requirement already satisfied: bids-validator-deno&gt;=2.0.5 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.1.1)
+Requirement already satisfied: click&lt;8.2.0,&gt;=7.1 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (8.1.8)
+Requirement already satisfied: click-didyoumean in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.1)
+Requirement already satisfied: dandischema&lt;0.12.0,&gt;=0.11.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.11.1)
+Requirement already satisfied: etelemetry&gt;=0.2.2 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.1)
+Requirement already satisfied: fasteners in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.20)
+Requirement already satisfied: fscacher&gt;=0.3.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.4)
+Requirement already satisfied: hdmf!=3.14.4,!=3.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.1.0)
+Requirement already satisfied: humanize in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.13.0)
+Requirement already satisfied: interleave~=0.3 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.0)
+Requirement already satisfied: joblib in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.2)
+Requirement already satisfied: keyring!=23.9.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (25.6.0)
+Requirement already satisfied: keyrings.alt in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (5.0.2)
+Requirement already satisfied: packaging in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (24.1)
+Requirement already satisfied: platformdirs in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.4.0)
+Requirement already satisfied: pycryptodomex in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (3.23.0)
+Requirement already satisfied: pydantic~=2.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.11.10)
+Requirement already satisfied: numcodecs&lt;0.16 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.15.1)
+Requirement already satisfied: nwbinspector!=0.4.32,&gt;=0.4.28 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.6.5)
+Requirement already satisfied: pyout!=0.6.0,&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.8.1)
+Requirement already satisfied: python-dateutil in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.post0)
+Requirement already satisfied: ruamel.yaml&lt;1,&gt;=0.15 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.18.6)
+Requirement already satisfied: semantic-version in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.10.0)
+Requirement already satisfied: tensorstore in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.1.77)
+Requirement already satisfied: urllib3&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.2.3)
+Requirement already satisfied: yarl~=1.9 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.21.0)
+Requirement already satisfied: zarr_checksum~=0.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.7)
+Requirement already satisfied: zipp&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from importlib-metadata&lt;5.0-&gt;nwbwidgets) (3.23.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting bqplot (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets)
+  Downloading bqplot-0.12.45-py2.py3-none-any.whl.metadata (6.4 kB)
+Requirement already satisfied: traitlets in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (5.14.3)
+Requirement already satisfied: Pillow in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (11.1.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipywebrtc (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets)
+  Downloading ipywebrtc-0.6.0-py2.py3-none-any.whl.metadata (825 bytes)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipyvuetify (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets)
+  Downloading ipyvuetify-1.11.3-py2.py3-none-any.whl.metadata (7.5 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipyvue&gt;=1.7.0 (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets)
+  Downloading ipyvue-1.11.3-py2.py3-none-any.whl.metadata (987 bytes)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pythreejs&gt;=2.4.0 (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets)
+  Downloading pythreejs-2.4.2-py3-none-any.whl.metadata (5.4 kB)
+Requirement already satisfied: comm&gt;=0.1.3 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.2)
+Requirement already satisfied: ipython&gt;=6.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (8.31.0)
+Requirement already satisfied: widgetsnbextension~=4.0.12 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (4.0.13)
+Requirement already satisfied: jupyterlab-widgets~=3.0.12 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.13)
+Requirement already satisfied: h5py&gt;=3.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from pynwb-&gt;nwbwidgets) (3.14.0)
+Requirement already satisfied: pandas&gt;=1.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from pynwb-&gt;nwbwidgets) (2.2.3)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;nwbwidgets) (3.3.2)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;nwbwidgets) (3.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;nwbwidgets) (2024.12.14)
+Requirement already satisfied: asciitree in /opt/miniconda3/lib/python3.12/site-packages (from zarr-&gt;nwbwidgets) (0.3.3)
+Requirement already satisfied: aiohappyeyeballs&gt;=2.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (2.6.1)
+Requirement already satisfied: aiosignal&gt;=1.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (1.4.0)
+Requirement already satisfied: attrs&gt;=17.3.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (24.3.0)
+Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (1.7.0)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (6.6.4)
+Requirement already satisfied: propcache&gt;=0.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (0.4.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting py2vega&gt;=0.5 (from ipydatagrid-&gt;nwbwidgets)
+  Downloading py2vega-0.6.1-py3-none-any.whl.metadata (874 bytes)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (1.3.1)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (4.56.0)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (1.4.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (3.2.1)
+Requirement already satisfied: scipy&gt;=1.11.4 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (1.16.2)
+Collecting networkx&gt;=3.0 (from scikit-image-&gt;nwbwidgets)
+  Using cached networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting imageio!=2.35.0,&gt;=2.33 (from scikit-image-&gt;nwbwidgets)
+  Using cached imageio-2.37.0-py3-none-any.whl.metadata (5.2 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting lazy-loader&gt;=0.4 (from scikit-image-&gt;nwbwidgets)
+  Using cached lazy_loader-0.4-py3-none-any.whl.metadata (7.6 kB)
+Requirement already satisfied: typing-extensions&gt;=4.2 in /opt/miniconda3/lib/python3.12/site-packages (from aiosignal&gt;=1.4.0-&gt;aiohttp-&gt;nwbwidgets) (4.12.2)
+Requirement already satisfied: acres in /opt/miniconda3/lib/python3.12/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.0)
+Requirement already satisfied: pyyaml in /opt/miniconda3/lib/python3.12/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.2)
+Requirement already satisfied: jsonschema[format] in /opt/miniconda3/lib/python3.12/site-packages (from dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.23.0)
+Requirement already satisfied: ci-info&gt;=0.2 in /opt/miniconda3/lib/python3.12/site-packages (from etelemetry&gt;=0.2.2-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (5.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.19.2)
+Requirement already satisfied: matplotlib-inline in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.1.7)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (4.9.0)
+Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.48)
+Requirement already satisfied: pygments&gt;=2.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (2.19.1)
+Requirement already satisfied: stack_data in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.6.3)
+Requirement already satisfied: jaraco.classes in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.4.0)
+Requirement already satisfied: jaraco.functools in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.3.0)
+Requirement already satisfied: jaraco.context in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.1)
+Requirement already satisfied: deprecated in /opt/miniconda3/lib/python3.12/site-packages (from numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.2.18)
+Requirement already satisfied: hdmf-zarr in /opt/miniconda3/lib/python3.12/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.11.3)
+Requirement already satisfied: isodate in /opt/miniconda3/lib/python3.12/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.7.2)
+Requirement already satisfied: natsort in /opt/miniconda3/lib/python3.12/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (8.4.0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/miniconda3/lib/python3.12/site-packages (from pandas&gt;=1.2.0-&gt;pynwb-&gt;nwbwidgets) (2025.1)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/miniconda3/lib/python3.12/site-packages (from pandas&gt;=1.2.0-&gt;pynwb-&gt;nwbwidgets) (2025.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting gast&lt;0.5,&gt;=0.4.0 (from py2vega&gt;=0.5-&gt;ipydatagrid-&gt;nwbwidgets)
+  Downloading gast-0.4.0-py3-none-any.whl.metadata (1.1 kB)
+Requirement already satisfied: annotated-types&gt;=0.6.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.33.2)
+Requirement already satisfied: typing-inspection&gt;=0.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.2)
+Requirement already satisfied: blessed in /opt/miniconda3/lib/python3.12/site-packages (from pyout!=0.6.0,&gt;=0.5-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.22.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/miniconda3/lib/python3.12/site-packages (from python-dateutil-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.0)
+Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /opt/miniconda3/lib/python3.12/site-packages (from ruamel.yaml&lt;1,&gt;=0.15-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.2.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ml_dtypes&gt;=0.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from tensorstore-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.3)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /opt/miniconda3/lib/python3.12/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.8.4)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2024.10.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.35.1)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.22.3)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.7.0)
+Requirement already satisfied: wcwidth in /opt/miniconda3/lib/python3.12/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.13)
+Requirement already satisfied: email-validator&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /opt/miniconda3/lib/python3.12/site-packages (from deprecated-&gt;numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.3)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from hdmf-zarr-&gt;nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.6.0)
+Requirement already satisfied: more-itertools in /opt/miniconda3/lib/python3.12/site-packages (from jaraco.classes-&gt;keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (10.8.0)
+Requirement already satisfied: fqdn in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.1)
+Requirement already satisfied: isoduration in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (20.11.0)
+Requirement already satisfied: jsonpointer&gt;1.13 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.1)
+Requirement already satisfied: rfc3339-validator in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.1.4)
+Requirement already satisfied: rfc3987 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.8)
+Requirement already satisfied: uri-template in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
+Requirement already satisfied: webcolors&gt;=1.11 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (24.11.1)
+Requirement already satisfied: executing&gt;=1.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (2.1.0)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.0)
+Requirement already satisfied: pure-eval in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.3)
+Requirement already satisfied: dnspython&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from email-validator&gt;=2.0.0-&gt;pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.8.0)
+Requirement already satisfied: arrow&gt;=0.15.0 in /opt/miniconda3/lib/python3.12/site-packages (from isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/miniconda3/lib/python3.12/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.20241206)
+Downloading nwbwidgets-0.11.3-py3-none-any.whl (73 kB)
+Downloading ipydatawidgets-4.3.2-py2.py3-none-any.whl (271 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading ipyfilechooser-0.6.0-py3-none-any.whl (11 kB)
+Downloading plotly-5.13.1-py2.py3-none-any.whl (15.2 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/15.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.6/15.2 MB</span> <span class=" -Color -Color-Red">33.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">15.2/15.2 MB</span> <span class=" -Color -Color-Red">37.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading importlib_metadata-4.13.0-py3-none-any.whl (23 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading ipyvolume-0.6.3-py3-none-any.whl (1.6 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.6 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/1.6 MB</span> <span class=" -Color -Color-Red">33.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading ipydatagrid-1.4.0-py3-none-any.whl (1.9 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.9 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.9/1.9 MB</span> <span class=" -Color -Color-Red">36.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading ipympl-0.9.7-py3-none-any.whl (515 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading ndx_grayscalevolume-0.0.2-py2.py3-none-any.whl (4.1 kB)
+Downloading ndx_icephys_meta-0.1.0-py2.py3-none-any.whl (19 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading ndx_spectrum-0.2.2-py3-none-any.whl (4.3 kB)
+Downloading scikit_image-0.25.2-cp312-cp312-macosx_12_0_arm64.whl (13.2 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/13.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━ <span class=" -Color -Color-Green">9.4/13.2 MB</span> <span class=" -Color -Color-Red">46.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">13.2/13.2 MB</span> <span class=" -Color -Color-Red">43.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading tifffile-2025.9.30-py3-none-any.whl (230 kB)
+Downloading trimesh-4.8.3-py3-none-any.whl (735 kB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/735.5 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">735.5/735.5 kB</span> <span class=" -Color -Color-Red">22.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading bqplot-0.12.45-py2.py3-none-any.whl (1.2 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/1.2 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.2/1.2 MB</span> <span class=" -Color -Color-Red">31.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using cached imageio-2.37.0-py3-none-any.whl (315 kB)
+Downloading ipyvue-1.11.3-py2.py3-none-any.whl (2.7 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.7 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.7/2.7 MB</span> <span class=" -Color -Color-Red">37.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hUsing cached lazy_loader-0.4-py3-none-any.whl (12 kB)
+Using cached networkx-3.5-py3-none-any.whl (2.0 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading py2vega-0.6.1-py3-none-any.whl (16 kB)
+Downloading pythreejs-2.4.2-py3-none-any.whl (3.4 MB)
+?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/3.4 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">3.4/3.4 MB</span> <span class=" -Color -Color-Red">36.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading traittypes-0.2.1-py2.py3-none-any.whl (8.6 kB)
+Downloading ipyvuetify-1.11.3-py2.py3-none-any.whl (6.3 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/6.3 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">6.3/6.3 MB</span> <span class=" -Color -Color-Red">41.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading ipywebrtc-0.6.0-py2.py3-none-any.whl (260 kB)
+Downloading gast-0.4.0-py3-none-any.whl (9.8 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: ipywebrtc, trimesh, traittypes, tifffile, plotly, networkx, lazy-loader, importlib-metadata, imageio, gast, scikit-image, py2vega, ipyvue, ipympl, ipyfilechooser, ipydatawidgets, bqplot, pythreejs, ipyvuetify, ipydatagrid, ndx-spectrum, ndx-icephys-meta, ndx-grayscalevolume, ipyvolume, nwbwidgets
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Attempting uninstall: importlib-metadata
+    Found existing installation: importlib_metadata 8.7.0
+    Uninstalling importlib_metadata-8.7.0:
+      Successfully uninstalled importlib_metadata-8.7.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed bqplot-0.12.45 gast-0.4.0 imageio-2.37.0 importlib-metadata-4.13.0 ipydatagrid-1.4.0 ipydatawidgets-4.3.2 ipyfilechooser-0.6.0 ipympl-0.9.7 ipyvolume-0.6.3 ipyvue-1.11.3 ipyvuetify-1.11.3 ipywebrtc-0.6.0 lazy-loader-0.4 ndx-grayscalevolume-0.0.2 ndx-icephys-meta-0.1.0 ndx-spectrum-0.2.2 networkx-3.5 nwbwidgets-0.11.3 plotly-5.13.1 py2vega-0.6.1 pythreejs-2.4.2 scikit-image-0.25.2 tifffile-2025.9.30 traittypes-0.2.1 trimesh-4.8.3
 </pre></div>
 </div>
 </div>
 </div>
-<p>Finally, also need to make sure you have the correct version of NumPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
-    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;1.23.1&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Updated NumPy installed.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of NumPy installed. Would you like to install a newer version of NumPy? (Y/N)&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
-            <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>numpy
-<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>numpy
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updated NumPy installed.
-</pre></div>
-</div>
-</div>
-</div>
-<p>First things first, let’s make sure you have the AllenSDK installed. See the <a class="reference external" href="https://alleninstitute.github.io/AllenSDK/install.html">Allen Institute website</a> for information on installing it, otherwise, the cell below will do it for you.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the AllenSDK is installed.</span>
-<span class="c1"># If not, it will install it for you.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for seaborn (visualization package)</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
-    <span class="k">if</span> <span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s1">&#39;2.13.6&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of AllenSDK installed. Would you like to install a newer version? (Y/N)&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
-            <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>allensdk
+    <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;seaborn installed.&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>allensdk
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>seaborn
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting seaborn
+  Using cached seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Requirement already satisfied: numpy!=1.24.0,&gt;=1.20 in /opt/miniconda3/lib/python3.12/site-packages (from seaborn) (2.2.3)
+Requirement already satisfied: pandas&gt;=1.2 in /opt/miniconda3/lib/python3.12/site-packages (from seaborn) (2.2.3)
+Requirement already satisfied: matplotlib!=3.6.1,&gt;=3.4 in /opt/miniconda3/lib/python3.12/site-packages (from seaborn) (3.10.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.3.1)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (4.56.0)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.4.8)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (24.1)
+Requirement already satisfied: pillow&gt;=8 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (11.1.0)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (3.2.1)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/miniconda3/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2025.1)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/miniconda3/lib/python3.12/site-packages (from pandas&gt;=1.2-&gt;seaborn) (2025.1)
+Requirement already satisfied: six&gt;=1.5 in /opt/miniconda3/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib!=3.6.1,&gt;=3.4-&gt;seaborn) (1.17.0)
+Using cached seaborn-0.13.2-py3-none-any.whl (294 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached allensdk-2.16.2-py3-none-any.whl.metadata (1.9 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: seaborn
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary (from allensdk)
-  Using cached psycopg2_binary-2.9.10-cp312-cp312-macosx_14_0_arm64.whl.metadata (4.9 kB)
-Requirement already satisfied: hdmf!=3.5.*,!=3.6.*,!=3.7.*,!=3.8.* in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (4.1.0)
-Requirement already satisfied: h5py in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.14.0)
-Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.10.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.24 (from allensdk)
-  Using cached numpy-1.23.5.tar.gz (10.7 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> error
-  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
-  
-  <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
-  <span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
-  <span class=" -Color -Color-Red">╰─&gt;</span> <span class=" -Color -Color-Red">[33 lines of output]</span>
-  <span class=" -Color -Color-Red">   </span> Traceback (most recent call last):
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 353, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     main()
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 335, in main
-  <span class=" -Color -Color-Red">   </span>     json_out[&#39;return_val&#39;] = hook(**hook_input[&#39;kwargs&#39;])
-  <span class=" -Color -Color-Red">   </span>                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 112, in get_requires_for_build_wheel
-  <span class=" -Color -Color-Red">   </span>     backend = _build_backend()
-  <span class=" -Color -Color-Red">   </span>               ^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 77, in _build_backend
-  <span class=" -Color -Color-Red">   </span>     obj = import_module(mod_path)
-  <span class=" -Color -Color-Red">   </span>           ^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/importlib/__init__.py&quot;, line 90, in import_module
-  <span class=" -Color -Color-Red">   </span>     return _bootstrap._gcd_import(name[level:], package, level)
-  <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1310, in _find_and_load_unlocked
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1331, in _find_and_load_unlocked
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 935, in _load_unlocked
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 995, in exec_module
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-mixrehwt/overlay/lib/python3.12/site-packages/setuptools/__init__.py&quot;, line 16, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     import setuptools.version
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-mixrehwt/overlay/lib/python3.12/site-packages/setuptools/version.py&quot;, line 1, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     import pkg_resources
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-mixrehwt/overlay/lib/python3.12/site-packages/pkg_resources/__init__.py&quot;, line 2172, in &lt;module&gt;
-
-  <span class=" -Color -Color-Red">   </span>     register_finder(pkgutil.ImpImporter, find_on_path)
-  <span class=" -Color -Color-Red">   </span>                     ^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span> AttributeError: module &#39;pkgutil&#39; has no attribute &#39;ImpImporter&#39;. Did you mean: &#39;zipimporter&#39;?
-  <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
-  
-  <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
-<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
-
-<span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
-<span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
-<span class=" -Color -Color-Red">╰─&gt;</span> See above for output.
-
-<span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed seaborn-0.13.2
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="lesson-5-packages">
+<h3>Lesson 5 Packages<a class="headerlink" href="#lesson-5-packages" title="Link to this heading">#</a></h3>
+<p>For the Greatest Hits lessons, you’ll also need these additional packages:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for pynapple</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pynapple</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pynapple installed.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pynapple
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pynapple installed.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for plotly</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">plotly</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;plotly installed.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>plotly
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly installed.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for fsspec</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fsspec installed.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>fsspec
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fsspec installed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -716,7 +1027,13 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages-required-for-lessons-1-4">Core packages required for Lessons 1-4:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages-for-lesson-5-greatest-hits">Additional packages for Lesson 5 (Greatest Hits):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages">Core Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-5-packages">Lesson 5 Packages</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
