@@ -2,12 +2,6 @@
 
 Based on JOSE review feedback (Issues #4 and #8), the following code execution errors need to be addressed:
 
-## Lesson 1: Introduction to NWB
-
-### Lesson_1/02-Working_with_NWB_format_in_Python.ipynb
-- **Cell 2**: File not found error
-- **Multiple cells**: No output after previous errors (needs re-execution after fixing cell 2)
-
 ## Lesson 2: Large-scale Electrophysiology
 
 ### Lesson_2/01-SpikeSorting.ipynb
