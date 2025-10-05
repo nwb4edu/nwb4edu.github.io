@@ -1,6 +1,6 @@
 # Contributing to nwb4edu
 
-Thank you for your interest in contributing to nwb4edu! We welcome contributions from the community to help improve this educational resource.
+Thank you for your interest in contributing to nwb4edu! We welcome contributions from our community to help improve and build it.
 
 ## How to Contribute
 
@@ -17,7 +17,7 @@ If you find a bug, typo, or have a suggestion for improvement:
 
 ### Suggesting New Lessons
 
-We're especially interested in expanding our "Greatest Hits" collection! If you have an idea for a lesson that recreates figures from landmark neuroscience papers using NWB data:
+We're especially interested in expanding our "Greatest Hits" collection. If you have an idea for a lesson that recreates the analysis and figures from landmark neuroscience papers using NWB data:
 
 1. Open an issue with the tag "new lesson"
 2. Describe the paper and which figures you'd like to recreate
@@ -158,8 +158,6 @@ If you're creating a new lesson, please include:
 - Update the main README.md if you're adding a major section
 
 ## Style Preferences
-
-- **Terminology**: Use "NWB" (not "NWB:N" or "Neurodata Without Borders") in general text
 - **Code comments**: Be generous with comments, especially for complex analyses
 - **Variable names**: Use descriptive names (e.g., `firing_rate` not `fr`)
 - **Figures**: Include axis labels, titles, and legends where appropriate
@@ -178,5 +176,3 @@ If you need help with your contribution:
 Contributors will be acknowledged in:
 - The project's README.md (for significant contributions)
 - Individual lesson pages (for lesson authors)
-
-Thank you for helping make neuroscience education more accessible!
