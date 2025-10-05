@@ -1,0 +1,5 @@
+# Dependencies for building the Jupyter Book documentation
+
+jupyter-book>=0.15.0
+ghp-import>=2.1.0
+sphinx>=4.0.0
