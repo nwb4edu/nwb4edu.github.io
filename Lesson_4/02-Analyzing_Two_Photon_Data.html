@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Analyzing Two Photon Data &#8212; Teaching &amp; Learning with NWB Datasets</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lesson_4/02-Analyzing_Two_Photon_Data';</script>
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../landing_page.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Teaching & Learning with NWB Datasets - Home"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Teaching & Learning with NWB Datasets - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -160,58 +183,58 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Introduction/Introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Introduction/Introduction.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Introduction/Using_This_Book.html">How to Use this Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Introduction/Setup.html">Set up Coding Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Introduction/For_Educators.html">For Educators</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">PYNWB</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_1/00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_1/00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/01-Obtaining_Datasets_with_DANDI.html">Obtaining Datasets with DANDI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/02-Working_with_NWB_format_in_Python.html">Working with NWB in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/03-Interactive_NWB_Data_Exploration.html">Interactive NWB Data Exploration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/Lesson1_ProblemSet.html">Lesson #1 Problem Set</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_2/00-LargeEphysIntroduction.html">Lesson #2: Analyzing Extracellular Recordings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_2/00-LargeEphysIntroduction.html">Lesson #2: Analyzing Extracellular Recordings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/01-SpikeSorting.html">Spike Sorting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/02-Visualizing_Recordings.html">Visualizing Large Scale Recordings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/Lesson_2_ProblemSet.html">Lesson #2 Problem Set</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ALLENSDK</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_3/00-SingleCellIntroduction.html">Lesson #3: Single-Cell Electrophysiology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_3/00-SingleCellIntroduction.html">Lesson #3: Single-Cell Electrophysiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/01-Obtaining_Data_For_Single_Cells.html">Obtaining Data for Single Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/02-Analyzing_Computed_Features.html">Analyzing Computed Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/Lesson_3_ProblemSet.html">Lesson 3 Problem Set</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="00-2pIntroduction.html">Lesson #4: Two Photon Imaging</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="00-2pIntroduction.html">Lesson #4: Two Photon Imaging</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01-Retrieving_Brain_Observatory_Data.html">Retrieving Calcium Imaging Data</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Analyzing Two Photon Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03-Correlations_in_Two_Photon_Data.html">Correlations in Two Photon Data</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GREATEST HITS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_5/00-GreatestHits.html">Greatest Hits in Physiology</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_5/00-GreatestHits.html">Greatest Hits in Physiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_5/01-PlaceFields.html">How does the brain encode space?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_5/02-RotationalDynamics.html">How do populations of neurons encode movement?</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -227,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -236,14 +259,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -268,14 +291,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_4/02-Analyzing_Two_Photon_Data.ipynb&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -286,14 +309,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Lesson_4/02-Analyzing_Two_Photon_Data.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -385,26 +408,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -439,20 +464,20 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="analyzing-two-photon-data">
-<h1>Analyzing Two Photon Data<a class="headerlink" href="#analyzing-two-photon-data" title="Permalink to this heading">#</a></h1>
+<h1>Analyzing Two Photon Data<a class="headerlink" href="#analyzing-two-photon-data" title="Link to this heading">#</a></h1>
 <p>On the previous page, we introduced how to retrieve specific experiments from the Allen Institute SDK’s Brain Observatory. Here we’ll introduce how researchers analyze this data, from processing single cell activity to understanding tuning curves.</p>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>We need a variety of standard Python packages in addition to two different <code class="docutils literal notranslate"><span class="pre">allensdk</span></code> toolboxes. If you have not yet installed the <code class="docutils literal notranslate"><span class="pre">allensdk</span></code>, run the cell below. Otherwise, you can skip to the cell that imports our toolboxes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the AllenSDK is installed.</span>
 <span class="c1"># If not, it will install it for you.</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">allensdk</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk imported.&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>allensdk
@@ -460,7 +485,95 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk imported.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk
+  Using cached allensdk-2.16.2-py3-none-any.whl.metadata (1.9 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary (from allensdk)
+  Using cached psycopg2_binary-2.9.10-cp312-cp312-macosx_14_0_arm64.whl.metadata (4.9 kB)
+Requirement already satisfied: hdmf!=3.5.*,!=3.6.*,!=3.7.*,!=3.8.* in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (4.1.0)
+Requirement already satisfied: h5py in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.14.0)
+Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.10.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.24 (from allensdk)
+  Using cached numpy-1.23.5.tar.gz (10.7 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> error
+  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
+  
+  <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
+  <span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
+  <span class=" -Color -Color-Red">╰─&gt;</span> <span class=" -Color -Color-Red">[33 lines of output]</span>
+  <span class=" -Color -Color-Red">   </span> Traceback (most recent call last):
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 353, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     main()
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 335, in main
+  <span class=" -Color -Color-Red">   </span>     json_out[&#39;return_val&#39;] = hook(**hook_input[&#39;kwargs&#39;])
+  <span class=" -Color -Color-Red">   </span>                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 112, in get_requires_for_build_wheel
+  <span class=" -Color -Color-Red">   </span>     backend = _build_backend()
+  <span class=" -Color -Color-Red">   </span>               ^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 77, in _build_backend
+  <span class=" -Color -Color-Red">   </span>     obj = import_module(mod_path)
+  <span class=" -Color -Color-Red">   </span>           ^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/importlib/__init__.py&quot;, line 90, in import_module
+  <span class=" -Color -Color-Red">   </span>     return _bootstrap._gcd_import(name[level:], package, level)
+  <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1310, in _find_and_load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1331, in _find_and_load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 935, in _load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 995, in exec_module
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-9xe9b1ls/overlay/lib/python3.12/site-packages/setuptools/__init__.py&quot;, line 16, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     import setuptools.version
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-9xe9b1ls/overlay/lib/python3.12/site-packages/setuptools/version.py&quot;, line 1, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     import pkg_resources
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-9xe9b1ls/overlay/lib/python3.12/site-packages/pkg_resources/__init__.py&quot;, line 2172, in &lt;module&gt;
+
+  <span class=" -Color -Color-Red">   </span>     register_finder(pkgutil.ImpImporter, find_on_path)
+  <span class=" -Color -Color-Red">   </span>                     ^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span> AttributeError: module &#39;pkgutil&#39; has no attribute &#39;ImpImporter&#39;. Did you mean: &#39;zipimporter&#39;?
+  <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
+  
+  <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
+<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
+
+<span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
+<span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
+<span class=" -Color -Color-Red">╰─&gt;</span> See above for output.
+
+<span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h
 </pre></div>
 </div>
 </div>
@@ -468,24 +581,32 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import toolboxes</span>
-<span class="kn">from</span> <span class="nn">allensdk.core.brain_observatory_cache</span> <span class="kn">import</span> <span class="n">BrainObservatoryCache</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.core.brain_observatory_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainObservatoryCache</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Packages imported.&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages imported.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import toolboxes</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.core.brain_observatory_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainObservatoryCache</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="download-inspect-the-natural-scenes-imaging-session">
-<h2>Download &amp; inspect the natural scenes imaging session<a class="headerlink" href="#download-inspect-the-natural-scenes-imaging-session" title="Permalink to this heading">#</a></h2>
+<h2>Download &amp; inspect the natural scenes imaging session<a class="headerlink" href="#download-inspect-the-natural-scenes-imaging-session" title="Link to this heading">#</a></h2>
 <p>First, we’ll look at an experiment where the mouse viewed natural scenes. Below, we’ll assign an experiment container ID (the same one we worked with in the previous section), designate that we’re interested in only the natural scenes experiments, and download the data for the first experiment in the container.</p>
 <p><strong>Note</strong>: The cell below downloads some data, and make take a minute or so to run. It is important that you do not interrupt the download of the data or else the file will become corrupted and you will have to delete it and try again.</p>
 <div class="cell docutils container">
@@ -510,7 +631,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data acquired.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create an instance of the Brain Observatory cache</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">boc</span> <span class="o">=</span> <span class="n">BrainObservatoryCache</span><span class="p">(</span><span class="n">manifest_file</span><span class="o">=</span><span class="s1">&#39;manifest.json&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Assign container ID from previous section</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">exp_container_id</span> <span class="o">=</span> <span class="mi">627823571</span>
+
+<span class="ne">NameError</span>: name &#39;BrainObservatoryCache&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -537,12 +666,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/896d2c9affec593b9093536c22e00d0868fdbabe491aaa08c0f4df54fc039222.png" src="../_images/896d2c9affec593b9093536c22e00d0868fdbabe491aaa08c0f4df54fc039222.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the maximum projection (a numpy array) of our data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">max_projection</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_max_projection</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Create a new figure</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;experiment_data&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="inspect-single-fluorescence-traces">
-<h2>Inspect single fluorescence traces<a class="headerlink" href="#inspect-single-fluorescence-traces" title="Permalink to this heading">#</a></h2>
+<h2>Inspect single fluorescence traces<a class="headerlink" href="#inspect-single-fluorescence-traces" title="Link to this heading">#</a></h2>
 <p>Now we’ll plot the data of each of our cells (from the field of view above) across time. Each line shows the change in fluorescence over baseline (<span class="math notranslate nohighlight">\(\Delta\)</span>)F/F) of the individual cells. When there are sharp increases, that’s when the cells are responding.</p>
 <p>In the example below, we will plot the first 10 cells from our data. the <code class="docutils literal notranslate"><span class="pre">get_dff_traces()</span></code> method returns the timestamps (in seconds) and deltaF/F.</p>
 <p>Below, we’ve also added a line in our loop that offsets each cell by a predetermined amount so that we can see individual calcium traces. Each line is a different neuron, and the small blips in the data are calcium-mediated changes in fluorescence.</p>
@@ -569,12 +708,30 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8d9d5324025156ce214a46f282b72048b2347bdbb3a076aa15c7173ea50ea8b2.png" src="../_images/8d9d5324025156ce214a46f282b72048b2347bdbb3a076aa15c7173ea50ea8b2.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_51247/4257893855.py:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  plt.ylabel(&#39;Neurons ($\Delta$F\F)&#39;)
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_51247/4257893855.py:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  plt.ylabel(&#39;Neurons ($\Delta$F\F)&#39;)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Assign timestamps and deltaF/F</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ts</span><span class="p">,</span> <span class="n">dff</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_dff_traces</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Set up a figure</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;experiment_data&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="look-at-the-response-of-your-cells-to-natural-scenes">
-<h2>Look at the response of your cells to natural scenes<a class="headerlink" href="#look-at-the-response-of-your-cells-to-natural-scenes" title="Permalink to this heading">#</a></h2>
+<h2>Look at the response of your cells to natural scenes<a class="headerlink" href="#look-at-the-response-of-your-cells-to-natural-scenes" title="Link to this heading">#</a></h2>
 <p>There are clearly some responses above, but it’s tough to see whether this corresponds to different behaviors or visual stimuli with just the raw fluorescence traces.</p>
 <p>Let’s see how these cells actually responded to different types of images. To do so, we’ll need to use the <code class="docutils literal notranslate"><span class="pre">get_cell_specimens()</span></code> method on our <code class="docutils literal notranslate"><span class="pre">boc</span></code>, giving it the name of the experiment container ID.</p>
 <p>The dataframe that this creates will have a lot more information about what the cells in our experiment prefer. Each row is a different cell, each with its own preferences and response patterns.</p>
@@ -591,172 +748,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the cell specimens information for this experiment</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_cell_specimens</span><span class="p">(</span><span class="n">experiment_container_ids</span><span class="o">=</span><span class="p">[</span><span class="n">exp_container_id</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">cell_specimens_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cell_specimens</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">cell_specimens_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>all_stim</th>
-      <th>area</th>
-      <th>cell_specimen_id</th>
-      <th>donor_full_genotype</th>
-      <th>dsi_dg</th>
-      <th>experiment_container_id</th>
-      <th>failed_experiment_container</th>
-      <th>g_dsi_dg</th>
-      <th>g_osi_dg</th>
-      <th>g_osi_sg</th>
-      <th>...</th>
-      <th>specimen_id</th>
-      <th>tfdi_dg</th>
-      <th>time_to_peak_ns</th>
-      <th>time_to_peak_sg</th>
-      <th>tld1_id</th>
-      <th>tld1_name</th>
-      <th>tld2_id</th>
-      <th>tld2_name</th>
-      <th>tlr1_id</th>
-      <th>tlr1_name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>False</td>
-      <td>VISp</td>
-      <td>662199586</td>
-      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
-      <td>NaN</td>
-      <td>627823571</td>
-      <td>False</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>603751387</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>265180449</td>
-      <td>Tlx3-Cre_PL56</td>
-      <td>None</td>
-      <td>None</td>
-      <td>528393470</td>
-      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>False</td>
-      <td>VISp</td>
-      <td>662199605</td>
-      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
-      <td>0.793449</td>
-      <td>627823571</td>
-      <td>False</td>
-      <td>0.452460</td>
-      <td>0.360264</td>
-      <td>0.640623</td>
-      <td>...</td>
-      <td>603751387</td>
-      <td>0.265616</td>
-      <td>0.29916</td>
-      <td>0.29916</td>
-      <td>265180449</td>
-      <td>Tlx3-Cre_PL56</td>
-      <td>None</td>
-      <td>None</td>
-      <td>528393470</td>
-      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>True</td>
-      <td>VISp</td>
-      <td>662199626</td>
-      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
-      <td>0.346550</td>
-      <td>627823571</td>
-      <td>False</td>
-      <td>0.346134</td>
-      <td>0.107403</td>
-      <td>0.943987</td>
-      <td>...</td>
-      <td>603751387</td>
-      <td>0.393678</td>
-      <td>0.29916</td>
-      <td>0.33240</td>
-      <td>265180449</td>
-      <td>Tlx3-Cre_PL56</td>
-      <td>None</td>
-      <td>None</td>
-      <td>528393470</td>
-      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>False</td>
-      <td>VISp</td>
-      <td>662199645</td>
-      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
-      <td>0.636332</td>
-      <td>627823571</td>
-      <td>False</td>
-      <td>0.629502</td>
-      <td>0.971795</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>603751387</td>
-      <td>0.357068</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>265180449</td>
-      <td>Tlx3-Cre_PL56</td>
-      <td>None</td>
-      <td>None</td>
-      <td>528393470</td>
-      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>False</td>
-      <td>VISp</td>
-      <td>662199683</td>
-      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
-      <td>NaN</td>
-      <td>627823571</td>
-      <td>False</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.524082</td>
-      <td>...</td>
-      <td>603751387</td>
-      <td>NaN</td>
-      <td>0.29916</td>
-      <td>0.33240</td>
-      <td>265180449</td>
-      <td>Tlx3-Cre_PL56</td>
-      <td>None</td>
-      <td>None</td>
-      <td>528393470</td>
-      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 60 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;boc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <p>Let’s create a bar graph of preferred images in our dataset. The <code class="docutils literal notranslate"><span class="pre">p_ns</span></code> column contains the pvalue that corresponds to whether a cell <em>significantly</em> prefered an image more than the rest. We will use this column to subset our <code class="docutils literal notranslate"><span class="pre">cell_specimens_df</span></code> dataframe to only contains cells that have a p value less than 0.05.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pref_image_ns</span></code> column contains the image IDs of the stimulus being presented. We can create our bar graph from this column to see how many cells responded to these statistically significant images.</p>
@@ -784,7 +787,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b9dd82c57a268fd45834b5baab6b2139e8f82508ad388d4514493283bae2e1e6.png" src="../_images/b9dd82c57a268fd45834b5baab6b2139e8f82508ad388d4514493283bae2e1e6.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Subset dataframe to contain significantly preferred images </span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">col_1</span> <span class="o">=</span> <span class="s1">&#39;p_ns&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sig_cells</span> <span class="o">=</span> <span class="n">cell_specimens_df</span><span class="p">[</span><span class="n">cell_specimens_df</span><span class="p">[</span><span class="n">col_1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Assign our image ids for significantly preferred images</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">col_2</span> <span class="o">=</span> <span class="s1">&#39;pref_image_ns&#39;</span>
+
+<span class="ne">NameError</span>: name &#39;cell_specimens_df&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>In order to actually see what these images are, first, we’ll organize the stimulus table. This tells us which stimulus was played on each trial. This data set has 118 different scenes, and each scene is presented 50 times. Images of the scenes can be found <a class="reference external" href="http://observatory.brain-map.org/visualcoding/stimulus/natural_scenes">here</a>.</p>
@@ -815,12 +829,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c149da0b6d61b5d1d239161c383c5fef0107a3a207ee1fc79ccb354d19f77e7.png" src="../_images/0c149da0b6d61b5d1d239161c383c5fef0107a3a207ee1fc79ccb354d19f77e7.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the natural scene information</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">natural_scene_table</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_stimulus_table</span><span class="p">(</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">natural_scene_template</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_stimulus_template</span><span class="p">(</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sceneIDs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">natural_scene_table</span><span class="o">.</span><span class="n">frame</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;experiment_data&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="examine-the-direction-selectivity-of-your-cell">
-<h2>Examine the direction selectivity of your cell<a class="headerlink" href="#examine-the-direction-selectivity-of-your-cell" title="Permalink to this heading">#</a></h2>
+<h2>Examine the direction selectivity of your cell<a class="headerlink" href="#examine-the-direction-selectivity-of-your-cell" title="Link to this heading">#</a></h2>
 <p>Sometimes, the function of a cell is not particularly clear from natural stimuli. Those stimuli have a lot of information in them, and it might be hard to tell what a cell is actually responding to. Instead, we can use simple drifting gratings to look at one straightforward property of a cell: <b>does it respond to specific directions of movement?</b></br> To do so, we’ll examine the <strong>drifting gratings</strong> experiments.</p>
 <p>We will now show how to plot a heatmap of a cell’s response organized by orientation and temporal frequency. We will be using one of the three cells from the dataframe above which showed direction selectivity from the significantly preferred images. Please visit the <a href = 'https://allensdk.readthedocs.io/en/latest/allensdk.brain_observatory.drifting_gratings.html'> Drifting Gratings module documentation </a> for additional help on the methods used in the drifting gratings section.</p>
 <p>Below, we’ll use the same experiment container but a different stimulus to create a separate experiment dataset, <code class="docutils literal notranslate"><span class="pre">dg_experiment</span></code>.</p>
@@ -841,7 +865,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data acquired.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get experiment for our container id and stimuli of interest</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">stim_2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;drifting_gratings&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">dg_experiment</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                         <span class="n">stimuli</span> <span class="o">=</span> <span class="n">stim_2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Download the experiment data using the experiment id</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">experiment_id_2</span> <span class="o">=</span> <span class="n">dg_experiment</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;boc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -860,7 +895,7 @@ document.write(`
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">allensdk.brain_observatory.drifting_gratings</span> <span class="kn">import</span> <span class="n">DriftingGratings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.brain_observatory.drifting_gratings</span><span class="w"> </span><span class="kn">import</span> <span class="n">DriftingGratings</span>
 
 <span class="c1"># Create my DriftingGratings Object </span>
 <span class="n">dg</span> <span class="o">=</span> <span class="n">DriftingGratings</span><span class="p">(</span><span class="n">data_dg</span><span class="p">)</span>
@@ -872,130 +907,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/VictorMagdaleno/opt/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py:205: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.brain_observatory.drifting_gratings</span><span class="w"> </span><span class="kn">import</span> <span class="n">DriftingGratings</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Create my DriftingGratings Object </span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">dg</span> <span class="o">=</span> <span class="n">DriftingGratings</span><span class="p">(</span><span class="n">data_dg</span><span class="p">)</span>
 
-See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  self._setitem_with_indexer(indexer, value)
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ori_dg</th>
-      <th>tf_dg</th>
-      <th>reliability_dg</th>
-      <th>osi_dg</th>
-      <th>dsi_dg</th>
-      <th>peak_dff_dg</th>
-      <th>ptest_dg</th>
-      <th>p_run_dg</th>
-      <th>run_modulation_dg</th>
-      <th>cv_os_dg</th>
-      <th>cv_ds_dg</th>
-      <th>tf_index_dg</th>
-      <th>cell_specimen_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5</td>
-      <td>1</td>
-      <td>0.280185</td>
-      <td>1.23717</td>
-      <td>0.0312253</td>
-      <td>16.5138</td>
-      <td>9.74126e-28</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.938693</td>
-      <td>0.0474909</td>
-      <td>0.434779</td>
-      <td>662201985</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>1</td>
-      <td>0.0855848</td>
-      <td>0.812747</td>
-      <td>0.565631</td>
-      <td>11.4741</td>
-      <td>3.50072e-14</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.614402</td>
-      <td>0.42813</td>
-      <td>0.39683</td>
-      <td>662201975</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>1</td>
-      <td>0.140565</td>
-      <td>0.439415</td>
-      <td>0.801277</td>
-      <td>9.85304</td>
-      <td>9.07543e-07</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.15991</td>
-      <td>0.460012</td>
-      <td>0.36523</td>
-      <td>662202121</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>3</td>
-      <td>0.0109138</td>
-      <td>0.557367</td>
-      <td>2.97525</td>
-      <td>1.33345</td>
-      <td>0.00575501</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.146026</td>
-      <td>0.438625</td>
-      <td>0.178085</td>
-      <td>662202077</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>3</td>
-      <td>0.099905</td>
-      <td>1.37391</td>
-      <td>0.882893</td>
-      <td>13.2219</td>
-      <td>0.000227121</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.808828</td>
-      <td>0.652798</td>
-      <td>0.324958</td>
-      <td>662202612</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 <p>Next, we’ll select a cell from our table by <code class="docutils literal notranslate"><span class="pre">cell_specimen_id</span></code>.</p>
 <p>If there is a specific cell you want to analyze, you can use the <code class="docutils literal notranslate"><span class="pre">get_cell_specimen_indices()</span></code> method to locate the index of your cell of interest. The index of your cell is needed becasue you will need to index into the NumPy arrary returned by the <code class="docutils literal notranslate"><span class="pre">response</span></code> attribute to contruct your heatmap.</p>
@@ -1012,8 +934,15 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Specimen ID: 662201985
-Cell loc: 0
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Select specimen ID from first row</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">specimen_id</span> <span class="o">=</span> <span class="n">dg_df</span><span class="p">[</span><span class="s1">&#39;cell_specimen_id&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">cell_loc</span> <span class="o">=</span> <span class="n">data_dg</span><span class="o">.</span><span class="n">get_cell_specimen_indices</span><span class="p">([</span><span class="n">specimen_id</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Specimen ID:&#39;</span><span class="p">,</span> <span class="n">specimen_id</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dg_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1037,7 +966,25 @@ Cell loc: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d90bd90483fa4402b4688a43faf89af93cbc3d6bdcc511f31e50c0c4c178fe83.png" src="../_images/d90bd90483fa4402b4688a43faf89af93cbc3d6bdcc511f31e50c0c4c178fe83.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_51247/1726107458.py:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  cbar.set_label(&quot;$\Delta$F/F (%)&quot;)
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_51247/1726107458.py:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  cbar.set_label(&quot;$\Delta$F/F (%)&quot;)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot our data, skiping the blank sweep column (0) of the temporal frequency dimension</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dg</span><span class="o">.</span><span class="n">response</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:,</span><span class="n">cell_loc</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heat Map, Cell Specimen: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">specimen_id</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">dg</span><span class="o">.</span><span class="n">tfvals</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>The preferred directions temporal frequency are stored within <code class="docutils literal notranslate"><span class="pre">ori_dg</span></code> and <code class="docutils literal notranslate"><span class="pre">tf_dg</span></code> in are table above and can be indexed through <code class="docutils literal notranslate"><span class="pre">dg.orivals</span></code> and <code class="docutils literal notranslate"><span class="pre">tf.tfvals</span></code> respectively.</p>
@@ -1052,8 +999,14 @@ Cell loc: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Preferred direction: 225
-Preferred temporal frequency: 1
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pref_ori</span> <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">orivals</span><span class="p">[</span><span class="n">dg</span><span class="o">.</span><span class="n">peak</span><span class="o">.</span><span class="n">ori_dg</span><span class="p">[</span><span class="n">cell_loc</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pref_tf</span> <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">tfvals</span><span class="p">[</span><span class="n">dg</span><span class="o">.</span><span class="n">peak</span><span class="o">.</span><span class="n">tf_dg</span><span class="p">[</span><span class="n">cell_loc</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Preferred direction:&quot;</span><span class="p">,</span> <span class="n">pref_ori</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dg&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1088,11 +1041,10 @@ Preferred temporal frequency: 1
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="01-Retrieving_Brain_Observatory_Data.html"
@@ -1112,10 +1064,7 @@ Preferred temporal frequency: 1
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1123,6 +1072,7 @@ Preferred temporal frequency: 1
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1156,9 +1106,10 @@ By The Jupyter Book community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1182,8 +1133,8 @@ By The Jupyter Book community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
