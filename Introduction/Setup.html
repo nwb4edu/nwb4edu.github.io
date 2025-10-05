@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,7 +57,7 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"4dcbee745abe494e928d68b96779b326": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "500px"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"75f58c93a21140d8b517dd5aac12bc7f": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "500px"}}}, "version_major": 2, "version_minor": 0}</script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Introduction/Setup';</script>
@@ -532,9 +532,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nwbwidgets in /opt/miniconda3/lib/python3.12/site-packages (0.11.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.2.3)
+Requirement already satisfied: numpy in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.2.3)
 Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.10.0)
 Requirement already satisfied: scikit-image in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.25.2)
 Requirement already satisfied: pynwb in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.1.2)
@@ -612,7 +610,9 @@ Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/miniconda3/lib/pytho
 Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (6.6.4)
 Requirement already satisfied: propcache&gt;=0.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (0.4.0)
 Requirement already satisfied: py2vega&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from ipydatagrid-&gt;nwbwidgets) (0.6.1)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (1.3.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (1.3.1)
 Requirement already satisfied: cycler&gt;=0.10 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (0.12.1)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (4.56.0)
 Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (1.4.8)
@@ -621,23 +621,21 @@ Requirement already satisfied: scipy&gt;=1.11.4 in /opt/miniconda3/lib/python3.1
 Requirement already satisfied: networkx&gt;=3.0 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (3.5)
 Requirement already satisfied: imageio!=2.35.0,&gt;=2.33 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (2.37.0)
 Requirement already satisfied: lazy-loader&gt;=0.4 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (0.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: typing-extensions&gt;=4.2 in /opt/miniconda3/lib/python3.12/site-packages (from aiosignal&gt;=1.4.0-&gt;aiohttp-&gt;nwbwidgets) (4.12.2)
+Requirement already satisfied: typing-extensions&gt;=4.2 in /opt/miniconda3/lib/python3.12/site-packages (from aiosignal&gt;=1.4.0-&gt;aiohttp-&gt;nwbwidgets) (4.12.2)
 Requirement already satisfied: acres in /opt/miniconda3/lib/python3.12/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.0)
 Requirement already satisfied: pyyaml in /opt/miniconda3/lib/python3.12/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.2)
 Requirement already satisfied: jsonschema[format] in /opt/miniconda3/lib/python3.12/site-packages (from dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.23.0)
 Requirement already satisfied: ci-info&gt;=0.2 in /opt/miniconda3/lib/python3.12/site-packages (from etelemetry&gt;=0.2.2-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.0)
-Requirement already satisfied: decorator in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (5.1.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (5.1.1)
 Requirement already satisfied: jedi&gt;=0.16 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.19.2)
 Requirement already satisfied: matplotlib-inline in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.1.7)
 Requirement already satisfied: pexpect&gt;4.3 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (4.9.0)
 Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.48)
 Requirement already satisfied: pygments&gt;=2.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (2.19.1)
 Requirement already satisfied: stack_data in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.6.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jaraco.classes in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.4.0)
+Requirement already satisfied: jaraco.classes in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.4.0)
 Requirement already satisfied: jaraco.functools in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.3.0)
 Requirement already satisfied: jaraco.context in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.1)
 Requirement already satisfied: deprecated in /opt/miniconda3/lib/python3.12/site-packages (from numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.2.18)
@@ -652,20 +650,20 @@ Requirement already satisfied: pydantic-core==2.33.2 in /opt/miniconda3/lib/pyth
 Requirement already satisfied: typing-inspection&gt;=0.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.2)
 Requirement already satisfied: blessed in /opt/miniconda3/lib/python3.12/site-packages (from pyout!=0.6.0,&gt;=0.5-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.22.0)
 Requirement already satisfied: six&gt;=1.5 in /opt/miniconda3/lib/python3.12/site-packages (from python-dateutil-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.0)
-Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /opt/miniconda3/lib/python3.12/site-packages (from ruamel.yaml&lt;1,&gt;=0.15-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.2.8)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ml_dtypes&gt;=0.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from tensorstore-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /opt/miniconda3/lib/python3.12/site-packages (from ruamel.yaml&lt;1,&gt;=0.15-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.2.8)
+Requirement already satisfied: ml_dtypes&gt;=0.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from tensorstore-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.3)
 Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /opt/miniconda3/lib/python3.12/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.8.4)
 Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2024.10.1)
 Requirement already satisfied: referencing&gt;=0.28.4 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.35.1)
 Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.22.3)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.7.0)
-Requirement already satisfied: wcwidth in /opt/miniconda3/lib/python3.12/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.13)
-Requirement already satisfied: email-validator&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /opt/miniconda3/lib/python3.12/site-packages (from deprecated-&gt;numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.7.0)
+Requirement already satisfied: wcwidth in /opt/miniconda3/lib/python3.12/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.13)
+Requirement already satisfied: email-validator&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.3.0)
+Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /opt/miniconda3/lib/python3.12/site-packages (from deprecated-&gt;numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.3)
 Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from hdmf-zarr-&gt;nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.6.0)
 Requirement already satisfied: more-itertools in /opt/miniconda3/lib/python3.12/site-packages (from jaraco.classes-&gt;keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (10.8.0)
 Requirement already satisfied: fqdn in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.1)
@@ -679,10 +677,10 @@ Requirement already satisfied: executing&gt;=1.2.0 in /opt/miniconda3/lib/python
 Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.0)
 Requirement already satisfied: pure-eval in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.3)
 Requirement already satisfied: dnspython&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from email-validator&gt;=2.0.0-&gt;pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.8.0)
-Requirement already satisfied: arrow&gt;=0.15.0 in /opt/miniconda3/lib/python3.12/site-packages (from isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/miniconda3/lib/python3.12/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.20241206)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: arrow&gt;=0.15.0 in /opt/miniconda3/lib/python3.12/site-packages (from isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
+Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/miniconda3/lib/python3.12/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.20241206)
 </pre></div>
 </div>
 </div>
@@ -778,22 +776,7 @@ Requirement already satisfied: arrow&gt;=0.15.0 in /opt/miniconda3/lib/python3.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting remfile
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading remfile-0.1.13-py3-none-any.whl.metadata (3.7 kB)
-Requirement already satisfied: numpy in /opt/miniconda3/lib/python3.12/site-packages (from remfile) (2.2.3)
-Requirement already satisfied: h5py in /opt/miniconda3/lib/python3.12/site-packages (from remfile) (3.14.0)
-Requirement already satisfied: requests in /opt/miniconda3/lib/python3.12/site-packages (from remfile) (2.32.3)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;remfile) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;remfile) (3.7)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;remfile) (2.2.3)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;remfile) (2024.12.14)
-Downloading remfile-0.1.13-py3-none-any.whl (11 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: remfile
-Successfully installed remfile-0.1.13
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remfile installed.
 </pre></div>
 </div>
 </div>
