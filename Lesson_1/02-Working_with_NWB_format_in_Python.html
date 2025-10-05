@@ -499,336 +499,41 @@ document.write(`
 <p><mark><strong>Note</strong>: Each dataset may contain multiple NWB files for different subjects and sessions for a given experiment. Make sure you specify the exact file path to the single NWB file you wish to read. Below, we’ll give the filename for one .nwb file within the folder that you downloaded in the last chapter.</mark></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the filename</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Set the filename - check if file exists in current directory or parent directory</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;000006/sub-anm369962/sub-anm369962_ses-20170310.nwb&#39;</span>
 
-<span class="c1"># assign file as an NWBHDF5IO object</span>
-<span class="n">io</span> <span class="o">=</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># If the file doesn&#39;t exist in the current directory, try looking in common locations</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># Try parent directory (in case notebooks are run from different locations)</span>
+    <span class="n">parent_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">parent_path</span><span class="p">):</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">parent_path</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Try the Lesson_1 directory</span>
+        <span class="n">lesson_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;Lesson_1&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">lesson_path</span><span class="p">):</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">lesson_path</span>
 
-<span class="c1"># read the file</span>
-<span class="n">nwb_file</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="n">nwb_file</span>
+<span class="c1"># Verify the file exists before trying to open it</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># assign file as an NWBHDF5IO object</span>
+    <span class="n">io</span> <span class="o">=</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># read the file</span>
+    <span class="n">nwb_file</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    
+    <span class="n">nwb_file</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Could not find the NWB file at </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current working directory: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Please ensure you have:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Completed the previous notebook (01-Obtaining_Datasets_with_DANDI.ipynb)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Downloaded the dataset using DANDI&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <style>
-            .container-fields {
-                font-family: "Open Sans", Arial, sans-serif;
-            }
-            .container-fields .field-value {
-                color: #00788E;
-            }
-            .container-fields details > summary {
-                cursor: pointer;
-                display: list-item;
-            }
-            .container-fields details > summary:hover {
-                color: #0A6EAA;
-            }
-        </style>
-        
-        <script>
-            function copyToClipboard(text) {
-                navigator.clipboard.writeText(text).then(function() {
-                    console.log('Copied to clipboard: ' + text);
-                }, function(err) {
-                    console.error('Could not copy text: ', err);
-                });
-            }
-
-            document.addEventListener('DOMContentLoaded', function() {
-                let fieldKeys = document.querySelectorAll('.container-fields .field-key');
-                fieldKeys.forEach(function(fieldKey) {
-                    fieldKey.addEventListener('click', function() {
-                        let accessCode = fieldKey.getAttribute('title').replace('Access code: ', '');
-                        copyToClipboard(accessCode);
-                    });
-                });
-            });
-        </script>
-        <div class='container-wrap'><div class='container-header'><div class='xr-obj-type'><h3>root (NWBFile)</h3></div></div><div style="margin-left: 0px;" class="container-fields"><span class="field-key" title=".session_description">session_description: </span><span class="field-value"></span></div><div style="margin-left: 0px;" class="container-fields"><span class="field-key" title=".identifier">identifier: </span><span class="field-value">anm369962_2017-03-10_1</span></div><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".session_start_time"><b>session_start_time</b></summary><span class="field-key">2017-03-10 00:00:00-06:00</span></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".timestamps_reference_time"><b>timestamps_reference_time</b></summary><span class="field-key">2017-03-10 00:00:00-06:00</span></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".file_create_date"><b>file_create_date</b></summary><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".file_create_date[0]"><b>0</b></summary><span class="field-key">2019-10-07 17:40:41.133533-05:00</span></details></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".experimenter"><b>experimenter</b></summary><span class="field-key">('Mike Economo',)</span></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".related_publications"><b>related_publications</b></summary><span class="field-key">('doi:10.1038/s41586-018-0642-9',)</span></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".acquisition"><b>acquisition</b></summary><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".acquisition['lick_times']"><b>lick_times</b></summary><details><summary style="display: list-item; margin-left: 40px;" class="container-fields field-key" title=".acquisition['lick_times'].time_series"><b>time_series</b></summary><details><summary style="display: list-item; margin-left: 60px;" class="container-fields field-key" title=".acquisition['lick_times'].time_series['lick_left_times']"><b>lick_left_times</b></summary><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].resolution">resolution: </span><span class="field-value">0.0</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].comments">comments: </span><span class="field-value">no comments</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].description">description: </span><span class="field-value">no description</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].conversion">conversion: </span><span class="field-value">1.0</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].offset">offset: </span><span class="field-value">0.0</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].unit">unit: </span><span class="field-value">a.u.</span></div><details><summary style="display: list-item; margin-left: 80px;" class="container-fields field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].data"><b>data</b></summary><div style="margin-left: 100px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(1803,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">14.09 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><details><summary style="display: list-item; margin-left: 80px;" class="container-fields field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].timestamps"><b>timestamps</b></summary><div style="margin-left: 100px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(1803,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">14.09 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].timestamps_unit">timestamps_unit: </span><span class="field-value">seconds</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_left_times'].interval">interval: </span><span class="field-value">1</span></div></details><details><summary style="display: list-item; margin-left: 60px;" class="container-fields field-key" title=".acquisition['lick_times'].time_series['lick_right_times']"><b>lick_right_times</b></summary><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].resolution">resolution: </span><span class="field-value">0.0</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].comments">comments: </span><span class="field-value">no comments</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].description">description: </span><span class="field-value">no description</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].conversion">conversion: </span><span class="field-value">1.0</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].offset">offset: </span><span class="field-value">0.0</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].unit">unit: </span><span class="field-value">a.u.</span></div><details><summary style="display: list-item; margin-left: 80px;" class="container-fields field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].data"><b>data</b></summary><div style="margin-left: 100px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(887,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">6.93 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><details><summary style="display: list-item; margin-left: 80px;" class="container-fields field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].timestamps"><b>timestamps</b></summary><div style="margin-left: 100px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(887,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">6.93 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].timestamps_unit">timestamps_unit: </span><span class="field-value">seconds</span></div><div style="margin-left: 80px;" class="container-fields"><span class="field-key" title=".acquisition['lick_times'].time_series['lick_right_times'].interval">interval: </span><span class="field-value">1</span></div></details></details></details></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".keywords"><b>keywords</b></summary><div style="margin-left: 20px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">object</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(4,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">32.00 bytes</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">0.5</td></tr></tbody></table><br>[b'motor planning' b'premotor cortex' b'preparatory activity'
- b'extracellular electrophysiology']</div></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".electrodes"><b>electrodes</b></summary><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".electrodes">description: </span><span class="field-value">metadata about extracellular electrodes</span></div><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".electrodes"><b>table</b></summary><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>x</th>
-      <th>y</th>
-      <th>z</th>
-      <th>imp</th>
-      <th>location</th>
-      <th>filtering</th>
-      <th>group</th>
-      <th>group_name</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-1.0</td>
-      <td>brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A</td>
-      <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x4552101904\nFields:\n  description: N/A\n  device: H-129 pynwb.device.Device at 0x4552101568\n  location: brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A\n</td>
-      <td>H-129: 64</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-1.0</td>
-      <td>brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A</td>
-      <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x4552101904\nFields:\n  description: N/A\n  device: H-129 pynwb.device.Device at 0x4552101568\n  location: brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A\n</td>
-      <td>H-129: 64</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-1.0</td>
-      <td>brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A</td>
-      <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x4552101904\nFields:\n  description: N/A\n  device: H-129 pynwb.device.Device at 0x4552101568\n  location: brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A\n</td>
-      <td>H-129: 64</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-1.0</td>
-      <td>brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A</td>
-      <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x4552101904\nFields:\n  description: N/A\n  device: H-129 pynwb.device.Device at 0x4552101568\n  location: brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A\n</td>
-      <td>H-129: 64</td>
-    </tr>
-  </tbody>
-</table><p>... and 60 more rows.</p></details></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".electrode_groups"><b>electrode_groups</b></summary><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".electrode_groups['H-129: 64']"><b>H-129: 64</b></summary><div style="margin-left: 40px;" class="container-fields"><span class="field-key" title=".electrode_groups['H-129: 64'].description">description: </span><span class="field-value">N/A</span></div><div style="margin-left: 40px;" class="container-fields"><span class="field-key" title=".electrode_groups['H-129: 64'].location">location: </span><span class="field-value">brain_region: ALM; brain_subregion: N/A; cortical_layer: 5; hemisphere: right; brain_location_full_name: N/A</span></div><details><summary style="display: list-item; margin-left: 40px;" class="container-fields field-key" title=".electrode_groups['H-129: 64'].device"><b>device</b></summary></details></details></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".devices"><b>devices</b></summary><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".devices['H-129']"><b>H-129</b></summary></details></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".intervals"><b>intervals</b></summary><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".intervals['trials']"><b>trials</b></summary><div style="margin-left: 40px;" class="container-fields"><span class="field-key" title=".intervals['trials']">description: </span><span class="field-value">experimental trials</span></div><details><summary style="display: list-item; margin-left: 40px;" class="container-fields field-key" title=".intervals['trials']"><b>table</b></summary><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>start_time</th>
-      <th>stop_time</th>
-      <th>type</th>
-      <th>response</th>
-      <th>stim_present</th>
-      <th>is_good</th>
-      <th>cue_start_time</th>
-      <th>pole_in_time</th>
-      <th>pole_out_time</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>323.171</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>early lick</td>
-      <td>0</td>
-      <td>1</td>
-      <td>7.49698</td>
-      <td>3.93949</td>
-      <td>5.12748</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329.570</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>early lick</td>
-      <td>0</td>
-      <td>1</td>
-      <td>11.81280</td>
-      <td>4.94181</td>
-      <td>5.94198</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>335.971</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>incorrect</td>
-      <td>0</td>
-      <td>1</td>
-      <td>6.62964</td>
-      <td>4.12915</td>
-      <td>5.12931</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>342.371</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>incorrect</td>
-      <td>0</td>
-      <td>1</td>
-      <td>6.41964</td>
-      <td>3.91915</td>
-      <td>4.91931</td>
-    </tr>
-  </tbody>
-</table><p>... and 271 more rows.</p></details></details></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".subject"><b>subject</b></summary><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".subject.genotype">genotype: </span><span class="field-value"></span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".subject.sex">sex: </span><span class="field-value">U</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".subject.species">species: </span><span class="field-value">Mus musculus</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".subject.subject_id">subject_id: </span><span class="field-value">anm369962</span></div></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".trials"><b>trials</b></summary><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".trials">description: </span><span class="field-value">experimental trials</span></div><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".trials"><b>table</b></summary><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>start_time</th>
-      <th>stop_time</th>
-      <th>type</th>
-      <th>response</th>
-      <th>stim_present</th>
-      <th>is_good</th>
-      <th>cue_start_time</th>
-      <th>pole_in_time</th>
-      <th>pole_out_time</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>323.171</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>early lick</td>
-      <td>0</td>
-      <td>1</td>
-      <td>7.49698</td>
-      <td>3.93949</td>
-      <td>5.12748</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>329.570</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>early lick</td>
-      <td>0</td>
-      <td>1</td>
-      <td>11.81280</td>
-      <td>4.94181</td>
-      <td>5.94198</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>335.971</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>incorrect</td>
-      <td>0</td>
-      <td>1</td>
-      <td>6.62964</td>
-      <td>4.12915</td>
-      <td>5.12931</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>342.371</td>
-      <td>NaN</td>
-      <td>lick right</td>
-      <td>incorrect</td>
-      <td>0</td>
-      <td>1</td>
-      <td>6.41964</td>
-      <td>3.91915</td>
-      <td>4.91931</td>
-    </tr>
-  </tbody>
-</table><p>... and 271 more rows.</p></details></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title=".units"><b>units</b></summary><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".units">description: </span><span class="field-value">Autogenerated by NWBFile</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title=".units">waveform_unit: </span><span class="field-value">volts</span></div><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title=".units"><b>table</b></summary><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>depth</th>
-      <th>quality</th>
-      <th>cell_type</th>
-      <th>spike_times</th>
-      <th>electrodes</th>
-    </tr>
-    <tr>
-      <th>id</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>665.0</td>
-      <td>Poor</td>
-      <td>unidentified</td>
-      <td>[933.873288, 948.2774710000008, 950.5357110000007, 963.8427369999994, 970.1696180000004, 970.3827380000004, 981.1382930000003, 998.4349809999999, 1001.8557769999996, 1007.1972369999995, 1007.5521569999995, 1008.2231169999995, 1015.226128, 1018.6167669999993, 1019.1921269999993, 1019.8214069999993, 1020.8079269999994, 1020.9495269999993, 1024.1829269999994, 1024.3382469999995, 1026.9299379999995, 1028.0509779999995, 1030.2083379999997, 1030.5045379999997, 1039.287091, 1040.493411, 1044.7219299999997, 1050.6465869999995, 1052.1171469999997, 1055.5252269999996, 1058.5977610000002, 1058.645561, 1060.035961, 1060.117921, 1061.8348010000002, 1063.4142630000001, 1065.2545430000002, 1069.3364309999995, 1070.9941109999995, 1074.5048709999994, 1074.7372709999995, 1074.8200709999994, 1078.8312000000003, 1078.9709200000002, 1079.7629600000002, 1086.0654379999996, 1087.6119579999995, 1089.7035540000002, 1090.0467540000002, 1091.1513940000002, 1092.2857540000002, 1092.8204340000002, 1094.394954, 1094.910994, 1095.2850539999997, 1095.396014, 1096.5906539999999, 1096.8606139999997, 1096.9020939999998, 1097.0972539999998, 1097.5926539999998, 1097.6708939999999, 1102.9711550000002, 1104.857715, 1105.1430350000003, 1107.7467379999996, 1109.9373779999996, 1110.7912579999997, 1118.6964169999992, 1119.0359769999993, 1120.9673569999998, 1121.9214769999996, 1122.4704769999996, 1123.4714369999997, 1123.8800369999997, 1124.1477969999996, 1124.9233569999997, 1125.0126369999998, 1125.3041569999998, 1125.5543569999998, 1125.7867969999998, 1126.0659569999998, 1128.7689970000001, 1129.3829570000003, 1130.6295570000002, 1131.9833970000002, 1134.609197, 1147.1666699999996, 1148.2476299999996, 1149.1750299999997, 1150.4954299999995, 1150.7217499999995, 1151.8413499999995, 1152.5431549999996, 1153.0057949999996, 1157.5447549999997, 1158.0824349999996, 1158.3623949999997, 1159.4290339999998, 1160.3188739999998, ...]</td>
-      <td>[9]</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>665.0</td>
-      <td>Fair</td>
-      <td>unidentified</td>
-      <td>[329.95417899999956, 330.01945899999953, 330.07061899999957, 330.1605389999996, 330.19749899999954, 330.25033899999954, 330.3272989999995, 330.4255789999996, 330.50769899999955, 330.56533899999954, 330.6544589999996, 330.67681899999957, 330.88049899999953, 331.12789899999956, 331.16241899999955, 331.83661899999953, 332.11609899999956, 332.21133899999955, 332.26629899999955, 332.29025899999954, 332.46317899999957, 332.5840989999996, 332.64813899999956, 332.67205899999954, 332.7318189999996, 332.85041899999953, 332.88953899999956, 332.91869899999955, 332.95189899999957, 333.27645899999953, 333.3234989999996, 333.4298989999996, 333.61673899999954, 333.6209789999996, 333.75233899999955, 333.77829899999955, 333.7805389999996, 333.79421899999954, 334.28205899999955, 334.46593899999954, 334.81589899999955, 334.83589899999953, 334.84221899999955, 335.07521899999955, 335.09905899999956, 335.34029899999956, 335.50417899999957, 335.54157899999956, 335.60637899999955, 336.23017899999957, 340.62930600000044, 340.8038660000004, 340.9015460000004, 341.0773060000004, 341.3530260000004, 341.5161860000004, 341.61046600000043, 341.6895860000004, 341.9116660000004, 341.9275060000004, 342.0619060000004, 342.20254600000044, 342.25106600000043, 342.36838600000044, 342.62282600000043, 342.8145060000004, 342.8201060000004, 342.87678600000044, 342.88090600000044, 342.9054660000004, 342.95326600000044, 343.12070600000044, 343.1307860000004, 343.2434260000004, 343.46078600000044, 343.5054660000004, 343.57054600000043, 343.9653460000004, 344.38054600000044, 344.4784260000004, 344.6781060000004, 344.68658600000043, 344.73442600000044, 344.7643860000004, 344.8727060000004, 344.9637860000004, 345.42818600000044, 345.5534660000004, 345.64610600000043, 345.9451060000004, 346.2581460000004, 346.59130600000043, 346.6327460000004, 346.72402600000044, 346.76662600000043, 346.7959860000004, 346.8223060000004, 346.8417860000004, 346.9655860000004, 346.9943060000004, ...]</td>
-      <td>[9]</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>715.0</td>
-      <td></td>
-      <td>unidentified</td>
-      <td>[329.94165899999956, 329.9998989999996, 330.00345899999957, 330.03741899999955, 330.08029899999957, 330.08541899999955, 330.18577899999957, 330.29097899999954, 330.30689899999953, 330.34997899999956, 330.41265899999956, 330.47921899999955, 330.50069899999954, 330.50661899999955, 330.5878589999996, 330.68321899999955, 330.71417899999955, 330.71877899999953, 331.01681899999954, 331.17033899999956, 331.18281899999954, 331.20917899999955, 331.28353899999956, 331.35097899999954, 331.54277899999954, 331.65309899999954, 331.7194589999996, 331.72581899999955, 331.7425789999996, 331.83385899999956, 331.9012589999996, 331.93197899999956, 331.93797899999953, 331.9941789999996, 331.99797899999953, 332.0042189999996, 332.0539789999996, 332.06657899999954, 332.13309899999956, 332.15777899999955, 332.2253789999996, 332.23561899999953, 332.31165899999957, 332.34281899999957, 332.42121899999955, 332.80737899999957, 332.9318589999996, 332.94913899999955, 333.0384189999996, 333.09549899999956, 333.12709899999953, 333.13197899999955, 333.19449899999955, 333.19765899999953, 333.20181899999955, 333.21209899999957, 333.3145789999996, 333.38661899999954, 333.39009899999957, 333.45685899999955, 333.4814589999996, 333.51805899999954, 333.52369899999957, 333.54873899999956, 333.74897899999957, 333.83061899999956, 333.8632589999996, 333.88461899999953, 333.91165899999953, 333.92329899999953, 333.9359789999996, 334.01541899999955, 334.02293899999955, 334.0346589999996, 334.0434189999996, 334.05877899999956, 334.07917899999956, 334.09389899999957, 334.16957899999954, 334.18117899999953, 334.18549899999954, 334.20037899999954, 334.23077899999953, 334.24617899999953, 334.2576189999996, 334.26141899999953, 334.2646189999995, 334.29097899999954, 334.29865899999953, 334.3140189999996, 334.31733899999955, 334.32433899999955, 334.3342589999996, 334.33705899999956, 334.34025899999955, 334.35117899999955, 334.3618589999996, 334.3729389999996, 334.38613899999956, 334.38909899999953, ...]</td>
-      <td>[11]</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>715.0</td>
-      <td>[]</td>
-      <td>unidentified</td>
-      <td>[329.93145899999956, 330.7492189999995, 330.77609899999953, 331.0661789999996, 331.06997899999953, 331.09685899999954, 331.1245389999996, 331.1362189999995, 331.14481899999953, 331.1557389999995, 331.47601899999955, 331.81585899999953, 331.8184989999996, 331.86241899999953, 331.87153899999953, 332.1306589999996, 332.13497899999953, 332.15073899999953, 332.15653899999955, 332.1691389999996, 332.1954589999996, 332.20829899999956, 332.21753899999953, 332.23481899999956, 332.24049899999955, 332.26265899999953, 332.27441899999957, 332.2848189999996, 332.3197389999996, 332.34649899999954, 332.34889899999956, 332.3622189999995, 332.3704589999995, 332.3782989999996, 332.39073899999954, 332.40185899999955, 332.43193899999955, 332.5068989999996, 332.5142589999996, 332.60165899999953, 332.62037899999956, 332.68753899999956, 332.76057899999955, 332.76877899999954, 332.80445899999955, 333.1094989999996, 333.18697899999955, 333.24425899999954, 333.31001899999956, 333.33757899999955, 333.73385899999954, 333.77717899999953, 333.81729899999954, 333.91561899999954, 333.94353899999953, 333.95481899999953, 333.96269899999953, 333.97665899999953, 333.99361899999957, 334.0659789999996, 334.13913899999955, 334.15669899999955, 334.16337899999957, 334.1711389999995, 334.19177899999954, 334.22253899999953, 334.24173899999954, 334.4456589999996, 334.45313899999957, 334.46145899999954, 334.48425899999955, 334.5070989999995, 334.5260589999996, 334.54673899999955, 334.55181899999957, 334.55985899999956, 334.56733899999955, 334.58697899999953, 334.60297899999955, 334.70257899999956, 334.72309899999954, 334.74245899999954, 334.7620989999996, 335.02689899999956, 336.20833899999957, 340.8186260000004, 341.2873460000004, 341.4092260000004, 341.45450600000044, 341.68606600000044, 341.7645460000004, 341.8113860000004, 341.84330600000044, 342.34042600000043, 342.4945860000004, 342.51358600000043, 343.3755060000004, 344.4470260000004, 344.45342600000043, 344.6145460000004, ...]</td>
-      <td>[11]</td>
-    </tr>
-  </tbody>
-</table><p>... and 75 more rows.</p></details></details><div style="margin-left: 0px;" class="container-fields"><span class="field-key" title=".experiment_description">experiment_description: </span><span class="field-value">Extracellular electrophysiology recordings performed on mouse anterior lateral motor cortex (ALM) in delay response task. Neural activity from two neuron populations, pyramidal track upper and lower, were characterized, in relation to movement execution.</span></div><div style="margin-left: 0px;" class="container-fields"><span class="field-key" title=".institution">institution: </span><span class="field-value">Janelia Research Campus</span></div></div></div></div>
 </div>
 <div class="alert alert-success"><b>Task</b>: Look through the file above by clicking on the sideways black triangles to drop down different levels of the file structure. What's there that might be interesting to analyze?</div></section>
 <section id="step-3-access-information-within-the-nwb-file-hierarchy">
@@ -899,7 +604,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x4547669664
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x4363405696
  Fields:
    time_series: {
      lick_left_times &lt;class &#39;pynwb.base.TimeSeries&#39;&gt;,
@@ -1227,7 +932,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x45...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -1238,7 +943,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x45...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -1249,7 +954,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x45...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -1260,7 +965,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x45...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -1271,7 +976,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x45...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
       <td>H-129: 64</td>
     </tr>
   </tbody>

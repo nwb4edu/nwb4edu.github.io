@@ -468,8 +468,8 @@ document.write(`
 <h1>Spike Sorting<a class="headerlink" href="#spike-sorting" title="Link to this heading">#</a></h1>
 <p>When you record extracellular electrophysiology data, one of the first data processing steps is figuring out which action potentials (or “spikes”) came from which neurons. The process of doing this is called <strong>spike sorting</strong>.</p>
 <p>Below, we’ll work with <a class="reference external" href="https://dandiarchive.org/dandiset/000053/0.210819.0345">this dataset</a> from <a class="reference external" href="https://giocomolab.weebly.com/">Lisa Giocomo’s lab at Stanford</a> to demonstrate the simplest form of spike sorting: thresholding, followed by feature extraction.</p>
-<p><mark><strong>Note #1</strong>:  The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, the best way to work with it is through the Dandihub. If you’re not already running this book on the Dandihub, read <a class="reference external" href="https://nwb4edu.github.io/Chapter_01/Using_This_Book.html">Using this Book</a> for instructions on how to run this on the Dandihub.</mark></p>
-<p><mark><strong>Note #2</strong>: Some of the cells below contain <code>try</code> and <code>except</code> to catch instances where these notebooks are not run in a properly configured coding environment. You can ignore these and focus on the code <em>after</em> <code>try</code>.</mark></p>
+<p><mark><strong>Note #1</strong>: The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, the best way to work with it is by streaming it from DANDI, which works best on the Dandihub. If you’re running locally, ensure you have completed the setup steps in <a class="reference external" href="https://nwb4edu.github.io/Introduction/Using_This_Book.html">Using this Book</a>, particularly the streaming configuration.</mark></p>
+<p><mark><strong>Note #2</strong>: Some of the cells below may take a minute to run, depending on the speed of your internet connection.</mark></p>
 <section id="step-1-inspect-the-data">
 <h2>Step 1. Inspect the Data<a class="headerlink" href="#step-1-inspect-the-data" title="Link to this heading">#</a></h2>
 <p>First, we need to find the correct URL for the dataset on the NWB’s Amazon S3 storage system. There is a tool to do so within the <code class="docutils literal notranslate"><span class="pre">dandiapi</span></code>, which we’ll use below to get the URL for one session within the dataset.</p>
@@ -494,28 +494,37 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Now that we have this path, we can stream the data rather than downloading it. Below, we’ll print some useful information about this experiment. We will also access a dataset we haven’t interacted with yet: <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/domain/ecephys.html"><code class="docutils literal notranslate"><span class="pre">ElectricalSeries</span></code></a>. As the name suggests, this group contains raw electrophysiology data – exactly what we need to sort! We will assign a portion of this to an object called <code class="docutils literal notranslate"><span class="pre">ephys_data</span></code>.</p>
+<p>Now that we have this path, we can stream the data using <code class="docutils literal notranslate"><span class="pre">remfile</span></code>. Below, we’ll print some useful information about this experiment. We will also access a dataset we haven’t interacted with yet: <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/domain/ecephys.html"><code class="docutils literal notranslate"><span class="pre">ElectricalSeries</span></code></a>. As the name suggests, this group contains raw electrophysiology data – exactly what we need to sort! We will assign a portion of this to an object called <code class="docutils literal notranslate"><span class="pre">ephys_data</span></code>.</p>
 <p><mark><strong>Note</strong>: The cell below will take about a minute to run, depending on the speed of your internet connection.</mark></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">pynwb</span><span class="w"> </span><span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pynwb</span><span class="w"> </span><span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">remfile</span>
 
-    <span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
+<span class="c1"># Stream the file using remfile</span>
+<span class="n">rem_file</span> <span class="o">=</span> <span class="n">remfile</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">s3_path</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">rem_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5py_file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">h5py_file</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
         <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
         <span class="n">sampling_freq</span> <span class="o">=</span> <span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rate</span> <span class="c1"># get the sampling frequency in Hz</span>
         <span class="n">ephys_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="mi">3000000</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span><span class="o">*</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;ElectricalSeries&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">conversion</span>
-        
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Environment is not configured for pynwb.&#39;</span><span class="p">)</span>
-    <span class="n">ephys_data</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">sampling_freq</span> <span class="o">=</span> <span class="mi">400</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Environment is not configured for pynwb.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pynwb</span><span class="w"> </span><span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">h5py</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">remfile</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Stream the file using remfile</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">rem_file</span> <span class="o">=</span> <span class="n">remfile</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">s3_path</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;remfile&#39;
 </pre></div>
 </div>
 </div>
@@ -544,7 +553,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f7d4f678061901a14b50db1c557e4a597117529ff7bc1100893f8877c4edd3ad.png" src="../_images/f7d4f678061901a14b50db1c557e4a597117529ff7bc1100893f8877c4edd3ad.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># generate a vector of timestamps</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">timestamps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ephys_data</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">sampling_freq</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">timestamps</span><span class="p">,</span><span class="n">ephys_data</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;ephys_data&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>In the data above, there are clear places where the data “spikes”. These are extracellularly recorded action potentials!</p>
@@ -563,16 +583,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Noise Estimate by Standard Deviation:  nan
-Recommended Spike Threshold         :  nan
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/lib/python3.12/site-packages/numpy/_core/_methods.py:223: RuntimeWarning: Degrees of freedom &lt;= 0 for slice
-  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
-/opt/miniconda3/lib/python3.12/site-packages/numpy/_core/_methods.py:181: RuntimeWarning: invalid value encountered in divide
-  arrmean = um.true_divide(arrmean, div, out=arrmean,
-/opt/miniconda3/lib/python3.12/site-packages/numpy/_core/_methods.py:215: RuntimeWarning: invalid value encountered in scalar divide
-  ret = ret.dtype.type(ret / rcount)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">noise_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ephys_data</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">recommended_threshold</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span> <span class="o">*</span> <span class="n">noise_std</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Noise Estimate by Standard Deviation: &#39;</span><span class="p">,</span> <span class="n">noise_std</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;ephys_data&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -649,7 +667,16 @@ Recommended Spike Threshold         :  nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/75f734346481e2ddf30242c1c0796f8d494a704e82d525348b83cf1a56e67b2f.png" src="../_images/75f734346481e2ddf30242c1c0796f8d494a704e82d525348b83cf1a56e67b2f.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">crossings</span> <span class="o">=</span> <span class="n">detect_threshold_crossings</span><span class="p">(</span><span class="n">ephys_data</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">recommended_threshold</span><span class="p">,</span> <span class="mf">0.003</span><span class="p">)</span> <span class="c1"># dead time of 3 ms</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">spks</span> <span class="o">=</span> <span class="n">align_to_minimum</span><span class="p">(</span><span class="n">ephys_data</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">crossings</span><span class="p">,</span> <span class="mf">0.002</span><span class="p">)</span> <span class="c1"># search range 2 ms</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;ephys_data&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>Finally, we can cut out the waveforms from these detected spikes so that we can look at their shape. To do so, we will cut out a portion of the signal around each spike. Spikes too close to the start or end of the signal that a full cutout is not possible are ignored.</p>
@@ -720,7 +747,16 @@ Recommended Spike Threshold         :  nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No data loaded.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pre</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># 1 ms</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">post</span><span class="o">=</span> <span class="mf">0.002</span> <span class="c1"># 2 ms</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">waveforms</span> <span class="o">=</span> <span class="n">extract_waveforms</span><span class="p">(</span><span class="n">ephys_data</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">spks</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plot_waveforms</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">sampling_freq</span><span class="p">,</span> <span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">min_voltage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">waveforms</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;ephys_data&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -743,7 +779,20 @@ Recommended Spike Threshold         :  nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d064a841ab4986a01277831b1c2e042a69ffbe5f19b338105478a78e7b2f124b.png" src="../_images/d064a841ab4986a01277831b1c2e042a69ffbe5f19b338105478a78e7b2f124b.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">min_voltage</span><span class="p">,</span> <span class="n">max_voltage</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Minimum Voltage (V)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Maximum Voltage (V)&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;min_voltage&#39; is not defined
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 800x800 with 0 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <p>Looking at the scatterplot above, would you say there is more than one cluster of waveforms?</p>
