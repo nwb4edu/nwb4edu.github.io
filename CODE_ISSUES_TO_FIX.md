@@ -4,9 +4,6 @@ Based on JOSE review feedback (Issues #4 and #8), the following code execution e
 
 ## Lesson 2: Large-scale Electrophysiology
 
-### Lesson_2/01-SpikeSorting.ipynb
-- **All figures**: Missing data in figures
-
 ### Lesson_2/02-Visualizing_Recordings.ipynb
 - **Cell 2**: Name error
 - **Function definitions**: Spacing issues (PEP8 compliance needed)
