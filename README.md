@@ -8,14 +8,14 @@ An interactive online textbook for teaching and learning neuroscience using Neur
 
 ## About This Project
 
-The `nwb4edu` online textbook provides interactive and self-guided resources for educators, students, and self-guided learners who would like to use open neuroscience datasets for research and/or teaching. The textbook introduces users to Neurodata Without Borders (NWB), a data standard for neurophysiology data, and teaches how to access, analyze, and visualize NWB datasets using Python.
+The `nwb4edu` online textbook provides interactive and self-guided resources for educators, students, and self-guided learners who would like to use open neuroscience datasets for research and/or teaching. The textbook introduces users to [Neurodata Without Borders (NWB)](https://www.nwb.org/), a data standard for neurophysiology data, and teaches how to access, analyze, and visualize NWB datasets using Python.
 
 ### Key Features
 
 - **Interactive Jupyter notebooks** with executable code
 - **Comprehensive tutorials** covering data access, analysis, and visualization
 - **Problem sets** for hands-on practice
-- **Real datasets** from DANDI Archive and Allen Institute
+- **Real datasets** from [DANDI Archive](https://dandiarchive.org/) and the [Allen Institute for Brain Science](https://alleninstitute.org/)
 - **Greatest Hits lessons** that recreate figures from landmark neuroscience papers
 - **Launch on JupyterHub** - no local installation required
 
@@ -164,7 +164,7 @@ We welcome contributions from the community! Regardless of whether you want to r
 
 ## Authors
 
-- **Ashley L. Juavinett** - UC San Diego, Neurobiology
+- **Ashley L. Juavinett** - UC San Diego, Neurobiology (current project maintainer)
 - **Victor Magdaleno** - UC San Diego Alum, Cognitive Science
 
 With thanks to Tommy Lee, Ariel Rokem, and Tom Donoghue for copyediting.
@@ -190,11 +190,3 @@ Juavinett, A.L., & Magdaleno, V. (2024). nwb4edu: an Online Textbook for Teachin
 and Learning with NWB Datasets. *Journal of Open Source Education: TENTATIVE*.
 https://nwb4edu.github.io
 ```
-
-## Related Resources
-
-- [Neurodata Without Borders (NWB)](https://www.nwb.org/)
-- [DANDI Archive](https://dandiarchive.org/)
-- [Allen Institute for Brain Science](https://alleninstitute.org/)
-- [PyNWB Documentation](https://pynwb.readthedocs.io/)
-- [AllenSDK Documentation](https://allensdk.readthedocs.io/)
