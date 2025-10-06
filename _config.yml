@@ -13,3 +13,5 @@ execute:
   execute_notebooks: cache
   allow_errors: true
   timeout: 180
+  exclude_patterns:
+    - 'Lesson_4/01-Retrieving_Brain_Observatory_Data.ipynb'
