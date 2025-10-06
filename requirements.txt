@@ -1,31 +1,26 @@
-# Core dependencies for running nwb4edu notebooks
+# Core dependencies for running nwb4edu notebooks (Lessons 1-4)
+# These are the essential packages - subdependencies will be installed automatically
 
-# NWB and data access
-pynwb>=2.0.0
+# NWB and data access (includes: pynwb, h5py, hdmf)
 dandi>=0.45.1
-h5py>=3.0.0
-hdmf>=3.0.0
 
-# Allen Institute SDK
+# Allen Institute SDK (includes: numpy, pandas, scipy, matplotlib)
 allensdk>=2.11.2
 
-# Scientific computing
-numpy>=1.18.5,<1.24.0
-pandas>=1.0.0
-scipy>=1.6.0
-xarray>=0.15.1
+# Widgets for interactive exploration (includes: ipywidgets, pynwb)
+nwbwidgets>=0.8.0
 
 # Visualization
-matplotlib>=3.4.0
 seaborn>=0.11.0
 
-# Widgets for interactive exploration
-nwbwidgets>=0.8.0
-ipywidgets>=7.6.0
+# Streaming data
+remfile
 
-# Spike analysis
-spykes>=0.3.dev0
+# Additional dependencies for Lesson 5 (Greatest Hits)
+pynapple
+plotly
+fsspec
 
-# Jupyter
+# Jupyter environment
 jupyter>=1.0.0
 notebook>=6.0.0
