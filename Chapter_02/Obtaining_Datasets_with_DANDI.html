@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.1. Obtaining Datasets with DANDI &#8212; Teaching &amp; Learning with NWB Datasets</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.2. Working with NWB in Python" href="Working_with_NWB_format_in_Python.html" />
+    <link rel="prev" title="2. Obtaining and Working with NWB Datasets" href="Obtaining_and_Working_with_NWB_Datasets.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/nwb_learning.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Teaching & Learning with NWB Datasets</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   Teaching and Learning with NWB Datasets
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_01/Data_Science_In_Python.html">
+   1. Data Science in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_01/NumPy.html">
+     1.3. NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_01/Pandas.html">
+     1.4. Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_01/SciPy.html">
+     1.5. SciPy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Obtaining_and_Working_with_NWB_Datasets.html">
+   2. Obtaining and Working with NWB Datasets
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Obtaining Datasets with DANDI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Working_with_NWB_format_in_Python.html">
+     2.2. Working with NWB in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Interactive_NWB_Data_Exploration.html">
+     2.3. Interactive NWB Data Exploration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Chapter_2_ProblemSet.html">
+     2.4. Chapter 2 Problem Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_03/Large_Scale_Electrophysiology.html">
+   3. Large-Scale Electrophysiology
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Visualizing_Large_Scale_Recordings.html">
+     3.1. Visualizing Large Scale Recordings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Obtaining_Raw_Electrophysiology_Data.html">
+     3.2. Obtaining  Electrophysiology Data from the AllenSDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Aligning_Spike_Trains_with_Stimuli_and_Behavior.html">
+     3.3. Aligning Spike Trains with Visual Stimuli and Behavior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Identifying_Cells_with_Optogenetics.html">
+     3.4. Identifying Cells with Optogenetics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_03/Chapter_3_ProblemSet.html">
+     3.5. Chapter 3 Problem Set
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_04/Single-Cell_Electrophysiology.html">
+   4. Single-Cell Electrophysiology
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Obtaining_Data_For_Single_Cells.html">
+     4.1. Obtaining Data for Single Cells
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_04/Analyzing_Computed_Features.html">
+     4.2. Analyzing Computed Features
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter_05/Two_Photon_Imaging.html">
+   5. Two Photon Imaging
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_05/Retrieving_Brain_Observatory_Data.html">
+     5.1. Retrieving Calcium Imaging Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_05/Analyzing_Two_Photon_Data.html">
+     5.2. Analyzing Two Photon Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter_05/Correlations_in_Two_Photon_Data.html">
+     5.3. Correlations in Two Photon Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Chapter_02/Obtaining_Datasets_with_DANDI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Chapter_02/Obtaining_Datasets_with_DANDI.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Chapter_02/Obtaining_Datasets_with_DANDI.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-1-downloading-dandisets-using-python">
+   2.1.1. Option 1: Downloading Dandisets using Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#option-2-streaming-the-dandiset">
+   2.1.2. Option 2: Streaming the Dandiset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-your-environment">
+     2.1.2.1. Configuring your environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#streaming-via-the-dandi-hub">
+     2.1.2.2. Streaming via the DANDI hub
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-for-data-streaming">
+     2.1.2.3. Code for Data Streaming
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="obtaining-datasets-with-dandi">
+<h1><span class="section-number">2.1. </span>Obtaining Datasets with DANDI<a class="headerlink" href="#obtaining-datasets-with-dandi" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a> is an open source data archive for neuroscience datasets, called <strong>Dandisets</strong>. DANDI allows scientists to submit and download neural datasets to promote research collaboration and consistent and transparent data standards. DANDI also provides a solution to the difficulties that come from housing data in the many other general domains (i.e. Dropbox, Google Drive, etc.). Usefully for our purposes here, many of the datasets on DANDI are in NWB format. If you’d like to know more about DANDI, check out the <a class="reference external" href="https://www.dandiarchive.org/handbook/">DANDI handbook</a>.</p>
+<p>There are two primary ways to work with Dandisets:</p>
+<ol class="simple">
+<li><p>You can <strong>download the datasets locally</strong>, either via the <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset">DANDI Web Application</a> or using the DANDI Python client below. If you download via the website, you’ll need to create an account.</p></li>
+<li><p>You can <strong>stream datasets directly</strong> from DANDI.</p></li>
+</ol>
+<p>Below, we demonstrate how to do both of these. For additional information on either of these methods, please refer to the <a class="reference external" href="https://gui.dandiarchive.org/">DANDI documentation</a>.</p>
+<div class="section" id="option-1-downloading-dandisets-using-python">
+<h2><span class="section-number">2.1.1. </span>Option 1: Downloading Dandisets using Python<a class="headerlink" href="#option-1-downloading-dandisets-using-python" title="Permalink to this headline">¶</a></h2>
+<p>First, we need to ensure that you have the <a class="reference external" href="https://pypi.org/project/dandi/"><code class="docutils literal notranslate"><span class="pre">DANDI</span></code> client</a> installed on your computer. The cell below will try to import DANDI. If you have an old version of DANDI, it will prompt you to install a newer version. Type “Y” if you would like to install a new version (this is recommended). If you don’t have DANDI at all, it will install the most recent version.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">dandi</span>
+    <span class="k">if</span> <span class="n">dandi</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;0.35.0&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DANDI installed &amp; imported.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of DANDI installed. Would you like to install a newer version of DANDI? (Y/N)&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
+            <span class="o">!</span>pip install --upgrade dandi
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip install dandi
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DANDI installed &amp; imported.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cell below will download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000006">this dataset</a> from DANDI. This dataset contains 32-channel extracellular recordings from mouse cortex. If you have previously run this cell, you do not need to run it again.</p>
+<p><mark><strong>Note:</strong> Downloading this dataset may take several minutes, depending on your internet connection.</mark></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.download</span> <span class="kn">import</span> <span class="n">download</span> <span class="k">as</span> <span class="n">dandi_download</span>
+<span class="kn">import</span> <span class="nn">os</span> 
+
+<span class="c1">#url = &quot;https://gui.dandiarchive.org/#/folder/5e72b6ac3da50caa9adb0498&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dandiarchive.org/dandiset/000006/draft&#39;</span>
+<span class="n">dandi_download</span><span class="p">([</span><span class="n">url</span><span class="p">],</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">existing</span><span class="o">=</span><span class="s2">&quot;skip&quot;</span><span class="p">)</span>
+
+<span class="c1"># Alternate way below -- this does not enable &quot;skip&quot; option</span>
+<span class="c1">#!dandi download https://dandiarchive.org/dandiset/000006/draft</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A newer version (0.45.1) of dandi/dandi-cli is available. You are using 0.35.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PATH                                         SIZE      DONE    DONE% CHECKSUM STATUS     MESSAGE          
+dandiset.yaml                                                                 skipped    already exists   
+sub-anm369962/sub-anm369962_ses-20170309.nwb                                  skipped    already exists   
+sub-anm369962/sub-anm369962_ses-20170316.nwb                                  skipped    already exists   
+sub-anm369962/sub-anm369962_ses-20170310.nwb                                  skipped    already exists   
+sub-anm369962/sub-anm369962_ses-20170314.nwb                                  skipped    already exists   
+sub-anm369962/sub-anm369962_ses-20170313.nwb                                  skipped    already exists   
+sub-anm369962/sub-anm369962_ses-20170317.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170227.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170226.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170228.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170301.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170302.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170306.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170309.nwb                                  skipped    already exists   
+sub-anm369963/sub-anm369963_ses-20170310.nwb                                  skipped    already exists   
+sub-anm369964/sub-anm369964_ses-20170321.nwb                                  skipped    already exists   
+sub-anm369964/sub-anm369964_ses-20170320.nwb                                  skipped    already exists   
+sub-anm369964/sub-anm369964_ses-20170322.nwb                                  skipped    already exists   
+sub-anm369964/sub-anm369964_ses-20170323.nwb                                  skipped    already exists   
+sub-anm372793/sub-anm372793_ses-20170504.nwb                                  skipped    already exists   
+sub-anm372793/sub-anm372793_ses-20170508.nwb                                  skipped    already exists   
+sub-anm372793/sub-anm372793_ses-20170512.nwb                                  skipped    already exists   
+sub-anm372793/sub-anm372793_ses-20170513.nwb                                  skipped    already exists   
+sub-anm372794/sub-anm372794_ses-20170621.nwb                                  skipped    already exists   
+sub-anm372794/sub-anm372794_ses-20170622.nwb                                  skipped    already exists   
+sub-anm372793/sub-anm372793_ses-20170514.nwb                                  skipped    already exists   
+sub-anm372794/sub-anm372794_ses-20170624.nwb                                  skipped    already exists   
+sub-anm372794/sub-anm372794_ses-20170625.nwb                                  skipped    already exists   
+sub-anm372794/sub-anm372794_ses-20170626.nwb                                  skipped    already exists   
+sub-anm372794/sub-anm372794_ses-20170627.nwb                                  skipped    already exists   
+sub-anm372795/sub-anm372795_ses-20170715.nwb                                  skipped    already exists   
+sub-anm372795/sub-anm372795_ses-20170714.nwb                                  skipped    already exists   
+sub-anm372795/sub-anm372795_ses-20170716.nwb                                  skipped    already exists   
+sub-anm372795/sub-anm372795_ses-20170718.nwb                                  skipped    already exists   
+sub-anm372797/sub-anm372797_ses-20170617.nwb                                  skipped    already exists   
+sub-anm372904/sub-anm372904_ses-20170615.nwb                                  skipped    already exists   
+sub-anm372797/sub-anm372797_ses-20170615.nwb                                  skipped    already exists   
+sub-anm372904/sub-anm372904_ses-20170617.nwb                                  skipped    already exists   
+sub-anm372904/sub-anm372904_ses-20170616.nwb                                  skipped    already exists   
+sub-anm372904/sub-anm372904_ses-20170618.nwb                                  skipped    already exists   
+sub-anm372904/sub-anm372904_ses-20170619.nwb                                  skipped    already exists   
+sub-anm372905/sub-anm372905_ses-20170715.nwb                                  skipped    already exists   
+sub-anm372905/sub-anm372905_ses-20170716.nwb                                  skipped    already exists   
+sub-anm372905/sub-anm372905_ses-20170717.nwb                                  skipped    already exists   
+sub-anm372906/sub-anm372906_ses-20170608.nwb                                  skipped    already exists   
+sub-anm372906/sub-anm372906_ses-20170610.nwb                                  skipped    already exists   
+sub-anm372906/sub-anm372906_ses-20170611.nwb                                  skipped    already exists   
+sub-anm372906/sub-anm372906_ses-20170612.nwb                                  skipped    already exists   
+sub-anm372907/sub-anm372907_ses-20170608.nwb                                  skipped    already exists   
+sub-anm372907/sub-anm372907_ses-20170610.nwb                                  skipped    already exists   
+sub-anm372907/sub-anm372907_ses-20170613.nwb                                  skipped    already exists   
+sub-anm372907/sub-anm372907_ses-20170612.nwb                                  skipped    already exists   
+sub-anm372909/sub-anm372909_ses-20170520.nwb                                  skipped    already exists   
+sub-anm372909/sub-anm372909_ses-20170522.nwb                                  skipped    already exists   
+Summary:                                     0 Bytes   0 Bytes                54 skipped 54 already exists
+                                             +139.6 MB 0.00%                                              
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once the cell above completes running, you will see a new folder 📁”00006” wherever you’re running this notebook. Usefully, the code above will also print a list of individual NWB files that have been downloaded in this folder.</p>
+<p><strong>Once the data is done downloading, you’re ready for the next step.</strong></p>
+</div>
+<div class="section" id="option-2-streaming-the-dandiset">
+<h2><span class="section-number">2.1.2. </span>Option 2: Streaming the Dandiset<a class="headerlink" href="#option-2-streaming-the-dandiset" title="Permalink to this headline">¶</a></h2>
+<p>The folks at NWB have also developed a clever way to stream Dandisets so that small bits of them can be viewed without downloading the entire dataset. This is particularly useful for very large datasets! <strong>This step is optional, and maybe a better option if you have limited hard drive space and/or are having issues with Option 1 above.</strong></p>
+<div class="section" id="configuring-your-environment">
+<h3><span class="section-number">2.1.2.1. </span>Configuring your environment<a class="headerlink" href="#configuring-your-environment" title="Permalink to this headline">¶</a></h3>
+<p>With some configuration, you can use this method on your local computer. First, you need to set up your environment with the right version of a package called <code class="docutils literal notranslate"><span class="pre">h5py</span></code>. <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html#sphx-glr-tutorials-advanced-io-streaming-py">There are instructions here for how to do that.</a>. Once you’re done, you can restart the kernel for this notebook, and run the code below.</p>
+</div>
+<div class="section" id="streaming-via-the-dandi-hub">
+<h3><span class="section-number">2.1.2.2. </span>Streaming via the DANDI hub<a class="headerlink" href="#streaming-via-the-dandi-hub" title="Permalink to this headline">¶</a></h3>
+<p>Alternatively, you can run the code below on the DANDI Jupyter Hub (<a class="reference external" href="https://hub.dandiarchive.org/">https://hub.dandiarchive.org/</a>). <strong>JupyterHub</strong> is an online coding environment in which you can run code on a remote server. Usefully, the folks at DANDI have set up a JupyterHub so that you can easily access the tools and data. To do so, follow these directions:</p>
+<ol class="simple">
+<li><p>If you do not have already, set up a <a class="reference external" href="https://github.com/signup">GitHub account</a>. It’s free, and it’s a great way to start tracking your code!</p></li>
+<li><p>Go to the Dandihub at <a class="reference external" href="https://hub.dandiarchive.org/">https://hub.dandiarchive.org/</a> and log in using your GitHub account.</p></li>
+<li><p>Choose “Base” as your server option.</p></li>
+<li><p>Create a new Python 3 notebook and copy and paste the three code cells below.</p></li>
+</ol>
+</div>
+<div class="section" id="code-for-data-streaming">
+<h3><span class="section-number">2.1.2.3. </span>Code for Data Streaming<a class="headerlink" href="#code-for-data-streaming" title="Permalink to this headline">¶</a></h3>
+<p>First, we need to figure out the correct URL for the dataset on the Amazon S3 storage system. There is a tool to do so within the dandiapi, which we’ll use below to get the URL for one session from the data we downloaded above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.dandiapi</span> <span class="kn">import</span> <span class="n">DandiAPIClient</span>
+
+<span class="n">dandiset_id</span> <span class="o">=</span> <span class="s1">&#39;000006&#39;</span>  <span class="c1"># ephys dataset from the Svoboda Lab</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;sub-anm372795/sub-anm372795_ses-20170718.nwb&#39;</span>  <span class="c1"># 450 kB file</span>
+
+<span class="k">with</span> <span class="n">DandiAPIClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">asset</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_dandiset</span><span class="p">(</span><span class="n">dandiset_id</span><span class="p">,</span> <span class="s1">&#39;draft&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_asset_by_path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="n">s3_path</span> <span class="o">=</span> <span class="n">asset</span><span class="o">.</span><span class="n">get_content_url</span><span class="p">(</span><span class="n">follow_redirects</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">strip_query</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">s3_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://dandiarchive.s3.amazonaws.com/blobs/43b/f3a/43bf3a81-4a0b-433f-b471-1f10303f9d35
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can read this path, but we’ll stream it, rather than downloading it! The cell below will print some of the data about this experiment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+
+<span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
+    <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="o">.</span><span class="n">acquisition</span><span class="p">[</span><span class="s1">&#39;lick_times&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">time_series</span><span class="p">[</span><span class="s1">&#39;lick_left_times&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">73</span><span class="n">fc9b98b614</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/hdmf/utils.py</span> in <span class="ni">func_call</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span>         <span class="k">if</span> <span class="n">is_method</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">578</span>             <span class="k">def</span> <span class="nf">func_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">579</span>                 <span class="n">pargs</span> <span class="o">=</span> <span class="n">_check_args</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">580</span>                 <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">pargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="nn">~/anaconda3/lib/python3.7/site-packages/hdmf/utils.py</span> in <span class="ni">_check_args</span><span class="nt">(args, kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>                 <span class="k">if</span> <span class="n">parse_err</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">571</span>                     <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parse_err</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">572</span>                     <span class="k">raise</span> <span class="n">ExceptionType</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> 
+<span class="g g-Whitespace">    </span><span class="mi">574</span>             <span class="k">return</span> <span class="n">parsed</span><span class="p">[</span><span class="s1">&#39;args&#39;</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: NWBHDF5IO.__init__: unrecognized argument: &#39;driver&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>In addition, we can use a fancy widget to create an interactive display of this dataset. More on this later!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nwbwidgets</span> <span class="kn">import</span> <span class="n">nwb2widget</span>
+
+<span class="n">nwb2widget</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following section will go over the the structure of an NWBFile and how to access data from this new file type.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Chapter_02"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Obtaining_and_Working_with_NWB_Datasets.html" title="previous page"><span class="section-number">2. </span>Obtaining and Working with NWB Datasets</a>
+    <a class='right-next' id="next-link" href="Working_with_NWB_format_in_Python.html" title="next page"><span class="section-number">2.2. </span>Working with NWB in Python</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Victor Magdaleno-Garcia & Ashley Juavinett<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

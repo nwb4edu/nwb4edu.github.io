@@ -1,0 +1,938 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Retrieving Calcium Imaging Data &#8212; Teaching &amp; Learning with NWB Datasets</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter_07/Retrieving_Brain_Observatory_Data';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analyzing Two Photon Data" href="Analyzing_Two_Photon_Data.html" />
+    <link rel="prev" title="Lesson #4: Two Photon Imaging" href="Two_Photon_Imaging.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../landing_page.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../landing_page.html">
+                    Teaching and Learning with NWB Datasets
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_01/Introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/Using_This_Book.html">How to Use this Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/Setup.html">Setup for Colab/Binder or Local Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/For_Educators.html">For Educators</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_02/Data_Science_In_Python.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/NumPy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/Pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/SciPy.html">SciPy</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PYNWB</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../NWB_Dataset_Structure/00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/01-Obtaining_Datasets_with_DANDI.html">Obtaining Datasets with DANDI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/02-Working_with_NWB_format_in_Python.html">Working with NWB in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/03-Interactive_NWB_Data_Exploration.html">Interactive NWB Data Exploration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NWB_Dataset_Structure/Lesson1_ProblemSet.html">Lesson #1 Problem Set</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_04/Large_Scale_Electrophysiology.html">Lesson #2: Analyzing Extracellular Recordings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/SpikeSorting.html">Spike Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/Visualizing_Recordings.html">Visualizing Large Scale Recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/Lesson2_ProblemSet.html">Lesson #2 Problem Set</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ALLENSDK</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_06/Single-Cell_Electrophysiology.html">Lesson #3: Single-Cell Electrophysiology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_06/Obtaining_Data_For_Single_Cells.html">Obtaining Data for Single Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_06/Analyzing_Computed_Features.html">Analyzing Computed Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_06/Lesson3_ProblemSet.html">Lesson 3 Problem Set</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Two_Photon_Imaging.html">Lesson #4: Two Photon Imaging</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Retrieving Calcium Imaging Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Analyzing_Two_Photon_Data.html">Analyzing Two Photon Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Correlations_in_Two_Photon_Data.html">Correlations in Two Photon Data</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Chapter_07/Retrieving_Brain_Observatory_Data.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter_07/Retrieving_Brain_Observatory_Data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Retrieving Calcium Imaging Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-a-list-of-all-possible-transgenic-mouse-lines-and-brain-areas-and-choose-which-to-work-with">Get a list of all possible transgenic mouse lines and brain areas, and choose which to work with.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-an-experiment-session">Extract an experiment session</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="retrieving-calcium-imaging-data">
+<h1>Retrieving Calcium Imaging Data<a class="headerlink" href="#retrieving-calcium-imaging-data" title="Permalink to this heading">#</a></h1>
+<p>This section will serve as an introdution to retrieving two-photon fluorescence imaging data from the Allen Brain Observatory. By the end of this section you will know how to obtain a two-photon imaging dataset for a particular cell type in a specific visual area.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<p>We need a variety of standard Python packages in addition to two different <code class="docutils literal notranslate"><span class="pre">allensdk</span></code> toolboxes. If you have not yet installed the <code class="docutils literal notranslate"><span class="pre">allensdk</span></code>, run the cell below. Otherwise, you can skip to the cell that imports our toolboxes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the AllenSDK is installed.</span>
+<span class="c1"># If not, it will install it for you.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">allensdk</span>
+    <span class="k">if</span> <span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s1">&#39;2.11.2&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;incompatible version of allensdk installed&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>allensdk
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached allensdk-2.15.1-py3-none-any.whl (4.0 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary
+  Using cached psycopg2_binary-2.9.6-cp311-cp311-macosx_10_9_x86_64.whl (2.2 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hdmf&lt;=3.4.7
+  Using cached hdmf-3.4.7-py3-none-any.whl (187 kB)
+Requirement already satisfied: h5py in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (3.9.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting matplotlib&lt;3.4.3,&gt;=1.4.3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached matplotlib-3.4.2.tar.gz (37.3 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hRequirement already satisfied: numpy in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (1.25.0)
+Requirement already satisfied: pandas&gt;=1.1.5 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (2.0.3)
+Requirement already satisfied: jinja2&gt;=3.0.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (3.1.2)
+Requirement already satisfied: scipy&lt;2.0.0,&gt;=1.4.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (1.11.1)
+Requirement already satisfied: six&lt;2.0.0,&gt;=1.9.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pynrrd&lt;1.0.0,&gt;=0.2.1
+  Using cached pynrrd-0.4.3-py2.py3-none-any.whl (18 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting future&lt;1.0.0,&gt;=0.14.3
+  Using cached future-0.18.3.tar.gz (840 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hRequirement already satisfied: requests&lt;3.0.0 in /Users/ashley/anaconda3/envs/jb/lib/python3.11/site-packages (from allensdk) (2.31.0)
+Collecting requests-toolbelt&lt;1.0.0
+  Using cached requests_toolbelt-0.10.1-py2.py3-none-any.whl (54 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting simplejson&lt;4.0.0,&gt;=3.10.0
+  Using cached simplejson-3.19.1-cp311-cp311-macosx_10_9_x86_64.whl (75 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scikit-image&gt;=0.14.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached scikit_image-0.21.0-cp311-cp311-macosx_10_9_x86_64.whl (12.9 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scikit-build&lt;1.0.0
+  Using cached scikit_build-0.17.6-py3-none-any.whl (84 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting statsmodels&lt;=0.13.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached statsmodels-0.13.0.tar.gz (17.8 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+?25h canceled
+<span class=" -Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import our toolboxes</span>
+<span class="kn">import</span> <span class="nn">allensdk.brain_observatory.stimulus_info</span> <span class="k">as</span> <span class="nn">stim_info</span>
+<span class="kn">from</span> <span class="nn">allensdk.core.brain_observatory_cache</span> <span class="kn">import</span> <span class="n">BrainObservatoryCache</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Packages installed.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/ashley/anaconda3/lib/python3.7/site-packages/dask/config.py:168: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  data = yaml.load(f.read()) or {}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages installed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-a-list-of-all-possible-transgenic-mouse-lines-and-brain-areas-and-choose-which-to-work-with">
+<h2>Get a list of all possible transgenic mouse lines and brain areas, and choose which to work with.<a class="headerlink" href="#get-a-list-of-all-possible-transgenic-mouse-lines-and-brain-areas-and-choose-which-to-work-with" title="Permalink to this heading">#</a></h2>
+<p>Below, we’ll create an instance of the <a class="reference external" href="https://alleninstitute.github.io/AllenSDK/allensdk.core.brain_observatory_cache.html"><code class="docutils literal notranslate"><span class="pre">BrainObservatoryCache</span></code></a>. This object will allow us to retrieve and analyze the Allen Brain Observatory data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We will create an instance of the Brain Observatory Cache as an object, &quot;boc.&quot;</span>
+<span class="n">boc</span> <span class="o">=</span> <span class="n">BrainObservatoryCache</span><span class="p">(</span><span class="n">manifest_file</span><span class="o">=</span><span class="s1">&#39;manifest.json&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we’ll use <code class="docutils literal notranslate"><span class="pre">get_all_cre_lines()</span></code> on our <code class="docutils literal notranslate"><span class="pre">boc</span></code> object to return all of the possible Cre lines and brain areas are that we can analyze. We can also use the <code class="docutils literal notranslate"><span class="pre">get_all_targeted_structures()</span></code> method to return all brain areas in our dataset.</p>
+<p>You can find more info about the Cre-lines on the Allen Brain Atlas <a href="http://observatory.brain-map.org/visualcoding/transgenic"> Transgenic Mouse Lines page</a>. Refer back to the <a href="http://observatory.brain-map.org/visualcoding">Brain Observatory landing page</a> to learn more about the different visual areas. Make sure to visit the <a href = 'https://alleninstitute.github.io/AllenSDK/allensdk.core.brain_observatory_cache.html'>BrainObservatoryCache doucumentation </a> for additional help with the methods used in this notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We&#39;ll assign the list of cre lines to a variable, &#39;cre-lines&#39;.</span>
+<span class="n">cre_lines</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_all_cre_lines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;all cre lines: </span><span class="si">{</span><span class="n">cre_lines</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># We&#39;ll assign the list of possible structures to a variable, &#39;brain_areas&#39;.</span>
+<span class="n">brain_areas</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_all_targeted_structures</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;all brain regions: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">brain_areas</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>all cre lines: [&#39;Cux2-CreERT2&#39;, &#39;Emx1-IRES-Cre&#39;, &#39;Fezf2-CreER&#39;, &#39;Nr5a1-Cre&#39;, &#39;Ntsr1-Cre_GN220&#39;, &#39;Pvalb-IRES-Cre&#39;, &#39;Rbp4-Cre_KL100&#39;, &#39;Rorb-IRES2-Cre&#39;, &#39;Scnn1a-Tg3-Cre&#39;, &#39;Slc17a7-IRES2-Cre&#39;, &#39;Sst-IRES-Cre&#39;, &#39;Tlx3-Cre_PL56&#39;, &#39;Vip-IRES-Cre&#39;] 
+
+all brain regions: [&#39;VISal&#39;, &#39;VISam&#39;, &#39;VISl&#39;, &#39;VISp&#39;, &#39;VISpm&#39;, &#39;VISrl&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extract-an-experiment-session">
+<h2>Extract an experiment session<a class="headerlink" href="#extract-an-experiment-session" title="Permalink to this heading">#</a></h2>
+<p>With access to the cre lines and brain regions from the dataset, we can construct a dataframe of experiement containers from our desired cre lines and brain regions. Each experiment container has a group of experiments that share the same targeted brain area, cre line, and depth. However, the stimuli conditions may differ across experiments for a given contianer.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">get_experiment_containers()</span></code> method of our <code class="docutils literal notranslate"><span class="pre">boc</span></code> object to return a list of dictionaries with data on the available experiment contianers. The method takes in the arguments <code class="docutils literal notranslate"><span class="pre">cre_lines</span></code> and <code class="docutils literal notranslate"><span class="pre">targeted_structures</span></code> which both require lists as inputs.</p>
+<p><em>Note</em>: Not every cre line and brain region combination will have data. If no data is availabe for a certain combindation, an empty dataframe will be created. You can use the <code class="docutils literal notranslate"><span class="pre">empty</span></code> attribute on your new datafram to check if it is empty.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assign visual area and cre line of interest for analysis </span>
+<span class="n">visual_area</span> <span class="o">=</span> <span class="s1">&#39;VISp&#39;</span>
+<span class="n">cre_line</span> <span class="o">=</span> <span class="s1">&#39;Tlx3-Cre_PL56&#39;</span>
+
+<span class="c1"># Get experiment contianers for visual area and cre line of interest </span>
+<span class="n">exp_cont</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_experiment_containers</span><span class="p">(</span><span class="n">targeted_structures</span> <span class="o">=</span> <span class="p">[</span><span class="n">visual_area</span><span class="p">],</span> 
+                                     <span class="n">cre_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">cre_line</span><span class="p">])</span>
+
+<span class="c1"># Create an experiment dataframe </span>
+<span class="n">exp_cont_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">exp_cont</span><span class="p">)</span>
+
+<span class="c1"># Check if dataframe is empty </span>
+<span class="k">if</span> <span class="n">exp_cont_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data frame is empty, choose another cre line &amp; visual area combination.&#39;</span><span class="p">)</span>
+
+<span class="c1"># Assign the ID column as the index and return dataframe</span>
+<span class="n">exp_cont_df</span> <span class="o">=</span> <span class="n">exp_cont_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<span class="n">exp_cont_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>imaging_depth</th>
+      <th>targeted_structure</th>
+      <th>cre_line</th>
+      <th>reporter_line</th>
+      <th>donor_name</th>
+      <th>specimen_name</th>
+      <th>tags</th>
+      <th>failed</th>
+    </tr>
+    <tr>
+      <th>id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>637671552</th>
+      <td>375</td>
+      <td>VISp</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+      <td>340430</td>
+      <td>Tlx3-Cre_PL56;Ai148-340430</td>
+      <td>[]</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>617381603</th>
+      <td>375</td>
+      <td>VISp</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+      <td>336824</td>
+      <td>Tlx3-Cre_PL56;Ai148(CAM)-336824</td>
+      <td>[]</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>627823571</th>
+      <td>375</td>
+      <td>VISp</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+      <td>337458</td>
+      <td>Tlx3-Cre_PL56;Ai148-337458</td>
+      <td>[]</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>648377366</th>
+      <td>375</td>
+      <td>VISp</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+      <td>352889</td>
+      <td>Tlx3-Cre_PL56;Ai148-352889</td>
+      <td>[]</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>657016265</th>
+      <td>375</td>
+      <td>VISp</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+      <td>357093</td>
+      <td>Tlx3-Cre_PL56;Ai148-357093</td>
+      <td>[]</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>637669268</th>
+      <td>375</td>
+      <td>VISp</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+      <td>340427</td>
+      <td>Tlx3-Cre_PL56;Ai148-340427</td>
+      <td>[]</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s look into one of these experiment containers, most of which have three different sessions for different types of visual stimuli. We can call <code class="docutils literal notranslate"><span class="pre">get_ophys_experiments()</span></code> on our <code class="docutils literal notranslate"><span class="pre">boc</span></code> object to return the experiments within a container. This method takes in the arguments <code class="docutils literal notranslate"><span class="pre">experiment_container_ids</span></code> and <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> which both require lists. We can select an id from our dataframe and choose a stimuli. In our case, we’ll filter for experiments with the <code class="docutils literal notranslate"><span class="pre">natural_scenes</span></code> stimuli.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assign experiment container id and stimuli </span>
+<span class="n">exp_container_id</span> <span class="o">=</span> <span class="mi">627823571</span>
+<span class="n">stim</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">]</span>
+
+<span class="c1"># Call experiment container for our id and stimuli of interest</span>
+<span class="n">experiments</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
+                                   <span class="n">stimuli</span> <span class="o">=</span> <span class="n">stim</span><span class="p">)</span>
+
+<span class="c1"># Print out our container </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">experiments</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: 644660705, &#39;imaging_depth&#39;: 375, &#39;targeted_structure&#39;: &#39;VISp&#39;, &#39;cre_line&#39;: &#39;Tlx3-Cre_PL56&#39;, &#39;reporter_line&#39;: &#39;Ai148(TIT2L-GC6f-ICL-tTA2)&#39;, &#39;acquisition_age_days&#39;: 133, &#39;experiment_container_id&#39;: 627823571, &#39;session_type&#39;: &#39;three_session_B&#39;, &#39;donor_name&#39;: &#39;337458&#39;, &#39;specimen_name&#39;: &#39;Tlx3-Cre_PL56;Ai148-337458&#39;, &#39;fail_eye_tracking&#39;: False}]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note</strong>: You can execute <code class="docutils literal notranslate"><span class="pre">get_all_stimuli()</span></code> on the <code class="docutils literal notranslate"><span class="pre">boc</span></code> object if you are unsure of what stimuli are available. Not all experiments or experiment contiainers will have every stimuli in their datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stimuli found in Brain Observatory:&#39;</span><span class="p">)</span>
+<span class="n">boc</span><span class="o">.</span><span class="n">get_all_stimuli</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stimuli found in Brain Observatory:
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;drifting_gratings&#39;,
+ &#39;locally_sparse_noise&#39;,
+ &#39;locally_sparse_noise_4deg&#39;,
+ &#39;locally_sparse_noise_8deg&#39;,
+ &#39;natural_movie_one&#39;,
+ &#39;natural_movie_three&#39;,
+ &#39;natural_movie_two&#39;,
+ &#39;natural_scenes&#39;,
+ &#39;spontaneous&#39;,
+ &#39;static_gratings&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s download the experiment data using the <code class="docutils literal notranslate"><span class="pre">get_ophys_experiment_data</span></code> method. If you look closley above, you can see that <code class="docutils literal notranslate"><span class="pre">experiments</span></code> is a list of dictionaries for each experiment in our assigned container. We will need to input the session id of our experiment into this method.</p>
+<p><strong>Note</strong>: The cell below downloads some data, and make take a minute or so to run. It is important that you do not interrupt the download of the data or else the file will become corrupted and you will have to delete it and try again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: This id is different from our experiment container id </span>
+<span class="n">session_id</span> <span class="o">=</span> <span class="n">experiments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiment_data</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
+
+<span class="c1"># Take a look at the kind of object data is </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;allensdk.core.brain_observatory_nwb_data_set.BrainObservatoryNwbDataSet object at 0x7f8b101641d0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The returned output is data accessor object that can be used to perform analyses that we will discuss in the next section.</p>
+<p>That’s how you retrieve an experiment from the Allen Brain Observatory! If you want to retrieve multiple experiments across multiple brain areas or cell types, you can use the <code class="docutils literal notranslate"><span class="pre">get_experiment_containers</span></code> method without specifying a targeted structure or brain area, and then subset your dataframe. There are many different types of analyses that can be done with this data. For example, we can creat a maximum projection image of the data to see how our cells respond to certain stimuli. We can also find out if our cells, if any, are direction selective. We will go over how to perform these analyses, and more, in the next two sections.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "nwb4edu/nwb4edu.github.io",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter_07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Two_Photon_Imaging.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lesson #4: Two Photon Imaging</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Analyzing_Two_Photon_Data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analyzing Two Photon Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-a-list-of-all-possible-transgenic-mouse-lines-and-brain-areas-and-choose-which-to-work-with">Get a list of all possible transgenic mouse lines and brain areas, and choose which to work with.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-an-experiment-session">Extract an experiment session</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ashley Juavinett & Victor Magdaleno-Garcia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
