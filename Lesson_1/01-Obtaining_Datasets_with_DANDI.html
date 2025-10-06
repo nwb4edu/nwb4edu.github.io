@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Obtaining Datasets with DANDI &#8212; Teaching &amp; Learning with NWB Datasets</title>
   
@@ -15,52 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lesson_1/01-Obtaining_Datasets_with_DANDI';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,19 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +137,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../landing_page.html">
+  
   
   
   
@@ -141,12 +153,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Teaching & Learning with NWB Datasets - Home"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Teaching & Learning with NWB Datasets - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -158,58 +181,58 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Introduction/Introduction.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Introduction/Introduction.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Introduction/Using_This_Book.html">How to Use this Book</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Introduction/Setup.html">Set up Coding Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Introduction/For_Educators.html">For Educators</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">PYNWB</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Obtaining Datasets with DANDI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02-Working_with_NWB_format_in_Python.html">Working with NWB in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03-Interactive_NWB_Data_Exploration.html">Interactive NWB Data Exploration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lesson1_ProblemSet.html">Lesson #1 Problem Set</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_2/00-LargeEphysIntroduction.html">Lesson #2: Analyzing Extracellular Recordings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_2/00-LargeEphysIntroduction.html">Lesson #2: Analyzing Extracellular Recordings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/01-SpikeSorting.html">Spike Sorting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/02-Visualizing_Recordings.html">Visualizing Large Scale Recordings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/Lesson_2_ProblemSet.html">Lesson #2 Problem Set</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ALLENSDK</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_3/00-SingleCellIntroduction.html">Lesson #3: Single-Cell Electrophysiology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_3/00-SingleCellIntroduction.html">Lesson #3: Single-Cell Electrophysiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/01-Obtaining_Data_For_Single_Cells.html">Obtaining Data for Single Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/02-Analyzing_Computed_Features.html">Analyzing Computed Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/Lesson_3_ProblemSet.html">Lesson 3 Problem Set</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_4/00-2pIntroduction.html">Lesson #4: Two Photon Imaging</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_4/00-2pIntroduction.html">Lesson #4: Two Photon Imaging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_4/01-Retrieving_Brain_Observatory_Data.html">Retrieving Calcium Imaging Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_4/02-Analyzing_Two_Photon_Data.html">Analyzing Two Photon Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_4/03-Correlations_in_Two_Photon_Data.html">Correlations in Two Photon Data</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GREATEST HITS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_5/00-GreatestHits.html">Greatest Hits in Physiology</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_5/00-GreatestHits.html">Greatest Hits in Physiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_5/01-PlaceFields.html">How does the brain encode space?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_5/02-RotationalDynamics.html">How do populations of neurons encode movement?</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -225,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -234,14 +257,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -266,14 +289,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_1/01-Obtaining_Datasets_with_DANDI.ipynb&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -284,14 +307,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Lesson_1/01-Obtaining_Datasets_with_DANDI.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -383,26 +406,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -440,10 +465,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="obtaining-datasets-with-dandi">
-<h1>Obtaining Datasets with DANDI<a class="headerlink" href="#obtaining-datasets-with-dandi" title="Permalink to this heading">#</a></h1>
+<h1>Obtaining Datasets with DANDI<a class="headerlink" href="#obtaining-datasets-with-dandi" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a> is an open source data archive for neuroscience datasets, called <strong>Dandisets</strong>. DANDI allows scientists to submit and download neural datasets to promote research collaboration and consistent and transparent data standards. DANDI also provides a solution to the difficulties that come from housing data in the many other general domains (i.e. Dropbox, Google Drive, etc.). Usefully for our purposes here, many of the datasets on DANDI are in NWB format. If you’d like to know more about DANDI, check out the <a class="reference external" href="https://www.dandiarchive.org/handbook/">DANDI handbook</a>.</p>
 <p>There are two primary ways to work with Dandisets:</p>
 <ol class="arabic simple">
@@ -452,14 +477,14 @@ document.write(`
 </ol>
 <p>Below, we demonstrate how to do both of these. For additional information on either of these methods, please refer to the <a class="reference external" href="https://gui.dandiarchive.org/">DANDI documentation</a>.</p>
 <section id="option-1-downloading-dandisets-using-python">
-<h2>Option 1: Downloading Dandisets using Python<a class="headerlink" href="#option-1-downloading-dandisets-using-python" title="Permalink to this heading">#</a></h2>
+<h2>Option 1: Downloading Dandisets using Python<a class="headerlink" href="#option-1-downloading-dandisets-using-python" title="Link to this heading">#</a></h2>
 <p>The cell below will download <a class="reference external" href="https://gui.dandiarchive.org/#/dandiset/000006">this dataset</a> from DANDI. This dataset contains 32-channel extracellular recordings from mouse cortex. We’re using the <a class="reference external" href="https://dandi.readthedocs.io/en/latest/cmdline/download.html"><code class="docutils literal notranslate"><span class="pre">download</span></code></a> tool from dandi below.</p>
 <p><mark><strong>Note:</strong> Downloading this dataset may take several minutes, depending on your internet connection.</mark></p>
 <p><mark><strong>Note #2:</strong> This step is <em>only possible</em> if you’re running this on the Dandihub or if you have completed the <a href="https://nwb4edu.github.io/Introduction/Using_This_Book.html">setup steps</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.download</span> <span class="kn">import</span> <span class="n">download</span> <span class="k">as</span> <span class="n">dandi_download</span>
-<span class="kn">import</span> <span class="nn">os</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dandi.download</span><span class="w"> </span><span class="kn">import</span> <span class="n">download</span> <span class="k">as</span> <span class="n">dandi_download</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span> 
 
 <span class="c1"># Set the URL for the DANDI file</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dandiarchive.org/dandiset/000006/draft&#39;</span>
@@ -471,64 +496,63 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PATH                                                SIZE      DONE            DONE% CHECKSUM STATUS          MESSAGE          
-000006/dandiset.yaml                                                                         skipped         no change        
-000006/sub-anm369962/sub-anm369962_ses-20170309.nwb                                          skipped         already exists   
-000006/sub-anm369962/sub-anm369962_ses-20170316.nwb                                          skipped         already exists   
-000006/sub-anm369962/sub-anm369962_ses-20170310.nwb                                          skipped         already exists   
-000006/sub-anm369962/sub-anm369962_ses-20170314.nwb                                          skipped         already exists   
-000006/sub-anm369962/sub-anm369962_ses-20170313.nwb                                          skipped         already exists   
-000006/sub-anm369962/sub-anm369962_ses-20170317.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170227.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170226.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170228.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170301.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170302.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170306.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170309.nwb                                          skipped         already exists   
-000006/sub-anm369963/sub-anm369963_ses-20170310.nwb                                          skipped         already exists   
-000006/sub-anm369964/sub-anm369964_ses-20170321.nwb                                          skipped         already exists   
-000006/sub-anm369964/sub-anm369964_ses-20170320.nwb 7.7 MB    7.7 MB           100%    ok    done                             
-000006/sub-anm369964/sub-anm369964_ses-20170322.nwb 5.0 MB    5.0 MB           100%    ok    done                             
-000006/sub-anm369964/sub-anm369964_ses-20170323.nwb 426.4 kB  426.4 kB         100%    ok    done                             
-000006/sub-anm372793/sub-anm372793_ses-20170504.nwb 357.8 kB  357.8 kB         100%    ok    done                             
-000006/sub-anm372793/sub-anm372793_ses-20170508.nwb 357.4 kB  357.4 kB         100%    ok    done                             
-000006/sub-anm372793/sub-anm372793_ses-20170512.nwb 470.8 kB  470.8 kB         100%    ok    done                             
-000006/sub-anm372793/sub-anm372793_ses-20170513.nwb 5.5 MB    5.5 MB           100%    ok    done                             
-000006/sub-anm372794/sub-anm372794_ses-20170621.nwb 654.2 kB  654.2 kB         100%    ok    done                             
-000006/sub-anm372794/sub-anm372794_ses-20170622.nwb 602.8 kB  602.8 kB         100%    ok    done                             
-000006/sub-anm372793/sub-anm372793_ses-20170514.nwb 5.5 MB    5.5 MB           100%    ok    done                             
-000006/sub-anm372794/sub-anm372794_ses-20170624.nwb 4.8 MB    4.8 MB           100%    ok    done                             
-000006/sub-anm372794/sub-anm372794_ses-20170625.nwb 5.7 MB    5.7 MB           100%    ok    done                             
-000006/sub-anm372794/sub-anm372794_ses-20170626.nwb 4.9 MB    4.9 MB           100%    ok    done                             
-000006/sub-anm372794/sub-anm372794_ses-20170627.nwb 553.4 kB  553.4 kB         100%    ok    done                             
-000006/sub-anm372795/sub-anm372795_ses-20170715.nwb 323.2 kB  323.2 kB         100%    ok    done                             
-000006/sub-anm372795/sub-anm372795_ses-20170714.nwb 465.5 kB  465.5 kB         100%    ok    done                             
-000006/sub-anm372795/sub-anm372795_ses-20170716.nwb 813.2 kB  813.2 kB         100%    ok    done                             
-000006/sub-anm372795/sub-anm372795_ses-20170718.nwb 452.3 kB  452.3 kB         100%    ok    done                             
-000006/sub-anm372797/sub-anm372797_ses-20170617.nwb 338.9 kB  338.9 kB         100%    ok    done                             
-000006/sub-anm372904/sub-anm372904_ses-20170615.nwb 388.2 kB  388.2 kB         100%    ok    done                             
-000006/sub-anm372797/sub-anm372797_ses-20170615.nwb 6.0 MB    6.0 MB           100%    ok    done                             
-000006/sub-anm372904/sub-anm372904_ses-20170617.nwb 384.9 kB  384.9 kB         100%    ok    done                             
-000006/sub-anm372904/sub-anm372904_ses-20170616.nwb 362.6 kB  362.6 kB         100%    ok    done                             
-000006/sub-anm372904/sub-anm372904_ses-20170618.nwb 9.4 MB    9.4 MB           100%    ok    done                             
-000006/sub-anm372904/sub-anm372904_ses-20170619.nwb 4.1 MB    4.1 MB           100%    ok    done                             
-000006/sub-anm372905/sub-anm372905_ses-20170715.nwb 344.0 kB  344.0 kB         100%    ok    done                             
-000006/sub-anm372905/sub-anm372905_ses-20170716.nwb 554.0 kB  554.0 kB         100%    ok    done                             
-000006/sub-anm372905/sub-anm372905_ses-20170717.nwb 448.4 kB  448.4 kB         100%    ok    done                             
-000006/sub-anm372906/sub-anm372906_ses-20170608.nwb 6.9 MB    6.9 MB           100%    ok    done                             
-000006/sub-anm372906/sub-anm372906_ses-20170610.nwb 374.8 kB  374.8 kB         100%    ok    done                             
-000006/sub-anm372906/sub-anm372906_ses-20170611.nwb 338.7 kB  338.7 kB         100%    ok    done                             
-000006/sub-anm372906/sub-anm372906_ses-20170612.nwb 324.3 kB  324.3 kB         100%    ok    done                             
-000006/sub-anm372907/sub-anm372907_ses-20170608.nwb 438.9 kB  438.9 kB         100%    ok    done                             
-000006/sub-anm372907/sub-anm372907_ses-20170610.nwb 349.7 kB  349.7 kB         100%    ok    done                             
-000006/sub-anm372907/sub-anm372907_ses-20170613.nwb 259.0 kB  259.0 kB         100%    ok    done                             
-000006/sub-anm372907/sub-anm372907_ses-20170612.nwb 444.5 kB  444.5 kB         100%    ok    done                             
-000006/sub-anm372909/sub-anm372909_ses-20170520.nwb 352.9 kB  352.9 kB         100%    ok    done                             
-000006/sub-anm372909/sub-anm372909_ses-20170522.nwb 5.7 MB    5.7 MB           100%    ok    done                             
-Summary:                                            82.3 MB   82.3 MB                        16 skipped      1 no change      
-                                                    +57.3 MB  58.95%                         38 done         15 already exists
-                                                              ETA: a minute                                                   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PATH                                                SIZE      DONE            DONE% CHECKSUM STATUS          MESSAGE    
+000006/dandiset.yaml                                                                         skipped         no change  
+000006/sub-anm369962/sub-anm369962_ses-20170309.nwb 796.9 kB  796.9 kB         100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170316.nwb 609.6 kB  609.6 kB         100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170310.nwb 6.6 MB    6.6 MB           100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170314.nwb 7.5 MB    7.5 MB           100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170313.nwb 11.5 MB   11.5 MB          100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170317.nwb 8.2 MB    8.2 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170227.nwb 6.5 MB    6.5 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170226.nwb 6.4 MB    6.4 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170228.nwb 276.6 kB  276.6 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170301.nwb 493.5 kB  493.5 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170302.nwb 281.0 kB  281.0 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170306.nwb 6.7 MB    6.7 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170309.nwb 450.9 kB  450.9 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170310.nwb 604.8 kB  604.8 kB         100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170321.nwb 499.9 kB  499.9 kB         100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170320.nwb 7.7 MB    7.7 MB           100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170322.nwb 5.0 MB    5.0 MB           100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170323.nwb 426.4 kB  426.4 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170504.nwb 357.8 kB  357.8 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170508.nwb 357.4 kB  357.4 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170512.nwb 470.8 kB  470.8 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170513.nwb 5.5 MB    5.5 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170621.nwb 654.2 kB  654.2 kB         100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170622.nwb 602.8 kB  602.8 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170514.nwb 5.5 MB    5.5 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170624.nwb 4.8 MB    4.8 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170625.nwb 5.7 MB    5.7 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170626.nwb 4.9 MB    4.9 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170627.nwb 553.4 kB  553.4 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170715.nwb 323.2 kB  323.2 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170714.nwb 465.5 kB  465.5 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170716.nwb 813.2 kB  813.2 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170718.nwb 452.3 kB  452.3 kB         100%    ok    done                       
+000006/sub-anm372797/sub-anm372797_ses-20170617.nwb 338.9 kB  338.9 kB         100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170615.nwb 388.2 kB  388.2 kB         100%    ok    done                       
+000006/sub-anm372797/sub-anm372797_ses-20170615.nwb 6.0 MB    6.0 MB           100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170617.nwb 384.9 kB  384.9 kB         100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170616.nwb 362.6 kB  362.6 kB         100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170618.nwb 9.4 MB    9.4 MB           100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170619.nwb 4.1 MB    4.1 MB           100%    ok    done                       
+000006/sub-anm372905/sub-anm372905_ses-20170715.nwb 344.0 kB  344.0 kB         100%    ok    done                       
+000006/sub-anm372905/sub-anm372905_ses-20170716.nwb 554.0 kB  554.0 kB         100%    ok    done                       
+000006/sub-anm372905/sub-anm372905_ses-20170717.nwb 448.4 kB  448.4 kB         100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170608.nwb 6.9 MB    6.9 MB           100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170610.nwb 374.8 kB  374.8 kB         100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170611.nwb 338.7 kB  338.7 kB         100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170612.nwb 324.3 kB  324.3 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170608.nwb 438.9 kB  438.9 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170610.nwb 349.7 kB  349.7 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170613.nwb 259.0 kB  259.0 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170612.nwb 444.5 kB  444.5 kB         100%    ok    done                       
+000006/sub-anm372909/sub-anm372909_ses-20170520.nwb 352.9 kB  352.9 kB         100%    ok    done                       
+000006/sub-anm372909/sub-anm372909_ses-20170522.nwb 5.7 MB    5.7 MB           100%    ok    done                       
+Summary:                                            139.6 MB  139.6 MB                       1 skipped       1 no change
+                                                              100.00%                        53 done                    
 </pre></div>
 </div>
 </div>
@@ -537,22 +561,22 @@ Summary:                                            82.3 MB   82.3 MB           
 <p><strong>Once the data is done downloading, you’re ready for the next step.</strong></p>
 </section>
 <section id="option-2-streaming-the-dandiset">
-<h2>Option 2: Streaming the Dandiset<a class="headerlink" href="#option-2-streaming-the-dandiset" title="Permalink to this heading">#</a></h2>
+<h2>Option 2: Streaming the Dandiset<a class="headerlink" href="#option-2-streaming-the-dandiset" title="Link to this heading">#</a></h2>
 <p>The folks at NWB have also developed a clever way to stream Dandisets so that small bits of them can be viewed without downloading the entire dataset. This is particularly useful for very large datasets! <strong>This step is a great option for large data sets, or if you have limited hard drive space, and/or if you are having issues with Option 1 above.</strong></p>
 <section id="streaming-via-the-dandihub">
-<h3>Streaming via the Dandihub<a class="headerlink" href="#streaming-via-the-dandihub" title="Permalink to this heading">#</a></h3>
+<h3>Streaming via the Dandihub<a class="headerlink" href="#streaming-via-the-dandihub" title="Link to this heading">#</a></h3>
 <p>The easiest way to stream data is via the DANDI Jupyter Hub (<a class="reference external" href="https://hub.dandiarchive.org/">https://hub.dandiarchive.org/</a>). There are setup steps for this in the introduction. The code below should work without a hitch in the Dandihub.</p>
 </section>
 <section id="streaming-locally-after-configuring-your-environment">
-<h3>Streaming locally, after configuring your environment<a class="headerlink" href="#streaming-locally-after-configuring-your-environment" title="Permalink to this heading">#</a></h3>
+<h3>Streaming locally, after configuring your environment<a class="headerlink" href="#streaming-locally-after-configuring-your-environment" title="Link to this heading">#</a></h3>
 <p>With some configuration, you can stream data on your local computer. First, you need to set up your environment with the right version of a package called <code class="docutils literal notranslate"><span class="pre">h5py</span></code>. <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html#sphx-glr-tutorials-advanced-io-streaming-py">There are instructions here for how to do that</a>. Once you’re done, you can restart the kernel for this notebook, and run the code below.</p>
 </section>
 <section id="code-for-data-streaming">
-<h3>Code for Data Streaming<a class="headerlink" href="#code-for-data-streaming" title="Permalink to this heading">#</a></h3>
+<h3>Code for Data Streaming<a class="headerlink" href="#code-for-data-streaming" title="Link to this heading">#</a></h3>
 <p>First, we need to figure out the correct URL for the dataset on the Amazon S3 storage system. There is a tool to do so within the dandiapi, which we’ll use below to get the URL for one session from the data we downloaded above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dandi.dandiapi</span> <span class="kn">import</span> <span class="n">DandiAPIClient</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dandi.dandiapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">DandiAPIClient</span>
 
 <span class="n">dandiset_id</span> <span class="o">=</span> <span class="s1">&#39;000006&#39;</span>  <span class="c1"># ephys dataset from the Svoboda Lab</span>
 <span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;sub-anm372795/sub-anm372795_ses-20170718.nwb&#39;</span>  <span class="c1"># 450 kB file</span>
@@ -573,7 +597,7 @@ Summary:                                            82.3 MB   82.3 MB           
 </div>
 <p>Now, we can read this path, but we’ll stream it, rather than downloading it! The cell below will print some of the data about this experiment. It uses another package, <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/index.html"><strong>PyNWB</strong></a>, which is specifically designed to work with NWB files in Python. As you might expect, this won’t be the last time we see this package. Below, we’ll use the <code class="docutils literal notranslate"><span class="pre">NWBHDF5IO</span></code> class from this package, which will allow us to read NWB files.</p>
 <p><mark><strong>Note</strong>: The code below <em>will not work</em> unless you’re on the Dandihub or have properly configured your environment. If you’d like to run it in Dandihub, copy and paste the code into a new cell below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pynwb</span> <span class="kn">import</span> <span class="n">NWBHDF5IO</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pynwb</span><span class="w"> </span><span class="kn">import</span> <span class="n">NWBHDF5IO</span>
 
 <span class="k">with</span> <span class="n">NWBHDF5IO</span><span class="p">(</span><span class="n">s3_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">load_namespaces</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;ros3&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">io</span><span class="p">:</span>
     <span class="n">nwbfile</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -582,7 +606,7 @@ Summary:                                            82.3 MB   82.3 MB           
 </pre></div>
 </div>
 <p>In addition, we can use a fancy widget to create an interactive display of this dataset while we are streaming it. More on this <a class="reference external" href="https://nwb4edu.github.io/Lesson_1/03-Interactive_NWB_Data_Exploration.html">later</a>!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nwbwidgets</span> <span class="kn">import</span> <span class="n">nwb2widget</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nwbwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">nwb2widget</span>
 
 <span class="n">nwb2widget</span><span class="p">(</span><span class="n">nwbfile</span><span class="p">)</span>
 </pre></div>
@@ -590,7 +614,7 @@ Summary:                                            82.3 MB   82.3 MB           
 <p>The following section will go over the the structure of an NWBFile and how to access data from this new file type.</p>
 </section>
 <section id="additional-resources">
-<h3>Additional resources<a class="headerlink" href="#additional-resources" title="Permalink to this heading">#</a></h3>
+<h3>Additional resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>There are many different ways to configure your Dandi file download. <a class="reference external" href="https://alleninstitute.github.io/openscope_databook/basics/download_nwb.html">See this OpenScope page for more details</a>.</p></li>
 <li><p>Similarly, <a class="reference external" href="https://alleninstitute.github.io/openscope_databook/basics/stream_nwb.html">here are alternative ways to configure streaming</a>.</p></li>
@@ -624,11 +648,10 @@ Summary:                                            82.3 MB   82.3 MB           
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="00-Introduction.html"
@@ -648,10 +671,7 @@ Summary:                                            82.3 MB   82.3 MB           
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -659,6 +679,7 @@ Summary:                                            82.3 MB   82.3 MB           
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -695,9 +716,10 @@ By The Jupyter Book community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -721,8 +743,8 @@ By The Jupyter Book community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

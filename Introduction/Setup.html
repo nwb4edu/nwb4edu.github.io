@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Set up Coding Environment &#8212; Teaching &amp; Learning with NWB Datasets</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="application/vnd.jupyter.widget-state+json">{"state": {"68c726e416714bd1b47e5d075b0770de": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "500px"}}}, "version_major": 2, "version_minor": 0}</script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Introduction/Setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -75,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -129,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../landing_page.html">
+  
   
   
   
@@ -141,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/nwb_learning.png" class="logo__image only-light" alt="Teaching & Learning with NWB Datasets - Home"/>
+    <script>document.write(`<img src="../_static/nwb_learning.png" class="logo__image only-dark" alt="Teaching & Learning with NWB Datasets - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -158,58 +184,58 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">INTRODUCTION</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Introduction</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Introduction.html">Introduction</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Using_This_Book.html">How to Use this Book</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Set up Coding Environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="For_Educators.html">For Educators</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Data_Science_In_Python/Introduction.html">Data Science in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/NumPy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Pandas.html">Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/Matplotlib.html">Matplotlib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Data_Science_In_Python/SciPy.html">SciPy</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">PYNWB</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_1/00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_1/00-Introduction.html">Lesson #1: The Structure of NWB Datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/01-Obtaining_Datasets_with_DANDI.html">Obtaining Datasets with DANDI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/02-Working_with_NWB_format_in_Python.html">Working with NWB in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/03-Interactive_NWB_Data_Exploration.html">Interactive NWB Data Exploration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_1/Lesson1_ProblemSet.html">Lesson #1 Problem Set</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_2/00-LargeEphysIntroduction.html">Lesson #2: Analyzing Extracellular Recordings</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_2/00-LargeEphysIntroduction.html">Lesson #2: Analyzing Extracellular Recordings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/01-SpikeSorting.html">Spike Sorting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/02-Visualizing_Recordings.html">Visualizing Large Scale Recordings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_2/Lesson_2_ProblemSet.html">Lesson #2 Problem Set</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ALLENSDK</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_3/00-SingleCellIntroduction.html">Lesson #3: Single-Cell Electrophysiology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_3/00-SingleCellIntroduction.html">Lesson #3: Single-Cell Electrophysiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/01-Obtaining_Data_For_Single_Cells.html">Obtaining Data for Single Cells</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/02-Analyzing_Computed_Features.html">Analyzing Computed Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_3/Lesson_3_ProblemSet.html">Lesson 3 Problem Set</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_4/00-2pIntroduction.html">Lesson #4: Two Photon Imaging</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_4/00-2pIntroduction.html">Lesson #4: Two Photon Imaging</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_4/01-Retrieving_Brain_Observatory_Data.html">Retrieving Calcium Imaging Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_4/02-Analyzing_Two_Photon_Data.html">Analyzing Two Photon Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_4/03-Correlations_in_Two_Photon_Data.html">Correlations in Two Photon Data</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">GREATEST HITS</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_5/00-GreatestHits.html">Greatest Hits in Physiology</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Lesson_5/00-GreatestHits.html">Greatest Hits in Physiology</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_5/01-PlaceFields.html">How does the brain encode space?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Lesson_5/02-RotationalDynamics.html">How do populations of neurons encode movement?</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -225,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -234,14 +260,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -266,14 +292,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Introduction/Setup.ipynb&branch=master" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -284,14 +310,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/nwb4edu/nwb4edu.github.io/blob/master/Introduction/Setup.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -383,26 +409,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -423,7 +451,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages-required-for-lessons-1-2">Core packages required for Lessons 1-2:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-for-lessons-3-4-allen-cell-types">Packages for Lessons 3-4 (Allen Cell Types):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages-for-greatest-hits">Additional packages for Greatest Hits:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages">Core Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allensdk-lessons-3-4-only">AllenSDK (Lessons 3 &amp; 4 only)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greatest-hits-packages">Greatest Hits Packages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-for-data-streaming">Configuring for Data Streaming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dandihub-setup-for-lessons-3-4-allen-cell-types-database">DandiHub Setup for Lessons 3 &amp; 4 (Allen Cell Types Database)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-a-terminal">Step 1: Open a Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-the-conda-environment-with-pip">Step 2: Create the conda environment with pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-activate-the-environment">Step 3: Activate the environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-required-packages">Step 4: Install required packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-create-a-jupyter-kernel-for-this-environment">Step 5: Create a Jupyter kernel for this environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-refresh-your-browser">Step 6: Refresh your browser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-select-the-kernel-in-lesson-3-4-notebooks">Step 7: Select the kernel in Lesson 3 &amp; 4 notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-verify-the-installation">Step 8: Verify the installation</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -433,26 +481,58 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="set-up-coding-environment">
-<h1>Set up Coding Environment<a class="headerlink" href="#set-up-coding-environment" title="Permalink to this heading">#</a></h1>
+<h1>Set up Coding Environment<a class="headerlink" href="#set-up-coding-environment" title="Link to this heading">#</a></h1>
 <p>This notebook will ensure that your coding environment is set up for the interactive activities in this textbook. <mark>You <strong>do not</strong> need to worry about these requirements if you are running code on the Dandihub, as recommended in “How to use this book”.</mark> You can simply ignore this page and get on with the data!</p>
+<p><strong>Exception:</strong> If you plan to complete Lessons 3 &amp; 4 (Allen Cell Types Database) on DandiHub, see the special setup instructions at the bottom of this page.</p>
 <section id="package-requirements">
-<h2>Package Requirements<a class="headerlink" href="#package-requirements" title="Permalink to this heading">#</a></h2>
-<p>If you’re <em>not</em> running the code on the Dandihub, then we have to ensure that your coding environment has all of the proper packages installed. The packages required are:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">==</span><span class="mf">1.23.1</span>
-<span class="n">dandi</span><span class="o">==</span><span class="mf">0.45.1</span>
-<span class="n">h5py</span><span class="o">==</span><span class="mf">2.10.0</span>
+<h2>Package Requirements<a class="headerlink" href="#package-requirements" title="Link to this heading">#</a></h2>
+<p>If you’re <em>not</em> running the code on the Dandihub, then we have to ensure that your coding environment has all of the proper packages installed.</p>
+<p>We provide separate requirements files for different lessons:</p>
+<ul class="simple">
+<li><p><strong>Lessons 1-2</strong>: <a class="reference external" href="https://github.com/nwb4edu/nwb4edu.github.io/blob/master/requirements_lessons_1-2.txt"><code class="docutils literal notranslate"><span class="pre">requirements_lessons_1-2.txt</span></code></a> (Python 3.9+)</p></li>
+<li><p><strong>Lessons 3-4</strong>: <a class="reference external" href="https://github.com/nwb4edu/nwb4edu.github.io/blob/master/requirements_lessons_3-4.txt"><code class="docutils literal notranslate"><span class="pre">requirements_lessons_3-4.txt</span></code></a> (Python 3.11 required)</p></li>
+<li><p><strong>Greatest Hits</strong>: <a class="reference external" href="https://github.com/nwb4edu/nwb4edu.github.io/blob/master/requirements_greatest_hits.txt"><code class="docutils literal notranslate"><span class="pre">requirements_greatest_hits.txt</span></code></a> (Python 3.9+)</p></li>
+</ul>
+<p>You can install requirements using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements_lessons_1-2.txt
 </pre></div>
 </div>
-<p>The code below will ensure that you have these packages or newer.</p>
-<p>First, we need to ensure that you have the <a class="reference external" href="https://pypi.org/project/dandi/"><code class="docutils literal notranslate"><span class="pre">DANDI</span></code> client</a> installed in your coding environment. The cell below will try to import DANDI. If you have an old version of DANDI, it will prompt you to install a newer version. Type “Y” if you would like to install a new version (this is recommended). If you don’t have DANDI at all, it will install the most recent version.</p>
+<section id="core-packages-required-for-lessons-1-2">
+<h3>Core packages required for Lessons 1-2:<a class="headerlink" href="#core-packages-required-for-lessons-1-2" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dandi</span><span class="o">&gt;=</span><span class="mf">0.45.1</span>          <span class="c1"># Includes: pynwb, h5py, hdmf</span>
+<span class="n">nwbwidgets</span><span class="o">&gt;=</span><span class="mf">0.8.0</span>      <span class="c1"># Includes: ipywidgets</span>
+<span class="n">seaborn</span><span class="o">&gt;=</span><span class="mf">0.11.0</span>        <span class="c1"># Visualization package</span>
+<span class="n">remfile</span>                <span class="c1"># Data streaming</span>
+</pre></div>
+</div>
+</section>
+<section id="packages-for-lessons-3-4-allen-cell-types">
+<h3>Packages for Lessons 3-4 (Allen Cell Types):<a class="headerlink" href="#packages-for-lessons-3-4-allen-cell-types" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">allensdk</span><span class="o">&gt;=</span><span class="mf">2.11.2</span>       <span class="c1"># Includes: numpy&lt;1.24, pandas, scipy, matplotlib</span>
+                       <span class="c1"># Requires Python 3.11!</span>
+</pre></div>
+</div>
+</section>
+<section id="additional-packages-for-greatest-hits">
+<h3>Additional packages for Greatest Hits:<a class="headerlink" href="#additional-packages-for-greatest-hits" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pynapple</span>                <span class="c1"># Neural data analysis</span>
+<span class="n">plotly</span>                  <span class="c1"># Interactive plotting</span>
+<span class="n">fsspec</span>                  <span class="c1"># File system interface</span>
+</pre></div>
+</div>
+<p>The code cells below will check for and install these packages as needed.</p>
+</section>
+<section id="core-packages">
+<h3>Core Packages<a class="headerlink" href="#core-packages" title="Link to this heading">#</a></h3>
+<p>We’ll check for the essential packages that include all necessary dependencies.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the correct version of dandi is installed</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">dandi</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">dandi</span>
     <span class="k">if</span> <span class="n">dandi</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;0.45.1&#39;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Updated DANDI installed.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -460,7 +540,7 @@ document.write(`
         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
             <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>dandi
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>dandi<span class="w"> </span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>dandi
 </pre></div>
 </div>
 </div>
@@ -470,90 +550,358 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Next, we’ll check for pyNWB, the python package for NWB.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for pywnb</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for nwbwidgets (includes pynwb, ipywidgets)</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">pynwb</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pyNWB installed.&#39;</span><span class="p">)</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">nwbwidgets</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nwbwidgets installed.&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pwynb<span class="w">  </span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nwbwidgets
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pyNWB installed.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nwbwidgets in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (0.11.3)
+Requirement already satisfied: numpy in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (1.26.4)
+Requirement already satisfied: matplotlib in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (3.10.6)
+Requirement already satisfied: scikit-image in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.24.0)
+Requirement already satisfied: pynwb in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (3.1.2)
+Requirement already satisfied: ipympl in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.9.7)
+Requirement already satisfied: ipydatagrid in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (1.4.0)
+Requirement already satisfied: ipyvolume&gt;=0.6.0a10 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.6.3)
+Requirement already satisfied: ipywidgets&gt;=8.0.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (8.1.7)
+Requirement already satisfied: plotly==5.13.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (5.13.1)
+Requirement already satisfied: tqdm&gt;=4.36.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (4.67.1)
+Requirement already satisfied: zarr in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (2.18.7)
+Requirement already satisfied: tifffile in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (2025.10.4)
+Requirement already satisfied: ndx-spectrum in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.2.2)
+Requirement already satisfied: ndx-icephys-meta in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.1.0)
+Requirement already satisfied: ndx-grayscalevolume in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.0.2)
+Requirement already satisfied: trimesh in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (4.8.3)
+Requirement already satisfied: dandi&gt;=0.55.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.71.4)
+Requirement already satisfied: importlib-metadata&lt;5.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (4.13.0)
+Requirement already satisfied: fsspec in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (2025.9.0)
+Requirement already satisfied: requests in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (2.32.5)
+Requirement already satisfied: aiohttp in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (3.13.0)
+Requirement already satisfied: ipydatawidgets==4.3.2 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (4.3.2)
+Requirement already satisfied: ipyfilechooser==0.6.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbwidgets) (0.6.0)
+Requirement already satisfied: traittypes&gt;=0.2.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipydatawidgets==4.3.2-&gt;nwbwidgets) (0.2.1)
+Requirement already satisfied: tenacity&gt;=6.2.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from plotly==5.13.1-&gt;nwbwidgets) (9.1.2)
+Requirement already satisfied: zipp&gt;=0.5 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from importlib-metadata&lt;5.0-&gt;nwbwidgets) (3.23.0)
+Requirement already satisfied: bidsschematools~=1.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.1.0)
+Requirement already satisfied: bids-validator-deno&gt;=2.0.5 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.1.1)
+Requirement already satisfied: click&lt;8.2.0,&gt;=7.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (8.1.8)
+Requirement already satisfied: click-didyoumean in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.1)
+Requirement already satisfied: dandischema&lt;0.12.0,&gt;=0.11.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.11.1)
+Requirement already satisfied: etelemetry&gt;=0.2.2 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.1)
+Requirement already satisfied: fasteners in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.20)
+Requirement already satisfied: fscacher&gt;=0.3.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.4)
+Requirement already satisfied: hdmf!=3.14.4,!=3.5.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.1.0)
+Requirement already satisfied: humanize in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.13.0)
+Requirement already satisfied: interleave~=0.3 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.0)
+Requirement already satisfied: joblib in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.2)
+Requirement already satisfied: keyring!=23.9.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (25.6.0)
+Requirement already satisfied: keyrings.alt in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (5.0.2)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (25.0)
+Requirement already satisfied: platformdirs in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.4.0)
+Requirement already satisfied: pycryptodomex in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (3.23.0)
+Requirement already satisfied: pydantic~=2.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.11.10)
+Requirement already satisfied: numcodecs&lt;0.16 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.15.1)
+Requirement already satisfied: nwbinspector!=0.4.32,&gt;=0.4.28 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.6.5)
+Requirement already satisfied: pyout!=0.6.0,&gt;=0.5 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.8.1)
+Requirement already satisfied: python-dateutil in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.post0)
+Requirement already satisfied: ruamel.yaml&lt;1,&gt;=0.15 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.18.15)
+Requirement already satisfied: semantic-version in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.10.0)
+Requirement already satisfied: tensorstore in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.1.78)
+Requirement already satisfied: urllib3&gt;=2.0.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.5.0)
+Requirement already satisfied: yarl~=1.9 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.22.0)
+Requirement already satisfied: zarr_checksum~=0.4.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.7)
+Requirement already satisfied: acres in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.0)
+Requirement already satisfied: pyyaml in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.3)
+Requirement already satisfied: jsonschema[format] in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.25.1)
+Requirement already satisfied: deprecated in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.2.18)
+Requirement already satisfied: annotated-types&gt;=0.6.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.33.2)
+Requirement already satisfied: typing-extensions&gt;=4.12.2 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.15.0)
+Requirement already satisfied: typing-inspection&gt;=0.4.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.2)
+Requirement already satisfied: email-validator&gt;=2.0.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.3.0)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from requests-&gt;nwbwidgets) (3.4.3)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from requests-&gt;nwbwidgets) (3.10)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from requests-&gt;nwbwidgets) (2025.10.5)
+Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ruamel.yaml&lt;1,&gt;=0.15-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.2.14)
+Requirement already satisfied: multidict&gt;=4.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from yarl~=1.9-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.7.0)
+Requirement already satisfied: propcache&gt;=0.2.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from yarl~=1.9-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.0)
+Requirement already satisfied: asciitree in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from zarr-&gt;nwbwidgets) (0.3.3)
+Requirement already satisfied: dnspython&gt;=2.0.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from email-validator&gt;=2.0.0-&gt;pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.8.0)
+Requirement already satisfied: ci-info&gt;=0.2 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from etelemetry&gt;=0.2.2-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.0)
+Requirement already satisfied: h5py&gt;=3.1.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from hdmf!=3.14.4,!=3.5.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.14.0)
+Requirement already satisfied: pandas&gt;=1.2.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from hdmf!=3.14.4,!=3.5.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: bqplot in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (0.12.45)
+Requirement already satisfied: traitlets in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (5.14.3)
+Requirement already satisfied: Pillow in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (11.3.0)
+Requirement already satisfied: ipywebrtc in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (0.6.0)
+Requirement already satisfied: ipyvuetify in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (1.11.3)
+Requirement already satisfied: ipyvue&gt;=1.7.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (1.11.3)
+Requirement already satisfied: pythreejs&gt;=2.4.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (2.4.2)
+Requirement already satisfied: comm&gt;=0.1.3 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.3)
+Requirement already satisfied: ipython&gt;=6.1.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (9.6.0)
+Requirement already satisfied: widgetsnbextension~=4.0.14 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (4.0.14)
+Requirement already satisfied: jupyterlab_widgets~=3.0.15 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.15)
+Requirement already satisfied: decorator in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (5.2.1)
+Requirement already satisfied: ipython-pygments-lexers in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (1.1.1)
+Requirement already satisfied: jedi&gt;=0.16 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.19.2)
+Requirement already satisfied: matplotlib-inline in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.1.7)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (4.9.0)
+Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.52)
+Requirement already satisfied: pygments&gt;=2.4.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (2.19.2)
+Requirement already satisfied: stack_data in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.6.3)
+Requirement already satisfied: wcwidth in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.14)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.8.5)
+Requirement already satisfied: attrs&gt;=22.2.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (25.4.0)
+Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2025.9.1)
+Requirement already satisfied: referencing&gt;=0.28.4 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.36.2)
+Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.27.1)
+Requirement already satisfied: jaraco.classes in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.4.0)
+Requirement already satisfied: jaraco.functools in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.3.0)
+Requirement already satisfied: jaraco.context in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.1)
+Requirement already satisfied: hdmf-zarr in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.11.3)
+Requirement already satisfied: isodate in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.7.2)
+Requirement already satisfied: natsort in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (8.4.0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pandas&gt;=1.2.0-&gt;hdmf!=3.14.4,!=3.5.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2025.2)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.7.0)
+Requirement already satisfied: blessed in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from pyout!=0.6.0,&gt;=0.5-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.22.0)
+Requirement already satisfied: six&gt;=1.5 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from python-dateutil-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: aiohappyeyeballs&gt;=2.5.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from aiohttp-&gt;nwbwidgets) (2.6.1)
+Requirement already satisfied: aiosignal&gt;=1.4.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from aiohttp-&gt;nwbwidgets) (1.4.0)
+Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from aiohttp-&gt;nwbwidgets) (1.8.0)
+Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from deprecated-&gt;numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.3)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from hdmf-zarr-&gt;nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.6.0)
+Requirement already satisfied: py2vega&gt;=0.5 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from ipydatagrid-&gt;nwbwidgets) (0.6.1)
+Requirement already satisfied: gast&lt;0.5,&gt;=0.4.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from py2vega&gt;=0.5-&gt;ipydatagrid-&gt;nwbwidgets) (0.4.0)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from matplotlib-&gt;nwbwidgets) (1.3.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cycler&gt;=0.10 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from matplotlib-&gt;nwbwidgets) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from matplotlib-&gt;nwbwidgets) (4.60.1)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from matplotlib-&gt;nwbwidgets) (1.4.9)
+Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from matplotlib-&gt;nwbwidgets) (3.2.5)
+Requirement already satisfied: more-itertools in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jaraco.classes-&gt;keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (10.8.0)
+Requirement already satisfied: backports.tarfile in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jaraco.context-&gt;keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.2.0)
+Requirement already satisfied: fqdn in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.1)
+Requirement already satisfied: isoduration in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (20.11.0)
+Requirement already satisfied: jsonpointer&gt;1.13 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.0.0)
+Requirement already satisfied: rfc3339-validator in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.1.4)
+Requirement already satisfied: rfc3987 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.8)
+Requirement already satisfied: uri-template in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
+Requirement already satisfied: webcolors&gt;=1.11 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (24.11.1)
+Requirement already satisfied: arrow&gt;=0.15.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
+Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.20250822)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.9 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from scikit-image-&gt;nwbwidgets) (1.10.1)
+Requirement already satisfied: networkx&gt;=2.8 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from scikit-image-&gt;nwbwidgets) (3.5)
+Requirement already satisfied: imageio&gt;=2.33 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from scikit-image-&gt;nwbwidgets) (2.37.0)
+Requirement already satisfied: lazy-loader&gt;=0.4 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from scikit-image-&gt;nwbwidgets) (0.4)
+Requirement already satisfied: executing&gt;=1.2.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (2.2.1)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.0)
+Requirement already satisfied: pure-eval in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.3)
+Requirement already satisfied: ml_dtypes&gt;=0.5.0 in /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages (from tensorstore-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.3)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Finally, also need to make sure you have the correct version of NumPy.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">numpy</span>
-    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;1.23.1&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Updated NumPy installed.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of NumPy installed. Would you like to install a newer version of NumPy? (Y/N)&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
-            <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>numpy
-<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>numpy
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updated NumPy installed.
-</pre></div>
-</div>
-</div>
-</div>
-<p>First things first, let’s make sure you have the AllenSDK installed. See the <a class="reference external" href="https://alleninstitute.github.io/AllenSDK/install.html">Allen Institute website</a> for information on installing it, otherwise, the cell below will do it for you.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the AllenSDK is installed.</span>
-<span class="c1"># If not, it will install it for you.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for seaborn (visualization package)</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">allensdk</span>
-    <span class="k">if</span> <span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s1">&#39;2.13.6&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of AllenSDK installed. Would you like to install a newer version? (Y/N)&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
-            <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>allensdk
+    <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;seaborn installed.&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>allensdk
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>seaborn
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of AllenSDK installed. Would you like to install a newer version? (Y/N)&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install --upgrade allensdk&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/jb/lib/python3.11/site-packages/ipykernel/kernelbase.py:1201,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1199</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1201</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1204</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1206</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>seaborn installed.
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="allensdk-lessons-3-4-only">
+<h3>AllenSDK (Lessons 3 &amp; 4 only)<a class="headerlink" href="#allensdk-lessons-3-4-only" title="Link to this heading">#</a></h3>
+<p><strong>Important:</strong> The AllenSDK requires numpy&lt;1.24, which is incompatible with Python 3.12+. If you’re using Python 3.12 or later, you’ll need to create a Python 3.11 environment.</p>
+<p><strong>On DandiHub:</strong> See special setup instructions below.</p>
+<p><strong>On your local machine:</strong> Use conda to create a Python 3.11 environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>nwb4edu<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>nwb4edu
+pip<span class="w"> </span>install<span class="w"> </span>allensdk
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for allensdk (Lessons 3 &amp; 4 only)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk installed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Version: </span><span class="si">{</span><span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk is not installed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Note: allensdk requires Python 3.11 or earlier.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;See instructions above for creating a compatible environment.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk installed.
+Version: 2.16.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="greatest-hits-packages">
+<h3>Greatest Hits Packages<a class="headerlink" href="#greatest-hits-packages" title="Link to this heading">#</a></h3>
+<p>For the Greatest Hits lessons, you’ll also need these additional packages:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for pynapple</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pynapple</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pynapple installed.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pynapple
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pynapple installed.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for plotly</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">plotly</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;plotly installed.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>plotly
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly installed.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for fsspec</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">fsspec</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fsspec installed.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>fsspec
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fsspec installed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="configuring-for-data-streaming">
+<h2>Configuring for Data Streaming<a class="headerlink" href="#configuring-for-data-streaming" title="Link to this heading">#</a></h2>
+<p>Some lessons in this book stream data directly from DANDI rather than downloading it.</p>
+<p><strong>On Dandihub</strong>: This is already configured for you!</p>
+<p><strong>On your local machine</strong>: For the most recent guidance on configuring your environment for streaming, please see the <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html">PyNWB streaming tutorial</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for remfile (required for streaming)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">remfile</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;remfile installed.&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>remfile
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>remfile installed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="dandihub-setup-for-lessons-3-4-allen-cell-types-database">
+<h2>DandiHub Setup for Lessons 3 &amp; 4 (Allen Cell Types Database)<a class="headerlink" href="#dandihub-setup-for-lessons-3-4-allen-cell-types-database" title="Link to this heading">#</a></h2>
+<p><strong>Note:</strong> This environment is only required for Lessons 3 and 4, which use the Allen SDK. The Allen SDK requires Python 3.11 due to numpy version compatibility. All other lessons work with the default DandiHub environment.</p>
+<section id="step-1-open-a-terminal">
+<h3>Step 1: Open a Terminal<a class="headerlink" href="#step-1-open-a-terminal" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>In JupyterHub, click “File” → “New” → “Terminal”</p></li>
+</ul>
+</section>
+<section id="step-2-create-the-conda-environment-with-pip">
+<h3>Step 2: Create the conda environment with pip<a class="headerlink" href="#step-2-create-the-conda-environment-with-pip" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>nwb4edu<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>pip<span class="w"> </span>-y
+</pre></div>
+</div>
+</section>
+<section id="step-3-activate-the-environment">
+<h3>Step 3: Activate the environment<a class="headerlink" href="#step-3-activate-the-environment" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>nwb4edu
+</pre></div>
+</div>
+</section>
+<section id="step-4-install-required-packages">
+<h3>Step 4: Install required packages<a class="headerlink" href="#step-4-install-required-packages" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="nb">false</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>allensdk<span class="w"> </span>ipykernel
+</pre></div>
+</div>
+<p><strong>Note:</strong> This installation may take 5-10 minutes to complete. Please be patient while the packages are downloaded and installed.</p>
+</section>
+<section id="step-5-create-a-jupyter-kernel-for-this-environment">
+<h3>Step 5: Create a Jupyter kernel for this environment<a class="headerlink" href="#step-5-create-a-jupyter-kernel-for-this-environment" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>nwb4edu<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python 3.11 (nwb4edu)&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="step-6-refresh-your-browser">
+<h3>Step 6: Refresh your browser<a class="headerlink" href="#step-6-refresh-your-browser" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Refresh the JupyterHub page to see the new kernel</p></li>
+</ul>
+</section>
+<section id="step-7-select-the-kernel-in-lesson-3-4-notebooks">
+<h3>Step 7: Select the kernel in Lesson 3 &amp; 4 notebooks<a class="headerlink" href="#step-7-select-the-kernel-in-lesson-3-4-notebooks" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open a notebook from Lesson 3 or 4</p></li>
+<li><p>Click “Kernel” → “Change Kernel” → “Python 3.11 (nwb4edu)”</p></li>
+</ul>
+</section>
+<section id="step-8-verify-the-installation">
+<h3>Step 8: Verify the installation<a class="headerlink" href="#step-8-verify-the-installation" title="Link to this heading">#</a></h3>
+<p>Run this in a notebook cell to verify everything installed correctly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python version: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;allensdk version: </span><span class="si">{</span><span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -582,11 +930,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Using_This_Book.html"
@@ -606,10 +953,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -618,13 +962,34 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-requirements">Package Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages-required-for-lessons-1-2">Core packages required for Lessons 1-2:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages-for-lessons-3-4-allen-cell-types">Packages for Lessons 3-4 (Allen Cell Types):</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-packages-for-greatest-hits">Additional packages for Greatest Hits:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packages">Core Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#allensdk-lessons-3-4-only">AllenSDK (Lessons 3 &amp; 4 only)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#greatest-hits-packages">Greatest Hits Packages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-for-data-streaming">Configuring for Data Streaming</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dandihub-setup-for-lessons-3-4-allen-cell-types-database">DandiHub Setup for Lessons 3 &amp; 4 (Allen Cell Types Database)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-a-terminal">Step 1: Open a Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-the-conda-environment-with-pip">Step 2: Create the conda environment with pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-activate-the-environment">Step 3: Activate the environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-required-packages">Step 4: Install required packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-create-a-jupyter-kernel-for-this-environment">Step 5: Create a Jupyter kernel for this environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-refresh-your-browser">Step 6: Refresh your browser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-select-the-kernel-in-lesson-3-4-notebooks">Step 7: Select the kernel in Lesson 3 &amp; 4 notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-verify-the-installation">Step 8: Verify the installation</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -646,9 +1011,10 @@ By The Jupyter Book community
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -672,8 +1038,8 @@ By The Jupyter Book community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
