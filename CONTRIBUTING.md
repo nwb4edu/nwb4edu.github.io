@@ -103,7 +103,6 @@ def process_data(data, threshold=0.5):
 #### Markdown
 - Use proper heading hierarchy (# for titles, ## for main sections, etc.)
 - Include links to external resources where helpful
-- Use code blocks with language specification for syntax highlighting
 
 ### Testing Your Changes
 
