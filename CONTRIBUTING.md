@@ -24,7 +24,7 @@ We're especially interested in expanding our "Greatest Hits" collection. If you 
 3. Identify the NWB dataset (from DANDI or elsewhere) that contains the relevant data
 4. Outline the learning objectives
 
-### Contributing Code or Content
+### Contributing Content
 
 #### For Small Changes (typos, small fixes)
 
@@ -138,12 +138,11 @@ Fixes #123
 
 If you're creating a new lesson, please include:
 
-### Required Elements
+### Elements
 1. **Learning objectives** - Clear, measurable goals for the lesson
 2. **Introduction** - Context and motivation for the lesson
-3. **Step-by-step tutorial** - Well-commented code with explanations
-4. **Visualizations** - Clear, well-labeled figures
-5. **Problem set** - Exercises for students to practice
+3. **Step-by-step tutorial** - Well-commented code with explanations and visualizations
+4. **Problem set** - Exercises for students to practice (*optional*)
 6. **References** - Citations for papers, datasets, and methods used
 
 ### Dataset Requirements
@@ -151,6 +150,7 @@ If you're creating a new lesson, please include:
 - Include citation information for datasets
 - Provide clear instructions for data access
 - Consider data download size and accessibility
+-     Is it small enough to sync on Github? Is it small enough to download? If neither of those are true, can it be streamed?
 
 ### Documentation
 - Add your lesson to `_toc.yml`
