@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -472,40 +472,29 @@ document.write(`
 <span class="c1"># If not, it will install it for you.</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
-    <span class="k">if</span> <span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s1">&#39;2.11.2&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span> 
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;incompatible version of allensdk installed&#39;</span><span class="p">)</span>
-        <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">allensdk</span><span class="o">==</span><span class="m">2</span>.11.2
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Version: </span><span class="si">{</span><span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">allensdk</span><span class="o">==</span><span class="m">2</span>.11.2
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>allensdk
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk==2.11.2
-  Using cached allensdk-2.11.2-py3-none-any.whl.metadata (2.0 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk
+  Using cached allensdk-2.16.2-py3-none-any.whl.metadata (1.9 kB)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary&lt;3.0.0,&gt;=2.7 (from allensdk==2.11.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary (from allensdk)
   Using cached psycopg2_binary-2.9.10-cp312-cp312-macosx_14_0_arm64.whl.metadata (4.9 kB)
-Collecting hdmf&lt;2.5.0 (from allensdk==2.11.2)
+Requirement already satisfied: hdmf!=3.5.*,!=3.6.*,!=3.7.*,!=3.8.* in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (4.1.0)
+Requirement already satisfied: h5py in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.14.0)
+Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.10.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached hdmf-2.4.0-py2.py3-none-any.whl.metadata (8.1 kB)
-Collecting h5py&lt;3.0.0,&gt;=2.8 (from allensdk==2.11.2)
-  Using cached h5py-2.10.0.tar.gz (301 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.24 (from allensdk)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25hRequirement already satisfied: matplotlib&lt;4.0.0,&gt;=1.4.3 in /opt/miniconda3/lib/python3.12/site-packages (from allensdk==2.11.2) (3.10.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.19.0,&gt;=1.15.4 (from allensdk==2.11.2)
-  Using cached numpy-1.18.5.zip (5.4 MB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached numpy-1.23.5.tar.gz (10.7 MB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
@@ -520,59 +509,62 @@ Collecting h5py&lt;3.0.0,&gt;=2.8 (from allensdk==2.11.2)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Preparing metadata (pyproject.toml) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> error
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l- error
   <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
   
-  <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Preparing metadata </span><span class=" -Color -Color-Bold -Color-Bold-Green">(</span><span class=" -Color -Color-Green">pyproject.toml</span><span class=" -Color -Color-Bold -Color-Bold-Green">)</span> did not run successfully.
+  <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
   <span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
-  <span class=" -Color -Color-Red">╰─&gt;</span> <span class=" -Color -Color-Red">[25 lines of output]</span>
-  <span class=" -Color -Color-Red">   </span> Running from numpy source directory.
-  <span class=" -Color -Color-Red">   </span> &lt;string&gt;:461: UserWarning: Unrecognized setuptools command, proceeding with generating Cython sources and expanding templates
+  <span class=" -Color -Color-Red">╰─&gt;</span> <span class=" -Color -Color-Red">[33 lines of output]</span>
   <span class=" -Color -Color-Red">   </span> Traceback (most recent call last):
   <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 353, in &lt;module&gt;
   <span class=" -Color -Color-Red">   </span>     main()
   <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 335, in main
   <span class=" -Color -Color-Red">   </span>     json_out[&#39;return_val&#39;] = hook(**hook_input[&#39;kwargs&#39;])
   <span class=" -Color -Color-Red">   </span>                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 149, in prepare_metadata_for_build_wheel
-  <span class=" -Color -Color-Red">   </span>     return hook(metadata_directory, config_settings)
-  <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-v14l_qkb/overlay/lib/python3.12/site-packages/setuptools/build_meta.py&quot;, line 374, in prepare_metadata_for_build_wheel
-  <span class=" -Color -Color-Red">   </span>     self.run_setup()
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-v14l_qkb/overlay/lib/python3.12/site-packages/setuptools/build_meta.py&quot;, line 512, in run_setup
-  <span class=" -Color -Color-Red">   </span>     super().run_setup(setup_script=setup_script)
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-v14l_qkb/overlay/lib/python3.12/site-packages/setuptools/build_meta.py&quot;, line 317, in run_setup
-  <span class=" -Color -Color-Red">   </span>     exec(code, locals())
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;string&gt;&quot;, line 488, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;string&gt;&quot;, line 465, in setup_package
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-install-g155d1vn/numpy_484f55fa2ec848e88467955558317933/numpy/distutils/__init__.py&quot;, line 26, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     from . import ccompiler
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-install-g155d1vn/numpy_484f55fa2ec848e88467955558317933/numpy/distutils/ccompiler.py&quot;, line 111, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     replace_method(CCompiler, &#39;find_executables&#39;, CCompiler_find_executables)
-  <span class=" -Color -Color-Red">   </span>                    ^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span> NameError: name &#39;CCompiler&#39; is not defined. Did you mean: &#39;ccompiler&#39;?
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 112, in get_requires_for_build_wheel
+  <span class=" -Color -Color-Red">   </span>     backend = _build_backend()
+  <span class=" -Color -Color-Red">   </span>               ^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 77, in _build_backend
+  <span class=" -Color -Color-Red">   </span>     obj = import_module(mod_path)
+  <span class=" -Color -Color-Red">   </span>           ^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/importlib/__init__.py&quot;, line 90, in import_module
+  <span class=" -Color -Color-Red">   </span>     return _bootstrap._gcd_import(name[level:], package, level)
+  <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1310, in _find_and_load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1331, in _find_and_load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 935, in _load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 995, in exec_module
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-5g0iiiwk/overlay/lib/python3.12/site-packages/setuptools/__init__.py&quot;, line 16, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     import setuptools.version
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-5g0iiiwk/overlay/lib/python3.12/site-packages/setuptools/version.py&quot;, line 1, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     import pkg_resources
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-5g0iiiwk/overlay/lib/python3.12/site-packages/pkg_resources/__init__.py&quot;, line 2172, in &lt;module&gt;
+
+  <span class=" -Color -Color-Red">   </span>     register_finder(pkgutil.ImpImporter, find_on_path)
+  <span class=" -Color -Color-Red">   </span>                     ^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span> AttributeError: module &#39;pkgutil&#39; has no attribute &#39;ImpImporter&#39;. Did you mean: &#39;zipimporter&#39;?
   <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
   
   <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
-<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">metadata-generation-failed</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
 
-<span class=" -Color -Color-Red">×</span> Encountered error while generating package metadata.
+<span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
+<span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
 <span class=" -Color -Color-Red">╰─&gt;</span> See above for output.
 
-<span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This is an issue with the package mentioned above, not pip.
-<span class=" -Color -Color-Bold -Color-Bold-Cyan">hint</span>: See above for details.
+<span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h
