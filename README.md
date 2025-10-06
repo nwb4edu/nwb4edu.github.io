@@ -63,9 +63,7 @@ Recreate figures from foundational papers:
 
 ### For Students
 
-The easiest way to use this textbook is through the live website at [https://nwb4edu.github.io](https://nwb4edu.github.io). You can launch any notebook directly on JupyterHub using the rocket icon in the top right corner of each page.
-
-No installation is required when using JupyterHub!
+The easiest way to use this textbook is through the live website at [https://nwb4edu.github.io](https://nwb4edu.github.io). You can launch any notebook directly on JupyterHub using the rocket icon in the top right corner of each page. No installation on your computer is required when using JupyterHub!
 
 ### For Local Development
 
@@ -156,17 +154,7 @@ nwb4edu.github.io/
 
 ## Contributing
 
-We welcome contributions from the community! Whether you want to:
-- Report a bug or issue
-- Suggest improvements to existing lessons
-- Contribute new lesson content
-- Fix typos or improve documentation
-
-Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
-### Reporting Issues
-
-Found a problem? Please [open an issue](https://github.com/nwb4edu/nwb4edu.github.io/issues) on GitHub.
+We welcome contributions from the community! Regardless of whether you want to report a bug, typo, or issue, suggest improvements to existing lessons, contribute new lesson content, or improve documentation, please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
 
 ### Getting Help
 
@@ -177,15 +165,15 @@ Found a problem? Please [open an issue](https://github.com/nwb4edu/nwb4edu.githu
 ## Authors
 
 - **Ashley L. Juavinett** - UC San Diego, Neurobiology
-- **Victor Magdaleno** - UC San Diego, Cognitive Science
+- **Victor Magdaleno** - UC San Diego Alum, Cognitive Science
 
-With thanks to Tommy Lee for copyediting.
+With thanks to Tommy Lee, Ariel Rokem, and Tom Donoghue for copyediting.
 
 ## Acknowledgements
 
 This work is supported by a [Kavli Foundation Seed Grant](https://www.nwb.org/projects/) to increase access to Neurodata Without Borders datasets. We thank the Kavli Foundation, specifically program officer Stephanie Albin, for their support.
 
-We also thank Ben Dichter, Oliver Rübel, Ryan Ly, Ariel Rokem, and Tom Donoghue for valuable feedback and technical support.
+We also thank Ben Dichter, Oliver Rübel, and Ryan Ly for valuable feedback and technical support.
 
 ## License
 
@@ -199,7 +187,7 @@ If you use these materials in your teaching or research, please cite:
 
 ```
 Juavinett, A.L., & Magdaleno, V. (2024). nwb4edu: an Online Textbook for Teaching
-and Learning with NWB Datasets. Journal of Open Source Education.
+and Learning with NWB Datasets. *Journal of Open Source Education: TENTATIVE*.
 https://nwb4edu.github.io
 ```
 
