@@ -1,0 +1,13 @@
+# Requirements for Lessons 3-4 (Allen Cell Types Database)
+# Requires Python 3.11 due to allensdk compatibility (requires numpy<1.24)
+
+# NWB and data access
+dandi>=0.45.1
+
+# Allen Institute SDK (includes: numpy<1.24, pandas, scipy, matplotlib)
+allensdk>=2.11.2
+
+# Jupyter environment
+jupyter>=1.0.0
+notebook>=6.0.0
+ipykernel

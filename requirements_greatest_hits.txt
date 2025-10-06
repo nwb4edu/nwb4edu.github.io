@@ -1,0 +1,21 @@
+# Requirements for Greatest Hits lessons
+# Compatible with Python 3.9+
+
+# NWB and data access
+dandi>=0.45.1
+
+# Neural data analysis
+pynapple
+
+# Interactive plotting
+plotly
+
+# File system interface
+fsspec
+
+# Streaming data
+remfile
+
+# Jupyter environment
+jupyter>=1.0.0
+notebook>=6.0.0

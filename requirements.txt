@@ -1,5 +1,17 @@
-# Core dependencies for running nwb4edu notebooks (Lessons 1-4)
-# These are the essential packages - subdependencies will be installed automatically
+# Complete dependencies for building the nwb4edu book
+#
+# IMPORTANT: Requires Python 3.11 due to allensdk compatibility
+# The allensdk package requires numpy<1.24, which is incompatible with Python 3.12+
+#
+# To set up the build environment:
+#   conda create --name nwb4edu python=3.11 -y
+#   conda activate nwb4edu
+#   pip install -r requirements.txt
+#
+# For lesson-specific requirements, see:
+#   - requirements_lessons_1-2.txt (Python 3.9+)
+#   - requirements_lessons_3-4.txt (Python 3.11 required)
+#   - requirements_greatest_hits.txt (Python 3.9+)
 
 # NWB and data access (includes: pynwb, h5py, hdmf)
 dandi>=0.45.1
@@ -16,7 +28,7 @@ seaborn>=0.11.0
 # Streaming data
 remfile
 
-# Additional dependencies for Lesson 5 (Greatest Hits)
+# Additional dependencies for Greatest Hits
 pynapple
 plotly
 fsspec

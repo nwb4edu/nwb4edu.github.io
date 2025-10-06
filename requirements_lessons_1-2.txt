@@ -1,0 +1,19 @@
+# Requirements for Lessons 1-2 (NWB Basics)
+# Compatible with Python 3.9+
+
+# NWB and data access (includes: pynwb, h5py, hdmf)
+dandi>=0.45.1
+
+# Widgets for interactive exploration (includes: ipywidgets, pynwb)
+nwbwidgets>=0.8.0
+
+# Visualization
+seaborn>=0.11.0
+matplotlib
+
+# Streaming data
+remfile
+
+# Jupyter environment
+jupyter>=1.0.0
+notebook>=6.0.0
