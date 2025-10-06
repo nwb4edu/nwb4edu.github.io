@@ -97,8 +97,17 @@ This textbook is built using [Jupyter Book](https://jupyterbook.org/).
 
 ### Requirements
 
-Install the documentation build requirements:
+**Important**: Building the book requires **Python 3.11** due to AllenSDK compatibility requirements (AllenSDK requires numpy<1.24, which is incompatible with Python 3.12+).
+
+1. Create a Python 3.11 environment:
 ```bash
+conda create --name nwb4edu python=3.11 -y
+conda activate nwb4edu
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
 pip install -r requirements-docs.txt
 ```
 

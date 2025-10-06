@@ -46,19 +46,27 @@ We're especially interested in expanding our "Greatest Hits" collection. If you 
 
 ### Setting Up Your Environment
 
+**Important**: Building the book requires **Python 3.11** due to AllenSDK compatibility requirements.
+
 1. Fork and clone the repository:
 ```bash
 git clone https://github.com/YOUR-USERNAME/nwb4edu.github.io.git
 cd nwb4edu.github.io
 ```
 
-2. Install dependencies:
+2. Create a Python 3.11 environment:
+```bash
+conda create --name nwb4edu python=3.11 -y
+conda activate nwb4edu
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 pip install -r requirements-docs.txt
 ```
 
-3. Create a new branch for your work:
+4. Create a new branch for your work:
 ```bash
 git checkout -b descriptive-branch-name
 ```

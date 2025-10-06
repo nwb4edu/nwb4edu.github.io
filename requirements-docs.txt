@@ -1,4 +1,14 @@
 # Dependencies for building the Jupyter Book documentation
+#
+# IMPORTANT: Requires Python 3.11
+# The book includes AllenSDK content which requires numpy<1.24
+# numpy<1.24 is incompatible with Python 3.12+
+#
+# To set up the build environment:
+#   conda create --name nwb4edu python=3.11 -y
+#   conda activate nwb4edu
+#   pip install -r requirements.txt
+#   pip install -r requirements-docs.txt
 
 jupyter-book>=0.15.0
 ghp-import>=2.1.0
