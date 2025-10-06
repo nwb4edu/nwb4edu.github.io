@@ -30,12 +30,12 @@ Each lesson contains learning objectives, tasks, and a problem set so that stude
 In its current form, there are four complete lessons, which contain multiple notebooks. Each lesson contains specific learning objectives, such as:
 
 * Identify and implement multiple ways to obtain a NWB dataset via DANDI
-* Explore the metadata contained in a typical Dandiset and explain the three common features of datasets: metadata, raw data, and processed data
-* Implement spike sorting on extracellular recording data
+* Explore the metadata contained in a typical Dandiset [@economo2018alm;@economo2018distinct] and explain the three common features of datasets: metadata, raw data, and processed data
+* Implement spike sorting on extracellular recording data in mice [@campbell2021mec_neuropixels;@campbell2021distance]
 * Generate and interpret common visualizations of extracellular recording data
-* Access and visualize single-cell and two-photon neural data from the Allen Institute
+* Access and visualize single-cell electrophysiology and two-photon imaging data [@de_vries_sharing_2023; @de_vries_large-scale_2020] from the Allen Institute 
 
-Furthermore, there are a growing set of single notebook lessons ("Greatest Hits in Neuroscience") in which users can re-create figures from published scientific papers using their NWB-formatted data. These lessons transform foundational papers in neuroscience into living lessons, breathing new life into old data and inviting all students in to conduct authentic research.
+Furthermore, there are a growing set of single notebook lessons ("Greatest Hits in Neuroscience") in which users can re-create figures from published scientific papers [@sargolini_conjunctive_2006;@churchland_neural_2012] using their NWB-formatted data. These lessons transform foundational papers in neuroscience into living lessons, breathing new life into old data and inviting all students in to conduct authentic research.
 
 
 ## Statement of Need
