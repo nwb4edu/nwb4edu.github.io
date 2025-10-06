@@ -637,30 +637,38 @@ document.write(`
 <p>The plot is ultimately created using the function <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.eventplot.html"><code class="docutils literal notranslate"><span class="pre">plt.eventplot</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function for creating raster plots for Units group in NWB file </span>
-<span class="k">def</span><span class="w"> </span><span class="nf">plot_raster</span><span class="p">(</span><span class="n">units_df</span><span class="p">,</span><span class="n">neuron_start</span><span class="p">,</span><span class="n">neuron_end</span><span class="p">,</span><span class="n">start_time</span><span class="p">,</span><span class="n">end_time</span><span class="p">):</span> 
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Takes a dataframe containing the units group of a nwb file (units_df) and creates </span>
-<span class="sd">    a raster plot with a given set of neurons (indexed by neuron_start, neuron_end) and a start and end time.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_raster</span><span class="p">(</span><span class="n">units_df</span><span class="p">,</span> <span class="n">neuron_start</span><span class="p">,</span> <span class="n">neuron_end</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a raster plot from spike times in a units dataframe.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    units_df : pandas.DataFrame</span>
+<span class="sd">        Dataframe containing the units group of an NWB file</span>
+<span class="sd">    neuron_start : int</span>
+<span class="sd">        Index of first neuron of interest</span>
+<span class="sd">    neuron_end : int</span>
+<span class="sd">        Index of last neuron of interest</span>
+<span class="sd">    start_time : float</span>
+<span class="sd">        Start time for desired time interval in seconds</span>
+<span class="sd">    end_time : float</span>
+<span class="sd">        End time for desired time interval in seconds</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">neural_data</span> <span class="o">=</span> <span class="n">units_df</span><span class="p">[</span><span class="s1">&#39;spike_times&#39;</span><span class="p">][</span><span class="n">neuron_start</span><span class="p">:</span><span class="n">neuron_end</span><span class="p">]</span>
+    <span class="n">num_neurons</span> <span class="o">=</span> <span class="n">neuron_end</span> <span class="o">-</span> <span class="n">neuron_start</span>
+    <span class="n">my_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_neurons</span><span class="p">)]</span>
     
-    <span class="n">neural_data</span> <span class="o">=</span> <span class="n">units_df</span><span class="p">[</span><span class="s1">&#39;spike_times&#39;</span><span class="p">][</span><span class="n">neuron_start</span><span class="p">:</span><span class="n">neuron_end</span><span class="p">]</span> <span class="c1"># Select the data</span>
-    <span class="n">num_neurons</span> <span class="o">=</span> <span class="n">neuron_end</span> <span class="o">-</span> <span class="n">neuron_start</span> <span class="c1"># Calculate # of neurons</span>
-    <span class="n">my_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_neurons</span><span class="p">)]</span>  <span class="c1">#Generate a list of colors (C0, C1...)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">eventplot</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">my_colors</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">])</span>
     
-    <span class="n">plt</span><span class="o">.</span><span class="n">eventplot</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="n">my_colors</span><span class="p">)</span>  <span class="c1"># Plot our raster plot </span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">start_time</span><span class="p">,</span><span class="n">end_time</span><span class="p">])</span> <span class="c1"># Set axis limits to only include points in our data</span>
-    
-    <span class="c1"># Label our figure </span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spike raster plot&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron #&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_neurons</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_neurons</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Use our new function</span>
-<span class="n">plot_raster</span><span class="p">(</span><span class="n">units_df</span><span class="p">,</span> <span class="n">neuron_start</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">neuron_end</span> <span class="o">=</span> <span class="mi">11</span><span class="p">,</span> <span class="n">start_time</span> <span class="o">=</span> <span class="mi">330</span><span class="p">,</span> <span class="n">end_time</span> <span class="o">=</span> <span class="mi">335</span><span class="p">)</span>
+<span class="n">plot_raster</span><span class="p">(</span><span class="n">units_df</span><span class="p">,</span> <span class="n">neuron_start</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">neuron_end</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="mi">330</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="mi">335</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -674,35 +682,30 @@ document.write(`
 <p>Raster plots are great for seeing individual neural spikes, but difficult to see the overall firing rates of the units. To get a better sense of the overall firing rates of our units, we can bin our spikes into time bins of 1 second using the function below, <code class="docutils literal notranslate"><span class="pre">plot_firing_rates()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_firing_rates</span><span class="p">(</span><span class="n">spike_times</span><span class="p">,</span> <span class="n">start_time</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_time</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    plots the binned firing rate for the spike times in the list it is given in 1 second time bins.</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_firing_rates</span><span class="p">(</span><span class="n">spike_times</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_time</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot binned firing rate for spike times in 1 second time bins.</span>
+<span class="sd">    </span>
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    spike_times : list</span>
-<span class="sd">                  spike times, in seconds</span>
-
-<span class="sd">    start_time  : int</span>
-<span class="sd">                  start time for spike binning in seconds; sets lower-most bound for x axis</span>
-<span class="sd">                  </span>
-<span class="sd">    end_time    : int</span>
-<span class="sd">                  end time for spike binning in seconds ; sets upper-most bound for x axis</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="c1"># Assign total number of bins </span>
+<span class="sd">    spike_times : numpy.ndarray</span>
+<span class="sd">        Spike times in seconds</span>
+<span class="sd">    start_time : int, optional</span>
+<span class="sd">        Start time for spike binning in seconds; sets lower bound for x axis</span>
+<span class="sd">    end_time : int, optional</span>
+<span class="sd">        End time for spike binning in seconds; sets upper bound for x axis</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">num_bins</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">spike_times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
     <span class="n">binned_spikes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">num_bins</span><span class="p">)</span>
-  
-    <span class="c1"># Assign the frequency of spikes over time</span>
+    
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_bins</span><span class="p">):</span>
-        <span class="n">binned_spikes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">spike_times</span><span class="p">[(</span><span class="n">spike_times</span><span class="o">&gt;</span><span class="n">j</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">spike_times</span><span class="o">&lt;</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
-          
+        <span class="n">binned_spikes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">spike_times</span><span class="p">[(</span><span class="n">spike_times</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">spike_times</span> <span class="o">&lt;</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+    
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">binned_spikes</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing Rate (Hz)&#39;</span><span class="p">)</span>
-        
-    <span class="k">if</span> <span class="p">(</span><span class="n">start_time</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">end_time</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">start_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">end_time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -713,7 +716,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot our data</span>
 <span class="n">single_unit</span> <span class="o">=</span> <span class="n">units_df</span><span class="p">[</span><span class="s1">&#39;spike_times&#39;</span><span class="p">][</span><span class="n">unit_id</span><span class="p">]</span>
-<span class="n">plot_firing_rates</span><span class="p">(</span><span class="n">single_unit</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">plot_firing_rates</span><span class="p">(</span><span class="n">single_unit</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
