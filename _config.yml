@@ -17,3 +17,4 @@ execute:
     - 'Lesson_4/01-Retrieving_Brain_Observatory_Data.ipynb'
     - 'Lesson_4/02-Analyzing_Two_Photon_Data.ipynb'
     - 'Lesson_4/03-Correlations_in_Two_Photon_Data.ipynb'
+    - 'Lesson_5/01-PlaceFields.ipynb'
