@@ -971,9 +971,27 @@ corrections for edge effects and unvisited locations.  With λ (x, y) denoting t
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
+
 <span class="k">def</span><span class="w"> </span><span class="nf">create_coer_arr</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">rad_min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rad_max</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Creating an array for correlation(tau_x, tau_y)</span>
-<span class="sd">    Takes tau_x from the range (-arr.shape[0]+1, arr.shape[0]-1) and the same for tau_y</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create an array for correlation(tau_x, tau_y).</span>
+<span class="sd">    </span>
+<span class="sd">    Takes tau_x from the range (-arr.shape[0]+1, arr.shape[0]-1) and </span>
+<span class="sd">    the same for tau_y.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : numpy.ndarray</span>
+<span class="sd">        Input array for calculating correlation.</span>
+<span class="sd">    rad_min : float, optional</span>
+<span class="sd">        Minimum radius for calculating correlation.</span>
+<span class="sd">    rad_max : float, optional</span>
+<span class="sd">        Maximum radius for calculating correlation.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    numpy.ndarray</span>
+<span class="sd">        Correlation array.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sh_x</span><span class="p">,</span> <span class="n">sh_y</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
     <span class="c1"># creating an array full of nan&#39;s</span>
@@ -983,98 +1001,106 @@ corrections for edge effects and unvisited locations.  With λ (x, y) denoting t
             <span class="c1"># shifting tau_x/y</span>
             <span class="n">tau_x</span> <span class="o">=</span> <span class="n">ii</span><span class="o">-</span><span class="n">sh_x</span><span class="o">+</span><span class="mi">1</span>
             <span class="n">tau_y</span> <span class="o">=</span> <span class="n">jj</span><span class="o">-</span><span class="n">sh_y</span><span class="o">+</span><span class="mi">1</span>
-            <span class="c1"># if rad_max and rad_min is provided, I only calculate the correlation for points between rad_min and rad_max</span>
-            <span class="k">if</span> <span class="n">rad_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">((</span><span class="n">tau_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">tau_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">&gt;</span> <span class="n">rad_max</span><span class="p">):</span>
+            <span class="c1"># if rad_max and rad_min is provided, calculate correlation</span>
+            <span class="c1"># for points between rad_min and rad_max</span>
+            <span class="k">if</span> <span class="n">rad_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="p">(</span><span class="n">tau_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">tau_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">&gt;</span> <span class="n">rad_max</span>
+            <span class="p">):</span>
                 <span class="k">continue</span>
-            <span class="k">if</span> <span class="n">rad_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">((</span><span class="n">tau_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">tau_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">&lt;</span> <span class="n">rad_min</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">rad_min</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="p">(</span><span class="n">tau_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">tau_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">&lt;</span> <span class="n">rad_min</span>
+            <span class="p">):</span>
                 <span class="k">continue</span>
-            <span class="n">coer_arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">pearson_autocor</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">lag_x</span><span class="o">=</span><span class="n">tau_x</span><span class="p">,</span> <span class="n">lag_y</span><span class="o">=</span><span class="n">tau_y</span><span class="p">)</span>
+            <span class="n">coer_arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span> <span class="o">=</span> <span class="n">pearson_autocor</span><span class="p">(</span>
+                <span class="n">arr</span><span class="p">,</span> <span class="n">lag_x</span><span class="o">=</span><span class="n">tau_x</span><span class="p">,</span> <span class="n">lag_y</span><span class="o">=</span><span class="n">tau_y</span>
+            <span class="p">)</span>
     <span class="k">return</span> <span class="n">coer_arr</span>
 
+
 <span class="k">def</span><span class="w"> </span><span class="nf">pearson_autocor</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">lag_x</span><span class="p">,</span> <span class="n">lag_y</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculates Pearson autocorrelation for an array that can contain NaN values.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate Pearson autocorrelation for an array with NaN values.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr : numpy.ndarray</span>
+<span class="sd">        Input array.</span>
+<span class="sd">    lag_x : int</span>
+<span class="sd">        Lag in x direction.</span>
+<span class="sd">    lag_y : int</span>
+<span class="sd">        Lag in y direction.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Pearson correlation coefficient.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sh_x</span><span class="p">,</span> <span class="n">sh_y</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
     <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">lag_x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">sh_x</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">lag_y</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">sh_y</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;abs(lag_x), abs(lag_y) have to be smaller than </span><span class="si">{</span><span class="n">sh_x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">sh_y</span><span class="si">}</span><span class="s2">, but </span><span class="si">{</span><span class="n">lag_x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">lag_y</span><span class="si">}</span><span class="s2"> provided&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;abs(lag_x), abs(lag_y) have to be smaller than &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sh_x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">sh_y</span><span class="si">}</span><span class="s2">, but </span><span class="si">{</span><span class="n">lag_x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">lag_y</span><span class="si">}</span><span class="s2"> provided&quot;</span>
+        <span class="p">)</span>
 
     <span class="c1"># calculating sum for elements that meet the requirements</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">sum1</span><span class="p">,</span> <span class="n">sum2</span><span class="p">,</span> <span class="n">sum3</span><span class="p">,</span> <span class="n">sum4</span><span class="p">,</span> <span class="n">sum5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sh_x</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sh_y</span><span class="p">):</span>
-            <span class="c1"># checking if the indices are withing the array</span>
+            <span class="c1"># checking if the indices are within the array</span>
             <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">ii</span><span class="o">-</span><span class="n">lag_x</span> <span class="o">&lt;</span> <span class="n">sh_x</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">jj</span><span class="o">-</span><span class="n">lag_y</span> <span class="o">&lt;</span> <span class="n">sh_y</span><span class="p">:</span>
                 <span class="c1"># checking if both values (in ii,jj and shifted) are not nan</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">])</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="n">lag_x</span><span class="p">,</span> <span class="n">jj</span><span class="o">-</span><span class="n">lag_y</span><span class="p">]):</span>
-                    
+                <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">])</span> <span class="ow">and</span>
+                        <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="n">lag_x</span><span class="p">,</span> <span class="n">jj</span><span class="o">-</span><span class="n">lag_y</span><span class="p">])):</span>
                     <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
                     <span class="n">sum1</span> <span class="o">+=</span> <span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span> <span class="o">*</span> <span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="n">lag_x</span><span class="p">,</span> <span class="n">jj</span><span class="o">-</span><span class="n">lag_y</span><span class="p">]</span>
-                    <span class="n">sum2</span> <span class="o">+=</span> <span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span> 
+                    <span class="n">sum2</span> <span class="o">+=</span> <span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span>
                     <span class="n">sum3</span> <span class="o">+=</span> <span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="n">lag_x</span><span class="p">,</span> <span class="n">jj</span><span class="o">-</span><span class="n">lag_y</span><span class="p">]</span>
-        
                     <span class="n">sum4</span> <span class="o">+=</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
                     <span class="n">sum5</span> <span class="o">+=</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">ii</span><span class="o">-</span><span class="n">lag_x</span><span class="p">,</span> <span class="n">jj</span><span class="o">-</span><span class="n">lag_y</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
 
-              
     <span class="c1"># according to the paper they had this limit for number of points</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
     <span class="n">numerator</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">sum1</span> <span class="o">-</span> <span class="n">sum2</span> <span class="o">*</span> <span class="n">sum3</span>
-    <span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">sum4</span> <span class="o">-</span> <span class="n">sum2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">sum5</span> <span class="o">-</span> <span class="n">sum3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">sum4</span> <span class="o">-</span> <span class="n">sum2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">sum5</span> <span class="o">-</span> <span class="n">sum3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="p">)</span>
     <span class="n">cor</span> <span class="o">=</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span>
 
     <span class="k">return</span> <span class="n">cor</span>
 
+
 <span class="k">def</span><span class="w"> </span><span class="nf">pearson_cor_2arr</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Calculates Pearson correlation for two arrays with the same shape and no NaN.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate Pearson correlation for two arrays with the same shape.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    arr1 : numpy.ndarray</span>
+<span class="sd">        First array.</span>
+<span class="sd">    arr2 : numpy.ndarray</span>
+<span class="sd">        Second array.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Pearson correlation coefficient.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">arr1</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">arr2</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Both arrays should have the same shape&quot;</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">arr1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">arr1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
- 
+
     <span class="n">numerator</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr1</span> <span class="o">*</span> <span class="n">arr2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
-    <span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span>
+        <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="p">)</span>
     <span class="k">return</span> <span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span>
 
+
 <span class="o">%</span><span class="k">whos</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable             Type                 Data/Info
----------------------------------------------------
-CachingFileSystem    _Cached              &lt;class &#39;fsspec.implementa&lt;...&gt;ached.CachingFileSystem&#39;&gt;
-DandiAPIClient       type                 &lt;class &#39;dandi.dandiapi.DandiAPIClient&#39;&gt;
-File                 ABCMeta              &lt;class &#39;h5py._hl.files.File&#39;&gt;
-NWBHDF5IO            ABCMeta              &lt;class &#39;pynwb.NWBHDF5IO&#39;&gt;
-asset                RemoteBlobAsset      DANDI:assets/2b9e441b-56bc-4be2-893e-0e02d22d239d
-ax                   Axes                 Axes(0.125,0.11;0.775x0.77)
-client               DandiAPIClient       &lt;dandi.dandiapi.DandiAPIC&lt;...&gt;nt object at 0x109299280&gt;
-create_coer_arr      function             &lt;function create_coer_arr at 0x13c7ff7e0&gt;
-dandiset_id          str                  000582
-fig                  Figure               Figure(400x400)
-file                 File                 &lt;HDF5 file &quot;26a22c31-09bc&lt;...&gt;-edc7394ed12c&gt;&quot; (mode r)&gt;
-file_system          HTTPFile             &lt;File-like object HTTPFil&lt;...&gt;c-43a4-9187-edc7394ed12c&gt;
-filesystem           function             &lt;function filesystem at 0x109ba8540&gt;
-fs                   CachingFileSystem    &lt;fsspec.implementations.c&lt;...&gt;em object at 0x119db9f40&gt;
-io                   NWBHDF5IO            &lt;pynwb.NWBHDF5IO object at 0x119c1f380&gt;
-nap                  module               &lt;module &#39;pynapple&#39; from &#39;&lt;...&gt;es/pynapple/__init__.py&#39;&gt;
-np                   module               &lt;module &#39;numpy&#39; from &#39;/op&lt;...&gt;kages/numpy/__init__.py&#39;&gt;
-num_bins             int                  15
-nwbfile              NWBFile              root pynwb.file.NWBFile a&lt;...&gt;ass &#39;pynwb.misc.Units&#39;&gt;\n
-nwbfile_path         str                  sub-10073/sub-10073_ses-1&lt;...&gt;0302_behavior+ecephys.nwb
-pearson_autocor      function             &lt;function pearson_autocor at 0x13c7ff6a0&gt;
-pearson_cor_2arr     function             &lt;function pearson_cor_2arr at 0x13c7ff2e0&gt;
-plt                  module               &lt;module &#39;matplotlib.pyplo&lt;...&gt;es/matplotlib/pyplot.py&#39;&gt;
-position_bins        list                 n=2
-position_over_time   TsdFrame             Time (s)    x         y\n&lt;...&gt;loat64, shape: (30000, 2)
-pynapple             module               &lt;module &#39;pynapple&#39; from &#39;&lt;...&gt;es/pynapple/__init__.py&#39;&gt;
-rate_maps            dict                 n=8
-s3_url               str                  https://dandiarchive.s3.a&lt;...&gt;bc-43a4-9187-edc7394ed12c
-spatial_series       SpatialSeries        SpatialSeriesLED1 pynwb.b&lt;...&gt;seconds\n  unit: meters\n
-spike_times_group    TsGroup                Index     rate\n-------&lt;...&gt; 2.8855\n      7  1.46525
-x                    ndarray              30000: 30000 elems, type `float64`, 240000 bytes (234.375 kb)
-y                    ndarray              30000: 30000 elems, type `float64`, 240000 bytes (234.375 kb)
 </pre></div>
 </div>
 </div>
