@@ -485,94 +485,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk
-  Using cached allensdk-2.16.2-py3-none-any.whl.metadata (1.9 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary (from allensdk)
-  Using cached psycopg2_binary-2.9.10-cp312-cp312-macosx_14_0_arm64.whl.metadata (4.9 kB)
-Requirement already satisfied: hdmf!=3.5.*,!=3.6.*,!=3.7.*,!=3.8.* in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (4.1.0)
-Requirement already satisfied: h5py in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.14.0)
-Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.10.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.24 (from allensdk)
-  Using cached numpy-1.23.5.tar.gz (10.7 MB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l- error
-  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
-  
-  <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
-  <span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
-  <span class=" -Color -Color-Red">╰─&gt;</span> <span class=" -Color -Color-Red">[33 lines of output]</span>
-  <span class=" -Color -Color-Red">   </span> Traceback (most recent call last):
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 353, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     main()
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 335, in main
-  <span class=" -Color -Color-Red">   </span>     json_out[&#39;return_val&#39;] = hook(**hook_input[&#39;kwargs&#39;])
-  <span class=" -Color -Color-Red">   </span>                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 112, in get_requires_for_build_wheel
-  <span class=" -Color -Color-Red">   </span>     backend = _build_backend()
-  <span class=" -Color -Color-Red">   </span>               ^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 77, in _build_backend
-  <span class=" -Color -Color-Red">   </span>     obj = import_module(mod_path)
-  <span class=" -Color -Color-Red">   </span>           ^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/importlib/__init__.py&quot;, line 90, in import_module
-  <span class=" -Color -Color-Red">   </span>     return _bootstrap._gcd_import(name[level:], package, level)
-  <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1310, in _find_and_load_unlocked
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1331, in _find_and_load_unlocked
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 935, in _load_unlocked
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 995, in exec_module
-  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-_i3k7ktb/overlay/lib/python3.12/site-packages/setuptools/__init__.py&quot;, line 16, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     import setuptools.version
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-_i3k7ktb/overlay/lib/python3.12/site-packages/setuptools/version.py&quot;, line 1, in &lt;module&gt;
-  <span class=" -Color -Color-Red">   </span>     import pkg_resources
-  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-_i3k7ktb/overlay/lib/python3.12/site-packages/pkg_resources/__init__.py&quot;, line 2172, in &lt;module&gt;
-
-  <span class=" -Color -Color-Red">   </span>     register_finder(pkgutil.ImpImporter, find_on_path)
-  <span class=" -Color -Color-Red">   </span>                     ^^^^^^^^^^^^^^^^^^^
-  <span class=" -Color -Color-Red">   </span> AttributeError: module &#39;pkgutil&#39; has no attribute &#39;ImpImporter&#39;. Did you mean: &#39;zipimporter&#39;?
-  <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
-  
-  <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
-
-<span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
-<span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
-<span class=" -Color -Color-Red">╰─&gt;</span> See above for output.
-
-<span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk imported.
 </pre></div>
 </div>
 </div>
@@ -590,15 +503,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import toolboxes</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.core.brain_observatory_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainObservatoryCache</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages imported.
 </pre></div>
 </div>
 </div>
@@ -630,15 +535,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create an instance of the Brain Observatory cache</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">boc</span> <span class="o">=</span> <span class="n">BrainObservatoryCache</span><span class="p">(</span><span class="n">manifest_file</span><span class="o">=</span><span class="s1">&#39;manifest.json&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Assign container ID from previous section</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">exp_container_id</span> <span class="o">=</span> <span class="mi">627823571</span>
-
-<span class="ne">NameError</span>: name &#39;BrainObservatoryCache&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data acquired.
 </pre></div>
 </div>
 </div>
@@ -665,17 +562,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the maximum projection (a numpy array) of our data</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">max_projection</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_max_projection</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Create a new figure</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;experiment_data&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/896d2c9affec593b9093536c22e00d0868fdbabe491aaa08c0f4df54fc039222.png" src="../_images/896d2c9affec593b9093536c22e00d0868fdbabe491aaa08c0f4df54fc039222.png" />
 </div>
 </div>
 </section>
@@ -707,25 +594,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/4257893855.py:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  plt.ylabel(&#39;Neurons ($\Delta$F\F)&#39;)
-/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/4257893855.py:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  plt.ylabel(&#39;Neurons ($\Delta$F\F)&#39;)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Assign timestamps and deltaF/F</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ts</span><span class="p">,</span> <span class="n">dff</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_dff_traces</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Set up a figure</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;experiment_data&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/8d9d5324025156ce214a46f282b72048b2347bdbb3a076aa15c7173ea50ea8b2.png" src="../_images/8d9d5324025156ce214a46f282b72048b2347bdbb3a076aa15c7173ea50ea8b2.png" />
 </div>
 </div>
 </section>
@@ -747,18 +616,172 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the cell specimens information for this experiment</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_cell_specimens</span><span class="p">(</span><span class="n">experiment_container_ids</span><span class="o">=</span><span class="p">[</span><span class="n">exp_container_id</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">cell_specimens_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cell_specimens</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">cell_specimens_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;boc&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>all_stim</th>
+      <th>area</th>
+      <th>cell_specimen_id</th>
+      <th>donor_full_genotype</th>
+      <th>dsi_dg</th>
+      <th>experiment_container_id</th>
+      <th>failed_experiment_container</th>
+      <th>g_dsi_dg</th>
+      <th>g_osi_dg</th>
+      <th>g_osi_sg</th>
+      <th>...</th>
+      <th>specimen_id</th>
+      <th>tfdi_dg</th>
+      <th>time_to_peak_ns</th>
+      <th>time_to_peak_sg</th>
+      <th>tld1_id</th>
+      <th>tld1_name</th>
+      <th>tld2_id</th>
+      <th>tld2_name</th>
+      <th>tlr1_id</th>
+      <th>tlr1_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>False</td>
+      <td>VISp</td>
+      <td>662199586</td>
+      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
+      <td>NaN</td>
+      <td>627823571</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>603751387</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>265180449</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>None</td>
+      <td>None</td>
+      <td>528393470</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>False</td>
+      <td>VISp</td>
+      <td>662199605</td>
+      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
+      <td>0.793449</td>
+      <td>627823571</td>
+      <td>False</td>
+      <td>0.452460</td>
+      <td>0.360264</td>
+      <td>0.640623</td>
+      <td>...</td>
+      <td>603751387</td>
+      <td>0.265616</td>
+      <td>0.29916</td>
+      <td>0.29916</td>
+      <td>265180449</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>None</td>
+      <td>None</td>
+      <td>528393470</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>True</td>
+      <td>VISp</td>
+      <td>662199626</td>
+      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
+      <td>0.346550</td>
+      <td>627823571</td>
+      <td>False</td>
+      <td>0.346134</td>
+      <td>0.107403</td>
+      <td>0.943987</td>
+      <td>...</td>
+      <td>603751387</td>
+      <td>0.393678</td>
+      <td>0.29916</td>
+      <td>0.33240</td>
+      <td>265180449</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>None</td>
+      <td>None</td>
+      <td>528393470</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>False</td>
+      <td>VISp</td>
+      <td>662199645</td>
+      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
+      <td>0.636332</td>
+      <td>627823571</td>
+      <td>False</td>
+      <td>0.629502</td>
+      <td>0.971795</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>603751387</td>
+      <td>0.357068</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>265180449</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>None</td>
+      <td>None</td>
+      <td>528393470</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>False</td>
+      <td>VISp</td>
+      <td>662199683</td>
+      <td>Tlx3-Cre_PL56/wt;Ai148(TIT2L-GC6f-ICL-tTA2)/wt</td>
+      <td>NaN</td>
+      <td>627823571</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.524082</td>
+      <td>...</td>
+      <td>603751387</td>
+      <td>NaN</td>
+      <td>0.29916</td>
+      <td>0.33240</td>
+      <td>265180449</td>
+      <td>Tlx3-Cre_PL56</td>
+      <td>None</td>
+      <td>None</td>
+      <td>528393470</td>
+      <td>Ai148(TIT2L-GC6f-ICL-tTA2)</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 60 columns</p>
+</div></div></div>
 </div>
 <p>Let’s create a bar graph of preferred images in our dataset. The <code class="docutils literal notranslate"><span class="pre">p_ns</span></code> column contains the pvalue that corresponds to whether a cell <em>significantly</em> prefered an image more than the rest. We will use this column to subset our <code class="docutils literal notranslate"><span class="pre">cell_specimens_df</span></code> dataframe to only contains cells that have a p value less than 0.05.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pref_image_ns</span></code> column contains the image IDs of the stimulus being presented. We can create our bar graph from this column to see how many cells responded to these statistically significant images.</p>
@@ -786,18 +809,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Subset dataframe to contain significantly preferred images </span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">col_1</span> <span class="o">=</span> <span class="s1">&#39;p_ns&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sig_cells</span> <span class="o">=</span> <span class="n">cell_specimens_df</span><span class="p">[</span><span class="n">cell_specimens_df</span><span class="p">[</span><span class="n">col_1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Assign our image ids for significantly preferred images</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">col_2</span> <span class="o">=</span> <span class="s1">&#39;pref_image_ns&#39;</span>
-
-<span class="ne">NameError</span>: name &#39;cell_specimens_df&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/b9dd82c57a268fd45834b5baab6b2139e8f82508ad388d4514493283bae2e1e6.png" src="../_images/b9dd82c57a268fd45834b5baab6b2139e8f82508ad388d4514493283bae2e1e6.png" />
 </div>
 </div>
 <p>In order to actually see what these images are, first, we’ll organize the stimulus table. This tells us which stimulus was played on each trial. This data set has 118 different scenes, and each scene is presented 50 times. Images of the scenes can be found <a class="reference external" href="http://observatory.brain-map.org/visualcoding/stimulus/natural_scenes">here</a>.</p>
@@ -828,17 +840,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the natural scene information</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">natural_scene_table</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_stimulus_table</span><span class="p">(</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">natural_scene_template</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_stimulus_template</span><span class="p">(</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sceneIDs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">natural_scene_table</span><span class="o">.</span><span class="n">frame</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;experiment_data&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/0c149da0b6d61b5d1d239161c383c5fef0107a3a207ee1fc79ccb354d19f77e7.png" src="../_images/0c149da0b6d61b5d1d239161c383c5fef0107a3a207ee1fc79ccb354d19f77e7.png" />
 </div>
 </div>
 </section>
@@ -864,18 +866,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get experiment for our container id and stimuli of interest</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">stim_2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;drifting_gratings&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">dg_experiment</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                         <span class="n">stimuli</span> <span class="o">=</span> <span class="n">stim_2</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Download the experiment data using the experiment id</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">experiment_id_2</span> <span class="o">=</span> <span class="n">dg_experiment</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;boc&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data acquired.
 </pre></div>
 </div>
 </div>
@@ -906,17 +897,130 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.brain_observatory.drifting_gratings</span><span class="w"> </span><span class="kn">import</span> <span class="n">DriftingGratings</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Create my DriftingGratings Object </span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">dg</span> <span class="o">=</span> <span class="n">DriftingGratings</span><span class="p">(</span><span class="n">data_dg</span><span class="p">)</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/VictorMagdaleno/opt/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py:205: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self._setitem_with_indexer(indexer, value)
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ori_dg</th>
+      <th>tf_dg</th>
+      <th>reliability_dg</th>
+      <th>osi_dg</th>
+      <th>dsi_dg</th>
+      <th>peak_dff_dg</th>
+      <th>ptest_dg</th>
+      <th>p_run_dg</th>
+      <th>run_modulation_dg</th>
+      <th>cv_os_dg</th>
+      <th>cv_ds_dg</th>
+      <th>tf_index_dg</th>
+      <th>cell_specimen_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5</td>
+      <td>1</td>
+      <td>0.280185</td>
+      <td>1.23717</td>
+      <td>0.0312253</td>
+      <td>16.5138</td>
+      <td>9.74126e-28</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.938693</td>
+      <td>0.0474909</td>
+      <td>0.434779</td>
+      <td>662201985</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>1</td>
+      <td>0.0855848</td>
+      <td>0.812747</td>
+      <td>0.565631</td>
+      <td>11.4741</td>
+      <td>3.50072e-14</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.614402</td>
+      <td>0.42813</td>
+      <td>0.39683</td>
+      <td>662201975</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0.140565</td>
+      <td>0.439415</td>
+      <td>0.801277</td>
+      <td>9.85304</td>
+      <td>9.07543e-07</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.15991</td>
+      <td>0.460012</td>
+      <td>0.36523</td>
+      <td>662202121</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>3</td>
+      <td>0.0109138</td>
+      <td>0.557367</td>
+      <td>2.97525</td>
+      <td>1.33345</td>
+      <td>0.00575501</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.146026</td>
+      <td>0.438625</td>
+      <td>0.178085</td>
+      <td>662202077</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>3</td>
+      <td>0.099905</td>
+      <td>1.37391</td>
+      <td>0.882893</td>
+      <td>13.2219</td>
+      <td>0.000227121</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.808828</td>
+      <td>0.652798</td>
+      <td>0.324958</td>
+      <td>662202612</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Next, we’ll select a cell from our table by <code class="docutils literal notranslate"><span class="pre">cell_specimen_id</span></code>.</p>
 <p>If there is a specific cell you want to analyze, you can use the <code class="docutils literal notranslate"><span class="pre">get_cell_specimen_indices()</span></code> method to locate the index of your cell of interest. The index of your cell is needed becasue you will need to index into the NumPy arrary returned by the <code class="docutils literal notranslate"><span class="pre">response</span></code> attribute to contruct your heatmap.</p>
@@ -933,15 +1037,8 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Select specimen ID from first row</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">specimen_id</span> <span class="o">=</span> <span class="n">dg_df</span><span class="p">[</span><span class="s1">&#39;cell_specimen_id&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">cell_loc</span> <span class="o">=</span> <span class="n">data_dg</span><span class="o">.</span><span class="n">get_cell_specimen_indices</span><span class="p">([</span><span class="n">specimen_id</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Specimen ID:&#39;</span><span class="p">,</span> <span class="n">specimen_id</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;dg_df&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Specimen ID: 662201985
+Cell loc: 0
 </pre></div>
 </div>
 </div>
@@ -965,25 +1062,7 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/1726107458.py:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  cbar.set_label(&quot;$\Delta$F/F (%)&quot;)
-/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/1726107458.py:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
-  cbar.set_label(&quot;$\Delta$F/F (%)&quot;)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot our data, skiping the blank sweep column (0) of the temporal frequency dimension</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dg</span><span class="o">.</span><span class="n">response</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:,</span><span class="n">cell_loc</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heat Map, Cell Specimen: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">specimen_id</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">dg</span><span class="o">.</span><span class="n">tfvals</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-
-<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
-</pre></div>
-</div>
+<img alt="../_images/d90bd90483fa4402b4688a43faf89af93cbc3d6bdcc511f31e50c0c4c178fe83.png" src="../_images/d90bd90483fa4402b4688a43faf89af93cbc3d6bdcc511f31e50c0c4c178fe83.png" />
 </div>
 </div>
 <p>The preferred directions temporal frequency are stored within <code class="docutils literal notranslate"><span class="pre">ori_dg</span></code> and <code class="docutils literal notranslate"><span class="pre">tf_dg</span></code> in are table above and can be indexed through <code class="docutils literal notranslate"><span class="pre">dg.orivals</span></code> and <code class="docutils literal notranslate"><span class="pre">tf.tfvals</span></code> respectively.</p>
@@ -998,14 +1077,8 @@ Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pref_ori</span> <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">orivals</span><span class="p">[</span><span class="n">dg</span><span class="o">.</span><span class="n">peak</span><span class="o">.</span><span class="n">ori_dg</span><span class="p">[</span><span class="n">cell_loc</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pref_tf</span> <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">tfvals</span><span class="p">[</span><span class="n">dg</span><span class="o">.</span><span class="n">peak</span><span class="o">.</span><span class="n">tf_dg</span><span class="p">[</span><span class="n">cell_loc</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Preferred direction:&quot;</span><span class="p">,</span> <span class="n">pref_ori</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;dg&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Preferred direction: 225
+Preferred temporal frequency: 1
 </pre></div>
 </div>
 </div>
