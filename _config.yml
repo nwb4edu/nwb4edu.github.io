@@ -14,6 +14,8 @@ execute:
   allow_errors: true
   timeout: 180
   exclude_patterns:
+    - 'Lesson_3/01-Obtaining_Data_For_Single_Cells.ipynb'
+    - 'Lesson_3/02-Analyzing_Computed_Features.ipynb'
     - 'Lesson_4/01-Retrieving_Brain_Observatory_Data.ipynb'
     - 'Lesson_4/02-Analyzing_Two_Photon_Data.ipynb'
     - 'Lesson_4/03-Correlations_in_Two_Photon_Data.ipynb'
