@@ -1,4 +1,6 @@
 title: Teaching & Learning with NWB Datasets
+author: Ashley Juavinett
+copyright: "2025"
 version: 1.0.0
 logo: _images/nwb_learning.png
 only_build_toc_files: true
