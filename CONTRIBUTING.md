@@ -1,6 +1,6 @@
 # Contributing to nwb4edu
 
-Thank you for your interest in contributing to nwb4edu! We welcome contributions from our community to help improve and build it.
+Thank you for your interest in contributing to nwb4edu!
 
 ## How to Contribute
 
@@ -46,7 +46,7 @@ We're especially interested in expanding our "Greatest Hits" collection. If you 
 
 ### Setting Up Your Environment
 
-**Important**: Building the book requires **Python 3.11** due to AllenSDK compatibility requirements.
+**Important**: Building the book currently requires **Python 3.11** due to AllenSDK compatibility requirements.
 
 1. Fork and clone the repository:
 ```bash
@@ -73,44 +73,7 @@ git checkout -b descriptive-branch-name
 
 ### Code Style Guidelines
 
-#### Python Code
-- Follow [PEP 8](https://pep8.org/) style guidelines
-- Use snake_case for function and variable names (not CamelCase)
-- Include docstrings for functions using numpy-style format:
-```python
-def process_data(data, threshold=0.5):
-    """
-    Process neural data by applying a threshold.
-
-    Parameters
-    ----------
-    data : numpy.ndarray
-        The input data array
-    threshold : float, optional
-        The threshold value (default: 0.5)
-
-    Returns
-    -------
-    processed : numpy.ndarray
-        The processed data
-    """
-    processed = data[data > threshold]
-    return processed
-```
-
-- Use proper spacing around operators and after commas
-- Keep lines under 100 characters when possible
-
-#### Jupyter Notebooks
-- Use markdown cells liberally to explain what you're doing
-- Include comments in code cells for complex operations
-- Test that all cells run in order without errors
-- Include learning objectives at the beginning of each lesson
-- End lessons with a summary or problem set
-
-#### Markdown
-- Use proper heading hierarchy (# for titles, ## for main sections, etc.)
-- Include links to external resources where helpful
+Please follow [PEP 8](https://pep8.org/) style guidelines in your code, use markdown cells liberally to explain what you're doing, and link to external resources where helpful
 
 ### Testing Your Changes
 
@@ -174,9 +137,8 @@ If you're creating a new lesson, please include:
 
 If you need help with your contribution:
 
-- **Questions about content**: Open a discussion on GitHub
-- **Technical issues**: Open an issue with the "help wanted" tag
-- **Direct contact**: Email Ashley Juavinett at ajuavine(at)ucsd(dot)edu
+- **Questions about content**: Email Ashley Juavinett at ajuavine(at)ucsd(dot)edu
+- **Technical issues**: Open an issue on Github.
 
 ## Recognition
 
