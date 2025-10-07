@@ -501,12 +501,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="c1"># Set the filename - check if file exists in current directory or parent directory</span>
+<span class="c1"># Set the filename</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;000006/sub-anm369962/sub-anm369962_ses-20170310.nwb&#39;</span>
 
-<span class="c1"># If the file doesn&#39;t exist in the current directory, try looking in common locations</span>
+<span class="c1"># Check if file exists in current directory or parent directory</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="c1"># Try parent directory (in case notebooks are run from different locations)</span>
+    <span class="c1"># Try parent directory (notebooks may run from different locations)</span>
     <span class="n">parent_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">parent_path</span><span class="p">):</span>
         <span class="n">filename</span> <span class="o">=</span> <span class="n">parent_path</span>
@@ -529,7 +529,10 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: Could not find the NWB file at </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Current working directory: </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Please ensure you have:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Completed the previous notebook (01-Obtaining_Datasets_with_DANDI.ipynb)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;1. Completed the previous notebook &quot;</span>
+        <span class="s2">&quot;(01-Obtaining_Datasets_with_DANDI.ipynb)&quot;</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Downloaded the dataset using DANDI&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -581,13 +584,15 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get metadata from NWB file </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The experiment within this NWB file was conducted at&#39;</span><span class="p">,</span><span class="n">nwb_file</span><span class="o">.</span><span class="n">institution</span><span class="p">,</span><span class="s1">&#39;.&#39;</span>\
-      <span class="p">,</span><span class="n">nwb_file</span><span class="o">.</span><span class="n">experiment_description</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s1">&#39;The experiment within this NWB file was conducted at &#39;</span>
+    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">nwb_file</span><span class="o">.</span><span class="n">institution</span><span class="si">}</span><span class="s1">. </span><span class="si">{</span><span class="n">nwb_file</span><span class="o">.</span><span class="n">experiment_description</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The experiment within this NWB file was conducted at Janelia Research Campus . Extracellular electrophysiology recordings performed on mouse anterior lateral motor cortex (ALM) in delay response task. Neural activity from two neuron populations, pyramidal track upper and lower, were characterized, in relation to movement execution.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The experiment within this NWB file was conducted at Janelia Research Campus. Extracellular electrophysiology recordings performed on mouse anterior lateral motor cortex (ALM) in delay response task. Neural activity from two neuron populations, pyramidal track upper and lower, were characterized, in relation to movement execution.
 </pre></div>
 </div>
 </div>
@@ -604,7 +609,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x4462682400
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x4730184832
  Fields:
    time_series: {
      lick_left_times &lt;class &#39;pynwb.base.TimeSeries&#39;&gt;,
@@ -932,7 +937,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -943,7 +948,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -954,7 +959,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -965,7 +970,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -976,7 +981,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x44...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
       <td>H-129: 64</td>
     </tr>
   </tbody>
