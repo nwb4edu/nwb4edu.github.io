@@ -15,4 +15,5 @@ execute:
   timeout: 180
   exclude_patterns:
     - 'Lesson_4/01-Retrieving_Brain_Observatory_Data.ipynb'
-    - 'Lesson_5/02-RotationalDynamics.ipynb'
+    - 'Lesson_4/02-Analyzing_Two_Photon_Data.ipynb'
+    - 'Lesson_4/03-Correlations_in_Two_Photon_Data.ipynb'
