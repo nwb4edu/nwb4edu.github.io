@@ -15,3 +15,4 @@ execute:
   timeout: 180
   exclude_patterns:
     - 'Lesson_4/01-Retrieving_Brain_Observatory_Data.ipynb'
+    - 'Lesson_5/02-RotationalDynamics.ipynb'
