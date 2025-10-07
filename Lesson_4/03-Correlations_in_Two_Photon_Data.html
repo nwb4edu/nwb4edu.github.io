@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -470,17 +470,9 @@ document.write(`
 <span class="c1"># If not, it will install it for you.</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
-    <span class="k">if</span> <span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span> <span class="o">==</span> <span class="s1">&#39;2.11.2&#39;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;incompatible version of allensdk installed&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk already installed.&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>allensdk
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>incompatible version of allensdk installed
 </pre></div>
 </div>
 </div>
@@ -504,10 +496,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/core/brain_observatory_nwb_data_set.py:43: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools&lt;81.
-  from pkg_resources import parse_version
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages imported.
 </pre></div>
 </div>
@@ -545,18 +533,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">experiments</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                                      <span class="n">stimuli</span> <span class="o">=</span> <span class="p">[</span><span class="n">stim</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Assign the experiment id </span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">experiment_id</span> <span class="o">=</span> <span class="n">experiments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Import the natural scenes analysis</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">ns</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiment_analysis</span><span class="p">(</span><span class="n">ophys_experiment_id</span><span class="o">=</span> <span class="n">experiment_id</span><span class="p">,</span> 
-<span class="g g-Whitespace">     </span><span class="mi">17</span>                                        <span class="n">stimulus_type</span><span class="o">=</span> <span class="n">stim</span><span class="p">)</span>
-
-<span class="ne">IndexError</span>: list index out of range
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Signal correlation acquired.
 </pre></div>
 </div>
 </div>
@@ -571,14 +548,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> Signal Correlation Values:&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(122, 122)
 
-<span class="ne">NameError</span>: name &#39;sc&#39; is not defined
+ Signal Correlation Values:
+[[1.         0.14323458 0.17951859 ... 0.01880074 0.23897593 0.66786783]
+ [0.14323458 1.         0.23507335 ... 0.01021934 0.15987039 0.1993377 ]
+ [0.17951859 0.23507335 1.         ... 0.30795471 0.2214713  0.20853155]
+ ...
+ [0.01880074 0.01021934 0.30795471 ... 1.         0.31723401 0.1081826 ]
+ [0.23897593 0.15987039 0.2214713  ... 0.31723401 1.         0.37313061]
+ [0.66786783 0.1993377  0.20853155 ... 0.1081826  0.37313061 1.        ]]
 </pre></div>
 </div>
 </div>
@@ -601,20 +580,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Signal Correlations&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sc&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Cell #&#39;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 600x600 with 0 Axes&gt;
-</pre></div>
-</div>
+<a class="reference internal image-reference" href="../_images/565060158edcbb1ab77e38376c7a6c2a68d0098d1cb90e66b12b43ef4c3eed53.png"><img alt="../_images/565060158edcbb1ab77e38376c7a6c2a68d0098d1cb90e66b12b43ef4c3eed53.png" src="../_images/565060158edcbb1ab77e38376c7a6c2a68d0098d1cb90e66b12b43ef4c3eed53.png" style="width: 386px; height: 345px;" />
+</a>
 </div>
 </div>
 <p>Neurons that are closer together in space tend to have stronger correlations. For this reason it is a good idea to calculate the distance between the neurons. To remind ourselves of what our fluroecent image looks like, the maximum projection of our cells is displayed below.</p>
@@ -634,21 +604,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the max projection of the data and show it</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">data_set</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiment_data</span><span class="p">(</span><span class="n">ophys_experiment_id</span><span class="o">=</span> <span class="n">experiment_id</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">max_proj</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">get_max_projection</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">max_proj</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;experiment_id&#39; is not defined
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 600x600 with 0 Axes&gt;
-</pre></div>
-</div>
+<a class="reference internal image-reference" href="../_images/0423bf2264da060bb670d0ffc327b4102f48e0eb238f736124074beb8932331f.png"><img alt="../_images/0423bf2264da060bb670d0ffc327b4102f48e0eb238f736124074beb8932331f.png" src="../_images/0423bf2264da060bb670d0ffc327b4102f48e0eb238f736124074beb8932331f.png" style="width: 387px; height: 378px;" />
+</a>
 </div>
 </div>
 <p>In the block below, we’ll get the regions of interest (ROIs) and then calculate the distance between these ROIs, using simple geometric distance. The <code class="docutils literal notranslate"><span class="pre">get_roi_mask_array()</span></code> method will return a NumPy array containing all the regions of interest for our experiment. All of the cells in our maximum projection image are defined as a region of interest. For a better understanding, below we will show how one region of interest corresponds to our image above.</p>
@@ -662,16 +619,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rois</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">get_roi_mask_array</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rois</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;data_set&#39; is not defined
-</pre></div>
-</div>
+<a class="reference internal image-reference" href="../_images/35ad8b990c13ebccaf909dd1836098d31fe6b93c376132f815e923ce19fa5477.png"><img alt="../_images/35ad8b990c13ebccaf909dd1836098d31fe6b93c376132f815e923ce19fa5477.png" src="../_images/35ad8b990c13ebccaf909dd1836098d31fe6b93c376132f815e923ce19fa5477.png" style="width: 369px; height: 360px;" />
+</a>
 </div>
 </div>
 <p>This distance that we calculate will be in “pixels” of the image – we’d need to know the size of our field of view in order to get this into actual units of distance. The plot will display how far a cell is to every other cell.</p>
@@ -707,16 +656,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rois</span> <span class="o">=</span> <span class="n">data_set</span><span class="o">.</span><span class="n">get_roi_mask_array</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">num_cells</span> <span class="o">=</span> <span class="n">rois</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">loc_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_cells</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;data_set&#39; is not defined
-</pre></div>
-</div>
+<a class="reference internal image-reference" href="../_images/41ecd1b908c02d2c33a124127c9189f3b50ef30d7e190b9c1827a70ba28f6ff6.png"><img alt="../_images/41ecd1b908c02d2c33a124127c9189f3b50ef30d7e190b9c1827a70ba28f6ff6.png" src="../_images/41ecd1b908c02d2c33a124127c9189f3b50ef30d7e190b9c1827a70ba28f6ff6.png" style="width: 381px; height: 349px;" />
+</a>
 </div>
 </div>
 <p>Below, we’ll plot the distribution of distances. Importantly, we only count each distance once, so we’ll use a numpy function called <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.triu_indices.html">triu_indices</a> to get the x and y indices of the the values. This is becasue in our matrices our symmetrical, meaning the top right triangle is identical to the bottom left triangle. <code class="docutils literal notranslate"><span class="pre">triu_indices()</span></code> will return a pair of indices for each location on our matrix , thus creating a vector that contains all the values in our matrix.</p>
@@ -732,16 +673,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu_indices</span><span class="p">(</span><span class="n">num_cells</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">distance_vector</span> <span class="o">=</span> <span class="n">distance</span><span class="p">[</span><span class="n">inds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">distance_vector</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;num_cells&#39; is not defined
-</pre></div>
-</div>
+<a class="reference internal image-reference" href="../_images/df69ffaad37b3d1b0e72bf575afa6f77defcf06dbb729dab0a1f261938aa3e43.png"><img alt="../_images/df69ffaad37b3d1b0e72bf575afa6f77defcf06dbb729dab0a1f261938aa3e43.png" src="../_images/df69ffaad37b3d1b0e72bf575afa6f77defcf06dbb729dab0a1f261938aa3e43.png" style="width: 388px; height: 261px;" />
+</a>
 </div>
 </div>
 <p>We now have a matrix of the signal correlations and a matrix of the distance. Our next step is to as if these two things are correlated. To test this, we can plot a scatter plot of the distance versus the signal correlation. However, it is better to plot the <code class="docutils literal notranslate"><span class="pre">distance_vector</span></code> versus the <code class="docutils literal notranslate"><span class="pre">sc_vector</span></code>, becasue this will remove the point where the cells are plotted against themselves in our matrices (i.e the diagonal).</p>
@@ -769,21 +702,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Assign our signal correlation vector</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">sc_vector</span> <span class="o">=</span> <span class="n">sc</span><span class="p">[</span><span class="n">inds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Plot the scatter plot</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">distance_vector</span><span class="p">,</span> <span class="n">sc_vector</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sc&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r_value: -0.023194    p_value: 0.046302
+pearson&#39;s r: -0.023194    pearson&#39;s p: 0.046302
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 800x500 with 0 Axes&gt;
-</pre></div>
-</div>
+<a class="reference internal image-reference" href="../_images/37fcdcd1a16bf5e4a73aa55c2f79453542ecb7238cd0f4dc147d0a279899dd52.png"><img alt="../_images/37fcdcd1a16bf5e4a73aa55c2f79453542ecb7238cd0f4dc147d0a279899dd52.png" src="../_images/37fcdcd1a16bf5e4a73aa55c2f79453542ecb7238cd0f4dc147d0a279899dd52.png" style="width: 505px; height: 316px;" />
+</a>
 </div>
 </div>
 </section>

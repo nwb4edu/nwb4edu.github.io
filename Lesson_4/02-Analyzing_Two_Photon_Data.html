@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -485,7 +485,94 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allensdk imported.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting allensdk
+  Using cached allensdk-2.16.2-py3-none-any.whl.metadata (1.9 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting psycopg2-binary (from allensdk)
+  Using cached psycopg2_binary-2.9.10-cp312-cp312-macosx_14_0_arm64.whl.metadata (4.9 kB)
+Requirement already satisfied: hdmf!=3.5.*,!=3.6.*,!=3.7.*,!=3.8.* in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (4.1.0)
+Requirement already satisfied: h5py in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.14.0)
+Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from allensdk) (3.10.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpy&lt;1.24 (from allensdk)
+  Using cached numpy-1.23.5.tar.gz (10.7 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l- error
+  <span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
+  
+  <span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
+  <span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
+  <span class=" -Color -Color-Red">╰─&gt;</span> <span class=" -Color -Color-Red">[33 lines of output]</span>
+  <span class=" -Color -Color-Red">   </span> Traceback (most recent call last):
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 353, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     main()
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 335, in main
+  <span class=" -Color -Color-Red">   </span>     json_out[&#39;return_val&#39;] = hook(**hook_input[&#39;kwargs&#39;])
+  <span class=" -Color -Color-Red">   </span>                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 112, in get_requires_for_build_wheel
+  <span class=" -Color -Color-Red">   </span>     backend = _build_backend()
+  <span class=" -Color -Color-Red">   </span>               ^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py&quot;, line 77, in _build_backend
+  <span class=" -Color -Color-Red">   </span>     obj = import_module(mod_path)
+  <span class=" -Color -Color-Red">   </span>           ^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;/opt/miniconda3/lib/python3.12/importlib/__init__.py&quot;, line 90, in import_module
+  <span class=" -Color -Color-Red">   </span>     return _bootstrap._gcd_import(name[level:], package, level)
+  <span class=" -Color -Color-Red">   </span>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1310, in _find_and_load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1331, in _find_and_load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 935, in _load_unlocked
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap_external&gt;&quot;, line 995, in exec_module
+  <span class=" -Color -Color-Red">   </span>   File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 488, in _call_with_frames_removed
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-_i3k7ktb/overlay/lib/python3.12/site-packages/setuptools/__init__.py&quot;, line 16, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     import setuptools.version
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-_i3k7ktb/overlay/lib/python3.12/site-packages/setuptools/version.py&quot;, line 1, in &lt;module&gt;
+  <span class=" -Color -Color-Red">   </span>     import pkg_resources
+  <span class=" -Color -Color-Red">   </span>   File &quot;/private/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/pip-build-env-_i3k7ktb/overlay/lib/python3.12/site-packages/pkg_resources/__init__.py&quot;, line 2172, in &lt;module&gt;
+
+  <span class=" -Color -Color-Red">   </span>     register_finder(pkgutil.ImpImporter, find_on_path)
+  <span class=" -Color -Color-Red">   </span>                     ^^^^^^^^^^^^^^^^^^^
+  <span class=" -Color -Color-Red">   </span> AttributeError: module &#39;pkgutil&#39; has no attribute &#39;ImpImporter&#39;. Did you mean: &#39;zipimporter&#39;?
+  <span class=" -Color -Color-Red">   </span> <span class=" -Color -Color-Red">[end of output]</span>
+  
+  <span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">error</span>: <span class=" -Color -Color-Bold">subprocess-exited-with-error</span>
+
+<span class=" -Color -Color-Red">×</span> <span class=" -Color -Color-Green">Getting requirements to build wheel</span> did not run successfully.
+<span class=" -Color -Color-Red">│</span> exit code: <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span>
+<span class=" -Color -Color-Red">╰─&gt;</span> See above for output.
+
+<span class=" -Color -Color-Bold -Color-Bold-Magenta">note</span>: This error originates from a subprocess, and is likely not a problem with pip.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h
 </pre></div>
 </div>
 </div>
@@ -503,11 +590,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/core/brain_observatory_nwb_data_set.py:43: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools&lt;81.
-  from pkg_resources import parse_version
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Packages imported.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import toolboxes</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.core.brain_observatory_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BrainObservatoryCache</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> 
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
 </pre></div>
 </div>
 </div>
@@ -540,16 +631,14 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">experiments</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span><span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>                                      <span class="n">stimuli</span> <span class="o">=</span> <span class="n">stim</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1"># Assign the experiment id </span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">experiment_id</span> <span class="o">=</span> <span class="n">experiments</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">experiment_data</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiment_data</span><span class="p">(</span><span class="n">experiment_id</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data acquired.&#39;</span><span class="p">)</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Create an instance of the Brain Observatory cache</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">boc</span> <span class="o">=</span> <span class="n">BrainObservatoryCache</span><span class="p">(</span><span class="n">manifest_file</span><span class="o">=</span><span class="s1">&#39;manifest.json&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Assign container ID from previous section</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">exp_container_id</span> <span class="o">=</span> <span class="mi">627823571</span>
 
-<span class="ne">IndexError</span>: list index out of range
+<span class="ne">NameError</span>: name &#39;BrainObservatoryCache&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -618,6 +707,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/4257893855.py:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  plt.ylabel(&#39;Neurons ($\Delta$F\F)&#39;)
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/4257893855.py:14: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  plt.ylabel(&#39;Neurons ($\Delta$F\F)&#39;)
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
@@ -651,201 +748,14 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the cell specimens information for this experiment</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_cell_specimens</span><span class="p">(</span><span class="n">experiment_container_ids</span><span class="o">=</span><span class="p">[</span><span class="n">exp_container_id</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">cell_specimens_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cell_specimens</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">cell_specimens_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/core/brain_observatory_cache.py:489,</span> in <span class="ni">BrainObservatoryCache.get_cell_specimens</span><span class="nt">(self, file_name, ids, experiment_container_ids, include_failed, simple, filters)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Return cell specimens that have certain properies.</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span><span class="sd"> Parameters</span>
-<span class="sd">   (...)    484 list of dictionaries</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cache_path</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">CELL_SPECIMENS_KEY</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">489</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_cell_metrics</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">path</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;lazy&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">492</span>     <span class="n">pre</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="o">**</span><span class="n">Cache</span><span class="o">.</span><span class="n">cache_json</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">filter_cell_specimens</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>     <span class="n">cell_specimens</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="n">ids</span><span class="o">=</span><span class="n">ids</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">501</span>     <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># drop the thumbnail columns</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:661,</span> in <span class="ni">cacheable.&lt;locals&gt;.decor.&lt;locals&gt;.w</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span> <span class="k">if</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span> <span class="ow">and</span> <span class="ow">not</span> <span class="s1">&#39;post in kwargs&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;post&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">decor</span><span class="o">.</span><span class="n">post</span>
-<span class="ne">--&gt; </span><span class="mi">661</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Cache</span><span class="o">.</span><span class="n">cacher</span><span class="p">(</span><span class="n">func</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>                       <span class="o">*</span><span class="n">args</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>                       <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/warehouse_cache/cache.py:384,</span> in <span class="ni">Cache.cacher</span><span class="nt">(fn, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span> <span class="k">if</span> <span class="n">writer</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">384</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">pre</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">writer</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/core/brain_observatory_cache.py:492,</span> in <span class="ni">BrainObservatoryCache.get_cell_specimens.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">(x)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Return cell specimens that have certain properies.</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span><span class="sd"> Parameters</span>
-<span class="sd">   (...)    484 list of dictionaries</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cache_path</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">CELL_SPECIMENS_KEY</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_cell_metrics</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">path</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;lazy&quot;</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">492</span>     <span class="n">pre</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="o">**</span><span class="n">Cache</span><span class="o">.</span><span class="n">cache_json</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">filter_cell_specimens</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>     <span class="n">cell_specimens</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="n">ids</span><span class="o">=</span><span class="n">ids</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">501</span>     <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># drop the thumbnail columns</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/core/brain_observatory_cache.py:492,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Return cell specimens that have certain properies.</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span><span class="sd"> Parameters</span>
-<span class="sd">   (...)    484 list of dictionaries</span>
-<span class="g g-Whitespace">    </span><span class="mi">485</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cache_path</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">CELL_SPECIMENS_KEY</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">get_cell_metrics</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="n">path</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;lazy&quot;</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">492</span>     <span class="n">pre</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">y</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="o">**</span><span class="n">Cache</span><span class="o">.</span><span class="n">cache_json</span><span class="p">(),</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span> <span class="n">cell_specimens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">filter_cell_specimens</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span>     <span class="n">cell_specimens</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="n">ids</span><span class="o">=</span><span class="n">ids</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">501</span>     <span class="n">filters</span><span class="o">=</span><span class="n">filters</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="c1"># drop the thumbnail columns</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/queries/rma_pager.py:58,</span> in <span class="ni">RmaPager.pager</span><span class="nt">(fn, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="k">while</span> <span class="n">result_count</span> <span class="o">==</span> <span class="n">num_rows</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;start_row&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">start_row</span>
-<span class="ne">---&gt; </span><span class="mi">58</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="n">start_row</span> <span class="o">=</span> <span class="n">start_row</span> <span class="o">+</span> <span class="n">num_rows</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="n">result_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/queries/brain_observatory_api.py:359,</span> in <span class="ni">BrainObservatoryApi.get_cell_metrics</span><span class="nt">(self, cell_specimen_ids, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Get cell metrics by id</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span><span class="sd"> Parameters</span>
-<span class="sd">   (...)    354 dict : cell metric metadata</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="n">order</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;order&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;&#39;cell_specimen_id&#39;&quot;</span><span class="p">])</span>
-<span class="ne">--&gt; </span><span class="mi">359</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_query</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="s2">&quot;brain_observatory_queries&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span>     <span class="s2">&quot;cell_metric&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span>     <span class="n">cell_specimen_ids</span><span class="o">=</span><span class="n">cell_specimen_ids</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span>     <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">364</span>     <span class="o">*</span><span class="n">args</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">return</span> <span class="n">data</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/queries/rma_template.py:132,</span> in <span class="ni">RmaTemplate.template_query</span><span class="nt">(self, template_name, entry_name, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="n">query_args</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">template</span><span class="p">[</span><span class="s1">&#39;order&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="n">query_args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">132</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_query</span><span class="p">(</span><span class="o">**</span><span class="n">query_args</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">return</span> <span class="n">data</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/queries/rma_api.py:257,</span> in <span class="ni">RmaApi.model_query</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">def</span><span class="w"> </span><span class="nf">model_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span><span class="w">     </span><span class="sd">&#39;&#39;&#39;Construct and execute a model stage of an RMA query string.</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span><span class="sd">     Parameters</span>
-<span class="sd">   (...)    255     response, including the normalized query.</span>
-<span class="g g-Whitespace">    </span><span class="mi">256</span><span class="sd">     &#39;&#39;&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">257</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">json_msg_query</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span>         <span class="bp">self</span><span class="o">.</span><span class="n">build_query_url</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>             <span class="bp">self</span><span class="o">.</span><span class="n">model_stage</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)))</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/api.py:164,</span> in <span class="ni">Api.json_msg_query</span><span class="nt">(self, url, dataframe)</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span> <span class="k">def</span><span class="w"> </span><span class="nf">json_msg_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">dataframe</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span><span class="w">     </span><span class="sd">&#39;&#39;&#39; Common case where the url is fully constructed</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span><span class="sd">         and the response data is stored in the &#39;msg&#39; field.</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="sd"> </span>
-<span class="sd">   (...)    161         returned data; type depends on dataframe option</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="sd">     &#39;&#39;&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">164</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_query</span><span class="p">(</span><span class="k">lambda</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">k</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span>                          <span class="bp">self</span><span class="o">.</span><span class="n">read_data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">167</span>     <span class="k">if</span> <span class="n">dataframe</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;dataframe argument is deprecated&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/api.py:204,</span> in <span class="ni">Api.do_query</span><span class="nt">(self, url_builder_fn, json_traversal_fn, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="n">api_url</span> <span class="o">=</span> <span class="n">url_builder_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="n">post</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">204</span> <span class="n">json_parsed_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_parsed_json_over_http</span><span class="p">(</span><span class="n">api_url</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">json_traversal_fn</span><span class="p">(</span><span class="n">json_parsed_data</span><span class="p">)</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/api/api.py:369,</span> in <span class="ni">Api.retrieve_parsed_json_over_http</span><span class="nt">(self, url, post)</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading URL: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">if</span> <span class="n">post</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">369</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">json_utilities</span><span class="o">.</span><span class="n">read_url_get</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">370</span>         <span class="n">requests</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">url</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span>                              <span class="s1">&#39;;/?:@&amp;=+$,&#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">json_utilities</span><span class="o">.</span><span class="n">read_url_post</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/site-packages/allensdk/core/json_utilities.py:116,</span> in <span class="ni">read_url_get</span><span class="nt">(url)</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Transform a JSON contained in a file into an equivalent</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span><span class="sd"> nested python dict.</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span><span class="sd"> </span>
-<span class="sd">   (...)    113 the output will be of the corresponding type.</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="n">response</span> <span class="o">=</span> <span class="n">urllib_request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">116</span> <span class="n">json_string</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/http/client.py:467,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="k">return</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">467</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_chunked</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span>         <span class="c1"># clip the read to the &quot;end of response&quot;</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/http/client.py:599,</span> in <span class="ni">HTTPResponse._read_chunked</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="n">chunk_left</span> <span class="o">-</span> <span class="n">amt</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span>     <span class="k">break</span>
-<span class="ne">--&gt; </span><span class="mi">599</span> <span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="n">chunk_left</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">600</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">601</span>     <span class="n">amt</span> <span class="o">-=</span> <span class="n">chunk_left</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/http/client.py:638,</span> in <span class="ni">HTTPResponse._safe_read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">631</span> <span class="k">def</span><span class="w"> </span><span class="nf">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amt</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">632</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Read the number of bytes requested.</span>
-<span class="g g-Whitespace">    </span><span class="mi">633</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="sd">     This function should be used when &lt;amt&gt; bytes &quot;should&quot; be present for</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="sd">     reading. If the bytes are truly not available (due to EOF), then the</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span><span class="sd">     IncompleteRead exception can be used to detect the problem.</span>
-<span class="g g-Whitespace">    </span><span class="mi">637</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">638</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">amt</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span>         <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">amt</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-
-<span class="nn">File /opt/miniconda3/envs/nwb4edu/lib/python3.11/socket.py:718,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">718</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">719</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">720</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="ne">NameError</span>: name &#39;boc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -876,7 +786,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b9dd82c57a268fd45834b5baab6b2139e8f82508ad388d4514493283bae2e1e6.png" src="../_images/b9dd82c57a268fd45834b5baab6b2139e8f82508ad388d4514493283bae2e1e6.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Subset dataframe to contain significantly preferred images </span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">col_1</span> <span class="o">=</span> <span class="s1">&#39;p_ns&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sig_cells</span> <span class="o">=</span> <span class="n">cell_specimens_df</span><span class="p">[</span><span class="n">cell_specimens_df</span><span class="p">[</span><span class="n">col_1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Assign our image ids for significantly preferred images</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">col_2</span> <span class="o">=</span> <span class="s1">&#39;pref_image_ns&#39;</span>
+
+<span class="ne">NameError</span>: name &#39;cell_specimens_df&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>In order to actually see what these images are, first, we’ll organize the stimulus table. This tells us which stimulus was played on each trial. This data set has 118 different scenes, and each scene is presented 50 times. Images of the scenes can be found <a class="reference external" href="http://observatory.brain-map.org/visualcoding/stimulus/natural_scenes">here</a>.</p>
@@ -907,7 +828,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c149da0b6d61b5d1d239161c383c5fef0107a3a207ee1fc79ccb354d19f77e7.png" src="../_images/0c149da0b6d61b5d1d239161c383c5fef0107a3a207ee1fc79ccb354d19f77e7.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get the natural scene information</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">natural_scene_table</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_stimulus_table</span><span class="p">(</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">natural_scene_template</span> <span class="o">=</span> <span class="n">experiment_data</span><span class="o">.</span><span class="n">get_stimulus_template</span><span class="p">(</span><span class="s1">&#39;natural_scenes&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sceneIDs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">natural_scene_table</span><span class="o">.</span><span class="n">frame</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;experiment_data&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -933,7 +864,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data acquired.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Get experiment for our container id and stimuli of interest</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">stim_2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;drifting_gratings&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">dg_experiment</span> <span class="o">=</span> <span class="n">boc</span><span class="o">.</span><span class="n">get_ophys_experiments</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">experiment_container_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">exp_container_id</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                         <span class="n">stimuli</span> <span class="o">=</span> <span class="n">stim_2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Download the experiment data using the experiment id</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">experiment_id_2</span> <span class="o">=</span> <span class="n">dg_experiment</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;boc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -964,130 +906,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/VictorMagdaleno/opt/anaconda3/lib/python3.7/site-packages/pandas/core/indexing.py:205: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">allensdk.brain_observatory.drifting_gratings</span><span class="w"> </span><span class="kn">import</span> <span class="n">DriftingGratings</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Create my DriftingGratings Object </span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">dg</span> <span class="o">=</span> <span class="n">DriftingGratings</span><span class="p">(</span><span class="n">data_dg</span><span class="p">)</span>
 
-See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  self._setitem_with_indexer(indexer, value)
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;allensdk&#39;
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>ori_dg</th>
-      <th>tf_dg</th>
-      <th>reliability_dg</th>
-      <th>osi_dg</th>
-      <th>dsi_dg</th>
-      <th>peak_dff_dg</th>
-      <th>ptest_dg</th>
-      <th>p_run_dg</th>
-      <th>run_modulation_dg</th>
-      <th>cv_os_dg</th>
-      <th>cv_ds_dg</th>
-      <th>tf_index_dg</th>
-      <th>cell_specimen_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5</td>
-      <td>1</td>
-      <td>0.280185</td>
-      <td>1.23717</td>
-      <td>0.0312253</td>
-      <td>16.5138</td>
-      <td>9.74126e-28</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.938693</td>
-      <td>0.0474909</td>
-      <td>0.434779</td>
-      <td>662201985</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>1</td>
-      <td>0.0855848</td>
-      <td>0.812747</td>
-      <td>0.565631</td>
-      <td>11.4741</td>
-      <td>3.50072e-14</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.614402</td>
-      <td>0.42813</td>
-      <td>0.39683</td>
-      <td>662201975</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>1</td>
-      <td>0.140565</td>
-      <td>0.439415</td>
-      <td>0.801277</td>
-      <td>9.85304</td>
-      <td>9.07543e-07</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.15991</td>
-      <td>0.460012</td>
-      <td>0.36523</td>
-      <td>662202121</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>3</td>
-      <td>0.0109138</td>
-      <td>0.557367</td>
-      <td>2.97525</td>
-      <td>1.33345</td>
-      <td>0.00575501</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.146026</td>
-      <td>0.438625</td>
-      <td>0.178085</td>
-      <td>662202077</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>3</td>
-      <td>0.099905</td>
-      <td>1.37391</td>
-      <td>0.882893</td>
-      <td>13.2219</td>
-      <td>0.000227121</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.808828</td>
-      <td>0.652798</td>
-      <td>0.324958</td>
-      <td>662202612</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 <p>Next, we’ll select a cell from our table by <code class="docutils literal notranslate"><span class="pre">cell_specimen_id</span></code>.</p>
 <p>If there is a specific cell you want to analyze, you can use the <code class="docutils literal notranslate"><span class="pre">get_cell_specimen_indices()</span></code> method to locate the index of your cell of interest. The index of your cell is needed becasue you will need to index into the NumPy arrary returned by the <code class="docutils literal notranslate"><span class="pre">response</span></code> attribute to contruct your heatmap.</p>
@@ -1104,8 +933,15 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Specimen ID: 662201985
-Cell loc: 0
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Select specimen ID from first row</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">specimen_id</span> <span class="o">=</span> <span class="n">dg_df</span><span class="p">[</span><span class="s1">&#39;cell_specimen_id&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">cell_loc</span> <span class="o">=</span> <span class="n">data_dg</span><span class="o">.</span><span class="n">get_cell_specimen_indices</span><span class="p">([</span><span class="n">specimen_id</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Specimen ID:&#39;</span><span class="p">,</span> <span class="n">specimen_id</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dg_df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1129,7 +965,25 @@ Cell loc: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d90bd90483fa4402b4688a43faf89af93cbc3d6bdcc511f31e50c0c4c178fe83.png" src="../_images/d90bd90483fa4402b4688a43faf89af93cbc3d6bdcc511f31e50c0c4c178fe83.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/1726107458.py:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  cbar.set_label(&quot;$\Delta$F/F (%)&quot;)
+/var/folders/xf/zpnqd_3d3m77t0w3b54_8ls80000gp/T/ipykernel_31257/1726107458.py:10: SyntaxWarning: invalid escape sequence &#39;\D&#39;
+  cbar.set_label(&quot;$\Delta$F/F (%)&quot;)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Plot our data, skiping the blank sweep column (0) of the temporal frequency dimension</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dg</span><span class="o">.</span><span class="n">response</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:,</span><span class="n">cell_loc</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Heat Map, Cell Specimen: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">specimen_id</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">dg</span><span class="o">.</span><span class="n">tfvals</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>The preferred directions temporal frequency are stored within <code class="docutils literal notranslate"><span class="pre">ori_dg</span></code> and <code class="docutils literal notranslate"><span class="pre">tf_dg</span></code> in are table above and can be indexed through <code class="docutils literal notranslate"><span class="pre">dg.orivals</span></code> and <code class="docutils literal notranslate"><span class="pre">tf.tfvals</span></code> respectively.</p>
@@ -1144,8 +998,14 @@ Cell loc: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Preferred direction: 225
-Preferred temporal frequency: 1
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pref_ori</span> <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">orivals</span><span class="p">[</span><span class="n">dg</span><span class="o">.</span><span class="n">peak</span><span class="o">.</span><span class="n">ori_dg</span><span class="p">[</span><span class="n">cell_loc</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">pref_tf</span> <span class="o">=</span> <span class="n">dg</span><span class="o">.</span><span class="n">tfvals</span><span class="p">[</span><span class="n">dg</span><span class="o">.</span><span class="n">peak</span><span class="o">.</span><span class="n">tf_dg</span><span class="p">[</span><span class="n">cell_loc</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Preferred direction:&quot;</span><span class="p">,</span> <span class="n">pref_ori</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;dg&#39; is not defined
 </pre></div>
 </div>
 </div>
