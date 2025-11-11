@@ -10,7 +10,7 @@ authors:
   - name: Ashley L. Juavinett
     orcid: 0000-0003-0872-7098
     affiliation: 1
-  - name: Victor Magdaleno
+  - name: Victor Magdaleno-Garcia
     affiliation: 2
 affiliations:
  - name: UC San Diego, Neurobiology
