@@ -174,7 +174,7 @@ We welcome contributions from the community! Regardless of whether you want to r
 ## Authors
 
 - **Ashley L. Juavinett** - UC San Diego, Neurobiology (current project maintainer)
-- **Victor Magdaleno** - UC San Diego Alum, Cognitive Science
+- **Victor Magdaleno-Garcia** - UC San Diego Alum, Cognitive Science
 
 With thanks to Tommy Lee, Ariel Rokem, and Tom Donoghue for copyediting.
 
@@ -195,7 +195,7 @@ You are free to use and adapt these resources, but if you create derivative work
 If you use these materials in your teaching or research, please cite:
 
 ```
-Juavinett, A.L., & Magdaleno, V. (2024). nwb4edu: an Online Textbook for Teaching
+Juavinett, A.L., & Magdaleno-Garcia, V. (2024). nwb4edu: an Online Textbook for Teaching
 and Learning with NWB Datasets. *Journal of Open Source Education: TENTATIVE*.
 https://nwb4edu.github.io
 ```
