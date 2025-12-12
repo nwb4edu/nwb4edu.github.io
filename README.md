@@ -4,7 +4,12 @@
 
 An interactive online textbook for teaching and learning neuroscience using Neurodata Without Borders (NWB) datasets.
 
-**Live Website:** [https://nwb4edu.github.io](https://nwb4edu.github.io)
+**Website:** [https://nwb4edu.github.io](https://nwb4edu.github.io)
+
+***JOSE* Paper**:
+[![DOI](https://jose.theoj.org/papers/10.21105/jose.00309/status.svg)](https://doi.org/10.21105/jose.00309)
+
+
 
 ## About This Project
 
