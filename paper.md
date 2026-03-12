@@ -8,7 +8,7 @@ tags:
   - Neurodata Without Borders
 authors:
   - name: Ashley L. Juavinett
-    orcid: 0000-0003-0872-7098
+    orcid: 0000-0002-4254-3009
     affiliation: 1
   - name: Victor Magdaleno-Garcia
     affiliation: 2
