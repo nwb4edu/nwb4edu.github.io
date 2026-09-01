@@ -19,9 +19,6 @@ dandi>=0.45.1
 # Allen Institute SDK (includes: numpy, pandas, scipy, matplotlib)
 allensdk>=2.11.2
 
-# Widgets for interactive exploration (includes: ipywidgets, pynwb)
-nwbwidgets>=0.8.0
-
 # Visualization
 seaborn>=0.11.0
 

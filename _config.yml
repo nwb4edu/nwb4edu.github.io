@@ -10,7 +10,7 @@ repository:
 launch_buttons:
   colab_url: "https://colab.research.google.com"
   thebe                  : true
-  jupyterhub_url: "https://hub.dandiarchive.org/"
+  binderhub_url: "https://mybinder.org"
 
 execute:
   execute_notebooks: cache

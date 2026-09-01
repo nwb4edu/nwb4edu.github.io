@@ -22,7 +22,7 @@ The `nwb4edu` online textbook provides interactive and self-guided resources for
 - **Problem sets** for hands-on practice
 - **Real datasets** from [DANDI Archive](https://dandiarchive.org/) and the [Allen Institute for Brain Science](https://alleninstitute.org/)
 - **Greatest Hits lessons** that recreate figures from landmark neuroscience papers
-- **Launch on JupyterHub** - no local installation required
+- **Launch on Colab or Binder** - no local installation required
 
 ## Content Overview
 
@@ -68,7 +68,7 @@ Recreate figures from foundational papers:
 
 ### For Students
 
-The easiest way to use this textbook is through the live website at [https://nwb4edu.github.io](https://nwb4edu.github.io). You can launch any notebook directly on JupyterHub using the rocket icon in the top right corner of each page. No installation on your computer is required when using JupyterHub!
+The easiest way to use this textbook is through the live website at [https://nwb4edu.github.io](https://nwb4edu.github.io). You can launch any notebook directly in Google Colab or Binder using the rocket icon in the top right corner of each page. No installation on your computer is required!
 
 ### For Local Development
 
