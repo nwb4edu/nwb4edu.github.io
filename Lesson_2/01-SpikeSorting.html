@@ -287,18 +287,18 @@
       
       
       
-      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_2/01-SpikeSorting.ipynb&branch=master" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Lesson_2/01-SpikeSorting.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Binder</span>
 </a>
 </li>
       
@@ -468,7 +468,7 @@ document.write(`
 <h1>Spike Sorting<a class="headerlink" href="#spike-sorting" title="Link to this heading">#</a></h1>
 <p>When you record extracellular electrophysiology data, one of the first data processing steps is figuring out which action potentials (or “spikes”) came from which neurons. The process of doing this is called <strong>spike sorting</strong>.</p>
 <p>Below, we’ll work with <a class="reference external" href="https://dandiarchive.org/dandiset/000053/0.210819.0345">this dataset</a> from <a class="reference external" href="https://giocomolab.weebly.com/">Lisa Giocomo’s lab at Stanford</a> to demonstrate the simplest form of spike sorting: thresholding, followed by feature extraction.</p>
-<p><mark><strong>Note #1</strong>: The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, the best way to work with it is by streaming it from DANDI, which works best on the Dandihub. If you’re running locally, ensure you have completed the setup steps in <a class="reference external" href="https://nwb4edu.github.io/Introduction/Using_This_Book.html">Using this Book</a>, particularly the streaming configuration.</mark></p>
+<p><mark><strong>Note #1</strong>: The code below requires a different dataset than the one we interacted with in the last chapter. Because this dataset contains all of the raw recording data, it is much, much bigger. As a result, we’ll stream it directly from DANDI rather than downloading it – this works the same way whether you’re on Colab, Binder, or your own machine.</mark></p>
 <p><mark><strong>Note #2</strong>: Some of the cells below may take a minute to run, depending on the speed of your internet connection.</mark></p>
 <section id="step-1-inspect-the-data">
 <h2>Step 1. Inspect the Data<a class="headerlink" href="#step-1-inspect-the-data" title="Link to this heading">#</a></h2>
@@ -544,7 +544,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/66cc37c1b1b2572a761c021144317b2c4abe99bd929c7b14a33dc66b87638d23.png" src="../_images/66cc37c1b1b2572a761c021144317b2c4abe99bd929c7b14a33dc66b87638d23.png" />
+<img alt="../_images/91a27e16a94579e69c40195251d86df8800f1bbf00995481e42e778b3c4de41e.png" src="../_images/91a27e16a94579e69c40195251d86df8800f1bbf00995481e42e778b3c4de41e.png" />
 </div>
 </div>
 <p>In the data above, there are clear places where the data “spikes”. These are extracellularly recorded action potentials!</p>
@@ -653,7 +653,7 @@ Recommended Spike Threshold         :  -0.00015261320575734322
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1839e07fc2cbd460bdfc1388413b46f8bf044c6c902e8d5ee9e93749619592d2.png" src="../_images/1839e07fc2cbd460bdfc1388413b46f8bf044c6c902e8d5ee9e93749619592d2.png" />
+<img alt="../_images/b8085fd0c883927e6b0bef463c7f90a3cac4f482fe90bfa9c22145ac3c375efd.png" src="../_images/b8085fd0c883927e6b0bef463c7f90a3cac4f482fe90bfa9c22145ac3c375efd.png" />
 </div>
 </div>
 <p>Finally, we can cut out the waveforms from these detected spikes so that we can look at their shape. To do so, we will cut out a portion of the signal around each spike. Spikes too close to the start or end of the signal that a full cutout is not possible are ignored.</p>
@@ -728,7 +728,7 @@ Recommended Spike Threshold         :  -0.00015261320575734322
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/febeab8c9cd6ee5affba9108dd7728657f58ac1a66d69e587555c7db33ee54ee.png" src="../_images/febeab8c9cd6ee5affba9108dd7728657f58ac1a66d69e587555c7db33ee54ee.png" />
+<img alt="../_images/8b3f9476e13111215315cde61185d488e767b723bcf78e4f23f081c98eca8171.png" src="../_images/8b3f9476e13111215315cde61185d488e767b723bcf78e4f23f081c98eca8171.png" />
 </div>
 </div>
 <div class="alert alert-success"><b>Task:</b> Looking at the plot above, would you say there is just one waveform here, or multiple?</div>
@@ -749,7 +749,7 @@ Recommended Spike Threshold         :  -0.00015261320575734322
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/33b7713b0e995e9eaca6a86ce797c73ee370fc06cfbde247d922c68a7d966c54.png" src="../_images/33b7713b0e995e9eaca6a86ce797c73ee370fc06cfbde247d922c68a7d966c54.png" />
+<img alt="../_images/f230f7e92ead11b6e6fd2bcc21f0c12608697379fb98a708fabc4ffd05ec287e.png" src="../_images/f230f7e92ead11b6e6fd2bcc21f0c12608697379fb98a708fabc4ffd05ec287e.png" />
 </div>
 </div>
 <p>Looking at the scatterplot above, would you say there is more than one cluster of waveforms?</p>

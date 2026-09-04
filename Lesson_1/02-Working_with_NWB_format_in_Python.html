@@ -287,18 +287,18 @@
       
       
       
-      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_1/02-Working_with_NWB_format_in_Python.ipynb&branch=master" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Lesson_1/02-Working_with_NWB_format_in_Python.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Binder</span>
 </a>
 </li>
       
@@ -609,15 +609,59 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lick_times&#39;: lick_times pynwb.behavior.BehavioralEvents at 0x4730184832
- Fields:
-   time_series: {
-     lick_left_times &lt;class &#39;pynwb.base.TimeSeries&#39;&gt;,
-     lick_right_times &lt;class &#39;pynwb.base.TimeSeries&#39;&gt;
-   }}
-</pre></div>
-</div>
-</div>
+<div class="output text_html">
+        <style>
+            .container-fields {
+                font-family: "Open Sans", Arial, sans-serif;
+            }
+            .container-fields .field-value {
+                color: #00788E;
+            }
+            .container-fields details > summary {
+                cursor: pointer;
+                display: list-item;
+            }
+            .container-fields details > summary:hover {
+                color: #0A6EAA;
+            }
+        </style>
+        <div class='container-wrap'><div class='container-header'><div class='xr-obj-type'><h3>acquisition</h3></div></div><details><summary style='display: list-item; margin-left: 0px;' class='container-fields field-key' title="['lick_times']"><b>lick_times <span style='font-weight: normal; color: #888;'>(BehavioralEvents)</span></b></summary><div style='margin-left: 20px;'>
+        <style>
+            .container-fields {
+                font-family: "Open Sans", Arial, sans-serif;
+            }
+            .container-fields .field-value {
+                color: #00788E;
+            }
+            .container-fields details > summary {
+                cursor: pointer;
+                display: list-item;
+            }
+            .container-fields details > summary:hover {
+                color: #0A6EAA;
+            }
+        </style>
+        
+        <script>
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(function() {
+                    console.log('Copied to clipboard: ' + text);
+                }, function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                let fieldKeys = document.querySelectorAll('.container-fields .field-key');
+                fieldKeys.forEach(function(fieldKey) {
+                    fieldKey.addEventListener('click', function() {
+                        let accessCode = fieldKey.getAttribute('title').replace('Access code: ', '');
+                        copyToClipboard(accessCode);
+                    });
+                });
+            });
+        </script>
+        <div class='container-wrap'><div class='container-header'><div class='xr-obj-type'><h3>lick_times (BehavioralEvents)</h3></div></div><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title="['lick_left_times']"><b>lick_left_times <span style='font-weight: normal; color: #888;'>(TimeSeries)</span></b></summary><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].resolution">resolution: </span><span class="field-value">0.0</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].comments">comments: </span><span class="field-value">no comments</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].description">description: </span><span class="field-value">no description</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].conversion">conversion: </span><span class="field-value">1.0</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].offset">offset: </span><span class="field-value">0.0</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].unit">unit: </span><span class="field-value">a.u.</span></div><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title="['lick_left_times'].data"><b>data</b></summary><div style="margin-left: 40px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(1803,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">14.09 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Uncompressed size (bytes)</th><td style="text-align: left">14424</td></tr><tr><th style="text-align: left">Compressed size (bytes)</th><td style="text-align: left">14424</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title="['lick_left_times'].timestamps"><b>timestamps</b></summary><div style="margin-left: 40px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(1803,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">14.09 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Uncompressed size (bytes)</th><td style="text-align: left">14424</td></tr><tr><th style="text-align: left">Compressed size (bytes)</th><td style="text-align: left">14424</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].timestamps_unit">timestamps_unit: </span><span class="field-value">seconds</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_left_times'].interval">interval: </span><span class="field-value">1</span></div></details><details><summary style="display: list-item; margin-left: 0px;" class="container-fields field-key" title="['lick_right_times']"><b>lick_right_times <span style='font-weight: normal; color: #888;'>(TimeSeries)</span></b></summary><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].resolution">resolution: </span><span class="field-value">0.0</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].comments">comments: </span><span class="field-value">no comments</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].description">description: </span><span class="field-value">no description</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].conversion">conversion: </span><span class="field-value">1.0</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].offset">offset: </span><span class="field-value">0.0</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].unit">unit: </span><span class="field-value">a.u.</span></div><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title="['lick_right_times'].data"><b>data</b></summary><div style="margin-left: 40px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(887,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">6.93 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Uncompressed size (bytes)</th><td style="text-align: left">7096</td></tr><tr><th style="text-align: left">Compressed size (bytes)</th><td style="text-align: left">7096</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><details><summary style="display: list-item; margin-left: 20px;" class="container-fields field-key" title="['lick_right_times'].timestamps"><b>timestamps</b></summary><div style="margin-left: 40px;" class="container-fields">HDF5 dataset<br><table class="data-info"><tbody><tr><th style="text-align: left">Data type</th><td style="text-align: left">float64</td></tr><tr><th style="text-align: left">Shape</th><td style="text-align: left">(887,)</td></tr><tr><th style="text-align: left">Array size</th><td style="text-align: left">6.93 KiB</td></tr><tr><th style="text-align: left">Chunk shape</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Compression opts</th><td style="text-align: left">None</td></tr><tr><th style="text-align: left">Uncompressed size (bytes)</th><td style="text-align: left">7096</td></tr><tr><th style="text-align: left">Compressed size (bytes)</th><td style="text-align: left">7096</td></tr><tr><th style="text-align: left">Compression ratio</th><td style="text-align: left">1.0</td></tr></tbody></table></div></details><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].timestamps_unit">timestamps_unit: </span><span class="field-value">seconds</span></div><div style="margin-left: 20px;" class="container-fields"><span class="field-key" title="['lick_right_times'].interval">interval: </span><span class="field-value">1</span></div></details></div></div></details></div></div></div>
 </div>
 <p>In this file, the acquisition group contains one dataset, <code class="docutils literal notranslate"><span class="pre">lick_times</span></code>. This dataset has one field, <code class="docutils literal notranslate"><span class="pre">time_series</span></code>, which contains two time series objects, <code class="docutils literal notranslate"><span class="pre">lick_left_times</span></code> and <code class="docutils literal notranslate"><span class="pre">lick_right_times</span></code>. To access the actual data arrays of these objects we must first subset our dataset of interest from the group. We can then use <code class="docutils literal notranslate"><span class="pre">timestamps[:]</span></code> to return a list of timestamps for when the animal licked.</p>
 <div class="cell docutils container">
@@ -937,7 +981,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x50...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -948,7 +992,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x50...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -959,7 +1003,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x50...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -970,7 +1014,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x50...</td>
       <td>H-129: 64</td>
     </tr>
     <tr>
@@ -981,7 +1025,7 @@ pole_out_time : onset of the delay period
       <td>-1.0</td>
       <td>brain_region: ALM; brain_subregion: N/A; corti...</td>
       <td>Bandpass filtered 300-6K Hz</td>
-      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x47...</td>
+      <td>H-129: 64 pynwb.ecephys.ElectrodeGroup at 0x50...</td>
       <td>H-129: 64</td>
     </tr>
   </tbody>

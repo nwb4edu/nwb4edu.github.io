@@ -287,18 +287,18 @@
       
       
       
-      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Data_Science_In_Python/Pandas.ipynb&branch=master" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Data_Science_In_Python/Pandas.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Binder</span>
 </a>
 </li>
       
@@ -469,6 +469,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pandas">
 <h1>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="o">!</span>git<span class="w"> </span>clone<span class="w"> </span>-q<span class="w"> </span>https://github.com/nwb4edu/nwb4edu.github.io.git
+    <span class="o">%</span><span class="k">cd</span> nwb4edu.github.io/Data_Science_In_Python
+</pre></div>
+</div>
+</div>
+</div>
 <p>In this chapter we will be discussing the advantages to using the <em>Pandas</em> package to analyze large datasets. While NumPy is a useful package, it can only be used with data of the same datatype. <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/index.html#user-guide">Pandas</a>, however, is a package that helps us manipulate and analyze heterogeneous data.</p>
 <p>We strongly recommend looking at <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">“10 minutes to pandas”</a> for a broader overview, but here we’ll introduce the main concepts needed for the activities in this textbook.</p>
 <p>Before we can use pandas, we need to import it. We can also nickname the modules when we import them. The convention is to import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> as <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
@@ -486,6 +496,7 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable   Type      Data/Info
 ------------------------------
 pd         module    &lt;module &#39;pandas&#39; from &#39;/o&lt;...&gt;ages/pandas/__init__.py&#39;&gt;
+sys        module    &lt;module &#39;sys&#39; (built-in)&gt;
 </pre></div>
 </div>
 </div>

@@ -57,9 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"5fcba1e5d0fa4e649fcb933b4c4aee26": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "500px"}}}, "version_major": 2, "version_minor": 0}</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lesson_1/03-Interactive_NWB_Data_Exploration';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -290,18 +287,18 @@
       
       
       
-      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_1/03-Interactive_NWB_Data_Exploration.ipynb&branch=master" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Lesson_1/03-Interactive_NWB_Data_Exploration.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Binder</span>
 </a>
 </li>
       
@@ -468,23 +465,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="interactive-nwb-data-exploration">
 <h1>Interactive NWB Data Exploration<a class="headerlink" href="#interactive-nwb-data-exploration" title="Link to this heading">#</a></h1>
-<p>As we saw in the last section, the NWB file contains a ton of information about the experiment, as well as the actual data. We can look through each of the groups in the NWB file to pull out this information, or we can use a handy widget created by the NWB team.</p>
-<p>This widget will also let us take a sneak peek at the behavioral and neural data as well. As a first pass, it can be very useful to explore the dataset in this high level way. This allows you to inspect the data for quality, and look for any interesting trends.</p>
-<p>First, let’s set up our notebook and read the NWB file that we previously downloaded.</p>
+<p>As we saw in the last section, the NWB file contains a ton of information about the experiment, as well as the actual data. We can look through each of the groups in the NWB file to pull out this information programmatically, or we can use <a class="reference external" href="https://neurosift.app">Neurosift</a>, a browser-based visualization tool for NWB and DANDI data maintained by the Flatiron Institute.</p>
+<p>Neurosift lets us take a peek at the behavioral and neural data without writing any code. As a first pass, it can be very useful to explore a dataset this way – it lets you inspect the data for quality and look for interesting trends, right from the DANDI Archive.</p>
+<p>First, let’s set up our notebook and read the NWB file that we previously downloaded, so we have a code-based view to compare against what Neurosift shows us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pynwb</span><span class="w"> </span><span class="kn">import</span> <span class="n">NWBHDF5IO</span>
-
-<span class="c1"># Try to import nwbwidgets (may fail due to package incompatibilities)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span><span class="w"> </span><span class="nn">nwbwidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">nwb2widget</span>
-    <span class="n">nwbwidgets_available</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nwbwidgets successfully imported.&#39;</span><span class="p">)</span>
-<span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">nwbwidgets_available</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nwbwidgets could not be imported (package compatibility issue).&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is expected when building the book. The widget works on Dandihub.&#39;</span><span class="p">)</span>
 
 <span class="c1"># Set the filename</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;000006/sub-anm369962/sub-anm369962_ses-20170310.nwb&#39;</span>
@@ -512,39 +499,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nwbwidgets could not be imported (package compatibility issue).
-This is expected when building the book. The widget works on Dandihub.
-NWB file found and read.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NWB file found and read.
 &lt;class &#39;pynwb.file.NWBFile&#39;&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Below, we’ll take advantage of the <a class="reference external" href="https://github.com/NeurodataWithoutBorders/nwb-jupyter-widgets"><code class="docutils literal notranslate"><span class="pre">nwbwidgets</span></code> package</a> to explore the data. This package usefully automatically renders information and visualizations of the data, depending on what it is. We’ll use the nwb2widget function to explore the dataset we read above.</p>
-<p>To take a peek at the neural data here, you can look under the “Units” header below.</p>
-<p><mark><strong>Note</strong>: You won’t be able to see the output from the <code class="docutils literal notranslate"><span class="pre">nwb4edu.github.io</span></code> website. To see the output below, launch this in an interactive environment!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">nwbwidgets_available</span><span class="p">:</span>
-    <span class="n">nwb2widget</span><span class="p">(</span><span class="n">nwb_file</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nwbwidgets is not available in this environment.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To use the interactive widget, run this notebook on Dandihub.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You can still explore the NWB file programmatically.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For example, try: nwb_file.units.to_dataframe()&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nwbwidgets is not available in this environment.
-To use the interactive widget, run this notebook on Dandihub.
-
-You can still explore the NWB file programmatically.
-For example, try: nwb_file.units.to_dataframe()
-</pre></div>
-</div>
-</div>
-</div>
+<p>Now, let’s look at this same file in Neurosift:</p>
+<ol class="arabic simple">
+<li><p>Go to this dataset’s page on DANDI: <a class="reference external" href="https://dandiarchive.org/dandiset/000006">dandiset 000006</a></p></li>
+<li><p>Browse to the file <code class="docutils literal notranslate"><span class="pre">sub-anm369962/sub-anm369962_ses-20170310.nwb</span></code> (the same one we just read above)</p></li>
+<li><p>Click the <strong>Open with Neurosift</strong> link next to the file</p></li>
+</ol>
+<p>This opens an interactive, browser-based view of the file – no code, no download, no environment setup required. Take a look under the <strong>Units</strong> section to see the neural data.</p>
+<p><mark><strong>Note</strong>: Neurosift runs entirely in your browser, so it works the same way whether you’re on Colab, Binder, your own computer, or just reading this page.</mark></p>
 <div class="alert alert-success">
 <p><b>Questions for consideration</b></p>
 <ol class="arabic">
@@ -556,7 +524,7 @@ For example, try: nwb_file.units.to_dataframe()
 <hr>
 <section id="lesson-1-wrap-up">
 <h2>Lesson 1 Wrap Up<a class="headerlink" href="#lesson-1-wrap-up" title="Link to this heading">#</a></h2>
-<p>In this first lesson, we showed you how to explore an NWB file. We discussed common elements in the structure, and how you can use <code class="docutils literal notranslate"><span class="pre">nwbwidgets</span></code> to explore the data at a high level.</p>
+<p>In this first lesson, we showed you how to explore an NWB file. We discussed common elements in the structure, and how you can use Neurosift to explore the data at a high level.</p>
 <p>Hopefully now you can:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>✔️ Explain the three common features of datasets: metadata, raw data, and processed data
 
@@ -564,7 +532,7 @@ For example, try: nwb_file.units.to_dataframe()
 
 ✔️ Explore the metadata contained in a typical Dandiset
 
-✔️ Use an interactive widget for a big picture view of a Dandiset
+✔️ Use Neurosift for a code-free, big-picture view of a Dandiset
 </pre></div>
 </div>
 <p>In the following lesson, we’ll demonstrate different kinds of visualizations and analyses that you might do with the data.</p>
@@ -572,7 +540,8 @@ For example, try: nwb_file.units.to_dataframe()
 <section id="additional-resources">
 <h3>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference external" href="https://training.incf.org/lesson/nwbwidgets-inteactively-exploring-nwb-files">Ben Dichter provides an overview of NWBWidgets</a></p></li>
+<li><p><a class="reference external" href="https://github.com/flatironinstitute/neurosift">Neurosift</a> – browser-based visualization for NWB and DANDI data, maintained by the Flatiron Institute</p></li>
+<li><p><a class="reference external" href="https://nwb.org/tools/community/">More community NWB tools</a></p></li>
 </ul>
 </section>
 </section>

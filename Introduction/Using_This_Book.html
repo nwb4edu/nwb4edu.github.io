@@ -287,18 +287,18 @@
       
       
       
-      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Introduction/Using_This_Book.ipynb&branch=master" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Introduction/Using_This_Book.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Binder</span>
 </a>
 </li>
       
@@ -449,11 +449,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-as-a-casual-observer">Option 1: As a casual observer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-cloud-computing">Option 2: Using cloud computing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dandi-jupyter-hub">DANDI Jupyter Hub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab">Colab</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-cloud-computing">Option 2: Using cloud computing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-3-using-your-local-python-environment">Option 3: Using your local Python environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-tips">Additional tips</a></li>
 </ul>
@@ -476,25 +472,8 @@ document.write(`
 </section>
 <section id="option-2-using-cloud-computing">
 <h2>Option 2: Using cloud computing<a class="headerlink" href="#option-2-using-cloud-computing" title="Link to this heading">#</a></h2>
-<p>This, dear reader, is our preferred mode of interaction so that you really engage with the materials! And even here, you have two options:</p>
-<section id="dandi-jupyter-hub">
-<h3>DANDI Jupyter Hub<a class="headerlink" href="#dandi-jupyter-hub" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://www.dandiarchive.org/">DANDI</a>, a platform for publishing, sharing, and processing neurophysiology data funded by the BRAIN Initiative, has a <a class="reference external" href="https://jupyterhub.readthedocs.io/en/stable/">JupyterHub</a> which is pre-configured for working with their dataset. This JupyterHub (nicknamed the <a class="reference external" href="http://hub.dandiarchive.org/">Dandihub</a>) allows you to run code on servers that they are supporting.</p>
-<p>To launch the code here on the Dandihub, follow these directions:</p>
-<ol class="arabic simple">
-<li><p>If you do not have already, set up a <a class="reference external" href="https://github.com/signup">GitHub account</a>. It’s free, and it’s a great way to start tracking your code!</p></li>
-<li><p><strong>Register for a DANDI account</strong> at <a class="reference external" href="https://dandiarchive.org/">https://dandiarchive.org/</a> by clicking “LOG IN” and then “LOG IN WITH GITHUB”. Membership is usually granted automatically to GitHub accounts with a .edu or similar academic email address. For new GitHub accounts or non-.edu email addresses, approval may take up to 24 hours or longer.</p></li>
-<li><p>Once your account is approved, navigate to the page you’d like to interact with in this book and click the rocket icon at the top of the screen. In the dropdown menu, choose <strong>JupyterHub</strong>. This will bring you to the Dandihub at <a class="reference external" href="https://hub.dandiarchive.org/">https://hub.dandiarchive.org/</a>.</p></li>
-<li><p>Log in using your GitHub account (you should already be logged in if you just registered).</p></li>
-<li><p>Choose the <strong>Standard</strong> server option with the <strong>DANDI Image</strong>.</p></li>
-<li><p>Click the Start button and dive into the notebook that opens!</p></li>
-</ol>
-<p><strong>Note</strong>: Regardless of whether or not you’re running the code on the Dandihub, we’ll primarily be using the <code class="docutils literal notranslate"><span class="pre">dandi</span></code> package to interact with NWB datasets.</p>
-</section>
-<section id="colab">
-<h3>Colab<a class="headerlink" href="#colab" title="Link to this heading">#</a></h3>
-<p>If you have a strong preference for Colab, there is also an option in the rocket launch menu to open the notebooks here in Colab. Note that when you try to run your first cell in Colab, it will tell you that your notebook was not authored by Google – that’s okay! Click “Run Anyway.” Saving notebooks in Colab is possible if you log into a Google account.</p>
-</section>
+<p>This, dear reader, is our preferred mode of interaction so that you really engage with the materials!</p>
+<p>There are options in the rocket launch menu to open the notebooks here in Colab or Binder. Note that when you try to run your first cell in Colab, it will tell you that your notebook was not authored by Google – that’s okay! Click “Run Anyway.” Saving notebooks in Colab is possible if you log into a Google account. Binder works similarly, but will take a minute or two longer than Colab to build the environment.</p>
 </section>
 <section id="option-3-using-your-local-python-environment">
 <h2>Option 3: Using your local Python environment<a class="headerlink" href="#option-3-using-your-local-python-environment" title="Link to this heading">#</a></h2>
@@ -576,11 +555,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-as-a-casual-observer">Option 1: As a casual observer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-cloud-computing">Option 2: Using cloud computing</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dandi-jupyter-hub">DANDI Jupyter Hub</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colab">Colab</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-using-cloud-computing">Option 2: Using cloud computing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-3-using-your-local-python-environment">Option 3: Using your local Python environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-tips">Additional tips</a></li>
 </ul>

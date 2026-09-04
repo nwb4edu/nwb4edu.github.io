@@ -57,9 +57,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script type="application/vnd.jupyter.widget-state+json">{"state": {"d9a4c6681bbb4f16ae4943ce2ed24b86": {"model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "500px"}}}, "version_major": 2, "version_minor": 0}</script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script crossorigin="anonymous" data-jupyter-widgets-cdn="https://cdn.jsdelivr.net/npm/" src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@1.0.6/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Introduction/Setup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -290,18 +287,18 @@
       
       
       
-      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Introduction/Setup.ipynb&branch=master" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Introduction/Setup.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Binder</span>
 </a>
 </li>
       
@@ -461,17 +458,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-for-data-streaming">Configuring for Data Streaming</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dandihub-setup-for-lessons-3-4">DandiHub Setup for Lessons 3 &amp; 4</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-a-terminal">Step 1: Open a Terminal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-the-conda-environment-with-pip">Step 2: Create the conda environment with pip</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-activate-the-environment">Step 3: Activate the environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-required-packages">Step 4: Install required packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-create-a-jupyter-kernel-for-this-environment">Step 5: Create a Jupyter kernel for this environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-refresh-your-browser">Step 6: Refresh your browser</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-select-the-kernel-in-lesson-3-4-notebooks">Step 7: Select the kernel in Lesson 3 &amp; 4 notebooks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-verify-the-installation">Step 8: Verify the installation</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -485,11 +471,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="set-up-coding-environment">
 <h1>Set up Coding Environment<a class="headerlink" href="#set-up-coding-environment" title="Link to this heading">#</a></h1>
-<p>This notebook will ensure that your coding environment is set up for the interactive activities in this textbook. <mark>You <strong>do not</strong> need to worry about these requirements if you are running code on the Dandihub, as recommended in “How to use this book”.</mark> You can simply ignore this page and get on with the data!</p>
-<p><strong>Exception:</strong> If you plan to complete Lessons 3 &amp; 4 (Allen Cell Types Database) on DandiHub, see the special setup instructions at the bottom of this page.</p>
+<p>This notebook will ensure that your coding environment is set up for the interactive activities in this textbook. <mark>You <strong>do not</strong> need to worry about any of this if you’re running code on Binder (fully pre-configured) or Colab (each notebook installs what it needs automatically) – just use the rocket icon at the top of any page. You can simply ignore this page and get on with the data!</mark></p>
+<p>This page is for anyone setting up a local Python environment on their own machine.</p>
 <section id="package-requirements">
 <h2>Package Requirements<a class="headerlink" href="#package-requirements" title="Link to this heading">#</a></h2>
-<p>If you’re <em>not</em> running the code on the Dandihub, then we have to ensure that your coding environment has all of the proper packages installed.</p>
+<p>To run this book’s code on your own machine, we have to ensure that your coding environment has all of the proper packages installed.</p>
 <p>We provide separate requirements files for different lessons:</p>
 <ul class="simple">
 <li><p><strong>Lessons 1-2</strong>: <a class="reference external" href="https://github.com/nwb4edu/nwb4edu.github.io/blob/master/requirements_lessons_1-2.txt"><code class="docutils literal notranslate"><span class="pre">requirements_lessons_1-2.txt</span></code></a> (Python 3.9+)</p></li>
@@ -502,8 +488,7 @@ document.write(`
 </div>
 <section id="core-packages-required-for-lessons-1-2">
 <h3>Core packages required for Lessons 1-2:<a class="headerlink" href="#core-packages-required-for-lessons-1-2" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dandi</span><span class="o">&gt;=</span><span class="mf">0.45.1</span>          <span class="c1"># Includes: pynwb, h5py, hdmf</span>
-<span class="n">nwbwidgets</span><span class="o">&gt;=</span><span class="mf">0.8.0</span>      <span class="c1"># Includes: ipywidgets</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dandi</span><span class="o">&gt;=</span><span class="mf">0.74.0</span>          <span class="c1"># Includes: pynwb, h5py, hdmf</span>
 <span class="n">seaborn</span><span class="o">&gt;=</span><span class="mf">0.11.0</span>        <span class="c1"># Visualization package</span>
 <span class="n">remfile</span>                <span class="c1"># Data streaming</span>
 </pre></div>
@@ -533,7 +518,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the correct version of dandi is installed</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">dandi</span>
-    <span class="k">if</span> <span class="n">dandi</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;0.45.1&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">dandi</span><span class="o">.</span><span class="n">__version__</span><span class="o">&gt;=</span><span class="s1">&#39;0.74.0&#39;</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Updated DANDI installed.&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Old version of DANDI installed. Would you like to install a newer version of DANDI? (Y/N)&#39;</span><span class="p">)</span>
@@ -546,172 +531,6 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updated DANDI installed.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for nwbwidgets (includes pynwb, ipywidgets)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">nwbwidgets</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nwbwidgets installed.&#39;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nwbwidgets
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nwbwidgets in /opt/miniconda3/lib/python3.12/site-packages (0.11.3)
-Requirement already satisfied: numpy in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.2.3)
-Requirement already satisfied: matplotlib in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.10.0)
-Requirement already satisfied: scikit-image in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.25.2)
-Requirement already satisfied: pynwb in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.1.2)
-Requirement already satisfied: ipympl in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.9.7)
-Requirement already satisfied: ipydatagrid in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (1.4.0)
-Requirement already satisfied: ipyvolume&gt;=0.6.0a10 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.6.3)
-Requirement already satisfied: ipywidgets&gt;=8.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (8.1.5)
-Requirement already satisfied: plotly==5.13.1 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (5.13.1)
-Requirement already satisfied: tqdm&gt;=4.36.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (4.67.1)
-Requirement already satisfied: zarr in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.18.7)
-Requirement already satisfied: tifffile in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2025.9.30)
-Requirement already satisfied: ndx-spectrum in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.2.2)
-Requirement already satisfied: ndx-icephys-meta in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.1.0)
-Requirement already satisfied: ndx-grayscalevolume in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.0.2)
-Requirement already satisfied: trimesh in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (4.8.3)
-Requirement already satisfied: dandi&gt;=0.55.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.71.4)
-Requirement already satisfied: importlib-metadata&lt;5.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (4.13.0)
-Requirement already satisfied: fsspec in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2025.9.0)
-Requirement already satisfied: requests in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (2.32.3)
-Requirement already satisfied: aiohttp in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (3.12.15)
-Requirement already satisfied: ipydatawidgets==4.3.2 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (4.3.2)
-Requirement already satisfied: ipyfilechooser==0.6.0 in /opt/miniconda3/lib/python3.12/site-packages (from nwbwidgets) (0.6.0)
-Requirement already satisfied: traittypes&gt;=0.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipydatawidgets==4.3.2-&gt;nwbwidgets) (0.2.1)
-Requirement already satisfied: tenacity&gt;=6.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from plotly==5.13.1-&gt;nwbwidgets) (9.1.2)
-Requirement already satisfied: bidsschematools~=1.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.1.0)
-Requirement already satisfied: bids-validator-deno&gt;=2.0.5 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.1.1)
-Requirement already satisfied: click&lt;8.2.0,&gt;=7.1 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (8.1.8)
-Requirement already satisfied: click-didyoumean in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.1)
-Requirement already satisfied: dandischema&lt;0.12.0,&gt;=0.11.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.11.1)
-Requirement already satisfied: etelemetry&gt;=0.2.2 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.1)
-Requirement already satisfied: fasteners in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.20)
-Requirement already satisfied: fscacher&gt;=0.3.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.4)
-Requirement already satisfied: hdmf!=3.14.4,!=3.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.1.0)
-Requirement already satisfied: humanize in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.13.0)
-Requirement already satisfied: interleave~=0.3 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.0)
-Requirement already satisfied: joblib in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.2)
-Requirement already satisfied: keyring!=23.9.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (25.6.0)
-Requirement already satisfied: keyrings.alt in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (5.0.2)
-Requirement already satisfied: packaging in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (24.1)
-Requirement already satisfied: platformdirs in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (4.4.0)
-Requirement already satisfied: pycryptodomex in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (3.23.0)
-Requirement already satisfied: pydantic~=2.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.11.10)
-Requirement already satisfied: numcodecs&lt;0.16 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.15.1)
-Requirement already satisfied: nwbinspector!=0.4.32,&gt;=0.4.28 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.6.5)
-Requirement already satisfied: pyout!=0.6.0,&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.8.1)
-Requirement already satisfied: python-dateutil in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.post0)
-Requirement already satisfied: ruamel.yaml&lt;1,&gt;=0.15 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.18.6)
-Requirement already satisfied: semantic-version in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.10.0)
-Requirement already satisfied: tensorstore in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.1.77)
-Requirement already satisfied: urllib3&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (2.2.3)
-Requirement already satisfied: yarl~=1.9 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (1.21.0)
-Requirement already satisfied: zarr_checksum~=0.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.7)
-Requirement already satisfied: zipp&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from importlib-metadata&lt;5.0-&gt;nwbwidgets) (3.23.0)
-Requirement already satisfied: bqplot in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (0.12.45)
-Requirement already satisfied: traitlets in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (5.14.3)
-Requirement already satisfied: Pillow in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (11.1.0)
-Requirement already satisfied: ipywebrtc in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (0.6.0)
-Requirement already satisfied: ipyvuetify in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (1.11.3)
-Requirement already satisfied: ipyvue&gt;=1.7.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (1.11.3)
-Requirement already satisfied: pythreejs&gt;=2.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipyvolume&gt;=0.6.0a10-&gt;nwbwidgets) (2.4.2)
-Requirement already satisfied: comm&gt;=0.1.3 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.2)
-Requirement already satisfied: ipython&gt;=6.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (8.31.0)
-Requirement already satisfied: widgetsnbextension~=4.0.12 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (4.0.13)
-Requirement already satisfied: jupyterlab-widgets~=3.0.12 in /opt/miniconda3/lib/python3.12/site-packages (from ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.13)
-Requirement already satisfied: h5py&gt;=3.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from pynwb-&gt;nwbwidgets) (3.14.0)
-Requirement already satisfied: pandas&gt;=1.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from pynwb-&gt;nwbwidgets) (2.2.3)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;nwbwidgets) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;nwbwidgets) (3.7)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/miniconda3/lib/python3.12/site-packages (from requests-&gt;nwbwidgets) (2024.12.14)
-Requirement already satisfied: asciitree in /opt/miniconda3/lib/python3.12/site-packages (from zarr-&gt;nwbwidgets) (0.3.3)
-Requirement already satisfied: aiohappyeyeballs&gt;=2.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (2.6.1)
-Requirement already satisfied: aiosignal&gt;=1.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (1.4.0)
-Requirement already satisfied: attrs&gt;=17.3.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (24.3.0)
-Requirement already satisfied: frozenlist&gt;=1.1.1 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (1.7.0)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (6.6.4)
-Requirement already satisfied: propcache&gt;=0.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from aiohttp-&gt;nwbwidgets) (0.4.0)
-Requirement already satisfied: py2vega&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from ipydatagrid-&gt;nwbwidgets) (0.6.1)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (1.3.1)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (4.56.0)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (1.4.8)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /opt/miniconda3/lib/python3.12/site-packages (from matplotlib-&gt;nwbwidgets) (3.2.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.11.4 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (1.16.2)
-Requirement already satisfied: networkx&gt;=3.0 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (3.5)
-Requirement already satisfied: imageio!=2.35.0,&gt;=2.33 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (2.37.0)
-Requirement already satisfied: lazy-loader&gt;=0.4 in /opt/miniconda3/lib/python3.12/site-packages (from scikit-image-&gt;nwbwidgets) (0.4)
-Requirement already satisfied: typing-extensions&gt;=4.2 in /opt/miniconda3/lib/python3.12/site-packages (from aiosignal&gt;=1.4.0-&gt;aiohttp-&gt;nwbwidgets) (4.12.2)
-Requirement already satisfied: acres in /opt/miniconda3/lib/python3.12/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.0)
-Requirement already satisfied: pyyaml in /opt/miniconda3/lib/python3.12/site-packages (from bidsschematools~=1.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.2)
-Requirement already satisfied: jsonschema[format] in /opt/miniconda3/lib/python3.12/site-packages (from dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.23.0)
-Requirement already satisfied: ci-info&gt;=0.2 in /opt/miniconda3/lib/python3.12/site-packages (from etelemetry&gt;=0.2.2-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.3.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.19.2)
-Requirement already satisfied: matplotlib-inline in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.1.7)
-Requirement already satisfied: pexpect&gt;4.3 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (4.9.0)
-Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.48)
-Requirement already satisfied: pygments&gt;=2.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (2.19.1)
-Requirement already satisfied: stack_data in /opt/miniconda3/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.6.3)
-Requirement already satisfied: jaraco.classes in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.4.0)
-Requirement already satisfied: jaraco.functools in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (4.3.0)
-Requirement already satisfied: jaraco.context in /opt/miniconda3/lib/python3.12/site-packages (from keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (6.0.1)
-Requirement already satisfied: deprecated in /opt/miniconda3/lib/python3.12/site-packages (from numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.2.18)
-Requirement already satisfied: hdmf-zarr in /opt/miniconda3/lib/python3.12/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.11.3)
-Requirement already satisfied: isodate in /opt/miniconda3/lib/python3.12/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.7.2)
-Requirement already satisfied: natsort in /opt/miniconda3/lib/python3.12/site-packages (from nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (8.4.0)
-Requirement already satisfied: pytz&gt;=2020.1 in /opt/miniconda3/lib/python3.12/site-packages (from pandas&gt;=1.2.0-&gt;pynwb-&gt;nwbwidgets) (2025.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /opt/miniconda3/lib/python3.12/site-packages (from pandas&gt;=1.2.0-&gt;pynwb-&gt;nwbwidgets) (2025.1)
-Requirement already satisfied: gast&lt;0.5,&gt;=0.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from py2vega&gt;=0.5-&gt;ipydatagrid-&gt;nwbwidgets) (0.4.0)
-Requirement already satisfied: annotated-types&gt;=0.6.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.7.0)
-Requirement already satisfied: pydantic-core==2.33.2 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.33.2)
-Requirement already satisfied: typing-inspection&gt;=0.4.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic~=2.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.4.2)
-Requirement already satisfied: blessed in /opt/miniconda3/lib/python3.12/site-packages (from pyout!=0.6.0,&gt;=0.5-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.22.0)
-Requirement already satisfied: six&gt;=1.5 in /opt/miniconda3/lib/python3.12/site-packages (from python-dateutil-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.0)
-Requirement already satisfied: ruamel.yaml.clib&gt;=0.2.7 in /opt/miniconda3/lib/python3.12/site-packages (from ruamel.yaml&lt;1,&gt;=0.15-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.2.8)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ml_dtypes&gt;=0.5.0 in /opt/miniconda3/lib/python3.12/site-packages (from tensorstore-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.5.3)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /opt/miniconda3/lib/python3.12/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.8.4)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2024.10.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.22.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/miniconda3/lib/python3.12/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.7.0)
-Requirement already satisfied: wcwidth in /opt/miniconda3/lib/python3.12/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.13)
-Requirement already satisfied: email-validator&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.3.0)
-Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /opt/miniconda3/lib/python3.12/site-packages (from deprecated-&gt;numcodecs&lt;0.16-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.17.3)
-Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from hdmf-zarr-&gt;nwbinspector!=0.4.32,&gt;=0.4.28-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (3.6.0)
-Requirement already satisfied: more-itertools in /opt/miniconda3/lib/python3.12/site-packages (from jaraco.classes-&gt;keyring!=23.9.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (10.8.0)
-Requirement already satisfied: fqdn in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.5.1)
-Requirement already satisfied: isoduration in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (20.11.0)
-Requirement already satisfied: jsonpointer&gt;1.13 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.1)
-Requirement already satisfied: rfc3339-validator in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (0.1.4)
-Requirement already satisfied: rfc3987 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.8)
-Requirement already satisfied: uri-template in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
-Requirement already satisfied: webcolors&gt;=1.11 in /opt/miniconda3/lib/python3.12/site-packages (from jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (24.11.1)
-Requirement already satisfied: executing&gt;=1.2.0 in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (2.1.0)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (3.0.0)
-Requirement already satisfied: pure-eval in /opt/miniconda3/lib/python3.12/site-packages (from stack_data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets&gt;=8.0.0-&gt;nwbwidgets) (0.2.3)
-Requirement already satisfied: dnspython&gt;=2.0.0 in /opt/miniconda3/lib/python3.12/site-packages (from email-validator&gt;=2.0.0-&gt;pydantic[email]~=2.4-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.8.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: arrow&gt;=0.15.0 in /opt/miniconda3/lib/python3.12/site-packages (from isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (1.3.0)
-Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/miniconda3/lib/python3.12/site-packages (from arrow&gt;=0.15.0-&gt;isoduration-&gt;jsonschema[format]-&gt;dandischema&lt;0.12.0,&gt;=0.11.0-&gt;dandi&gt;=0.55.0-&gt;nwbwidgets) (2.9.0.20241206)
 </pre></div>
 </div>
 </div>
@@ -737,7 +556,7 @@ Requirement already satisfied: types-python-dateutil&gt;=2.8.10 in /opt/minicond
 <section id="allensdk-lessons-3-4-only">
 <h3>AllenSDK (Lessons 3 &amp; 4 only)<a class="headerlink" href="#allensdk-lessons-3-4-only" title="Link to this heading">#</a></h3>
 <p><strong>Important:</strong> The AllenSDK requires numpy&lt;1.24, which is incompatible with Python 3.12+. If you’re using Python 3.12 or later, you’ll need to create a Python 3.11 environment.</p>
-<p><strong>On DandiHub:</strong> See special setup instructions below.</p>
+<p><strong>On Binder:</strong> This is already configured for you – Binder builds a Python 3.11 environment automatically.</p>
 <p><strong>On your local machine:</strong> Use conda to create a Python 3.11 environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>nwb4edu<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
 conda<span class="w"> </span>activate<span class="w"> </span>nwb4edu
@@ -825,9 +644,7 @@ See instructions above for creating a compatible environment.
 </section>
 <section id="configuring-for-data-streaming">
 <h2>Configuring for Data Streaming<a class="headerlink" href="#configuring-for-data-streaming" title="Link to this heading">#</a></h2>
-<p>Some lessons in this book stream data directly from DANDI rather than downloading it.</p>
-<p><strong>On Dandihub</strong>: This is already configured for you!</p>
-<p><strong>On your local machine</strong>: For the most recent guidance on configuring your environment for streaming, please see the <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html">PyNWB streaming tutorial</a>.</p>
+<p>Some lessons in this book stream data directly from DANDI rather than downloading it, using the <code class="docutils literal notranslate"><span class="pre">remfile</span></code> package (installed via the cell below). This works out of the box in any environment – Binder, Colab, or your own machine – no special configuration needed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check for remfile (required for streaming)</span>
@@ -845,65 +662,6 @@ See instructions above for creating a compatible environment.
 </div>
 </div>
 </div>
-</section>
-<hr class="docutils" />
-<section id="dandihub-setup-for-lessons-3-4">
-<h2>DandiHub Setup for Lessons 3 &amp; 4<a class="headerlink" href="#dandihub-setup-for-lessons-3-4" title="Link to this heading">#</a></h2>
-<p><strong>Note:</strong> This environment is only required for Lessons 3 and 4, which use the Allen SDK. The Allen SDK requires Python 3.11 due to numpy version compatibility. All other lessons work with the default DandiHub environment.</p>
-<section id="step-1-open-a-terminal">
-<h3>Step 1: Open a Terminal<a class="headerlink" href="#step-1-open-a-terminal" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>In JupyterHub, click “File” → “New” → “Terminal”</p></li>
-</ul>
-</section>
-<section id="step-2-create-the-conda-environment-with-pip">
-<h3>Step 2: Create the conda environment with pip<a class="headerlink" href="#step-2-create-the-conda-environment-with-pip" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>nwb4edu<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>pip<span class="w"> </span>-y
-</pre></div>
-</div>
-</section>
-<section id="step-3-activate-the-environment">
-<h3>Step 3: Activate the environment<a class="headerlink" href="#step-3-activate-the-environment" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>nwb4edu
-</pre></div>
-</div>
-</section>
-<section id="step-4-install-required-packages">
-<h3>Step 4: Install required packages<a class="headerlink" href="#step-4-install-required-packages" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="nb">false</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>allensdk<span class="w"> </span>ipykernel
-</pre></div>
-</div>
-<p><strong>Note:</strong> This installation may take 5-10 minutes to complete. Please be patient while the packages are downloaded and installed.</p>
-</section>
-<section id="step-5-create-a-jupyter-kernel-for-this-environment">
-<h3>Step 5: Create a Jupyter kernel for this environment<a class="headerlink" href="#step-5-create-a-jupyter-kernel-for-this-environment" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>nwb4edu<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python 3.11 (nwb4edu)&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="step-6-refresh-your-browser">
-<h3>Step 6: Refresh your browser<a class="headerlink" href="#step-6-refresh-your-browser" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Refresh the JupyterHub page to see the new kernel</p></li>
-</ul>
-</section>
-<section id="step-7-select-the-kernel-in-lesson-3-4-notebooks">
-<h3>Step 7: Select the kernel in Lesson 3 &amp; 4 notebooks<a class="headerlink" href="#step-7-select-the-kernel-in-lesson-3-4-notebooks" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Open a notebook from Lesson 3 or 4</p></li>
-<li><p>Click “Kernel” → “Change Kernel” → “Python 3.11 (nwb4edu)”</p></li>
-</ul>
-</section>
-<section id="step-8-verify-the-installation">
-<h3>Step 8: Verify the installation<a class="headerlink" href="#step-8-verify-the-installation" title="Link to this heading">#</a></h3>
-<p>Run this in a notebook cell to verify everything installed correctly:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python version: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;allensdk version: </span><span class="si">{</span><span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
 </section>
 </section>
 
@@ -981,17 +739,6 @@ See instructions above for creating a compatible environment.
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-for-data-streaming">Configuring for Data Streaming</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dandihub-setup-for-lessons-3-4">DandiHub Setup for Lessons 3 &amp; 4</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-a-terminal">Step 1: Open a Terminal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-create-the-conda-environment-with-pip">Step 2: Create the conda environment with pip</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-activate-the-environment">Step 3: Activate the environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-install-required-packages">Step 4: Install required packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-create-a-jupyter-kernel-for-this-environment">Step 5: Create a Jupyter kernel for this environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-refresh-your-browser">Step 6: Refresh your browser</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-select-the-kernel-in-lesson-3-4-notebooks">Step 7: Select the kernel in Lesson 3 &amp; 4 notebooks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-verify-the-installation">Step 8: Verify the installation</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

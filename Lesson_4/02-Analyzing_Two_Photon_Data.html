@@ -289,18 +289,18 @@
       
       
       
-      <li><a href="https://hub.dandiarchive.org/hub/user-redirect/git-pull?repo=https%3A//github.com/nwb4edu/nwb4edu.github.io&urlpath=tree/nwb4edu.github.io/Lesson_4/02-Analyzing_Two_Photon_Data.ipynb&branch=master" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/nwb4edu/nwb4edu.github.io/master?urlpath=tree/Lesson_4/02-Analyzing_Two_Photon_Data.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on JupyterHub"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="JupyterHub logo" src="../_static/images/logo_jupyterhub.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="btn__text-container">Binder</span>
 </a>
 </li>
       
@@ -474,13 +474,26 @@ document.write(`
 <p>We need a variety of standard Python packages in addition to two different <code class="docutils literal notranslate"><span class="pre">allensdk</span></code> toolboxes. If you have not yet installed the <code class="docutils literal notranslate"><span class="pre">allensdk</span></code>, run the cell below. Otherwise, you can skip to the cell that imports our toolboxes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will ensure that the AllenSDK is installed.</span>
-<span class="c1"># If not, it will install it for you.</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk imported.&#39;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>allensdk
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># @title Run to initialize Allen Brain Observatory on Colab {display-mode: &quot;form&quot; }</span>
+
+<span class="c1"># run only once per runtime/session, and only if running in colab</span>
+<span class="c1"># the runtime will need to restxart after</span>
+<span class="o">%%capture</span>
+<span class="err">!</span><span class="n">apt</span> <span class="n">install</span> <span class="n">s3fs</span>
+
+<span class="err">!</span><span class="n">pip</span> <span class="n">uninstall</span> <span class="o">-</span><span class="n">y</span> <span class="n">numpy</span> <span class="n">pandas</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">AllenInstitute</span><span class="o">/</span><span class="n">AllenSDK</span><span class="o">@</span><span class="mi">1</span><span class="n">bdca3ad884c3a5edea8236161424650603e6f29</span> <span class="s2">&quot;numpy == 1.26.4&quot;</span> <span class="s2">&quot;pandas == 2.3.0&quot;</span> <span class="s2">&quot;matplotlib &gt; 3.8.0&quot;</span> <span class="s2">&quot;statsmodels &gt;= 0.14.4&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;allensdk imported successfully&#39;</span><span class="p">)</span>
+
+<span class="err">!</span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">allen</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">observatory</span><span class="o">/</span>
+<span class="err">!</span><span class="n">s3fs</span> <span class="n">allen</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">observatory</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">allen</span><span class="o">-</span><span class="n">brain</span><span class="o">-</span><span class="n">observatory</span><span class="o">/</span> <span class="o">-</span><span class="n">o</span> <span class="n">public_bucket</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Runtime is now restarting...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can ignore the error message [Your session crashed for an unknown reason.]&quot;</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
