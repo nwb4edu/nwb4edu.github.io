@@ -2,7 +2,7 @@
 # Compatible with Python 3.9+
 
 # NWB and data access
-dandi>=0.45.1
+dandi>=0.74.0
 
 # Neural data analysis
 pynapple

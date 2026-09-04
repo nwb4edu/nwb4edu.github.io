@@ -14,7 +14,7 @@
 #   - requirements_greatest_hits.txt (Python 3.9+)
 
 # NWB and data access (includes: pynwb, h5py, hdmf)
-dandi>=0.45.1
+dandi>=0.74.0
 
 # Allen Institute SDK (includes: numpy, pandas, scipy, matplotlib)
 allensdk>=2.11.2
