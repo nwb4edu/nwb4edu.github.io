@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -471,6 +471,15 @@ document.write(`
 <p><mark><strong>Note #2</strong>: Some of the cells below contain <code>try</code> and <code>except</code> to catch instances where these notebooks are not run in a properly configured coding environment. You can focus on the code <em>after</em> <code>try</code> – that’s the code we want to run.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">pip</span> install -q &quot;dandi&gt;=0.74.0&quot; remfile
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
@@ -673,7 +682,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5d33d48f72c3e46638d3c1e3d1a78f3b039d633d97988fa6700144a059db9dfb.png" src="../_images/5d33d48f72c3e46638d3c1e3d1a78f3b039d633d97988fa6700144a059db9dfb.png" />
+<img alt="../_images/aefe7c31cea6b06ec5ff4835d348a9b72c2c71aa7b2e672dbd734bca9d929a60.png" src="../_images/aefe7c31cea6b06ec5ff4835d348a9b72c2c71aa7b2e672dbd734bca9d929a60.png" />
 </div>
 </div>
 <p>The plot above is only contains neural spikes from nine neurons in a five second time interval. While there are many spikes to consider in this one graph, each neuron has much more than five seconds worth of spike recordings! To summarize these spikes over time, we can compute a <strong>firing rate</strong>.</p>
@@ -721,7 +730,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7b1a6cb74e79c11ba26303490588c40170105d217b92c45b27d4454831291d95.png" src="../_images/7b1a6cb74e79c11ba26303490588c40170105d217b92c45b27d4454831291d95.png" />
+<img alt="../_images/66639e3e856b7aabf2946adc68cf019aaeb1fd042c11d29073962672df11c466.png" src="../_images/66639e3e856b7aabf2946adc68cf019aaeb1fd042c11d29073962672df11c466.png" />
 </div>
 </div>
 <div class="alert alert-success"><b>Task</b>: Modify the <code>plot_firing_rates</code> function above so that it returns <code>binned_spikes</code>. You'll need this for the Lesson 2 problem set!</div></section>
@@ -740,7 +749,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/58d5b0dc928923d9b24b5b3b225c191990f690b39301e2c07f9a211554f63c63.png" src="../_images/58d5b0dc928923d9b24b5b3b225c191990f690b39301e2c07f9a211554f63c63.png" />
+<img alt="../_images/4a981fdf1c7180d7c1008d4966f6f75e33eddf12d1d96f189d67951b826ab68a.png" src="../_images/4a981fdf1c7180d7c1008d4966f6f75e33eddf12d1d96f189d67951b826ab68a.png" />
 </div>
 </div>
 <p>We will compare one unit recorded from 1165 microns to one unit recorded from 715 microns.</p>
@@ -763,7 +772,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d4c2fedc3389ac9cdcb44b076f3a2ce020154e24e790f4e792c5fa29f2aa7749.png" src="../_images/d4c2fedc3389ac9cdcb44b076f3a2ce020154e24e790f4e792c5fa29f2aa7749.png" />
+<img alt="../_images/087c2af04de6e3893ad8d0284b52dddc3cb2bf496ad759d606e49644a2fdebd1.png" src="../_images/087c2af04de6e3893ad8d0284b52dddc3cb2bf496ad759d606e49644a2fdebd1.png" />
 </div>
 </div>
 <p>It looks like the neuron that’s more superficial (at a depth of 715 microns) has a higher firing rate! But we’d certainly need more data to make a conclusive argument about that.</p>

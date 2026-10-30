@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -479,6 +479,15 @@ document.write(`
 <p>Below, we’ll find the correct URL for the dataset on Amazon S3, then stream it directly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">pip</span> install -q &quot;dandi&gt;=0.74.0&quot; remfile
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dandi.dandiapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">DandiAPIClient</span>
 
 <span class="n">dandiset_id</span> <span class="o">=</span> <span class="s1">&#39;000006&#39;</span>  <span class="c1"># ephys dataset from the Svoboda Lab</span>
@@ -518,7 +527,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>root pynwb.file.NWBFile at 0x5135612432
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>root pynwb.file.NWBFile at 0x4553553920
 Fields:
   acquisition: {
     lick_times &lt;class &#39;pynwb.behavior.BehavioralEvents&#39;&gt;
@@ -540,11 +549,9 @@ Fields:
   }
   keywords: &lt;StrDataset for HDF5 dataset &quot;keywords&quot;: shape (4,), type &quot;|O&quot;&gt;
   related_publications: [&#39;doi:10.1038/s41586-018-0642-9&#39;]
-  session_description: 
   session_start_time: 2017-07-18 00:00:00-05:00
-  subject: subject pynwb.file.Subject at 0x5135607392
+  subject: subject pynwb.file.Subject at 0x4553552768
 Fields:
-  genotype: 
   sex: U
   species: Mus musculus
   subject_id: anm372795
@@ -579,63 +586,63 @@ Fields:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PATH                                                SIZE      DONE            DONE% CHECKSUM STATUS          MESSAGE   
-000006/dandiset.yaml                                                                         done            updated   
-000006/sub-anm369962/sub-anm369962_ses-20170309.nwb 796.9 kB  796.9 kB         100%    ok    done                      
-000006/sub-anm369962/sub-anm369962_ses-20170316.nwb 609.6 kB  609.6 kB         100%    ok    done                      
-000006/sub-anm369962/sub-anm369962_ses-20170310.nwb 6.6 MB    6.6 MB           100%    ok    done                      
-000006/sub-anm369962/sub-anm369962_ses-20170314.nwb 7.5 MB    7.5 MB           100%    ok    done                      
-000006/sub-anm369962/sub-anm369962_ses-20170313.nwb 11.5 MB   11.5 MB          100%    ok    done                      
-000006/sub-anm369962/sub-anm369962_ses-20170317.nwb 8.2 MB    8.2 MB           100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170227.nwb 6.5 MB    6.5 MB           100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170226.nwb 6.4 MB    6.4 MB           100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170228.nwb 276.6 kB  276.6 kB         100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170301.nwb 493.5 kB  493.5 kB         100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170302.nwb 281.0 kB  281.0 kB         100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170306.nwb 6.7 MB    6.7 MB           100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170309.nwb 450.9 kB  450.9 kB         100%    ok    done                      
-000006/sub-anm369963/sub-anm369963_ses-20170310.nwb 604.8 kB  604.8 kB         100%    ok    done                      
-000006/sub-anm369964/sub-anm369964_ses-20170321.nwb 499.9 kB  499.9 kB         100%    ok    done                      
-000006/sub-anm369964/sub-anm369964_ses-20170320.nwb 7.7 MB    7.7 MB           100%    ok    done                      
-000006/sub-anm369964/sub-anm369964_ses-20170322.nwb 5.0 MB    5.0 MB           100%    ok    done                      
-000006/sub-anm369964/sub-anm369964_ses-20170323.nwb 426.4 kB  426.4 kB         100%    ok    done                      
-000006/sub-anm372793/sub-anm372793_ses-20170504.nwb 357.8 kB  357.8 kB         100%    ok    done                      
-000006/sub-anm372793/sub-anm372793_ses-20170508.nwb 357.4 kB  357.4 kB         100%    ok    done                      
-000006/sub-anm372793/sub-anm372793_ses-20170512.nwb 470.8 kB  470.8 kB         100%    ok    done                      
-000006/sub-anm372793/sub-anm372793_ses-20170513.nwb 5.5 MB    5.5 MB           100%    ok    done                      
-000006/sub-anm372794/sub-anm372794_ses-20170621.nwb 654.2 kB  654.2 kB         100%    ok    done                      
-000006/sub-anm372794/sub-anm372794_ses-20170622.nwb 602.8 kB  602.8 kB         100%    ok    done                      
-000006/sub-anm372793/sub-anm372793_ses-20170514.nwb 5.5 MB    5.5 MB           100%    ok    done                      
-000006/sub-anm372794/sub-anm372794_ses-20170624.nwb 4.8 MB    4.8 MB           100%    ok    done                      
-000006/sub-anm372794/sub-anm372794_ses-20170625.nwb 5.7 MB    5.7 MB           100%    ok    done                      
-000006/sub-anm372794/sub-anm372794_ses-20170626.nwb 4.9 MB    4.9 MB           100%    ok    done                      
-000006/sub-anm372794/sub-anm372794_ses-20170627.nwb 553.4 kB  553.4 kB         100%    ok    done                      
-000006/sub-anm372795/sub-anm372795_ses-20170715.nwb 323.2 kB  323.2 kB         100%    ok    done                      
-000006/sub-anm372795/sub-anm372795_ses-20170714.nwb 465.5 kB  465.5 kB         100%    ok    done                      
-000006/sub-anm372795/sub-anm372795_ses-20170716.nwb 813.2 kB  813.2 kB         100%    ok    done                      
-000006/sub-anm372795/sub-anm372795_ses-20170718.nwb 452.3 kB  452.3 kB         100%    ok    done                      
-000006/sub-anm372797/sub-anm372797_ses-20170617.nwb 338.9 kB  338.9 kB         100%    ok    done                      
-000006/sub-anm372904/sub-anm372904_ses-20170615.nwb 388.2 kB  388.2 kB         100%    ok    done                      
-000006/sub-anm372797/sub-anm372797_ses-20170615.nwb 6.0 MB    6.0 MB           100%    ok    done                      
-000006/sub-anm372904/sub-anm372904_ses-20170617.nwb 384.9 kB  384.9 kB         100%    ok    done                      
-000006/sub-anm372904/sub-anm372904_ses-20170616.nwb 362.6 kB  362.6 kB         100%    ok    done                      
-000006/sub-anm372904/sub-anm372904_ses-20170618.nwb 9.4 MB    9.4 MB           100%    ok    done                      
-000006/sub-anm372904/sub-anm372904_ses-20170619.nwb 4.1 MB    4.1 MB           100%    ok    done                      
-000006/sub-anm372905/sub-anm372905_ses-20170715.nwb 344.0 kB  344.0 kB         100%    ok    done                      
-000006/sub-anm372905/sub-anm372905_ses-20170716.nwb 554.0 kB  554.0 kB         100%    ok    done                      
-000006/sub-anm372905/sub-anm372905_ses-20170717.nwb 448.4 kB  448.4 kB         100%    ok    done                      
-000006/sub-anm372906/sub-anm372906_ses-20170608.nwb 6.9 MB    6.9 MB           100%    ok    done                      
-000006/sub-anm372906/sub-anm372906_ses-20170610.nwb 374.8 kB  374.8 kB         100%    ok    done                      
-000006/sub-anm372906/sub-anm372906_ses-20170611.nwb 338.7 kB  338.7 kB         100%    ok    done                      
-000006/sub-anm372906/sub-anm372906_ses-20170612.nwb 324.3 kB  324.3 kB         100%    ok    done                      
-000006/sub-anm372907/sub-anm372907_ses-20170608.nwb 438.9 kB  438.9 kB         100%    ok    done                      
-000006/sub-anm372907/sub-anm372907_ses-20170610.nwb 349.7 kB  349.7 kB         100%    ok    done                      
-000006/sub-anm372907/sub-anm372907_ses-20170613.nwb 259.0 kB  259.0 kB         100%    ok    done                      
-000006/sub-anm372907/sub-anm372907_ses-20170612.nwb 444.5 kB  444.5 kB         100%    ok    done                      
-000006/sub-anm372909/sub-anm372909_ses-20170520.nwb 352.9 kB  352.9 kB         100%    ok    done                      
-000006/sub-anm372909/sub-anm372909_ses-20170522.nwb 5.7 MB    5.7 MB           100%    ok    done                      
-Summary:                                            139.6 MB  139.6 MB                       54 done         1 updated 
-                                                              100.00%                                                  
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PATH                                                SIZE      DONE            DONE% CHECKSUM STATUS          MESSAGE    
+000006/dandiset.yaml                                                                         skipped         no change  
+000006/sub-anm369962/sub-anm369962_ses-20170309.nwb 796.9 kB  796.9 kB         100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170316.nwb 609.6 kB  609.6 kB         100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170310.nwb 6.6 MB    6.6 MB           100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170314.nwb 7.5 MB    7.5 MB           100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170313.nwb 11.5 MB   11.5 MB          100%    ok    done                       
+000006/sub-anm369962/sub-anm369962_ses-20170317.nwb 8.2 MB    8.2 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170227.nwb 6.5 MB    6.5 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170226.nwb 6.4 MB    6.4 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170228.nwb 276.6 kB  276.6 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170301.nwb 493.5 kB  493.5 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170302.nwb 281.0 kB  281.0 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170306.nwb 6.7 MB    6.7 MB           100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170309.nwb 450.9 kB  450.9 kB         100%    ok    done                       
+000006/sub-anm369963/sub-anm369963_ses-20170310.nwb 604.8 kB  604.8 kB         100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170321.nwb 499.9 kB  499.9 kB         100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170320.nwb 7.7 MB    7.7 MB           100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170322.nwb 5.0 MB    5.0 MB           100%    ok    done                       
+000006/sub-anm369964/sub-anm369964_ses-20170323.nwb 426.4 kB  426.4 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170504.nwb 357.8 kB  357.8 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170508.nwb 357.4 kB  357.4 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170512.nwb 470.8 kB  470.8 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170513.nwb 5.5 MB    5.5 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170621.nwb 654.2 kB  654.2 kB         100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170622.nwb 602.8 kB  602.8 kB         100%    ok    done                       
+000006/sub-anm372793/sub-anm372793_ses-20170514.nwb 5.5 MB    5.5 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170624.nwb 4.8 MB    4.8 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170625.nwb 5.7 MB    5.7 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170626.nwb 4.9 MB    4.9 MB           100%    ok    done                       
+000006/sub-anm372794/sub-anm372794_ses-20170627.nwb 553.4 kB  553.4 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170715.nwb 323.2 kB  323.2 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170714.nwb 465.5 kB  465.5 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170716.nwb 813.2 kB  813.2 kB         100%    ok    done                       
+000006/sub-anm372795/sub-anm372795_ses-20170718.nwb 452.3 kB  452.3 kB         100%    ok    done                       
+000006/sub-anm372797/sub-anm372797_ses-20170617.nwb 338.9 kB  338.9 kB         100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170615.nwb 388.2 kB  388.2 kB         100%    ok    done                       
+000006/sub-anm372797/sub-anm372797_ses-20170615.nwb 6.0 MB    6.0 MB           100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170617.nwb 384.9 kB  384.9 kB         100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170616.nwb 362.6 kB  362.6 kB         100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170618.nwb 9.4 MB    9.4 MB           100%    ok    done                       
+000006/sub-anm372904/sub-anm372904_ses-20170619.nwb 4.1 MB    4.1 MB           100%    ok    done                       
+000006/sub-anm372905/sub-anm372905_ses-20170715.nwb 344.0 kB  344.0 kB         100%    ok    done                       
+000006/sub-anm372905/sub-anm372905_ses-20170716.nwb 554.0 kB  554.0 kB         100%    ok    done                       
+000006/sub-anm372905/sub-anm372905_ses-20170717.nwb 448.4 kB  448.4 kB         100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170608.nwb 6.9 MB    6.9 MB           100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170610.nwb 374.8 kB  374.8 kB         100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170611.nwb 338.7 kB  338.7 kB         100%    ok    done                       
+000006/sub-anm372906/sub-anm372906_ses-20170612.nwb 324.3 kB  324.3 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170608.nwb 438.9 kB  438.9 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170610.nwb 349.7 kB  349.7 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170613.nwb 259.0 kB  259.0 kB         100%    ok    done                       
+000006/sub-anm372907/sub-anm372907_ses-20170612.nwb 444.5 kB  444.5 kB         100%    ok    done                       
+000006/sub-anm372909/sub-anm372909_ses-20170520.nwb 352.9 kB  352.9 kB         100%    ok    done                       
+000006/sub-anm372909/sub-anm372909_ses-20170522.nwb 5.7 MB    5.7 MB           100%    ok    done                       
+Summary:                                            139.6 MB  139.6 MB                       1 skipped       1 no change
+                                                              100.00%                        53 done                    
 </pre></div>
 </div>
 </div>

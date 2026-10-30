@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -481,11 +481,11 @@ document.write(`
 <section id="contents">
 <h2>Contents:<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="#stream-nwb"><span class="xref myst">Streaming NWB files</span></a></p></li>
-<li><p><a class="reference internal" href="#access-nwb"><span class="xref myst">Accessing data and metadata</span></a></p></li>
-<li><p><a class="reference internal" href="#position"><span class="xref myst">Accessing behavior data</span></a></p></li>
-<li><p><a class="reference internal" href="#spike-times"><span class="xref myst">Accessing spike times</span></a></p></li>
-<li><p><a class="reference internal" href="#rate-maps"><span class="xref myst">Showing rate maps</span></a></p></li>
+<li><p><a href="#stream-nwb">Streaming NWB files</a></p></li>
+<li><p><a href="#access-nwb">Accessing data and metadata</a></p></li>
+<li><p><a href="#position">Accessing behavior data</a></p></li>
+<li><p><a href="#spike-times">Accessing spike times</a></p></li>
+<li><p><a href="#rate-maps">Showing rate maps</a></p></li>
 </ul>
 </section>
 <section id="authors">
@@ -498,6 +498,15 @@ document.write(`
 <h2>Streaming NWB files <a class="anchor" id="stream-nwb"></a><a class="headerlink" href="#streaming-nwb-files" title="Link to this heading">#</a></h2>
 <p>This section demonstrates how to access the files on DANDI without downloading them. If you need a refresher, we discussed this in <a class="reference external" href="https://nwb4edu.github.io/Lesson_1/01-Obtaining_Datasets_with_DANDI.html">Lesson 1</a>. You can also reference the <a class="reference external" href="https://pynwb.readthedocs.io/en/stable/tutorials/advanced_io/streaming.html">Streaming NWB files</a> tutorial from <code class="docutils literal notranslate"><span class="pre">PyNWB</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">DandiAPIClient</span></code> can be used to get the S3 URL of <a class="reference external" href="https://dandiarchive.org/dandiset/000582/draft">this NWB file</a> stored in the DANDI Archive.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">pip</span> install -q &quot;dandi&gt;=0.74.0&quot; remfile pynapple plotly
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">dandi.dandiapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">DandiAPIClient</span>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -468,6 +468,15 @@ document.write(`
 <p>As we saw in the last section, the NWB file contains a ton of information about the experiment, as well as the actual data. We can look through each of the groups in the NWB file to pull out this information programmatically, or we can use <a class="reference external" href="https://neurosift.app">Neurosift</a>, a browser-based visualization tool for NWB and DANDI data maintained by the Flatiron Institute.</p>
 <p>Neurosift lets us take a peek at the behavioral and neural data without writing any code. As a first pass, it can be very useful to explore a dataset this way – it lets you inspect the data for quality and look for interesting trends, right from the DANDI Archive.</p>
 <p>First, let’s set up our notebook and read the NWB file that we previously downloaded, so we have a code-based view to compare against what Neurosift shows us.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="o">%</span><span class="k">pip</span> install -q &quot;dandi&gt;=0.74.0&quot; remfile
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
